@@ -257,7 +257,7 @@
                                     <tr>
                                         <td>
                                             <?php foreach ($dunlop_highlight as $each) : ?>
-                                            <div class="highlight"><a href="<?= $each->Highlight_URL ?>"><img src="<?= base_url() ?>adminstrator/public/uploads/<?= $each->Highlight_IMG ?>" /></a></div>
+                                            <div class="highlight"><a href="<?= $each->Highlight_URL ?>"><img src="<?= base_url() ?>administrator/public/uploads/<?= $each->Highlight_IMG ?>" /></a></div>
                                             <?php endforeach; ?>
                                         </td>
 
