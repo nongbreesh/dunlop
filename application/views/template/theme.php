@@ -24,7 +24,7 @@
         <div class="wrapper">
             <header>
                 <div class="vector"></div>
-                
+                 <div class="logo"></div>
             </header>
         </div>
         <footer>

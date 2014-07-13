@@ -49,6 +49,7 @@ body{
 header{
     height:78px;
     background:#ffde00;
+    position: relative;
 }
 header .vector{
     background:url('../images/header_vector.png');
@@ -56,4 +57,12 @@ header .vector{
     width:1300px;
     top:14px;
     position:absolute;
+}
+header .logo{
+    background:url('../images/logo.png');
+    height:46px;
+    width:263px;
+    position:absolute;
+    left:179px;
+    top: 7px;
 }
