@@ -192,7 +192,7 @@ class Service extends CI_Controller {
 
     function upload_picture_group() {
         $this->load->library('upload');
-
+        $type = $_FILE['input_image_add']['type'];
         if (trim($_FILES["input_image_add"]["tmp_name"]) != "") {
             $images = $_FILES["input_image"]["tmp_name"];
             $old_images = $_FILES["input_image"]["name"];
@@ -206,7 +206,25 @@ class Service extends CI_Controller {
             $photoY = ImagesY($images_orig);
             $images_fin = ImageCreateTrueColor($width, $height);
             ImageCopyResampled($images_fin, $images_orig, 0, 0, 0, 0, $width + 1, $height + 1, $photoX, $photoY);
-            ImageJPEG($images_fin, "./public/uploads/" . $new_images);
+            if ($type) {
+                switch ($type) {
+                    case 'image/jpeg':
+                        $image = imagecreatefromjpeg($fileName);
+                        imagecopyresampled($image_p, $image, 0, 0, 0, 0, $width, $height, $width_orig, $height_orig);
+                        ImageJPEG($images_fin, "./public/uploads/" . $new_images);
+                        break;
+
+                    case 'image/png':
+                        imagealphablending($image_p, false);
+                        imagesavealpha($image_p, true);
+                        $image = imagecreatefrompng($fileName);
+                        imagecopyresampled($image_p, $image, 0, 0, 0, 0, $width, $height, $width_orig, $height_orig);
+                        imagepng($images_fin, "./public/uploads/" . $new_images);
+                        break;
+                }
+            }
+
+
             ImageDestroy($images_orig);
             ImageDestroy($images_fin);
         }
@@ -221,6 +239,7 @@ class Service extends CI_Controller {
         $this->load->library('upload');
 
         if (trim($_FILES["input_image"]["tmp_name"]) != "") {
+            $type = $_FILES['input_image']['type'];
             $images = $_FILES["input_image"]["tmp_name"];
             $old_images = $_FILES["input_image"]["name"];
             $new_images = "Thumbnails_" . $_FILES["input_image"]["name"];
@@ -228,12 +247,29 @@ class Service extends CI_Controller {
             $width = 150; //*** Fix Width & Heigh (Autu caculate) ***//
             $weight = GetimageSize($images);
             $height = round($width * $weight[1] / $weight[0]);
-            $images_orig = ImageCreateFromJPEG($images);
-            $photoX = ImagesX($images_orig);
-            $photoY = ImagesY($images_orig);
-            $images_fin = ImageCreateTrueColor($width, $height);
-            ImageCopyResampled($images_fin, $images_orig, 0, 0, 0, 0, $width + 1, $height + 1, $photoX, $photoY);
-            ImageJPEG($images_fin, "./public/uploads/" . $new_images);
+
+            if ($type) {
+                switch ($type) {
+                    case 'image/jpeg':
+                        $images_orig = ImageCreateFromJPEG($images);
+                        $photoX = ImagesX($images_orig);
+                        $photoY = ImagesY($images_orig);
+                        $images_fin = ImageCreateTrueColor($width, $height);
+                        ImageCopyResampled($images_fin, $images_orig, 0, 0, 0, 0, $width + 1, $height + 1, $photoX, $photoY);
+                        ImageJPEG($images_fin, "./public/uploads/" . $new_images);
+                        break;
+
+                    case 'image/png':
+                        $images_orig = imagecreatefrompng($images);
+                        $photoX = ImagesX($images_orig);
+                        $photoY = ImagesY($images_orig);
+                        $images_fin = ImageCreateTrueColor($width, $height);
+                        ImageCopyResampled($images_fin, $images_orig, 0, 0, 0, 0, $width + 1, $height + 1, $photoX, $photoY);
+                        imagepng($images_fin, "./public/uploads/" . $new_images);
+                        break;
+                }
+            }
+
             ImageDestroy($images_orig);
             ImageDestroy($images_fin);
         }
@@ -391,8 +427,7 @@ class Service extends CI_Controller {
         $this->output->set_header('Content-Type: application/json; charset=utf-8');
         echo json_encode($data);
     }
-    
-    
+
     function delete_content() {
         $id = ($this->input->post('id') != false ? $this->input->post('id') : '');
 

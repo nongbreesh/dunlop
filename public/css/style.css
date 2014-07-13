@@ -45,6 +45,7 @@ body{
 }
 .wrapper{
     width:1300px;
+    margin: 0 auto;
 }
 header{
     height:78px;
@@ -65,4 +66,157 @@ header .logo{
     position:absolute;
     left:179px;
     top: 7px;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+.footer{
+    text-align: right;
+    color:#fff;
+    font:18px 'ThaiSansNeue-Light';
+}
+.product_2{
+    background:url('../images/home/product_2.png') 0px 0px;
+    font:16px 'ThaiSansNeue-Black';
+    padding-left: 40px;
+    height:31px;
+    width:210px;
+    position: relative;
+}
+
+.product_3{
+    background:url('../images/home/product_3.png') 0px 0px;
+    font:16px 'ThaiSansNeue-Black';
+    padding-left: 40px;
+    height:31px;
+    width:210px;
+    line-height: 31px;
+    position: relative;
+}
+.product_4{
+    background:url('../images/home/product_4.png') 0px 0px;
+    font:16px 'ThaiSansNeue-Black';
+    padding-left: 40px;
+    height:31px;
+    width:210px;
+    line-height: 31px;
+    position: relative;
+}
+.product_5{
+    background:url('../images/home/product_5.png') 0px 0px;
+    font:16px 'ThaiSansNeue-Black';
+    padding-left: 40px;
+    height:31px;
+    width:210px;
+    line-height: 31px;
+    position: relative;
+}
+.product_6{
+    background:url('../images/home/product_6.png') 0px 0px;
+    font:16px 'ThaiSansNeue-Black';
+    padding-left: 40px;
+    height:31px;
+    width:210px;
+    line-height: 31px;
+    position: relative;
+}
+.product_2 a{
+    position: absolute;
+    top: 8px;
+}
+.product_3 a,.product_4 a,.product_5 a,.product_6 a{
+    position: absolute;
+    top: 6px;
+}
+
+.product_2 a:hover,.product_3 a:hover,.product_4 a:hover,.product_5 a:hover,.product_6 a:hover{
+    color:#f00;
+}
+
+select{
+    font:16px 'ThaiSansNeue-Light';
+    background: #333333;
+    border: 1px #000 solid;
+    border-radius: 3px;
+    color:#ffffff;
+}
+.vdo{
+    margin-bottom: 10px;
+    width: 420px;
+    overflow: hidden;
+    margin-left: 5px;
+    border-radius: 5px;
+}
+.btn-vdo{
+    background: #282618;
+    border-top: 0px #000 solid;
+    border-right: 0px #000 solid;
+    border-bottom: 2px #322c01 solid;
+    border-left: 2px #322c01 solid;
+    font:18px 'ThaiSansNeue-Light';
+    color:#ffffff;
+    border-radius: 5px;
+    padding: 2px 10px 2px 10px;
+    cursor: pointer;
+}
+.btn-vdo:hover{
+    background: #ffde00;
+    color: #413800;
+    border-top: 0px #000 solid;
+    border-right: 0px #000 solid;
+    border-bottom: 2px #d5bb0d solid;
+    border-left: 2px #d5bb0d solid;
+}
+.menu{
+    position: absolute;
+    top: 24px;
+    left: 263px;
+    overflow: hidden;
+    text-align: center;
+}
+.whatnews {
+    width: 355px;
+    height: 260px;
+}
+.whatnews p {
+    font:18px 'ThaiSansNeue-Light';
+    padding: 0px;
+    margin: 0px;
+    color: #000;
+    text-align: center;
+}
+.whatnews_frame{
+    height: 180px;
+    width: 340px;
+    background: #000;
+
+    border: 5px solid #fff;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.whatnews_frame img{
+    min-width: 100%;
+    max-height: 200px;
+}
+.bx-has-controls-direction{
+    position: absolute;
+    top: -29px;
+    right: 26px;
+    width: 110px;
+}
+.bx-wrapper, .bx-viewport {
+    height:260px  !important; 
+}
+.bx-wrapper img{
+    min-width: 100%;
+    max-height: 200px;
+}
+.bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active{
+    background: #ffde00; 
+}
+.highlight{
+    float: left;
+    display: block;
+    margin-left:8px;
 }

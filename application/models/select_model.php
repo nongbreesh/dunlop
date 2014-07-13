@@ -2,364 +2,216 @@
 
 class select_model extends CI_Model {
 
+    function __construct() {
+        parent::__construct();
+        $this->load->helper(array('cookie', 'url'));
+    }
 
+    function get_dunlop_contact() {
+        $query = $this->db->query("SELECT  * FROM dunlop_contact");
+        return $query->result();
+    }
 
-    function getCountView_today() {
+    function get_dunlop_video() {
+        $query = $this->db->query("SELECT  * FROM dunlop_vdo");
+        return $query->result();
+    }
 
-        //$query = $this->db->query("select count(distinct(ip_addr)) as viewed_count from view_history where time_stamp >= NOW() - INTERVAL 1 DAY ");
-        $query = $this->db->query("SELECT count(distinct(ip_addr))  as viewed_count FROM view_history WHERE TO_DAYS(time_stamp) = TO_DAYS(now())");
+    function get_dunlop_whatnews() {
+        $query = $this->db->query("SELECT  * FROM dunlop_news");
+        return $query->result();
+    }
+
+    function get_dealer_list() {
+        $query = $this->db->query("SELECT  * FROM dealer_detail a"
+                . " inner join dealer_area b"
+                . " on a.AREA_ID = b.AREA_ID order by a.DEALER_ID");
+        return $query->result();
+    }
+
+    function get_area_list($zone_id) {
+        $query = $this->db->query("SELECT  * FROM dealer_area a"
+                . " where a.ZONE_ID = " . $zone_id);
+        return $query->result();
+    }
+
+    function get_dunlop_zone() {
+        $query = $this->db->query("SELECT  * FROM dealer_zone");
+        return $query->result();
+    }
+
+    function get_tire_width() {
+        $query = $this->db->query("SELECT  distinct(Tire_Width) FROM dunlop_tire where Tire_Width != ''");
+        return $query->result();
+    }
+
+    function get_tire_series() {
+        $query = $this->db->query("SELECT  distinct(Tire_Series) FROM dunlop_tire where Tire_Series != ''");
+        return $query->result();
+    }
+
+    function get_tire_size() {
+        $query = $this->db->query("SELECT  distinct(Tire_Diameter) FROM dunlop_tire where Tire_Diameter != ''");
+        return $query->result();
+    }
+
+    function dunlop_content() {
+        $query = $this->db->query("SELECT  * FROM dunlop_content");
+        return $query->result();
+    }
+
+    function get_dunlop_area($zone_id) {
+        $query = $this->db->query("SELECT  * FROM dealer_area where ZONE_ID = " . $zone_id);
+        return $query->result();
+    }
+
+    function get_dunlop_highlight() {
+        $query = $this->db->query("SELECT  * FROM dunlop_highlight");
+        return $query->result();
+    }
+
+    function get_dunlop_tire() {
+        $query = $this->db->query("SELECT  a.*,b.*,c.* FROM dunlop_tire a"
+                . " inner join dunlop_product b"
+                . " on a.Product_ID = b.Product_ID"
+                . " inner join dunlop_type c"
+                . " on a.Type_ID = c.Type_ID");
+        return $query->result();
+    }
+
+    function get_dunlop_product() {
+
+        $query = $this->db->query("SELECT  * FROM dunlop_product a "
+                . " inner join dunlop_group b"
+                . " on a.Group_ID = b.Group_ID");
+        return $query->result();
+    }
+
+    function get_dunlop_type() {
+
+        $query = $this->db->query("SELECT  * FROM dunlop_type");
+        return $query->result();
+    }
+
+    function get_dunlop_group() {
+
+        $query = $this->db->query("SELECT  * FROM dunlop_group");
+        return $query->result();
+    }
+
+    function getalluniqtraffic() {
+
+        $query = $this->db->query("SELECT count(distinct(b.meta_value))  as traffic_count FROM  tm_posts a inner join tm_postmeta b   on a.ID = b.post_id where a.post_type = 'pageview' AND b.meta_key  = 'ip_addr'  AND YEAR(a.post_date) = YEAR(now()) AND MONTH(a.post_date) = MONTH(now())");
         return $query->row();
     }
 
-    function getCountItemclick_today() {
+    function getalltraffic() {
 
-        //$query = $this->db->query("select count(distinct(ip_addr)) as viewed_count from view_history where time_stamp >= NOW() - INTERVAL 1 DAY ");
-        $query = $this->db->query("SELECT count(ip_addr)  as viewed_count FROM cart_history WHERE TO_DAYS(time_stamp) = TO_DAYS(now())");
+        $query = $this->db->query("SELECT count(b.meta_id)  as traffic_count FROM  tm_posts a inner join tm_postmeta b   on a.ID = b.post_id where a.post_type = 'pageview' AND b.meta_key  = 'ip_addr' AND YEAR(a.post_date) = YEAR(now()) AND MONTH(a.post_date) = MONTH(now())");
         return $query->row();
     }
 
-    function getCountItemclick_detail() {
-
-        //$query = $this->db->query("select count(distinct(ip_addr)) as viewed_count from view_history where time_stamp >= NOW() - INTERVAL 1 DAY ");
-        $query = $this->db->query("SELECT a.*,b.*,c.*,a.time_stamp as clicktime  FROM cart_history a left join items b on a.id = b.id left join categories c on b.categories = c.categories_id where time_stamp <= NOW() AND time_stamp >= DATE_SUB(time_stamp , INTERVAL 7 DAY) order by time_stamp desc");
-        return $query->result();
-    }
-
-    function getCateused($id) {
-        $query = $this->db->query("select a.* from   items  a left join categories b on a.categories = b.categories_id  where b.categories_id = " . $id);
-
-        return $query->num_rows();
-    }
-
-    function getAffclick($acc = null) {
-        $query = $this->db->query("select count(a.id) as vclick ,
-				 a.bannerid ,a.acc from (select * from aff_click 
-				  WHERE DATE_FORMAT(timestamp, '%Y-%m-%d') 
-				BETWEEN DATE_SUB(CURRENT_DATE, INTERVAL 30 DAY)AND CURRENT_DATE) a 
-				where a.acc=  '$acc' group by a.bannerid");
-
-        return $query->result();
-    }
-
-    function getAffclickdaily($acc = null) {
-        $query = $this->db->query("select count(a.id) as vclick ,
-				a.bannerid ,a.acc from (select * from aff_click
-				WHERE DATE_FORMAT(timestamp, '%Y-%m-%d')
-				BETWEEN DATE_SUB(CURRENT_DATE, INTERVAL 1 DAY)AND CURRENT_DATE) a
-				where a.acc=  '$acc' group by a.bannerid");
-
-        return $query->result();
-    }
-
-    function getAff_index($txt_search = null, $acc = null) {
-        $query = $this->db->query("SELECT * FROM aff_index");
+    function getregistercount() {
+        $query = $this->db->query("SELECT count(a.ID)  as register_count FROM  tm_posts a where a.post_mime_type = 'register'");
         return $query->row();
     }
 
-    function getOrderList($txt_search = null, $acc = null) {
-        $query = $this->db->query("SELECT * FROM orders a INNER JOIN orderdetails b ON a.order_id = 
-			b.order_id WHERE CONCAT(a.order_id,a.orders_ownername)  
-			LIKE '%$txt_search%' AND is_active = 1 And a.acc = '$acc' GROUP BY a.order_id Order By a.order_time desc");
-        return $query->result();
+    function get_export_register() {
+        $sql = "";
+        $sql .= "SELECT post_date as registerdate, post_content as phoneno , "
+                . " post_title as idcard , "
+                . " post_excerpt as email"
+                . " FROM  tm_posts a where a.post_mime_type = 'register'";
+        mysql_query('SET CHARACTER SET tis620');
+        mysql_query('SET collation_connection = "tis620_thai_ci"');
+        $query = $this->db->query($sql);
+        return $query;
     }
 
-    function getOrderDetail($order_id = null) {
-        $query = $this->db->query("SELECT a.price priceaff , a.*,b.* 
-				FROM orderdetails a
-				INNER JOIN items b ON a.product_id = b.id
-				WHERE order_id = '$order_id'");
-        return $query->result();
-    }
+    function getalldailyuniqtraffic() {
 
-    function getPaymentHistory($acc = null) {
-        $query = $this->db->query("SELECT sum(amount)  sumpayment FROM `withdraw_history` where acc = '$acc'");
+        $query = $this->db->query("SELECT count(distinct(b.meta_value))  as traffic_count FROM  tm_posts a inner join tm_postmeta b   on a.ID = b.post_id where a.post_type = 'pageview' AND b.meta_key  = 'ip_addr' AND TO_DAYS(a.post_date) = TO_DAYS(now())");
         return $query->row();
     }
 
-    function getPaymentRequest($acc = null) {
-        $query = $this->db->query("SELECT sum(amount)  sumpayment FROM `withdraw_request` where acc = '$acc'");
+    function getalldailytraffic() {
+
+        $query = $this->db->query("SELECT count(b.meta_id)  as traffic_count FROM  tm_posts a inner join tm_postmeta b   on a.ID = b.post_id where a.post_type = 'pageview' AND b.meta_key  = 'ip_addr' AND TO_DAYS(a.post_date) = TO_DAYS(now())");
         return $query->row();
     }
 
-    function getPaymentHistoryDetail($acc = null) {
-        $query = $this->db->query("SELECT * FROM `withdraw_history` where acc = '$acc' order by date_pay desc");
+    function getalltrafficlist($offset, $per_page) {
+
+        $query = $this->db->query("SELECT * FROM  tm_posts a   where a.post_type = 'pageview' ORDER BY a.id DESC limit " . $offset . " , " . $per_page);
         return $query->result();
     }
 
-    function getPaymentRequestDetail($acc = null) {
-        $query = $this->db->query("SELECT * FROM `withdraw_request` where acc = '$acc' order by date_request desc");
+    function getpostmeta($postid) {
+
+        $query = $this->db->query("SELECT * FROM  tm_postmeta a   where a.post_id = " . $postid);
         return $query->result();
     }
 
-    function getPaidDetail($acc = null) {
-        $query = $this->db->query("SELECT a.amount as aamount,a.*,b.* FROM withdraw_request a  
-				left join withdraw_history b ON  
-				a.id = b.request_id  where a.acc = '$acc'");
-        return $query->result();
-    }
+    function getalltrafficcount() {
 
-    function getmemberDetail($username) {
-        $this->db->select('*');
-        $this->db->where('username', $username);
-        $query = $this->db->get('user');
+        $query = $this->db->query("SELECT count(a.ID)  as traffic_count FROM  tm_posts a where a.post_type = 'pageview' and a.post_type = 'pageview' ");
         return $query->row();
     }
 
-    function getUserfromsession($session_id) {
-        $this->db->select('user');
-        $this->db->where('your_session_id', $session_id);
-        $query = $this->db->get('session_db');
+    function getalldailyredcard() {
+
+        $query = $this->db->query("select count(distinct( table2.meta_value))  as traffic_count from (SELECT * FROM tm_posts a
+ inner join tm_postmeta b 
+on 
+a.ID =b.post_id
+ where a.post_type ='pageview'
+ AND b.meta_key = 'cardtype'
+ AND b.meta_value = 'RED'
+AND TO_DAYS(a.post_date ) = TO_DAYS(now())
+ORDER BY `b`.`meta_value`  DESC) table1
+ inner join tm_postmeta table2
+on 
+table1.ID = table2.post_id
+ where table2.meta_key ='ip_addr'");
         return $query->row();
     }
 
-    function gettrackingdata($orderid = null) {
-        $this->db->select('*');
-        $this->db->where('order_id', $orderid);
-        $query = $this->db->get('orders');
+    function getalldailyblackcard() {
+
+        $query = $this->db->query("select count(distinct( table2.meta_value))  as traffic_count from (SELECT * FROM tm_posts a
+ inner join tm_postmeta b 
+on 
+a.ID =b.post_id
+ where a.post_type ='pageview'
+ AND b.meta_key = 'cardtype'
+ AND b.meta_value = 'BLACK'
+AND TO_DAYS(a.post_date ) = TO_DAYS(now())
+ORDER BY `b`.`meta_value`  DESC) table1
+ inner join tm_postmeta table2
+on 
+table1.ID = table2.post_id
+ where table2.meta_key ='ip_addr'");
         return $query->row();
     }
 
-    function getProvince($limit = null) {
-        $this->db->select('provinceid,provincename');
-        $query = $this->db->get('province');
-        return $query->result();
-    }
+    function getalldailynonecard() {
 
-    function getProducts() {
-        $query = $this->db->query("select a.*,b.* from   items  a left join categories b on a.categories = b.categories_id  where a.isuse = 0 order by id asc");
-        return $query->result();
-    }
-
-    function getProductsbyId($id) {
-        $query = $this->db->query("select a.*,b.* from   items  a left join categories b on a.categories = b.categories_id  where a.isuse = 0 and a.id =" . $id);
-        return $query->result();
-    }
-
-    function getProductHit($limit = null) {
-        $this->db->select('*');
-        $this->db->where('isuse', '0');
-        $this->db->where('ishit', '1');
-        $this->db->order_by('id', 'ASC');
-        $this->db->limit($limit, '0');
-        $query = $this->db->get('items');
-        return $query->result();
-    }
-
-    function getProductcate($id = null) {
-        $this->db->select('*');
-        $this->db->where('isuse', '0');
-        $this->db->where('categories', $id);
-        $this->db->order_by('id', 'DESC');
-        $query = $this->db->get('items');
-        return $query->result();
-    }
-
-    function getCatename($id = null) {
-        $this->db->select('*');
-        $this->db->where('categories_id', $id);
-        $query = $this->db->get('categories');
-        return $query->row();
-    }
-
-    function getProduct($limit = null) {
-        $this->db->select('*');
-        $this->db->where('isuse', '0');
-        $this->db->order_by('id', 'DESC');
-        $query = $this->db->get('items');
-        return $query->result();
-    }
-
-    function getProductNew() {
-        $this->db->select('*');
-        $this->db->where('isuse', '0');
-        $this->db->order_by('id', 'DESC');
-        $this->db->limit('4', '0');
-        $query = $this->db->get('items');
-        return $query->result();
-    }
-
-    function getProductOffer() {
-        $this->db->select('*');
-        $this->db->where('isuse', '0');
-        $this->db->where('isoffer', '1');
-        $this->db->order_by('id', 'ASC');
-        $this->db->limit('10', '0');
-        $query = $this->db->get('items');
-        return $query->result();
-    }
-
-    function getProductRandom() {
-        $this->db->select('*');
-        $this->db->where('isuse', '0');
-        $this->db->order_by('id', 'RANDOM');
-        $this->db->limit('9', '0');
-        $query = $this->db->get('items');
-        return $query->result();
-    }
-
-    function Product_detail($id) {
-        $this->db->select('*');
-        $this->db->where('id', $id);
-        $query = $this->db->get('items');
-        return $query->row();
-    }
-
-    function getCate() {
-        $this->db->select('categories_id as id,categories_name as value');
-        $query = $this->db->get('categories');
-        return $query->result();
-    }
-
-    function get_contact_detail() {
-        $this->db->select('*');
-        $this->db->where('is_read', 0);
-        $query = $this->db->get('contact_detail');
-        return $query->result();
-    }
-
-    function get_contact_detail_all() {
-        $this->db->select('*');
-        $query = $this->db->get('contact_detail');
-        return $query->result();
-    }
-
-    function getProprice($id) {
-        $this->db->select('*');
-        $this->db->where('id', $id);
-        $query = $this->db->get('items');
-        return $query->row();
-    }
-
-    function getCategories() {
-        $this->db->select('*');
-        $query = $this->db->get('categories');
-        return $query->result();
-    }
-
-    function getCategoriesddl() {
-        $this->db->select('categories_id as val1 , categories_name as val2 ');
-        $query = $this->db->get('categories');
-        return $query->result();
-    }
-
-    function getCategories_detail($menu) {
-        $this->db->select('*');
-        $this->db->where('name_en', $menu);
-        $query = $this->db->get('categories');
-
-        return $query->row();
-    }
-
-    function getContents_slide($limit) {
-        $this->db->select('*');
-        $this->db->limit($limit);
-        $this->db->order_by('timestamp', 'desc');
-        $query = $this->db->get('content');
-
-        return $query->result();
-    }
-
-    function getContents_slide_right($limit) {
-        $this->db->select('*');
-        $this->db->limit($limit, 5);
-        $this->db->order_by('timestamp', 'desc');
-        $query = $this->db->get('content');
-
-        return $query->result();
-    }
-
-    function getContents_feed($per_page = null, $pageLimit = null) {
-
-        $this->db->select('a.id aid,a.*,b.*');
-        $this->db->limit($per_page, $pageLimit + 5);
-        $this->db->order_by('a.timestamp', 'desc');
-        $this->db->join('categories b', 'b.id = a.categories_id', 'INNER');
-        $query = $this->db->get('content a');
-        return $query->result();
-    }
-
-    function getContents($cateid = null) {
+        //$query = $this->db->query("SELECT count(b.meta_value)  as traffic_count FROM  tm_posts a inner join tm_postmeta b   on a.ID = b.post_id where a.post_type = 'pageview' AND b.meta_key  = 'cardtype'  AND (b.meta_value = '0' or b.meta_value = '')  AND TO_DAYS(a.post_date) = TO_DAYS(now()) and a.post_type = 'pageview'");
 
 
-        $this->db->select('a.id aid,a.*,b.*');
-        if ($cateid <> null) {
-            $this->db->where('a.categories_id', $cateid);
-        }
-        $this->db->order_by('a.timestamp');
-        $this->db->join('categories b', 'b.id = a.categories_id', 'INNER');
-        $query = $this->db->get('content a');
-        return $query->result();
-    }
-
-    function getContents_detail($id) {
-        /* $this->db->select('*');
-
-          $query	= $this->db->get('content');
-
-          return $query->row(); */
-
-        $this->db->select('a.id aid,a.*,b.*');
-        $this->db->join('categories b', 'b.id = a.categories_id', 'INNER');
-        $this->db->where('a.id', $id);
-        $query = $this->db->get('content a');
-
-        return $query->row();
-    }
-
-    function getMostRead() {
-        $query = $this->db->query("select * from content t inner join 
-(select a.ID , sum(a.count) as vsum from
-(select *
-from `view_history`    WHERE DATE_FORMAT(time_stamp, '%Y-%m-%d') BETWEEN DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY) AND CURRENT_DATE) a
-group by a.id) c
-where t.id = c.id
-order by vsum desc
-limit 5");
-
-        return $query->result();
-    }
-
-    function checkword($title) {
-        $title = preg_replace("/[\"\']/", "-", $title);
-        $title = stripslashes($title);
-        $title = str_replace("-", "", $title);
-        $title = str_replace("@", "", $title);
-        $title = str_replace(" ", "-", $title);
-        $title = str_replace(".", "-", $title);
-        $title = str_replace("(", "", $title);
-        $title = str_replace(")", "", $title);
-        $title = str_replace(",", "", $title);
-        $title = str_replace("+", "", $title);
-        $title = str_replace("*", "", $title);
-        $title = str_replace("--", "-", $title);
-        $title = str_replace('"', "-", $title);
-        $title = str_replace('/', "-", $title);
-        $title = str_replace('&', "and", $title);
-        $title = str_replace('[', "", $title);
-        $title = str_replace(']', "", $title);
-        $title = str_replace('?', "", $title);
-        $title = str_replace('!', "", $title);
-        $title = str_replace('%', "percent", $title);
-        $title = str_replace('$', "dollar", $title);
-        $title = str_replace('#', "", $title);
-        return $title;
-    }
-
-    function getMenutop() {
-        $query = $this->db->query("SELECT *,a.id as aID FROM article a INNER JOIN article_cate_mapping b ON a.id = b.article_id WHERE b.id = 1 LIMIT 0,6");
-        return $query->result();
-    }
-
-    function getSidebar() {
-        $query = $this->db->query("SELECT *,a.id as aID FROM article a INNER JOIN article_cate_mapping b ON a.id = b.article_id WHERE b.id = 2 LIMIT 0,4 ");
-        return $query->result();
-    }
-
-    function getContent($id) {
-
-        $this->db->select('*');
-        $this->db->where('id', $id);
-        $query = $this->db->get('article');
+        $query = $this->db->query("select count(distinct( table2.meta_value))  as traffic_count from (SELECT * FROM tm_posts a
+ inner join tm_postmeta b 
+on 
+a.ID =b.post_id
+ where a.post_type ='pageview'
+ AND b.meta_key = 'cardtype'
+AND (b.meta_value = '0' or b.meta_value = '')
+AND TO_DAYS(a.post_date ) = TO_DAYS(now())
+ORDER BY `b`.`meta_value`  DESC) table1
+ inner join tm_postmeta table2
+on 
+table1.ID = table2.post_id
+ where table2.meta_key ='ip_addr'");
 
         return $query->row();
     }
