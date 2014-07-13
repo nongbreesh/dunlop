@@ -1,0 +1,59 @@
+@font-face {
+    font-family: 'ThaiSansNeue-Black';
+    src: url('../fonts/truebold.eot');
+    src: local('truebold'),  url('../fonts/ThaiSansNeue-Black.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/ThaiSansNeue-Black.woff') format('woff'), 
+        url('../fonts/ThaiSansNeue-Black.ttf') format('truetype'), 
+        url('../fonts/ThaiSansNeue-Black.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ThaiSansNeue-Bold';
+    src: url('fonts/truemedium.eot');
+    src: local('truemedium'),  url('../fonts/ThaiSansNeue-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/ThaiSansNeue-Bold.woff') format('woff'), 
+        url('../fonts/ThaiSansNeue-Bold.ttf') format('truetype'), 
+        url('../fonts/ThaiSansNeue-Bold.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ThaiSansNeue-Light';
+    src: url('fonts/truemedium.eot');
+    src: local('truemedium'),  url('../fonts/ThaiSansNeue-Light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/ThaiSansNeue-Light.woff') format('woff'), 
+        url('../fonts/ThaiSansNeue-Light.ttf') format('truetype'), 
+        url('../fonts/ThaiSansNeue-Light.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ThaiSansNeue-Regular';
+    src: url('fonts/truemedium.eot');
+    src: local('truemedium'),  url('../fonts/ThaiSansNeue-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/ThaiSansNeue-Regular.woff') format('woff'), 
+        url('../fonts/ThaiSansNeue-Regular.ttf') format('truetype'), 
+        url('../fonts/ThaiSansNeue-Regular.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    background: url('../images/bg.jpg');
+}
+.wrapper{
+    width:1300px;
+}
+header{
+    height:78px;
+    background:#ffde00;
+}
+header .vector{
+    background:url('../images/header_vector.png');
+    height:50px;
+    width:1300px;
+    top:14px;
+    position:absolute;
+}
