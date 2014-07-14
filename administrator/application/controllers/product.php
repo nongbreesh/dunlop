@@ -82,9 +82,9 @@ class Product extends CI_Controller {
         }
         $q = "";
         $data['q'] = "";
-        $per_page = 0;
+        $offset = 0;
         if ($this->input->get('per_page')) {
-            $per_page = $this->input->get('per_page');
+            $offset = $this->input->get('per_page');
         }
 
         $data['menu'] = "product_tire";
@@ -93,22 +93,21 @@ class Product extends CI_Controller {
         if ($this->input->get('seach') == 'excute') {
             $q = $this->input->get('q');
             $data['q'] = $q;
-            $per_page = 0;
-             $config['base_url'] = base_url() . 'product/tire/?q='.$q.'&seach=excute';
-        }
-        else{
-             $config['base_url'] = base_url() . 'product/tire/?';
+            $offset = 0;
+            $config['base_url'] = base_url() . 'product/tire/?q=' . $q . '&seach=excute';
+        } else {
+            $config['base_url'] = base_url() . 'product/tire/?';
         }
 
-       
+        // echo $offset;
         $config['total_rows'] = $this->select_model->get_dunlop_tire_total();
         $config['per_page'] = 20;
         $config['uri_segment'] = 5;
         $config['page_query_string'] = TRUE;
         $this->pagination->initialize($config);
-        $per_page = $config['per_page'];
 
-        $data['item_list'] = $this->select_model->get_dunlop_tire($q, $per_page, $config['per_page']);
+
+        $data['item_list'] = $this->select_model->get_dunlop_tire($q, $offset, $config['per_page']);
 
         $data['product_list'] = $this->select_model->get_dunlop_product();
 
