@@ -7,6 +7,11 @@ class select_model extends CI_Model {
         $this->load->helper(array('cookie', 'url'));
     }
 
+    function get_dunlop_slide() {
+        $query = $this->db->query("SELECT  * FROM dunlop_slide");
+        return $query->result();
+    }
+
     function get_dunlop_contact() {
         $query = $this->db->query("SELECT  * FROM dunlop_contact");
         return $query->result();

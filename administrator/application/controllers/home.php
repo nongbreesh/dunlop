@@ -86,5 +86,20 @@ class Home extends CI_Controller {
         $this->load->view('admin/home/video');
         $this->load->view('admin/template/footer');
     }
+    
+    public function slide($offset = 0) {
+        if ($this->user_model->is_login()) {
+            $data['account'] = $this->user_model->get_account_cookie();
+        } else {
+            redirect('login', 'refresh');
+        }
+
+
+        $data['menu'] = "home_slide";
+        $data['item_list'] = $this->select_model->get_dunlop_slide();
+        $this->load->view('admin/template/header', $data);
+        $this->load->view('admin/home/slide');
+        $this->load->view('admin/template/footer');
+    }
 
 }

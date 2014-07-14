@@ -20,7 +20,7 @@ class Home extends CI_Controller {
         $data['mTitle'] = $this->mTitle;
         $data['mDesc'] = $this->mDesc;
         $data['mKeyword'] = $this->mKeyword;
-
+        $data['slide_list'] = $this->select_model->get_dunlop_slide();
         $data['zone_list'] = $this->select_model->get_dunlop_zone();
         $data['tire_width'] = $this->select_model->get_tire_width();
         $data['tire_series'] = $this->select_model->get_tire_series();

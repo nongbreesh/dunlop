@@ -43,7 +43,7 @@ class Product extends CI_Controller {
         $this->load->view('admin/product/category');
         $this->load->view('admin/template/footer');
     }
-    
+
     public function type($offset = 0) {
         if ($this->user_model->is_login()) {
             $data['account'] = $this->user_model->get_account_cookie();
@@ -58,8 +58,7 @@ class Product extends CI_Controller {
         $this->load->view('admin/product/type');
         $this->load->view('admin/template/footer');
     }
-    
-    
+
     public function item($offset = 0) {
         if ($this->user_model->is_login()) {
             $data['account'] = $this->user_model->get_account_cookie();
@@ -74,23 +73,48 @@ class Product extends CI_Controller {
         $this->load->view('admin/product/item');
         $this->load->view('admin/template/footer');
     }
-    
-     public function tire($offset = 0) {
+
+    public function tire($offset = 0) {
         if ($this->user_model->is_login()) {
             $data['account'] = $this->user_model->get_account_cookie();
         } else {
             redirect('login', 'refresh');
         }
-
+        $q = "";
+        $data['q'] = "";
+        $per_page = 0;
+        if ($this->input->get('per_page')) {
+            $per_page = $this->input->get('per_page');
+        }
 
         $data['menu'] = "product_tire";
-        $data['item_list'] = $this->select_model->get_dunlop_tire();
-        
-         $data['product_list'] = $this->select_model->get_dunlop_product();
-         
+
+        $this->load->library('pagination');
+        if ($this->input->get('seach') == 'excute') {
+            $q = $this->input->get('q');
+            $data['q'] = $q;
+            $per_page = 0;
+             $config['base_url'] = base_url() . 'product/tire/?q='.$q.'&seach=excute';
+        }
+        else{
+             $config['base_url'] = base_url() . 'product/tire/?';
+        }
+
+       
+        $config['total_rows'] = $this->select_model->get_dunlop_tire_total();
+        $config['per_page'] = 20;
+        $config['uri_segment'] = 5;
+        $config['page_query_string'] = TRUE;
+        $this->pagination->initialize($config);
+        $per_page = $config['per_page'];
+
+        $data['item_list'] = $this->select_model->get_dunlop_tire($q, $per_page, $config['per_page']);
+
+        $data['product_list'] = $this->select_model->get_dunlop_product();
+
         $data['type_list'] = $this->select_model->get_dunlop_type();
-        
-        
+
+
         $this->load->view('admin/template/header', $data);
         $this->load->view('admin/product/tire');
         $this->load->view('admin/template/footer');

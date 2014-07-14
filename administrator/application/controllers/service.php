@@ -280,10 +280,109 @@ class Service extends CI_Controller {
         echo $html;
     }
 
+    function upload_picture_slide_bg() {
+        $this->load->library('upload');
+
+        if (trim($_FILES["input_image_slide_bg"]["tmp_name"]) != "") {
+            $type = $_FILES['input_image_slide_bg']['type'];
+            $images = $_FILES["input_image_slide_bg"]["tmp_name"];
+            $old_images = $_FILES["input_image_slide_bg"]["name"];
+            $new_images = "Thumbnails_" . $_FILES["input_image_slide_bg"]["name"];
+            copy($_FILES["input_image_slide_bg"]["tmp_name"], "./public/uploads/slide/" . $_FILES["input_image_slide_bg"]["name"]);
+            $width = 150; //*** Fix Width & Heigh (Autu caculate) ***//
+            $weight = GetimageSize($images);
+            $height = round($width * $weight[1] / $weight[0]);
+
+            if ($type) {
+                switch ($type) {
+                    case 'image/jpeg':
+                        $images_orig = ImageCreateFromJPEG($images);
+                        $photoX = ImagesX($images_orig);
+                        $photoY = ImagesY($images_orig);
+                        $images_fin = ImageCreateTrueColor($width, $height);
+                        ImageCopyResampled($images_fin, $images_orig, 0, 0, 0, 0, $width + 1, $height + 1, $photoX, $photoY);
+                        ImageJPEG($images_fin, "./public/uploads/slide/" . $new_images);
+                        break;
+
+                    case 'image/png':
+                        $images_orig = imagecreatefrompng($images);
+                        $photoX = ImagesX($images_orig);
+                        $photoY = ImagesY($images_orig);
+                        $images_fin = ImageCreateTrueColor($width, $height);
+                        ImageCopyResampled($images_fin, $images_orig, 0, 0, 0, 0, $width + 1, $height + 1, $photoX, $photoY);
+                        imagepng($images_fin, "./public/uploads/slide/" . $new_images);
+                        break;
+                }
+            }
+
+            ImageDestroy($images_orig);
+            ImageDestroy($images_fin);
+        }
+
+
+        $html = '<img src="' . base_url() . 'public/uploads/slide/' . $new_images . '" height="50">';
+        $html .= '<input type="hidden" id="input_hdimage_slide_bg" name="input_hdimage_slide_bg" value="' . $old_images . '" />';
+        echo $html;
+    }
+
+    function upload_picture_slide_object() {
+        $this->load->library('upload');
+
+        if (trim($_FILES["input_image_slide_object"]["tmp_name"]) != "") {
+            $type = $_FILES['input_image_slide_object']['type'];
+            $images = $_FILES["input_image_slide_object"]["tmp_name"];
+            $old_images = $_FILES["input_image_slide_object"]["name"];
+            $new_images = "Thumbnails_" . $_FILES["input_image_slide_object"]["name"];
+            copy($_FILES["input_image_slide_object"]["tmp_name"], "./public/uploads/slide/" . $_FILES["input_image_slide_object"]["name"]);
+            $width = 150; //*** Fix Width & Heigh (Autu caculate) ***//
+            $weight = GetimageSize($images);
+            $height = round($width * $weight[1] / $weight[0]);
+
+            if ($type) {
+                switch ($type) {
+                    case 'image/jpeg':
+                        $images_orig = ImageCreateFromJPEG($images);
+                        $photoX = ImagesX($images_orig);
+                        $photoY = ImagesY($images_orig);
+                        $images_fin = ImageCreateTrueColor($width, $height);
+                        ImageCopyResampled($images_fin, $images_orig, 0, 0, 0, 0, $width + 1, $height + 1, $photoX, $photoY);
+                        ImageJPEG($images_fin, "./public/uploads/slide/" . $new_images);
+                        break;
+
+                    case 'image/png':
+                        $images_orig = imagecreatefrompng($images);
+                        $photoX = ImagesX($images_orig);
+                        $photoY = ImagesY($images_orig);
+                        $images_fin = ImageCreateTrueColor($width, $height);
+                        ImageCopyResampled($images_fin, $images_orig, 0, 0, 0, 0, $width + 1, $height + 1, $photoX, $photoY);
+                        imagepng($images_fin, "./public/uploads/slide/" . $new_images);
+                        break;
+                }
+            }
+
+            ImageDestroy($images_orig);
+            ImageDestroy($images_fin);
+        }
+
+
+        $html = '<img src="' . base_url() . 'public/uploads/slide/' . $new_images . '" height="50">';
+        $html .= '<input type="hidden" id="input_hdimage_slide_object" name="input_hdimage_slide_object" value="' . $old_images . '" />';
+        echo $html;
+    }
+
     function gettire_detail() {
         $id = ($this->input->post('id') != false ? $this->input->post('id') : '');
 
         $data['result'] = $this->get_data->getTirebyId($id);
+
+        $this->output->set_header('Content-Type: application/json; charset=utf-8');
+        echo json_encode($data);
+    }
+
+    function getslide_detail() {
+        $id = ($this->input->post('id') != false ? $this->input->post('id') : '');
+
+        $data['result'] = $this->get_data->getSlidebyId($id);
 
         $this->output->set_header('Content-Type: application/json; charset=utf-8');
         echo json_encode($data);
@@ -354,6 +453,19 @@ class Service extends CI_Controller {
         $id = ($this->input->post('id') != false ? $this->input->post('id') : '');
 
         if ($this->update_data->delete_Tire($id)) {
+            $data['status'] = array('message' => 'ลบสำเร็จ', 'type' => 'success');
+        } else {
+            $data['status'] = array('message' => 'ลบไม่สำเร็จ', 'type' => 'danger');
+        }
+
+        $this->output->set_header('Content-Type: application/json; charset=utf-8');
+        echo json_encode($data);
+    }
+
+    function delete_slide() {
+        $id = ($this->input->post('id') != false ? $this->input->post('id') : '');
+
+        if ($this->update_data->delete_Slide($id)) {
             $data['status'] = array('message' => 'ลบสำเร็จ', 'type' => 'success');
         } else {
             $data['status'] = array('message' => 'ลบไม่สำเร็จ', 'type' => 'danger');
@@ -781,6 +893,29 @@ class Service extends CI_Controller {
         echo $html;
     }
 
+    function load_slide() {
+        $result = $this->get_data->getdunlop_slide();
+        $i = 1;
+        $html = '';
+        foreach ($result as $row) {
+
+
+            $html .= '<tr>';
+            $html .= '<td>' . $row->SLIDE_ID . '</td>';
+            $html .= '<td>' . $row->SLIDE_Headline . '<br>';
+            $html .= '<div class = "tools"><span class = "edit"><a href = "javascript:;" onclick="edit_product(' . $row->SLIDE_ID . ');">Edit</a> | </span><span class = "delete"><a class = "delete-tag" href = "javascript:;" onclick="removedata(' . $row->SLIDE_ID . ');">Delete</a></div></td>';
+            $html .= '<td>' . $row->SLIDE_Desc . '</td>';
+            $html .= '<td>' . $row->SLIDE_Animation_Type . '</td>';
+            $html .= '<td>' . $row->SLIDE_bg . '</td>';
+            $html .= '<td>' . $row->SLIDE_Object_img . '</td>';
+            $html .= '<td>' . time_ago($row->Create_Date) . '</td>';
+            $html .= '<td>' . time_ago($row->Update_Date) . '</td>';
+            $html .= '</tr>';
+            $i++;
+        }
+        echo $html;
+    }
+
     function load_video() {
         $result = $this->get_data->getdunlop_video();
         $i = 1;
@@ -981,6 +1116,32 @@ class Service extends CI_Controller {
         echo json_encode($data);
     }
 
+    function add_slide() {
+        $input_headline = $this->input->post('input_headline');
+        $input_description = $this->input->post('input_description');
+        $input_slide_anim = $this->input->post('input_slide_anim');
+        $input_hdimage_slide_bg = $this->input->post('input_hdimage_slide_bg');
+        $input_hdimage_slide_object = $this->input->post('input_hdimage_slide_object');
+        $input = array(
+            'SLIDE_Headline' => $input_headline,
+            'SLIDE_Desc' => $input_description,
+            'SLIDE_Animation_Type' => $input_slide_anim,
+            'SLIDE_bg' => $input_hdimage_slide_bg,
+            'SLIDE_Object_img' => $input_hdimage_slide_object,
+            'Create_Date' => date('Y-m-d H:i:s')
+        );
+        $data = '';
+        if ($this->insert_model->insert_Slide($input)) {
+            $data['status'] = array('message' => 'เพิ่มรายการสำเร็จ', 'type' => 'success');
+        } else {
+            $data['status'] = array('message' => 'เพิ่มรายการไม่สำเร็จ', 'type' => 'danger');
+        }
+
+
+        $this->output->set_header('Content-Type: application/json; charset=utf-8');
+        echo json_encode($data);
+    }
+
     function add_product() {
         $input_name = $this->input->post('input_name');
         $input_url = $this->input->post('input_url');
@@ -1065,6 +1226,32 @@ class Service extends CI_Controller {
         );
         $data = '';
         if ($this->update_data->update_Tire($id, $input)) {
+            $data['status'] = array('message' => 'อัพเดทข้อมูลสำเร็จ', 'type' => 'success');
+        } else {
+            $data['status'] = array('message' => 'อัพเดทข้อมูลไม่สำเร็จ', 'type' => 'danger');
+        }
+
+
+        $this->output->set_header('Content-Type: application/json; charset=utf-8');
+        echo json_encode($data);
+    }
+
+    function edit_slide($id) {
+        $input_headline = $this->input->post('input_headline');
+        $input_description = $this->input->post('input_description');
+        $input_slide_anim = $this->input->post('input_slide_anim');
+        $input_hdimage_slide_bg = $this->input->post('input_hdimage_slide_bg');
+        $input_hdimage_slide_object = $this->input->post('input_hdimage_slide_object');
+        $input = array(
+            'SLIDE_Headline' => $input_headline,
+            'SLIDE_Desc' => $input_description,
+            'SLIDE_Animation_Type' => $input_slide_anim,
+            'SLIDE_bg' => $input_hdimage_slide_bg,
+            'SLIDE_Object_img' => $input_hdimage_slide_object,
+            'Create_Date' => date('Y-m-d H:i:s')
+        );
+        $data = '';
+        if ($this->update_data->update_Slide($id, $input)) {
             $data['status'] = array('message' => 'อัพเดทข้อมูลสำเร็จ', 'type' => 'success');
         } else {
             $data['status'] = array('message' => 'อัพเดทข้อมูลไม่สำเร็จ', 'type' => 'danger');

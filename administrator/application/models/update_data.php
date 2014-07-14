@@ -97,6 +97,17 @@ class update_data extends CI_Model {
         endif;
     }
 
+    function update_Slide($id, $input) {
+
+        $this->db->where('SLIDE_ID', $id);
+
+        if ($this->db->update('dunlop_slide', $input)):
+            return true;
+        else:
+            return false;
+        endif;
+    }
+
     function update_Video($id, $input) {
 
         $this->db->where('VIDEO_ID', $id);
@@ -118,9 +129,8 @@ class update_data extends CI_Model {
             return false;
         endif;
     }
-    
-    
-      function update_Content($id, $input) {
+
+    function update_Content($id, $input) {
 
         $this->db->where('Content_ID', $id);
 
@@ -169,6 +179,17 @@ class update_data extends CI_Model {
         $this->db->where('Dealer_ID', $id);
 
         if ($this->db->delete('dealer_detail')):
+            return true;
+        else:
+            return false;
+        endif;
+    }
+
+    function delete_Slide($id) {
+
+        $this->db->where('SLIDE_ID', $id);
+
+        if ($this->db->delete('dunlop_slide')):
             return true;
         else:
             return false;
@@ -295,9 +316,8 @@ class update_data extends CI_Model {
             return false;
         endif;
     }
-    
-    
-     function delete_content($id) {
+
+    function delete_content($id) {
 
         $this->db->where('Content_ID', $id);
 
@@ -351,8 +371,6 @@ class update_data extends CI_Model {
             return false;
         endif;
     }
-
-  
 
 }
 

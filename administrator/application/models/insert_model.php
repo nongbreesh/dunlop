@@ -145,8 +145,7 @@ class Insert_model extends CI_Model {
         }
     }
 
-    
-      function insert_News($input) {
+    function insert_News($input) {
 
         if ($this->db->insert('dunlop_news', $input)):
             return true;
@@ -154,8 +153,8 @@ class Insert_model extends CI_Model {
             return false;
         endif;
     }
-    
-      function insert_Video($input) {
+
+    function insert_Video($input) {
 
         if ($this->db->insert('dunlop_vdo', $input)):
             return true;
@@ -163,9 +162,19 @@ class Insert_model extends CI_Model {
             return false;
         endif;
     }
+
     function insert_Hilight($input) {
 
         if ($this->db->insert('dunlop_highlight', $input)):
+            return true;
+        else:
+            return false;
+        endif;
+    }
+
+    function insert_Slide($input) {
+
+        if ($this->db->insert('dunlop_slide', $input)):
             return true;
         else:
             return false;
@@ -189,8 +198,8 @@ class Insert_model extends CI_Model {
             return false;
         endif;
     }
-    
-     function insert_Dealer_address($input) {
+
+    function insert_Dealer_address($input) {
 
         if ($this->db->insert('dealer_detail', $input)):
             return true;
@@ -198,8 +207,8 @@ class Insert_model extends CI_Model {
             return false;
         endif;
     }
-    
-     function insert_Content($input) {
+
+    function insert_Content($input) {
 
         if ($this->db->insert('dunlop_content', $input)):
             return true;

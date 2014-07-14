@@ -12,6 +12,11 @@ class select_model extends CI_Model {
         return $query->result();
     }
 
+    function get_dunlop_slide() {
+        $query = $this->db->query("SELECT  * FROM dunlop_slide");
+        return $query->result();
+    }
+
     function get_dunlop_video() {
         $query = $this->db->query("SELECT  * FROM dunlop_vdo");
         return $query->result();
@@ -21,17 +26,17 @@ class select_model extends CI_Model {
         $query = $this->db->query("SELECT  * FROM dunlop_news");
         return $query->result();
     }
-    
-    function get_dealer_list(){
+
+    function get_dealer_list() {
         $query = $this->db->query("SELECT  * FROM dealer_detail a"
                 . " inner join dealer_area b"
                 . " on a.AREA_ID = b.AREA_ID order by a.DEALER_ID");
         return $query->result();
     }
-    
-     function get_area_list($zone_id){
+
+    function get_area_list($zone_id) {
         $query = $this->db->query("SELECT  * FROM dealer_area a"
-                . " where a.ZONE_ID = ".$zone_id);
+                . " where a.ZONE_ID = " . $zone_id);
         return $query->result();
     }
 
@@ -39,30 +44,45 @@ class select_model extends CI_Model {
         $query = $this->db->query("SELECT  * FROM dealer_zone");
         return $query->result();
     }
-    
-     function dunlop_content() {
+
+    function dunlop_content() {
         $query = $this->db->query("SELECT  * FROM dunlop_content");
         return $query->result();
     }
-    
-    
-    
-     function get_dunlop_area($zone_id) {
-        $query = $this->db->query("SELECT  * FROM dealer_area where ZONE_ID = ".$zone_id);
+
+    function get_dunlop_area($zone_id) {
+        $query = $this->db->query("SELECT  * FROM dealer_area where ZONE_ID = " . $zone_id);
         return $query->result();
     }
-    
+
     function get_dunlop_highlight() {
         $query = $this->db->query("SELECT  * FROM dunlop_highlight");
         return $query->result();
     }
 
-    function get_dunlop_tire() {
+    function get_dunlop_tire_total() {
+        $query = $this->db->query("SELECT a.* FROM dunlop_tire a"
+                . " inner join dunlop_product b"
+                . " on a.Product_ID = b.Product_ID"
+                . " inner join dunlop_type c"
+                . " on a.Type_ID = c.Type_ID"
+                . " order by a.Tire_ID	");
+        return $query->num_rows();
+    }
+
+    function get_dunlop_tire($q, $offset, $limit) {
+        $where = '';
+        if ($q != '') {
+            $where = " where a.Tire_Name LIKE '%$q%'";
+        }
         $query = $this->db->query("SELECT  a.*,b.*,c.* FROM dunlop_tire a"
                 . " inner join dunlop_product b"
                 . " on a.Product_ID = b.Product_ID"
                 . " inner join dunlop_type c"
-                . " on a.Type_ID = c.Type_ID");
+                . " on a.Type_ID = c.Type_ID"
+                . $where
+                . " order by a.Tire_ID	"
+                . " limit " . $offset . "," . $limit);
         return $query->result();
     }
 
@@ -88,18 +108,24 @@ class select_model extends CI_Model {
 
     function getalluniqtraffic() {
 
-        $query = $this->db->query("SELECT count(distinct(b.meta_value))  as traffic_count FROM  tm_posts a inner join tm_postmeta b   on a.ID = b.post_id where a.post_type = 'pageview' AND b.meta_key  = 'ip_addr'  AND YEAR(a.post_date) = YEAR(now()) AND MONTH(a.post_date) = MONTH(now())");
+        $query = $this->db->query("SELECT count(distinct(b.meta_value))  as traffic_count FROM  tm_posts a inner join tm_postmeta b   on a.ID = b.post_id where a.post_type = 'pageview
+
+            ' AND b.meta_key  = 'ip_addr'  AND YEAR(a.post_date) = YEAR(now()) AND MONTH(a.post_date) = MONTH(now())");
         return $query->row();
     }
 
     function getalltraffic() {
 
-        $query = $this->db->query("SELECT count(b.meta_id)  as traffic_count FROM  tm_posts a inner join tm_postmeta b   on a.ID = b.post_id where a.post_type = 'pageview' AND b.meta_key  = 'ip_addr' AND YEAR(a.post_date) = YEAR(now()) AND MONTH(a.post_date) = MONTH(now())");
+        $query = $this->db->query("SELECT count(b.meta_id)  as traffic_count FROM  tm_posts a inner join tm_postmeta b   on a.ID = b.post_id where a.post_type = '
+
+            pageview' AND b.meta_key  = 'ip_addr' AND YEAR(a.post_date) = YEAR(now()) AND MONTH(a.post_date) = MONTH(now())");
         return $query->row();
     }
 
     function getregistercount() {
-        $query = $this->db->query("SELECT count(a.ID)  as register_count FROM  tm_posts a where a.post_mime_type = 'register'");
+        $query = $this->db->query("SELECT count(a.ID)  as register_count FROM  tm_posts a where a.post_mime_type = '
+
+            register'");
         return $query->row();
     }
 
@@ -109,7 +135,11 @@ class select_model extends CI_Model {
                 . " post_title as idcard , "
                 . " post_excerpt as email"
                 . " FROM  tm_posts a where a.post_mime_type = 'register'";
-        mysql_query('SET CHARACTER SET tis620');
+        mysql_query('
+
+            SET CHARACTER
+
+            SET tis620');
         mysql_query('SET collation_connection = "tis620_thai_ci"');
         $query = $this->db->query($sql);
         return $query;
@@ -117,7 +147,9 @@ class select_model extends CI_Model {
 
     function getalldailyuniqtraffic() {
 
-        $query = $this->db->query("SELECT count(distinct(b.meta_value))  as traffic_count FROM  tm_posts a inner join tm_postmeta b   on a.ID = b.post_id where a.post_type = 'pageview' AND b.meta_key  = 'ip_addr' AND TO_DAYS(a.post_date) = TO_DAYS(now())");
+        $query = $this->db->query("SELECT count(distinct(b.meta_value))  as traffic_count FROM  tm_posts a inner join tm_postmeta b   on a.ID = b.post_id where a.post_type = 'pageview' AND b.meta_key  = '
+
+            ip_addr' AND TO_DAYS(a.post_date) = TO_DAYS(now())");
         return $query->row();
     }
 
@@ -129,7 +161,9 @@ class select_model extends CI_Model {
 
     function getalltrafficlist($offset, $per_page) {
 
-        $query = $this->db->query("SELECT * FROM  tm_posts a   where a.post_type = 'pageview' ORDER BY a.id DESC limit " . $offset . " , " . $per_page);
+        $query = $this->db->query("SELECT * FROM  tm_posts a   where a.post_type = '
+
+            pageview' ORDER BY a.id DESC limit " . $offset . " , " . $per_page);
         return $query->result();
     }
 
@@ -141,7 +175,9 @@ class select_model extends CI_Model {
 
     function getalltrafficcount() {
 
-        $query = $this->db->query("SELECT count(a.ID)  as traffic_count FROM  tm_posts a where a.post_type = 'pageview' and a.post_type = 'pageview' ");
+        $query = $this->db->query("SELECT count(a.ID)  as traffic_count FROM  tm_posts a where a.post_type = 'pageview' and a.post_type = '
+
+            pageview' ");
         return $query->row();
     }
 
@@ -152,14 +188,18 @@ class select_model extends CI_Model {
 on 
 a.ID =b.post_id
  where a.post_type ='pageview'
- AND b.meta_key = 'cardtype'
- AND b.meta_value = 'RED'
+ AND b.meta_key = '
+
+            cardtype'
+ AND b.meta_value = ' RED'
 AND TO_DAYS(a.post_date ) = TO_DAYS(now())
 ORDER BY `b`.`meta_value`  DESC) table1
  inner join tm_postmeta table2
 on 
 table1.ID = table2.post_id
- where table2.meta_key ='ip_addr'");
+ where table2.meta_key ='
+
+            ip_addr'");
         return $query->row();
     }
 
@@ -170,36 +210,18 @@ table1.ID = table2.post_id
 on 
 a.ID =b.post_id
  where a.post_type ='pageview'
- AND b.meta_key = 'cardtype'
+ AND b.meta_key = '
+
+            cardtype'
  AND b.meta_value = 'BLACK'
 AND TO_DAYS(a.post_date ) = TO_DAYS(now())
 ORDER BY `b`.`meta_value`  DESC) table1
  inner join tm_postmeta table2
 on 
 table1.ID = table2.post_id
- where table2.meta_key ='ip_addr'");
-        return $query->row();
-    }
+ where table2.meta_key ='
 
-    function getalldailynonecard() {
-
-        //$query = $this->db->query("SELECT count(b.meta_value)  as traffic_count FROM  tm_posts a inner join tm_postmeta b   on a.ID = b.post_id where a.post_type = 'pageview' AND b.meta_key  = 'cardtype'  AND (b.meta_value = '0' or b.meta_value = '')  AND TO_DAYS(a.post_date) = TO_DAYS(now()) and a.post_type = 'pageview'");
-
-
-        $query = $this->db->query("select count(distinct( table2.meta_value))  as traffic_count from (SELECT * FROM tm_posts a
- inner join tm_postmeta b 
-on 
-a.ID =b.post_id
- where a.post_type ='pageview'
- AND b.meta_key = 'cardtype'
-AND (b.meta_value = '0' or b.meta_value = '')
-AND TO_DAYS(a.post_date ) = TO_DAYS(now())
-ORDER BY `b`.`meta_value`  DESC) table1
- inner join tm_postmeta table2
-on 
-table1.ID = table2.post_id
- where table2.meta_key ='ip_addr'");
-
+            ip_addr'");
         return $query->row();
     }
 

@@ -80,41 +80,45 @@
 
                                                     <div class="sl-slider">
 
-                                                        <div class="sl-slide bg-1" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
-                                                            <div class="sl-slide-inner" style="background: url('<?= base_url() ?>public/images/tyre-range-bg.jpg');">
-                                                                <div class="deco"><img src="<?= base_url() ?>public/images/tire.png" /></div>
-                                                                <h2>DIREZZA DI1020</h2>
-                                                                <blockquote><p><ul>
-                                                                            <li>ประสิทธิภาพยึดเกาะถนนแห้งและเปียก/การเข้าโค้ง/การเบรค.</li>
-                                                                            <li>ลดเสียงรบกวนและตอบสนองทุกการขับขี่</li>
-                                                                            <li>เพิ่มประสิทธิภาพในการต้านทานการเหินน้ำ</li>
-                                                                        </ul></p></blockquote>
+                                                        <?php
+                                                        $i = 1;
+                                                        foreach ($slide_list as $each):
+                                                            ?>
+                                                            <div class="sl-slide bg-<?= $i ?>" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+                                                                <div class="sl-slide-inner" style="background: url('<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_bg ?>');">
+                                                                    <div class="deco"><img src="<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_Object_img ?>" /></div>
+                                                                    <h2><?= $each->SLIDE_Headline ?></h2>
+                                                                    <blockquote><?= $each->SLIDE_Desc ?></blockquote>
+                                                                </div>
                                                             </div>
-                                                        </div>
+                                                            <?php $i++; ?>
+                                                        <?php endforeach; ?>
 
-                                                        <div class="sl-slide bg-2" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
-                                                            <div class="sl-slide-inner" style="background: url('<?= base_url() ?>public/images/bg_intro_felgen_1024x450.jpg');">
-                                                                <div class="deco"><img src="<?= base_url() ?>public/images/tire.png" /></div>
-                                                                <h2>DIREZZA DI1020</h2>
-                                                                <blockquote><p><ul>
-                                                                            <li>ประสิทธิภาพยึดเกาะถนนแห้งและเปียก/การเข้าโค้ง/การเบรค.</li>
-                                                                            <li>ลดเสียงรบกวนและตอบสนองทุกการขับขี่</li>
-                                                                            <li>เพิ่มประสิทธิภาพในการต้านทานการเหินน้ำ</li>
-                                                                        </ul></p></blockquote>   
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="sl-slide bg-3" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
-                                                            <div class="sl-slide-inner"  style="background: url('<?= base_url() ?>public/images/Victory-Mag-Flag-Bg.jpg');">
-                                                                <div class="deco"><img src="<?= base_url() ?>public/images/tire.png" /></div>
-                                                                <h2>DIREZZA DI1020</h2>
-                                                                <blockquote><p><ul>
-                                                                            <li>ประสิทธิภาพยึดเกาะถนนแห้งและเปียก/การเข้าโค้ง/การเบรค.</li>
-                                                                            <li>ลดเสียงรบกวนและตอบสนองทุกการขับขี่</li>
-                                                                            <li>เพิ่มประสิทธิภาพในการต้านทานการเหินน้ำ</li>
-                                                                        </ul></p></blockquote>
-                                                            </div>
-                                                        </div>
+                                                        <!--
+                                                                                                                <div class="sl-slide bg-2" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
+                                                                                                                    <div class="sl-slide-inner" style="background: url('<?= base_url() ?>public/images/bg_intro_felgen_1024x450.jpg');">
+                                                                                                                        <div class="deco"><img src="<?= base_url() ?>public/images/tire.png" /></div>
+                                                                                                                        <h2>DIREZZA DI1020</h2>
+                                                                                                                        <blockquote><p><ul>
+                                                                                                                                    <li>ประสิทธิภาพยึดเกาะถนนแห้งและเปียก/การเข้าโค้ง/การเบรค.</li>
+                                                                                                                                    <li>ลดเสียงรบกวนและตอบสนองทุกการขับขี่</li>
+                                                                                                                                    <li>เพิ่มประสิทธิภาพในการต้านทานการเหินน้ำ</li>
+                                                                                                                                </ul></p></blockquote>   
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                        
+                                                                                                                <div class="sl-slide bg-3" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
+                                                                                                                    <div class="sl-slide-inner"  style="background: url('<?= base_url() ?>public/images/Victory-Mag-Flag-Bg.jpg');">
+                                                                                                                        <div class="deco"><img src="<?= base_url() ?>public/images/tire.png" /></div>
+                                                                                                                        <h2>DIREZZA DI1020</h2>
+                                                                                                                        <blockquote><p><ul>
+                                                                                                                                    <li>ประสิทธิภาพยึดเกาะถนนแห้งและเปียก/การเข้าโค้ง/การเบรค.</li>
+                                                                                                                                    <li>ลดเสียงรบกวนและตอบสนองทุกการขับขี่</li>
+                                                                                                                                    <li>เพิ่มประสิทธิภาพในการต้านทานการเหินน้ำ</li>
+                                                                                                                                </ul></p></blockquote>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                        -->
                                                     </div><!-- /sl-slider -->
 
                                                     <nav id="nav-arrows" class="nav-arrows">
@@ -123,9 +127,16 @@
                                                     </nav>
 
                                                     <nav id="nav-dots" class="nav-dots">
-                                                        <span class="nav-dot-current"></span>
-                                                        <span></span>
-                                                        <span></span>
+
+                                                        <?php $x = 1;
+                                                        foreach ($slide_list as $each): ?>
+                                                            <?php if ($x == 1): ?>
+                                                                <span class="nav-dot-current"></span>
+                                                            <?php else: ?>
+                                                                <span></span>
+                                                            <?php endif; ?>
+    <?php $x++;
+endforeach; ?>
                                                     </nav>
 
                                                 </div><!-- /slider-wrapper -->
@@ -160,19 +171,19 @@
                                                                         <select name="size" id="size" style="margin-top: 10px;"><option value="0">(1) ขนาดหน้ายาง</option>
                                                                             <?php foreach ($tire_width as $each) { ?>
                                                                                 <option value="<?php echo $each->Tire_Width; ?>"><?php echo $each->Tire_Width; ?></option>';
-                                                                            <?php } ?>
+<?php } ?>
                                                                         </select>
 
                                                                         <select name="series" id="series" style="width: 86px;margin-top: 10px;"><option value="0">(2) Series</option>
                                                                             <?php foreach ($tire_series as $each) { ?>
                                                                                 <option value="<?php echo $each->Tire_Series; ?>"><?php echo $each->Tire_Series; ?></option>';
-                                                                            <?php } ?>
+<?php } ?>
                                                                         </select>
 
                                                                         <select name="diameter" id="diameter" style="width: 100%;margin-top: 10px;"><option value="0">(3) ขนาดขอบกระทะล้อ (นิ้ว)</option>
                                                                             <?php foreach ($tire_size as $each) { ?>
                                                                                 <option value="<?php echo $each->Tire_Diameter; ?>"><?php echo $each->Tire_Diameter; ?></option>';
-                                                                            <?php } ?>
+<?php } ?>
                                                                         </select>
 
                                                                     </td>
@@ -257,8 +268,8 @@
                                     <tr>
                                         <td>
                                             <?php foreach ($dunlop_highlight as $each) : ?>
-                                            <div class="highlight"><a href="<?= $each->Highlight_URL ?>"><img src="<?= base_url() ?>administrator/public/uploads/<?= $each->Highlight_IMG ?>" /></a></div>
-                                            <?php endforeach; ?>
+                                                <div class="highlight"><a href="<?= $each->Highlight_URL ?>"><img src="<?= base_url() ?>administrator/public/uploads/<?= $each->Highlight_IMG ?>" /></a></div>
+<?php endforeach; ?>
                                         </td>
 
                                     </tr>
@@ -311,9 +322,9 @@
                                                         <select name="diameter" id="diameter" style="margin-left: 20px;
                                                                 margin-top:5px;
                                                                 width: 160px;"><option value="">เลือกโซน</option>
-                                                                <?php foreach ($zone_list as $each) { ?>
+                                                            <?php foreach ($zone_list as $each) { ?>
                                                                 <option value="<?php echo $each->ZONE_ID; ?>"><?php echo $each->ZONE_NAME; ?></option>';
-                                                            <?php } ?>
+<?php } ?>
 
                                                         </select>
                                                         <select name="diameter" id="diameter" style="margin-left: 20px;

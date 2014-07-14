@@ -24,7 +24,7 @@
                     <div class="box-header">
                         <!-- tools box -->
                         <div class="pull-right box-tools">
-                            <button  onclick="update_list()" class="btn btn-danger btn-sm refresh-btn" data-toggle="tooltip" title="Reload"><i class="fa fa-refresh"></i></button>
+                          <!--  <button  onclick="update_list()" class="btn btn-danger btn-sm refresh-btn" data-toggle="tooltip" title="Reload"><i class="fa fa-refresh"></i></button> -->
                             <button class="btn btn-danger btn-sm" data-widget='collapse' data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
                             <button class="btn btn-danger btn-sm" data-widget='remove' data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
                         </div><!-- /. tools -->
@@ -79,6 +79,7 @@
                         ?>
                     </tbody>
                 </table>
+                <?php echo $this->pagination->create_links(); ?>
             </div><!-- /.box-body -->
             <div class="box-footer">
 
@@ -166,8 +167,8 @@
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Product Name</label>
-                                        
-                                             <select class="form-control" name="input_product_id" id="input_product_id">
+
+                                        <select class="form-control" name="input_product_id" id="input_product_id">
                                             <option value="">--- Select one ----</option>';
                                             <?php foreach ($product_list as $each) { ?>
                                                 <option value="<?php echo $each->Product_ID; ?>"><?php echo $each->Product_Name; ?></option>';
@@ -176,7 +177,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Type</label>
-                                             <select class="form-control" name="input_type_id" id="input_type_id">
+                                        <select class="form-control" name="input_type_id" id="input_type_id">
                                             <option value="">--- Select one ----</option>';
                                             <?php foreach ($type_list as $each) { ?>
                                                 <option value="<?php echo $each->Type_ID; ?>"><?php echo $each->Type_Name; ?></option>';
@@ -227,8 +228,9 @@
                     success: function(data) {
                         $.growl(data.status.message, {type: data.status.type}); //danger , info , warning
                         $btn.button('reset');
-                        update_list();
+                        //update_list();
                         $("#add_product-modal").modal("hide");
+                        location.reload();
                     },
                     error: function(XMLHttpRequest) {
                         $.growl(XMLHttpRequest.status, {type: 'danger'}); //danger , info , warning
@@ -246,8 +248,9 @@
                     success: function(data) {
                         $.growl(data.status.message, {type: data.status.type}); //danger , info , warning
                         $btn.button('reset');
-                        update_list();
+                        //update_list();
                         $("#add_product-modal").modal("hide");
+                        location.reload();
                     },
                     error: function(XMLHttpRequest) {
                         $.growl(XMLHttpRequest.status, {type: 'danger'}); //danger , info , warning
@@ -314,7 +317,7 @@
                 data: {"id": id},
                 dataType: 'json',
                 success: function(data) {
-                     console.log(data);
+                    console.log(data);
                     $('#input_name').val(data.result.Tire_Name);
                     $('#input_width').val(data.result.Tire_Width);
                     $('#input_series').val(data.result.Tire_Series);

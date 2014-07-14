@@ -101,9 +101,13 @@
                     <!-- search form -->
                     <form action="#" method="get" class="sidebar-form">
                         <div class="input-group">
-                            <input type="text" name="q" class="form-control" placeholder="Search..."/>
+                            <input type="text" name="q" class="form-control" placeholder="Search..." value="<?php
+                            if (!empty($q)) {
+                                echo $q;
+                            }
+                            ?>"/>
                             <span class="input-group-btn">
-                                <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+                                <button type='submit' name='seach' value="excute" id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
                             </span>
                         </div>
                     </form>
@@ -156,15 +160,15 @@
                             <li <?= is_menu_active($menu, "dealeraddress"); ?>><a href="#" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Dealer Address</a></li>
                             <li <?= is_menu_active($menu, "contact"); ?>><a href="#" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Contact</a></li>
                                 -->
-                                
-                                    <li><a href="#" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Dealer</a>
+
+                                <li><a href="#" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Dealer</a>
                                     <ul class="treeview-menu" style="display: block;">
                                         <li <?= is_menu_active($menu, "dealer_address"); ?> ><a href="<?= base_url() ?>dealer/address" style="margin-left: 40px;"><i class="fa fa-angle-right"></i> Address</a></li>
 
                                     </ul>
-                                    </li>
-                                    
-                                     <li><a href="<?= base_url() ?>news" style="margin-left: 10px;" <?= is_menu_active($menu, "news"); ?>><i class="fa fa-angle-double-right"></i> News</a></li>
+                                </li>
+
+                                <li><a href="<?= base_url() ?>news" style="margin-left: 10px;" <?= is_menu_active($menu, "news"); ?>><i class="fa fa-angle-double-right"></i> News</a></li>
                             </ul>
                         </li>
                         <li class="treeview ">
@@ -178,7 +182,7 @@
 
                             </ul>
                         </li>
-                
+
                     </ul>
                 </section>
                 <!-- /.sidebar -->

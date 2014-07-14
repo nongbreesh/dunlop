@@ -122,12 +122,11 @@ class get_data extends CI_Model {
         $query = $this->db->get('province');
         return $query->result();
     }
-    
-     function getContent_list() {
+
+    function getContent_list() {
         $query = $this->db->query("select  * from dunlop_content");
         return $query->result();
     }
-    
 
     function getProducts() {
         $query = $this->db->query("select a.*,b.* from   dunlop_product  a left join dunlop_group b on a.Group_ID = b.Group_ID ");
@@ -141,6 +140,11 @@ class get_data extends CI_Model {
                 . " inner join dunlop_type c"
                 . " on a.Type_ID = c.Type_ID"
                 . " where a.Tire_ID = " . $id);
+        return $query->row();
+    }
+
+    function getSlidebyId($id) {
+        $query = $this->db->query("select * from   dunlop_slide  where  SLIDE_ID =" . $id);
         return $query->row();
     }
 
@@ -314,6 +318,12 @@ class get_data extends CI_Model {
         return $query->result();
     }
 
+    function getdunlop_slide() {
+        $this->db->select('');
+        $query = $this->db->get('dunlop_slide');
+        return $query->result();
+    }
+
     function getdunlop_video() {
         $this->db->select('');
         $query = $this->db->get('dunlop_vdo');
@@ -455,7 +465,6 @@ limit 5");
         $query = $this->db->query("SELECT *,a.id as aID FROM article a INNER JOIN article_cate_mapping b ON a.id = b.article_id WHERE b.id = 2 LIMIT 0,4 ");
         return $query->result();
     }
-
 
 }
 
