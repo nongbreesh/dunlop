@@ -85,7 +85,7 @@
                                                         foreach ($slide_list as $each):
                                                             ?>
                                                         <?php if($each->SLIDE_Animation_Type == 1):?>
-                                                            <div class="sl-slide bg-<?= $i ?>" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+                                                            <div class="sl-slide bg-1" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
                                                                 <div class="sl-slide-inner" style="background: url('<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_bg ?>');">
                                                                     <div class="deco roll"><img src="<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_Object_img ?>" /></div>
                                                                     <h2 class="moveDown"><?= $each->SLIDE_Headline ?></h2>
@@ -93,7 +93,7 @@
                                                                 </div>
                                                             </div>
                                                         <?php elseif($each->SLIDE_Animation_Type == 2):?>
-                                                                <div class="sl-slide bg-<?= $i ?>" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+                                                                <div class="sl-slide bg-1" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
                                                                 <div class="sl-slide-inner" style="background: url('<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_bg ?>');">
                                                                     <div class="deco fromleft"><img src="<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_Object_img ?>" /></div>
                                                                     <h2 class="moveDown"><?= $each->SLIDE_Headline ?></h2>
@@ -101,7 +101,7 @@
                                                                 </div>
                                                             </div>
                                                          <?php elseif($each->SLIDE_Animation_Type == 3):?>
-                                                                <div class="sl-slide bg-<?= $i ?>" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+                                                                <div class="sl-slide bg-1" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
                                                                 <div class="sl-slide-inner" style="background: url('<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_bg ?>');">
                                                                     <div class="deco spin"><img src="<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_Object_img ?>" /></div>
                                                                     <h2 class="spin"><?= $each->SLIDE_Headline ?></h2>
