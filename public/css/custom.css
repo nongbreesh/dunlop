@@ -382,19 +382,59 @@
 
 /* Animations for content elements */
 
-.sl-trans-elems .deco{
-    -webkit-animation: roll 1s ease-out both, fadeIn 1s ease-out both;
-    -moz-animation: roll 1s ease-out both, fadeIn 1s ease-out both;
-    -o-animation: roll 1s ease-out both, fadeIn 1s ease-out both;
-    -ms-animation: roll 1s ease-out both, fadeIn 1s ease-out both;
-    animation: roll 1s ease-out both, fadeIn 1s ease-out both;
+.sl-trans-elems .roll{
+    -webkit-animation: roll 1s ease-out both, roll 1s ease-out both;
+    -moz-animation: roll 1s ease-out both, roll 1s ease-out both;
+    -o-animation: roll 1s ease-out both, roll 1s ease-out both;
+    -ms-animation: roll 1s ease-out both, roll 1s ease-out both;
+    animation: roll 1s ease-out both, roll 1s ease-out both;
 }
-.sl-trans-elems h2{
+.sl-trans-elems .fade-in{
+    -webkit-animation: fade-in 1s ease-out both, fadeIn 1s ease-out both;
+    -moz-animation: fade-in 1s ease-out both, fadeIn 1s ease-out both;
+    -o-animation: fade-in 1s ease-out both, fadeIn 1s ease-out both;
+    -ms-animation: fade-in 1s ease-out both, fadeIn 1s ease-out both;
+    animation: fade-in 1s ease-out both, fadeIn 1s ease-out both;
+}
+
+.sl-trans-elems .fromleft{
+    -webkit-animation: fromleft 1s ease-out both, fadeIn 1s ease-out both;
+    -moz-animation: fromleft 1s ease-out both, fadeIn 1s ease-out both;
+    -o-animation: fromleft 1s ease-out both, fadeIn 1s ease-out both;
+    -ms-animation: fromleft 1s ease-out both, fadeIn 1s ease-out both;
+    animation: fromleft 1s ease-out both, fadeIn 1s ease-out both;
+}
+
+.sl-trans-elems .spin{
+    -webkit-animation: spin 1s ease-out both, spin 1s ease-out both;
+    -moz-animation: spin 1s ease-out both, spin 1s ease-out both;
+    -o-animation: spin 1s ease-out both, spin 1s ease-out both;
+    -ms-animation: spin 1s ease-out both, spin 1s ease-out both;
+    animation: spin 1s ease-out both, spin 1s ease-out both;
+}
+
+.sl-trans-elems blockquote.bqmoveUp{
+    -webkit-animation: bqmoveUp 1s ease-in-out both,bqmoveUp 1s ease-in-out both;
+    -moz-animation: bqmoveUp 1s ease-in-out both,bqmoveUp 1s ease-in-out both;
+    -o-animation: bqmoveUp 1s ease-in-out both,bqmoveUp 1s ease-in-out both;
+    -ms-animation: bqmoveUp 1s ease-in-out both,bqmoveUp 1s ease-in-out both;
+    animation: bqmoveUp 1s ease-in-out both,bqmoveUp 1s ease-in-out both;
+}
+
+
+.sl-trans-elems h2.moveUp{
     -webkit-animation: moveUp 1s ease-in-out both;
     -moz-animation: moveUp 1s ease-in-out both;
     -o-animation: moveUp 1s ease-in-out both;
     -ms-animation: moveUp 1s ease-in-out both;
     animation: moveUp 1s ease-in-out both;
+}
+.sl-trans-elems h2.moveDown{
+    -webkit-animation: moveDown 1s ease-in-out both;
+    -moz-animation: moveDown 1s ease-in-out both;
+    -o-animation: moveDown 1s ease-in-out both;
+    -ms-animation: moveDown 1s ease-in-out both;
+    animation: moveDown 1s ease-in-out both;
 }
 .sl-trans-elems blockquote{
     -webkit-animation: fadeIn 0.5s linear 0.5s both;
@@ -424,6 +464,7 @@
     -ms-animation: fadeOut 1s linear both;
     animation: fadeOut 1s linear both;
 }
+
 @-webkit-keyframes roll{
     0% {-webkit-transform: translateX(500px) rotate(360deg);}
     100% {-webkit-transform: translateX(0px) rotate(0deg);}
@@ -464,6 +505,75 @@
     0% {transform: translateY(40px);}
     100% {transform: translateY(0px);}
 }
+
+@-webkit-keyframes fromleft{
+    0% {-webkit-transform: translateX(-60px);}
+    100% {-webkit-transform: translateX(0px);}
+}
+@-moz-keyframes fromleft{
+    0% {-moz-transform: translateX(-60px);}
+    100% {-moz-transform: translateX(0px);}
+}
+@-o-keyframes fromleft{
+    0% {-o-transform: translateX(-60px);}
+    100% {-o-transform: translateX(0px);}
+}
+@-ms-keyframes fromleft{
+    0% {-ms-transform: translateX(-60px);}
+    100% {-ms-transform: translateX(0px);}
+}
+@keyframes fromleft{
+    0% {transform: translateX(-60px);}
+    100% {transform: translateX(0px);}
+}
+
+
+
+@-webkit-keyframes bqmoveUp{
+    0% {-webkit-transform: translateY(40px);}
+    100% {-webkit-transform: translateY(0px);}
+}
+@-moz-keyframes bqmoveUp{
+    0% {-moz-transform: translateY(40px);}
+    100% {-moz-transform: translateY(0px);}
+}
+@-o-keyframes bqmoveUp{
+    0% {-o-transform: translateY(40px);}
+    100% {-o-transform: translateY(0px);}
+}
+@-ms-keyframes bqmoveUp{
+    0% {-ms-transform: translateY(40px);}
+    100% {-ms-transform: translateY(0px);}
+}
+@keyframes bqmoveUp{
+    0% {transform: translateY(40px);}
+    100% {transform: translateY(0px);}
+}
+
+
+
+@-webkit-keyframes moveDown{
+    0% {-webkit-transform: translateY(-40px);}
+    100% {-webkit-transform: translateY(0px);}
+}
+@-moz-keyframes moveDown{
+    0% {-moz-transform: translateY(-40px);}
+    100% {-moz-transform: translateY(0px);}
+}
+@-o-keyframes moveDown{
+    0% {-o-transform: translateY(-40px);}
+    100% {-o-transform: translateY(0px);}
+}
+@-ms-keyframes moveDown{
+    0% {-ms-transform: translateY(-40px);}
+    100% {-ms-transform: translateY(0px);}
+}
+@keyframes moveDown{
+    0% {transform: translateY(-40px);}
+    100% {transform: translateY(0px);}
+}
+
+
 @-webkit-keyframes fadeIn{
     0% {opacity: 0;}
     100% {opacity: 1;}
@@ -524,7 +634,9 @@
     0% {opacity: 1;}
     100% {opacity: 0;}
 }
-
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
 /* Media Queries for custom slider */
 

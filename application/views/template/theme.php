@@ -84,13 +84,31 @@
                                                         $i = 1;
                                                         foreach ($slide_list as $each):
                                                             ?>
+                                                        <?php if($each->SLIDE_Animation_Type == 1):?>
                                                             <div class="sl-slide bg-<?= $i ?>" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
                                                                 <div class="sl-slide-inner" style="background: url('<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_bg ?>');">
-                                                                    <div class="deco"><img src="<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_Object_img ?>" /></div>
-                                                                    <h2><?= $each->SLIDE_Headline ?></h2>
+                                                                    <div class="deco roll"><img src="<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_Object_img ?>" /></div>
+                                                                    <h2 class="moveDown"><?= $each->SLIDE_Headline ?></h2>
                                                                     <blockquote><?= $each->SLIDE_Desc ?></blockquote>
                                                                 </div>
                                                             </div>
+                                                        <?php elseif($each->SLIDE_Animation_Type == 2):?>
+                                                                <div class="sl-slide bg-<?= $i ?>" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+                                                                <div class="sl-slide-inner" style="background: url('<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_bg ?>');">
+                                                                    <div class="deco fromleft"><img src="<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_Object_img ?>" /></div>
+                                                                    <h2 class="moveDown"><?= $each->SLIDE_Headline ?></h2>
+                                                                    <blockquote class="bqmoveUp"><?= $each->SLIDE_Desc ?></blockquote>
+                                                                </div>
+                                                            </div>
+                                                         <?php elseif($each->SLIDE_Animation_Type == 3):?>
+                                                                <div class="sl-slide bg-<?= $i ?>" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+                                                                <div class="sl-slide-inner" style="background: url('<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_bg ?>');">
+                                                                    <div class="deco spin"><img src="<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_Object_img ?>" /></div>
+                                                                    <h2 class="spin"><?= $each->SLIDE_Headline ?></h2>
+                                                                    <blockquote class="spin"><?= $each->SLIDE_Desc ?></blockquote>
+                                                                </div>
+                                                            </div>
+                                                        <?php endif;?>
                                                             <?php $i++; ?>
                                                         <?php endforeach; ?>
 
@@ -129,14 +147,16 @@
                                                     <nav id="nav-dots" class="nav-dots">
 
                                                         <?php $x = 1;
-                                                        foreach ($slide_list as $each): ?>
+                                                        foreach ($slide_list as $each):
+                                                            ?>
                                                             <?php if ($x == 1): ?>
                                                                 <span class="nav-dot-current"></span>
                                                             <?php else: ?>
                                                                 <span></span>
                                                             <?php endif; ?>
-    <?php $x++;
-endforeach; ?>
+                                                            <?php $x++;
+                                                        endforeach;
+                                                        ?>
                                                     </nav>
 
                                                 </div><!-- /slider-wrapper -->
@@ -406,8 +426,8 @@ endforeach; ?>
 
                                         if (!slitslider.isActive()) {
 
-                                            $nav.removeClass('nav-dot-current');
-                                            $dot.addClass('nav-dot-current');
+                                           // $nav.removeClass('nav-dot-current');
+                                           // $dot.addClass('nav-dot-current');
 
                                         }
 
