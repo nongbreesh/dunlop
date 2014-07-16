@@ -69,6 +69,16 @@ class select_model extends CI_Model {
         $query = $this->db->query("SELECT  * FROM dealer_area where ZONE_ID = " . $zone_id);
         return $query->result();
     }
+    
+    function get_dunlop_news() {
+        $query = $this->db->query("SELECT  * FROM dunlop_news");
+        return $query->result();
+    }
+
+    function get_dunlop_vdo() {
+        $query = $this->db->query("SELECT  * FROM dunlop_vdo");
+        return $query->result();
+    }
 
     function get_dunlop_highlight() {
         $query = $this->db->query("SELECT  * FROM dunlop_highlight");

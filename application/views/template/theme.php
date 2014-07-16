@@ -84,59 +84,34 @@
                                                         $i = 1;
                                                         foreach ($slide_list as $each):
                                                             ?>
-                                                        <?php if($each->SLIDE_Animation_Type == 1):?>
-                                                            <div class="sl-slide bg-1" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
-                                                                <div class="sl-slide-inner" style="background: url('<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_bg ?>');">
-                                                                    <div class="deco roll"><img src="<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_Object_img ?>" /></div>
-                                                                    <h2 class="moveDown"><?= $each->SLIDE_Headline ?></h2>
-                                                                    <blockquote><?= $each->SLIDE_Desc ?></blockquote>
-                                                                </div>
-                                                            </div>
-                                                        <?php elseif($each->SLIDE_Animation_Type == 2):?>
+                                                            <?php if ($each->SLIDE_Animation_Type == 1): ?>
                                                                 <div class="sl-slide bg-1" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
-                                                                <div class="sl-slide-inner" style="background: url('<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_bg ?>');">
-                                                                    <div class="deco fromleft"><img src="<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_Object_img ?>" /></div>
-                                                                    <h2 class="moveDown"><?= $each->SLIDE_Headline ?></h2>
-                                                                    <blockquote class="bqmoveUp"><?= $each->SLIDE_Desc ?></blockquote>
+                                                                    <div class="sl-slide-inner" style="background: url('<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_bg ?>');">
+                                                                        <div class="deco roll"><img src="<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_Object_img ?>" /></div>
+                                                                        <h2 class="moveDown"><?= $each->SLIDE_Headline ?></h2>
+                                                                        <blockquote><?= $each->SLIDE_Desc ?></blockquote>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                         <?php elseif($each->SLIDE_Animation_Type == 3):?>
+                                                            <?php elseif ($each->SLIDE_Animation_Type == 2): ?>
                                                                 <div class="sl-slide bg-1" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
-                                                                <div class="sl-slide-inner" style="background: url('<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_bg ?>');">
-                                                                    <div class="deco spin"><img src="<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_Object_img ?>" /></div>
-                                                                    <h2 class="spin"><?= $each->SLIDE_Headline ?></h2>
-                                                                    <blockquote class="spin"><?= $each->SLIDE_Desc ?></blockquote>
+                                                                    <div class="sl-slide-inner" style="background: url('<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_bg ?>');">
+                                                                        <div class="deco fromleft"><img src="<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_Object_img ?>" /></div>
+                                                                        <h2 class="moveDown"><?= $each->SLIDE_Headline ?></h2>
+                                                                        <blockquote class="bqmoveUp"><?= $each->SLIDE_Desc ?></blockquote>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        <?php endif;?>
+                                                            <?php elseif ($each->SLIDE_Animation_Type == 3): ?>
+                                                                <div class="sl-slide bg-1" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+                                                                    <div class="sl-slide-inner" style="background: url('<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_bg ?>');">
+                                                                        <div class="deco spin"><img src="<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_Object_img ?>" /></div>
+                                                                        <h2 class="spin"><?= $each->SLIDE_Headline ?></h2>
+                                                                        <blockquote class="spin"><?= $each->SLIDE_Desc ?></blockquote>
+                                                                    </div>
+                                                                </div>
+                                                            <?php endif; ?>
                                                             <?php $i++; ?>
                                                         <?php endforeach; ?>
 
-                                                        <!--
-                                                                                                                <div class="sl-slide bg-2" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
-                                                                                                                    <div class="sl-slide-inner" style="background: url('<?= base_url() ?>public/images/bg_intro_felgen_1024x450.jpg');">
-                                                                                                                        <div class="deco"><img src="<?= base_url() ?>public/images/tire.png" /></div>
-                                                                                                                        <h2>DIREZZA DI1020</h2>
-                                                                                                                        <blockquote><p><ul>
-                                                                                                                                    <li>ประสิทธิภาพยึดเกาะถนนแห้งและเปียก/การเข้าโค้ง/การเบรค.</li>
-                                                                                                                                    <li>ลดเสียงรบกวนและตอบสนองทุกการขับขี่</li>
-                                                                                                                                    <li>เพิ่มประสิทธิภาพในการต้านทานการเหินน้ำ</li>
-                                                                                                                                </ul></p></blockquote>   
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                        
-                                                                                                                <div class="sl-slide bg-3" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
-                                                                                                                    <div class="sl-slide-inner"  style="background: url('<?= base_url() ?>public/images/Victory-Mag-Flag-Bg.jpg');">
-                                                                                                                        <div class="deco"><img src="<?= base_url() ?>public/images/tire.png" /></div>
-                                                                                                                        <h2>DIREZZA DI1020</h2>
-                                                                                                                        <blockquote><p><ul>
-                                                                                                                                    <li>ประสิทธิภาพยึดเกาะถนนแห้งและเปียก/การเข้าโค้ง/การเบรค.</li>
-                                                                                                                                    <li>ลดเสียงรบกวนและตอบสนองทุกการขับขี่</li>
-                                                                                                                                    <li>เพิ่มประสิทธิภาพในการต้านทานการเหินน้ำ</li>
-                                                                                                                                </ul></p></blockquote>
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                        -->
                                                     </div><!-- /sl-slider -->
 
                                                     <nav id="nav-arrows" class="nav-arrows">
@@ -146,7 +121,8 @@
 
                                                     <nav id="nav-dots" class="nav-dots">
 
-                                                        <?php $x = 1;
+                                                        <?php
+                                                        $x = 1;
                                                         foreach ($slide_list as $each):
                                                             ?>
                                                             <?php if ($x == 1): ?>
@@ -154,7 +130,8 @@
                                                             <?php else: ?>
                                                                 <span></span>
                                                             <?php endif; ?>
-                                                            <?php $x++;
+                                                            <?php
+                                                            $x++;
                                                         endforeach;
                                                         ?>
                                                     </nav>
@@ -191,19 +168,19 @@
                                                                         <select name="size" id="size" style="margin-top: 10px;"><option value="0">(1) ขนาดหน้ายาง</option>
                                                                             <?php foreach ($tire_width as $each) { ?>
                                                                                 <option value="<?php echo $each->Tire_Width; ?>"><?php echo $each->Tire_Width; ?></option>';
-<?php } ?>
+                                                                            <?php } ?>
                                                                         </select>
 
                                                                         <select name="series" id="series" style="width: 86px;margin-top: 10px;"><option value="0">(2) Series</option>
                                                                             <?php foreach ($tire_series as $each) { ?>
                                                                                 <option value="<?php echo $each->Tire_Series; ?>"><?php echo $each->Tire_Series; ?></option>';
-<?php } ?>
+                                                                            <?php } ?>
                                                                         </select>
 
                                                                         <select name="diameter" id="diameter" style="width: 100%;margin-top: 10px;"><option value="0">(3) ขนาดขอบกระทะล้อ (นิ้ว)</option>
                                                                             <?php foreach ($tire_size as $each) { ?>
                                                                                 <option value="<?php echo $each->Tire_Diameter; ?>"><?php echo $each->Tire_Diameter; ?></option>';
-<?php } ?>
+                                                                            <?php } ?>
                                                                         </select>
 
                                                                     </td>
@@ -253,43 +230,47 @@
                                                 <tr>
                                                     <td><img src="<?= base_url() ?>public/images/home/vdo_2_1.png" /></td>
                                                     <td width="430" background="<?= base_url() ?>public/images/home/vdo_2_2.png">
-                                                        <div class="vdo">
-                                                            <iframe width="425" height="230" src="//www.youtube.com/embed/xgzR0ZpW_rw" frameborder="0" allowfullscreen></iframe>
+                                                        <div class="vdo" id="vdo">
+                                                            <embed id="video" src="https://www.youtube-nocookie.com/v/<?= $dunlop_vdo[0]->VIDEO_LINK ?>?version=3&amp;hl=en_US&amp;rel=0&showinfo=0"
+                                                                   type="application/x-shockwave-flash" width="425" height="230"  allowscriptaccess="never" allowfullscreen="true">
+
+                                                            </embed>
                                                         </div>
-                                                        <button class="btn-vdo">TVC 2013</button>
-                                                        <button  class="btn-vdo">TVC 2011</button>
-                                                        <button  class="btn-vdo">HISTORY</button>
-                                                        <button  class="btn-vdo">BUTTON</button>
-                                                        <button  class="btn-vdo">BUTTON</button>
+                                                        <?php foreach ($dunlop_vdo as $each): ?>
+                                                            <button class="btn-vdo" id="btn-vdo<?= $each->VIDEO_ID ?>"  data-value="https://www.youtube-nocookie.com/v/<?= $each->VIDEO_LINK ?>?version=3&amp;hl=en_US&amp;rel=0&showinfo=0" onclick="showvdo(this.id);"><?= $each->VIDEO_Headline ?></button>
+                                                        <?php endforeach; ?>
                                                     </td>
-                                                    <td><img src="<?= base_url() ?>public/images/home/vdo_2_3.png" /></td>
+                                                    <td><img src = "<?= base_url() ?>public/images/home/vdo_2_3.png" /></td>
                                                 </tr>
                                                 <tr>
-                                                    <td colspan="3"><img src="<?= base_url() ?>public/images/home/vdo_3.png" /></td>
+                                                    <td colspan = "3"><img src = "<?= base_url() ?>public/images/home/vdo_3.png" /></td>
                                                 </tr>
                                             </table></td>
                                     </tr>
                                 </table></td>
                         </tr>
                         <tr>
-                            <td height="15"></td>
+                            <td height = "15"></td>
                         </tr>
                     </table></td>
-                <td background="<?= base_url() ?>public/images/home/bg_3.png">&nbsp;</td>
+                <td background = "<?= base_url() ?>public/images/home/bg_3.png">&nbsp;
+                </td>
             </tr>
-            <tr height="500">
-                <td>&nbsp;</td>
-                <td valign="top"><table height="500" width="942" cellspacing="0" cellpadding="0" >
+            <tr height = "500">
+                <td>&nbsp;
+                </td>
+                <td valign = "top"><table height = "500" width = "942" cellspacing = "0" cellpadding = "0" >
                         <tr>
-                            <td width="550" valign="top"><table class=border-radius  background="<?= base_url() ?>public/images/home/bg_1.jpg" width="550" height="500" cellspacing="10" cellpadding="0" >
+                            <td width = "550" valign = "top"><table class = border-radius background = "<?= base_url() ?>public/images/home/bg_1.jpg" width = "550" height = "500" cellspacing = "10" cellpadding = "0" >
                                     <tr>
-                                        <td valign="top" colspan="2" ><img src="<?= base_url() ?>public/images/home/Highlingt.png" /></td>
+                                        <td valign = "top" colspan = "2" ><img src = "<?= base_url() ?>public/images/home/Highlingt.png" /></td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <?php foreach ($dunlop_highlight as $each) : ?>
+                                            <?php foreach ($dunlop_highlight as $each) :
+                                                ?>
                                                 <div class="highlight"><a href="<?= $each->Highlight_URL ?>"><img src="<?= base_url() ?>administrator/public/uploads/<?= $each->Highlight_IMG ?>" /></a></div>
-<?php endforeach; ?>
+                                            <?php endforeach; ?>
                                         </td>
 
                                     </tr>
@@ -305,22 +286,12 @@
                                         <td height="263" width="357"  background="<?= base_url() ?>public/images/home/NEWS_2_2.png">
                                             <div class="whatnews">
                                                 <ul class="bxslider">
-                                                    <li>
-                                                        <div class="whatnews_frame"><img src="<?= base_url() ?>public/images/dsc_3143.jpg" width="100%" />  </div>
-                                                        <p>แถลงข่าว การแข่งขันรถยนต์ Pro.Racing Series Thailand Championship 2014</p>
-                                                    </li>
-                                                    <li>
-                                                        <div class="whatnews_frame"><img src="<?= base_url() ?>public/images/dsc_3143.jpg" width="100%"/> </div>
-                                                        <p>แถลงข่าว การแข่งขันรถยนต์ Pro.Racing Series Thailand Championship 2014</p>
-                                                    </li>
-                                                    <li>
-                                                        <div class="whatnews_frame"><img src="<?= base_url() ?>public/images/dsc_3143.jpg" width="100%"/> </div>
-                                                        <p>แถลงข่าว การแข่งขันรถยนต์ Pro.Racing Series Thailand Championship 2014</p>
-                                                    </li>
-                                                    <li>
-                                                        <div class="whatnews_frame"><img src="<?= base_url() ?>public/images/dsc_3143.jpg" width="100%"/> </div>
-                                                        <p>แถลงข่าว การแข่งขันรถยนต์ Pro.Racing Series Thailand Championship 2014</p>
-                                                    </li>
+                                                    <?php foreach ($dunlop_news as $each): ?>
+                                                        <li>
+                                                            <div class="whatnews_frame"><img src="<?= base_url() ?>administrator/public/uploads/<?= str_replace('thumb_', '', $each->NEWS_IMG) ?>" width="100%" />  </div>
+                                                            <p><?= $each->NEWS_Headline ?></p>
+                                                        </li>
+                                                    <?php endforeach; ?>
                                                 </ul>
                                             </div>
                                         </td>
@@ -342,9 +313,9 @@
                                                         <select name="diameter" id="diameter" style="margin-left: 20px;
                                                                 margin-top:5px;
                                                                 width: 160px;"><option value="">เลือกโซน</option>
-                                                            <?php foreach ($zone_list as $each) { ?>
+                                                                <?php foreach ($zone_list as $each) { ?>
                                                                 <option value="<?php echo $each->ZONE_ID; ?>"><?php echo $each->ZONE_NAME; ?></option>';
-<?php } ?>
+                                                            <?php } ?>
 
                                                         </select>
                                                         <select name="diameter" id="diameter" style="margin-left: 20px;
@@ -382,72 +353,83 @@
         <script type="text/javascript" src="<?= base_url() ?>public/js/jquery.ba-cond.min.js"></script>
         <script type="text/javascript" src="<?= base_url() ?>public/js/jquery.slitslider.js"></script>
         <script type="text/javascript">
-            $(document).ready(function() {
+                                                            $(document).ready(function() {
 
-                var Page = (function() {
+                                                                var Page = (function() {
 
-                    var $navArrows = $('#nav-arrows'),
-                            $nav = $('#nav-dots > span'),
-                            slitslider = $('#slider').slitslider({
-                        onBeforeChange: function(slide, pos) {
+                                                                    var $navArrows = $('#nav-arrows'),
+                                                                            $nav = $('#nav-dots > span'),
+                                                                            slitslider = $('#slider').slitslider({
+                                                                        onBeforeChange: function(slide, pos) {
 
-                            $nav.removeClass('nav-dot-current');
-                            $nav.eq(pos).addClass('nav-dot-current');
+                                                                            $nav.removeClass('nav-dot-current');
+                                                                            $nav.eq(pos).addClass('nav-dot-current');
 
-                        }
-                    }),
-                            init = function() {
+                                                                        }
+                                                                    }),
+                                                                            init = function() {
 
-                                initEvents();
+                                                                                initEvents();
 
-                            },
-                            initEvents = function() {
+                                                                            },
+                                                                            initEvents = function() {
 
-                                // add navigation events
-                                $navArrows.children(':last').on('click', function() {
+                                                                                // add navigation events
+                                                                                $navArrows.children(':last').on('click', function() {
 
-                                    slitslider.next();
-                                    return false;
+                                                                                    slitslider.next();
+                                                                                    return false;
 
-                                });
+                                                                                });
 
-                                $navArrows.children(':first').on('click', function() {
+                                                                                $navArrows.children(':first').on('click', function() {
 
-                                    slitslider.previous();
-                                    return false;
+                                                                                    slitslider.previous();
+                                                                                    return false;
 
-                                });
+                                                                                });
 
-                                $nav.each(function(i) {
+                                                                                $nav.each(function(i) {
 
-                                    $(this).on('click', function(event) {
+                                                                                    $(this).on('click', function(event) {
 
-                                        var $dot = $(this);
+                                                                                        var $dot = $(this);
 
-                                        if (!slitslider.isActive()) {
+                                                                                        if (!slitslider.isActive()) {
 
-                                           // $nav.removeClass('nav-dot-current');
-                                           // $dot.addClass('nav-dot-current');
+                                                                                            // $nav.removeClass('nav-dot-current');
+                                                                                            // $dot.addClass('nav-dot-current');
 
-                                        }
+                                                                                        }
 
-                                        slitslider.jump(i + 1);
-                                        return false;
+                                                                                        slitslider.jump(i + 1);
+                                                                                        return false;
 
-                                    });
+                                                                                    });
 
-                                });
+                                                                                });
 
-                            };
+                                                                            };
 
-                    return {init: init};
+                                                                    return {init: init};
 
-                })();
+                                                                })();
 
-                Page.init();
+                                                                Page.init();
 
 
-            });
+                                                            });
+
+
+                                                            function showvdo(id) {
+
+                                                                var videoWrap = document.getElementById('vdo');
+                                                                var element = document.getElementById(id);
+                                                                var src = element.getAttribute('data-value');
+                                                                // alert(src);
+                                                                videoWrap.innerHTML = '<embed src=' + src + ' type="application/x-shockwave-flash" width="425" height="230" allowscriptaccess="never" allowfullscreen="true"></embed>';
+
+                                                            }
         </script>
     </body>
 </html>
