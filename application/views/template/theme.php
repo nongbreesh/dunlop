@@ -288,7 +288,7 @@
                                                 <ul class="bxslider">
                                                     <?php foreach ($dunlop_news as $each): ?>
                                                         <li>
-                                                            <div class="whatnews_frame"><img src="<?= base_url() ?>administrator/public/uploads/<?= str_replace('thumb_', '', $each->NEWS_IMG) ?>" width="100%" />  </div>
+                                                            <div class="whatnews_frame" style="cursor: pointer;"><img onclick="location.href='<?= $each->NEWS_URL ?>'" src="<?= base_url() ?>administrator/public/uploads/<?= str_replace('thumb_', '', $each->NEWS_IMG) ?>" width="100%" /></div>
                                                             <p><?= $each->NEWS_Headline ?></p>
                                                         </li>
                                                     <?php endforeach; ?>
