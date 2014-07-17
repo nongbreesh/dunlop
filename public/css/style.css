@@ -219,7 +219,10 @@ select{
 .highlight{
     float: left;
     display: block;
-    margin-left:8px;
+    margin-left: 5px;
+}
+.highlight  img{
+    width: 245px;
 }
 .wrapper{
     min-height: 500px;

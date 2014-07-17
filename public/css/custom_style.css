@@ -4,9 +4,16 @@
 	position: relative;
 }
 
+
 .container.demo-1 {
-	height: 350px;
-        width: 940px;
+    height: 350px;
+    width: 940px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.container.demo-1   img{
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 .clr {
