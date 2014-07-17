@@ -43,20 +43,20 @@
                         </tr>
                     </table>
                     <div class="menu">
-                        <table id="Table_01" width="861" height="42" border="0" cellpadding="0" cellspacing="0">
+                        <table id="Table_01" width="696" height="42" border="0" cellpadding="0" cellspacing="0">
                             <tr>
                                 <td>
-                                    <a href="<?= base_url() ?>home"><img src="<?= base_url() ?>public/images/menu/home/menu_01.png" width="101" height="42" alt=""/></a></td>
+                                    <a href="<?= base_url() ?>home"><img src="<?= base_url() ?>public/images/menu/about/menu_01.png" width="98" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>product"> <img src="<?= base_url() ?>public/images/menu/home/menu_02.png" width="89" height="42" alt=""/></a></td>
+                                    <a href="<?= base_url() ?>product"> <img src="<?= base_url() ?>public/images/menu/about/menu_02.png" width="95" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>knowledge"><img src="<?= base_url() ?>public/images/menu/home/menu_03.png" width="132" height="42" alt=""/></a></td>
+                                    <a href="<?= base_url() ?>knowledge"><img src="<?= base_url() ?>public/images/menu/about/menu_03.png" width="104" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>about">  <img src="<?= base_url() ?>public/images/menu/home/menu_04.png" width="121" height="42" alt=""/></a></td>
+                                    <a href="<?= base_url() ?>about">  <img src="<?= base_url() ?>public/images/menu/about/menu_04.png" width="174" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>address"><img src="<?= base_url() ?>public/images/menu/home/menu_05.png" width="137" height="42" alt=""/></a></td>
+                                    <a href="<?= base_url() ?>address"><img src="<?= base_url() ?>public/images/menu/about/menu_05.png" width="107" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>contact"><img src="<?= base_url() ?>public/images/menu/home/menu_06.png" width="281" height="42" alt=""/></a></td>
+                                    <a href="<?= base_url() ?>contact"><img src="<?= base_url() ?>public/images/menu/about/menu_06.png" width="118" height="42" alt=""/></a></td>
                             </tr>
                         </table>
                     </div>
@@ -247,7 +247,8 @@
                                                 </tr>
                                             </table></td>
                                     </tr>
-                                </table></td>
+                                </table>
+                            </td>
                         </tr>
                         <tr>
                             <td height = "15"></td>

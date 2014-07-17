@@ -43,20 +43,20 @@
                         </tr>
                     </table>
                     <div class="menu">
-                        <table id="Table_01" width="861" height="42" border="0" cellpadding="0" cellspacing="0">
+                        <table id="Table_01" width="603" height="42" border="0" cellpadding="0" cellspacing="0"> 
                             <tr>
                                 <td>
-                                    <a href="<?= base_url() ?>home"><img src="<?= base_url() ?>public/images/menu/home/menu_01.png" width="101" height="42" alt=""/></a></td>
+                                    <a href="<?= base_url() ?>home"><img src="<?= base_url() ?>public/images/menu/contact/menu_01.png" width="98" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>product"> <img src="<?= base_url() ?>public/images/menu/home/menu_02.png" width="89" height="42" alt=""/></a></td>
+                                    <a href="<?= base_url() ?>product"> <img src="<?= base_url() ?>public/images/menu/contact/menu_02.png" width="96" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>knowledge"><img src="<?= base_url() ?>public/images/menu/home/menu_03.png" width="132" height="42" alt=""/></a></td>
+                                    <a href="<?= base_url() ?>knowledge"><img src="<?= base_url() ?>public/images/menu/contact/menu_03.png" width="129" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>about">  <img src="<?= base_url() ?>public/images/menu/home/menu_04.png" width="121" height="42" alt=""/></a></td>
+                                    <a href="<?= base_url() ?>about">  <img src="<?= base_url() ?>public/images/menu/contact/menu_04.png" width="119" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>address"><img src="<?= base_url() ?>public/images/menu/home/menu_05.png" width="137" height="42" alt=""/></a></td>
+                                    <a href="<?= base_url() ?>address"><img src="<?= base_url() ?>public/images/menu/contact/menu_05.png" width="111" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>contact"><img src="<?= base_url() ?>public/images/menu/home/menu_06.png" width="281" height="42" alt=""/></a></td>
+                                    <a href="<?= base_url() ?>address"><img src="<?= base_url() ?>public/images/menu/contact/menu_06.png" width="137" height="42" alt=""/></a></td>
                             </tr>
                         </table>
                     </div>
@@ -288,7 +288,7 @@
                                                 <ul class="bxslider">
                                                     <?php foreach ($dunlop_news as $each): ?>
                                                         <li>
-                                                            <div class="whatnews_frame" style="cursor: pointer;"><img onclick="location.href='<?= $each->NEWS_URL ?>'" src="<?= base_url() ?>administrator/public/uploads/<?= str_replace('thumb_', '', $each->NEWS_IMG) ?>" width="100%" /></div>
+                                                            <div class="whatnews_frame" style="cursor: pointer;"><img onclick="location.href = '<?= $each->NEWS_URL ?>'" src="<?= base_url() ?>administrator/public/uploads/<?= str_replace('thumb_', '', $each->NEWS_IMG) ?>" width="100%" /></div>
                                                             <p><?= $each->NEWS_Headline ?></p>
                                                         </li>
                                                     <?php endforeach; ?>
