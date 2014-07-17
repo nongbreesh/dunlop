@@ -64,8 +64,8 @@
                 <td background="<?= base_url() ?>public/images/home/logo_3.jpg">&nbsp;</td>
             </tr>
             <tr height="730">
-                <td background="<?= base_url() ?>public/images/home/bg_3.png">&nbsp;</td>
-                <td background="<?= base_url() ?>public/images/home/bg_3.png"><table   border="0" cellspacing="0" cellpadding="0" >
+                <td >&nbsp;</td>
+                <td ><table   border="0" cellspacing="0" cellpadding="0" >
                         <tr>
                             <td height="15"></td>
                         </tr>
@@ -253,7 +253,7 @@
                             <td height = "15"></td>
                         </tr>
                     </table></td>
-                <td background = "<?= base_url() ?>public/images/home/bg_3.png">&nbsp;
+                <td >&nbsp;
                 </td>
             </tr>
             <tr height = "500">
