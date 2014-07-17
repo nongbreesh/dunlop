@@ -347,3 +347,7 @@ p.contact_detail{
 .sidemenu li{
     line-height: 5px;
 }
+
+.border-radius{
+    border-radius: 5px;
+}

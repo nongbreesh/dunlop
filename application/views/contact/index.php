@@ -169,11 +169,85 @@
                                                 </tr>
                                                 <tr>
                                                     <td ><label>จังหวัด :</label><br/><select class="form-control">
-                                                            <option>1</option>
-                                                            <option>2</option>
-                                                            <option>3</option>
-                                                            <option>4</option>
-                                                            <option>5</option>
+
+                                                            <option value="-1" selected="selected">=====โปรดเลือก=====</option>
+                                                            <option value="8">กระบี่</option>
+                                                            <option value="9">กรุงเทพมหานคร</option>
+                                                            <option value="10">กาญจนบุรี</option>
+                                                            <option value="11">กาฬสินธุ์</option>
+                                                            <option value="12">กำแพงเพชร</option>
+                                                            <option value="13">ขอนแก่น</option>
+                                                            <option value="14">จันทบุรี</option>
+                                                            <option value="15">ฉะเชิงเทรา</option>
+                                                            <option value="16">ชลบุรี</option>
+                                                            <option value="17">ชัยนาท</option>
+                                                            <option value="18">ชัยภูมิ</option>
+                                                            <option value="19">ชุมพร</option>
+                                                            <option value="2">เชียงราย</option>
+                                                            <option value="1">เชียงใหม่</option>
+                                                            <option value="20">ตรัง</option>
+                                                            <option value="21">ตราด</option>
+                                                            <option value="22">ตาก</option>
+                                                            <option value="23">นครนายก</option>
+                                                            <option value="24">นครปฐม</option>
+                                                            <option value="25">นครพนม</option>
+                                                            <option value="26">นครราชสีมา</option>
+                                                            <option value="27">นครศรีธรรมราช</option>
+                                                            <option value="28">นครสวรรค์</option>
+                                                            <option value="29">นนทบุรี</option>
+                                                            <option value="30">นราธิวาส</option>
+                                                            <option value="31">น่าน</option>
+                                                            <option value="32">บุรีรัมย์</option>
+                                                            <option value="33">ปทุมธานี</option>
+                                                            <option value="34">ประจวบคีรีขันธ์</option>
+                                                            <option value="35">ปราจีนบุรี</option>
+                                                            <option value="36">ปัตตานี</option>
+                                                            <option value="37">พระนครศรีอยุธยา</option>
+                                                            <option value="38">พะเยา</option>
+                                                            <option value="39">พังงา</option>
+                                                            <option value="40">พัทลุง</option>
+                                                            <option value="41">พิจิตร</option>
+                                                            <option value="42">พิษณุโลก</option>
+                                                            <option value="3">เพชรบุรี</option>
+                                                            <option value="4">เพชรบูรณ์</option>
+                                                            <option value="6">แพร่</option>
+                                                            <option value="43">ภูเก็ต</option>
+                                                            <option value="44">มหาสารคาม</option>
+                                                            <option value="45">มุกดาหาร</option>
+                                                            <option value="7">แม่ฮ่องสอน</option>
+                                                            <option value="46">ยโสธร</option>
+                                                            <option value="47">ยะลา</option>
+                                                            <option value="48">ร้อยเอ็ด</option>
+                                                            <option value="49">ระนอง</option>
+                                                            <option value="50">ระยอง</option>
+                                                            <option value="51">ราชบุรี</option>
+                                                            <option value="52">ลพบุรี</option>
+                                                            <option value="53">ลำปาง</option>
+                                                            <option value="54">ลำพูน</option>
+                                                            <option value="5">เลย</option>
+                                                            <option value="55">ศรีสะเกษ</option>
+                                                            <option value="56">สกลนคร</option>
+                                                            <option value="57">สงขลา</option>
+                                                            <option value="58">สตูล</option>
+                                                            <option value="59">สมุทรปราการ</option>
+                                                            <option value="60">สมุทรสงคราม</option>
+                                                            <option value="61">สมุทรสาคร</option>
+                                                            <option value="62">สระแก้ว</option>
+                                                            <option value="63">สระบุรี</option>
+                                                            <option value="64">สิงห์บุรี</option>
+                                                            <option value="65">สุโขทัย</option>
+                                                            <option value="66">สุพรรณบุรี</option>
+                                                            <option value="67">สุราษฏร์ธานี</option>
+                                                            <option value="68">สุรินทร์</option>
+                                                            <option value="69">หนองคาย</option>
+                                                            <option value="70">หนองบัวลำภู</option>
+                                                            <option value="73">อ่างทอง</option>
+                                                            <option value="74">อำนาจเจริญ</option>
+                                                            <option value="0">อื่นๆ</option>
+                                                            <option value="75">อุดรธานี</option>
+                                                            <option value="76">อุตรดิตถ์</option>
+                                                            <option value="78">อุทัยธานี</option>
+                                                            <option value="71">อุบลราชธานี</option>
                                                         </select></td>
                                                     <td ><label>รหัสไปรษณีย์ :</label><br/><input style="width:150px" type="text" id="exampleInputEmail1" class="form-control" ></input></td>
                                                 </tr>
@@ -236,16 +310,16 @@
         <script type="text/javascript" src="<?= base_url() ?>public/js/jquery.slitslider.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js"></script>
         <script>
-                function initialize() {
-                    var map_canvas = document.getElementById('map_canvas');
-                    var map_options = {
-                        center: new google.maps.LatLng(13.667343, 100.642701),
-                        zoom: 18,
-                        mapTypeId: google.maps.MapTypeId.ROADMAP
-                    }
-                    var map = new google.maps.Map(map_canvas, map_options)
+            function initialize() {
+                var map_canvas = document.getElementById('map_canvas');
+                var map_options = {
+                    center: new google.maps.LatLng(13.667343, 100.642701),
+                    zoom: 18,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
                 }
-                google.maps.event.addDomListener(window, 'load', initialize);
+                var map = new google.maps.Map(map_canvas, map_options)
+            }
+            google.maps.event.addDomListener(window, 'load', initialize);
         </script>
         <script type="text/javascript">
             $(document).ready(function() {

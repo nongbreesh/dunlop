@@ -188,7 +188,7 @@
                                                             </table></td>
                                                     </tr>
                                                     <tr height="50">
-                                                        <td background="<?= base_url() ?>public/images/home/Find_3.png"><table border="0" cellspacing="10" cellpadding="0">
+                                                        <td background="<?= base_url() ?>public/images/home/Find_3.png" style="background-repeat: no-repeat;"><table border="0" cellspacing="10" cellpadding="0">
                                                                 <tr>
                                                                     <td><button class="btn-vdo">SEARCH</button></td>
                                                                 </tr>
