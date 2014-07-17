@@ -12,6 +12,7 @@
               type="text/css" />
         <link href="<?= base_url('public') ?>/css/animate.css" rel="stylesheet"
               type="text/css" />
+        <link rel="stylesheet" type="text/css" href="<?= base_url('public') ?>/css/bootstrap.css" />
         <link rel="stylesheet" type="text/css" href="<?= base_url('public') ?>/css/custom.css" />
         <link rel="stylesheet" type="text/css" href="<?= base_url('public') ?>/css/style.css" />
         <script type="text/javascript" src="<?= base_url('public') ?>/js/modernizr.custom.79639.js"></script>
@@ -149,13 +150,74 @@
                         <tr>
                             <td> 
 
-                                <div class="contact"></div>
+                                <div class="contact">
+                                    <div class="title_trans"><h1>CONTACT</h1></div>
+                                    <p class="contact_detail">หากท่านมีข้อสงสัยหรือคำแนะนำใดๆ เพิ่อมเติม ทางดันลอปยินดีที่จะรับฟัง และตอบคำถาม เพียงแค่กรอก ชื่อ, อีเมลล์ หรือเบอร์โทรศัพท์ที่จะติดต่อกลับของ
+                                        ท่านพร้อมกรอกรายละเอียดของเรื่องที่ต้องการสอบถามในแบบฟอร์มด้านล่างนี้</p>
+                                    <div class="col-xs-6">
+                                        <span class="c_danger">กรุณากรอกข้อมูลที่มีเครื่องหมาย * ให้ครบถ้วน</span>
+
+                                        <form role="form">
+                                            <table class="contact_form">
+                                                <tr>
+                                                    <td ><label>ชื่อ :</label><br/><input type="text" id="exampleInputEmail1" class="form-control" ></input></td>
+                                                    <td ><label>นามสกุล :</label><br/><input type="text" id="exampleInputEmail1" class="form-control" ></input></td>
+                                                </tr>
+                                                <tr>
+                                                    <td  colspan="2"><label>ที่อยู่ :</label><br/><textarea class="form-control" rows="3"></textarea></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td ><label>จังหวัด :</label><br/><select class="form-control">
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                        </select></td>
+                                                    <td ><label>รหัสไปรษณีย์ :</label><br/><input style="width:150px" type="text" id="exampleInputEmail1" class="form-control" ></input></td>
+                                                </tr>
+                                                <tr>
+                                                    <td ><label>โทรศัพท์ :</label><br/><input type="text" id="exampleInputEmail1" class="form-control" ></input></td>
+                                                    <td ><label>อีเมลล์ :</label><br/><input type="text" id="exampleInputEmail1" class="form-control" ></input></td>
+                                                </tr>
+                                                <tr>
+                                                    <td  colspan="2"><label>ข้อความ :</label><br/><textarea class="form-control" rows="3"></textarea></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td  colspan="2"> <button class="btn-vdo">ส่งข้อความ</button></td>
+
+                                                </tr>
+
+                                            </table>
+                                        </form>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="map"> <div id="map_canvas"></div></div>
+                                        <div class="address_detail">
+                                            <h1><img style="margin-right: 10px; margin-bottom: 7px;" src="<?= base_url() ?>public/images/location_icon.png"/>DUNLOP CONTACT ADDRESS</h1>
+                                            <p>บริษัท ดันลอปไทร์ (ไทยแลนด์) จำกัด<br/>
+                                                120 อาคารแอมเพิลทาวเวอร์ ชั้น 24 ห้อง 4/1 หมู่ที่ 11<br/>
+                                                ถนนบางนา-ตราด กม.4 แขวงบางนา เขตบางนา<br/>
+                                                กรุงเทพมหานคร 10260</p>
+                                            <p><img style="margin-right: 10px; " src="<?= base_url() ?>public/images/phone1.png"/>+66 (0) 2744-0199</p>
+                                            <p><img style="margin-right: 10px; " src="<?= base_url() ?>public/images/phone2.png"/>+66 (0) 2744-0198</p>
+                                            <p>Dunlop Tire (Thailand) Co.,Ltd.
+                                                120 Ample Tower, 4th Floor, Unit 4/1
+                                                Bangna-Trad Km.4 Road, Kwang Bangna, Khet Bangna,
+                                                Bangkok  10260</p>
+                                            <p><img style="margin-right: 10px; " src="<?= base_url() ?>public/images/phone1.png"/>+66 (0) 2744-0199</p>
+                                            <p><img style="margin-right: 10px; " src="<?= base_url() ?>public/images/phone2.png"/>+66 (0) 2744-0198</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </td>
                         </tr>
-                        
+
                     </table></td>
             </tr>
-      
+
             <tr height="30">
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -172,84 +234,97 @@
         <!-- end table 3x3-->
         <script type="text/javascript" src="<?= base_url() ?>public/js/jquery.ba-cond.min.js"></script>
         <script type="text/javascript" src="<?= base_url() ?>public/js/jquery.slitslider.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js"></script>
+        <script>
+                function initialize() {
+                    var map_canvas = document.getElementById('map_canvas');
+                    var map_options = {
+                        center: new google.maps.LatLng(13.667343, 100.642701),
+                        zoom: 18,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                    }
+                    var map = new google.maps.Map(map_canvas, map_options)
+                }
+                google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
         <script type="text/javascript">
-                                                            $(document).ready(function() {
+            $(document).ready(function() {
 
-                                                                var Page = (function() {
+                var Page = (function() {
 
-                                                                    var $navArrows = $('#nav-arrows'),
-                                                                            $nav = $('#nav-dots > span'),
-                                                                            slitslider = $('#slider').slitslider({
-                                                                        onBeforeChange: function(slide, pos) {
+                    var $navArrows = $('#nav-arrows'),
+                            $nav = $('#nav-dots > span'),
+                            slitslider = $('#slider').slitslider({
+                        onBeforeChange: function(slide, pos) {
 
-                                                                            $nav.removeClass('nav-dot-current');
-                                                                            $nav.eq(pos).addClass('nav-dot-current');
+                            $nav.removeClass('nav-dot-current');
+                            $nav.eq(pos).addClass('nav-dot-current');
 
-                                                                        }
-                                                                    }),
-                                                                            init = function() {
+                        }
+                    }),
+                            init = function() {
 
-                                                                                initEvents();
+                                initEvents();
 
-                                                                            },
-                                                                            initEvents = function() {
+                            },
+                            initEvents = function() {
 
-                                                                                // add navigation events
-                                                                                $navArrows.children(':last').on('click', function() {
+                                // add navigation events
+                                $navArrows.children(':last').on('click', function() {
 
-                                                                                    slitslider.next();
-                                                                                    return false;
+                                    slitslider.next();
+                                    return false;
 
-                                                                                });
+                                });
 
-                                                                                $navArrows.children(':first').on('click', function() {
+                                $navArrows.children(':first').on('click', function() {
 
-                                                                                    slitslider.previous();
-                                                                                    return false;
+                                    slitslider.previous();
+                                    return false;
 
-                                                                                });
+                                });
 
-                                                                                $nav.each(function(i) {
+                                $nav.each(function(i) {
 
-                                                                                    $(this).on('click', function(event) {
+                                    $(this).on('click', function(event) {
 
-                                                                                        var $dot = $(this);
+                                        var $dot = $(this);
 
-                                                                                        if (!slitslider.isActive()) {
+                                        if (!slitslider.isActive()) {
 
-                                                                                            // $nav.removeClass('nav-dot-current');
-                                                                                            // $dot.addClass('nav-dot-current');
+                                            // $nav.removeClass('nav-dot-current');
+                                            // $dot.addClass('nav-dot-current');
 
-                                                                                        }
+                                        }
 
-                                                                                        slitslider.jump(i + 1);
-                                                                                        return false;
+                                        slitslider.jump(i + 1);
+                                        return false;
 
-                                                                                    });
+                                    });
 
-                                                                                });
+                                });
 
-                                                                            };
+                            };
 
-                                                                    return {init: init};
+                    return {init: init};
 
-                                                                })();
+                })();
 
-                                                                Page.init();
-
-
-                                                            });
+                Page.init();
 
 
-                                                            function showvdo(id) {
+            });
 
-                                                                var videoWrap = document.getElementById('vdo');
-                                                                var element = document.getElementById(id);
-                                                                var src = element.getAttribute('data-value');
-                                                                // alert(src);
-                                                                videoWrap.innerHTML = '<embed src=' + src + ' type="application/x-shockwave-flash" width="425" height="230" allowscriptaccess="never" allowfullscreen="true"></embed>';
 
-                                                            }
+            function showvdo(id) {
+
+                var videoWrap = document.getElementById('vdo');
+                var element = document.getElementById(id);
+                var src = element.getAttribute('data-value');
+                // alert(src);
+                videoWrap.innerHTML = '<embed src=' + src + ' type="application/x-shockwave-flash" width="425" height="230" allowscriptaccess="never" allowfullscreen="true"></embed>';
+
+            }
         </script>
     </body>
 </html>

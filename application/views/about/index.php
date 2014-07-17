@@ -64,8 +64,8 @@
                 <td background="<?= base_url() ?>public/images/home/logo_3.jpg">&nbsp;</td>
             </tr>
             <tr height="730">
-                <td background="<?= base_url() ?>public/images/home/bg_3.png">&nbsp;</td>
-                <td background="<?= base_url() ?>public/images/home/bg_3.png"><table   border="0" cellspacing="0" cellpadding="0" >
+                <td >&nbsp;</td>
+                <td ><table   border="0" cellspacing="0" cellpadding="0" >
                         <tr>
                             <td height="15"></td>
                         </tr>
@@ -149,194 +149,24 @@
                         <tr>
                             <td> 
 
-                                <table class=border-radius  background="<?= base_url() ?>public/images/home/bg_1.jpg" width="942" height="320" cellspacing="10" cellpadding="0" >
-                                    <tr>
-                                        <td valign="top" width="220">
-                                            <form>
-                                                <table  border="0" cellspacing="0" cellpadding="0" width="220">
-                                                    <tr height="70">
-                                                        <td><img src="<?= base_url() ?>public/images/home/Find_1.png" /></td>
-                                                    </tr>
-                                                    <tr height="180">
-                                                        <td background="<?= base_url() ?>public/images/home/Find_2.png" valign="top"><table border="0" cellspacing="10" cellpadding="0">
-                                                                <tr>
-                                                                    <td><img src="<?= base_url() ?>public/images/home/Find_4.png"></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-
-                                                                        <select name="size" id="size" style="margin-top: 10px;"><option value="0">(1) ขนาดหน้ายาง</option>
-                                                                            <?php foreach ($tire_width as $each) { ?>
-                                                                                <option value="<?php echo $each->Tire_Width; ?>"><?php echo $each->Tire_Width; ?></option>';
-                                                                            <?php } ?>
-                                                                        </select>
-
-                                                                        <select name="series" id="series" style="width: 86px;margin-top: 10px;"><option value="0">(2) Series</option>
-                                                                            <?php foreach ($tire_series as $each) { ?>
-                                                                                <option value="<?php echo $each->Tire_Series; ?>"><?php echo $each->Tire_Series; ?></option>';
-                                                                            <?php } ?>
-                                                                        </select>
-
-                                                                        <select name="diameter" id="diameter" style="width: 100%;margin-top: 10px;"><option value="0">(3) ขนาดขอบกระทะล้อ (นิ้ว)</option>
-                                                                            <?php foreach ($tire_size as $each) { ?>
-                                                                                <option value="<?php echo $each->Tire_Diameter; ?>"><?php echo $each->Tire_Diameter; ?></option>';
-                                                                            <?php } ?>
-                                                                        </select>
-
-                                                                    </td>
-                                                                </tr>
-                                                            </table></td>
-                                                    </tr>
-                                                    <tr height="50">
-                                                        <td background="<?= base_url() ?>public/images/home/Find_3.png"><table border="0" cellspacing="10" cellpadding="0">
-                                                                <tr>
-                                                                    <td><button class="btn-vdo">SEARCH</button></td>
-                                                                </tr>
-                                                            </table></td>
-                                                    </tr>
-                                                </table>
-                                            </form>
-                                        </td>
-                                        <td valign="top" align="center" width="230"><table width="210" border="0" cellspacing="0" cellpadding="0">
-                                                <tr>
-                                                    <td><img src="<?= base_url() ?>public/images/home/product_1.png" /></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="product_2"><a href="#" >PASSENGER CAR TIRE</a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="product_3"><a href="#" >PICKUP</a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td  class="product_4"><a href="#">SUV/4x4 TIRE</a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td  class="product_5"><a href="#">OEM</a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="product_6"><a href="#" >WARRANTY POLICY</a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><img src="<?= base_url() ?>public/images/home/product_7.png" /></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>&nbsp;</td>
-                                                </tr>
-                                            </table></td>
-                                        <td width="452"><table width="450" border="0" cellspacing="0" cellpadding="0">
-                                                <tr>
-                                                    <td colspan="3"><img src="<?= base_url() ?>public/images/home/vdo_1.png" /></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><img src="<?= base_url() ?>public/images/home/vdo_2_1.png" /></td>
-                                                    <td width="430" background="<?= base_url() ?>public/images/home/vdo_2_2.png">
-                                                        <div class="vdo" id="vdo">
-                                                            <embed id="video" src="https://www.youtube-nocookie.com/v/<?= $dunlop_vdo[0]->VIDEO_LINK ?>?version=3&amp;hl=en_US&amp;rel=0&showinfo=0"
-                                                                   type="application/x-shockwave-flash" width="425" height="230"  allowscriptaccess="never" allowfullscreen="true">
-
-                                                            </embed>
-                                                        </div>
-                                                        <?php foreach ($dunlop_vdo as $each): ?>
-                                                            <button class="btn-vdo" id="btn-vdo<?= $each->VIDEO_ID ?>"  data-value="https://www.youtube-nocookie.com/v/<?= $each->VIDEO_LINK ?>?version=3&amp;hl=en_US&amp;rel=0&showinfo=0" onclick="showvdo(this.id);"><?= $each->VIDEO_Headline ?></button>
-                                                        <?php endforeach; ?>
-                                                    </td>
-                                                    <td><img src = "<?= base_url() ?>public/images/home/vdo_2_3.png" /></td>
-                                                </tr>
-                                                <tr>
-                                                    <td colspan = "3"><img src = "<?= base_url() ?>public/images/home/vdo_3.png" /></td>
-                                                </tr>
-                                            </table></td>
-                                    </tr>
-                                </table>
+                                <div class="wrapper">
+                                    <div class="sidebar-l" ><div class="about_title"></div>
+                                        <ul class="sidemenu">
+                                            <li><a href="#"><img style="" src="<?= base_url() ?>public/images/qa.png"/></a></li>
+                                            <li><a href="#"><img style="" src="<?= base_url() ?>public/images/tech.png"/></a></li>
+                                            <li><a href="#"><img style="" src="<?= base_url() ?>public/images/usage.png"/></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="contact-r ">
+                                        <div class="title_trans-r"> <h1>GL<img style="" src="<?= base_url() ?>public/images/O.png"/>BAL QUALITY</h1></div>
+                                    </div>
+                                </div>
                             </td>
                         </tr>
-                        <tr>
-                            <td height = "15"></td>
-                        </tr>
+
                     </table></td>
-                <td background = "<?= base_url() ?>public/images/home/bg_3.png">&nbsp;
-                </td>
             </tr>
-            <tr height = "500">
-                <td>&nbsp;
-                </td>
-                <td valign = "top"><table height = "500" width = "942" cellspacing = "0" cellpadding = "0" >
-                        <tr>
-                            <td width = "550" valign = "top"><table class = border-radius background = "<?= base_url() ?>public/images/home/bg_1.jpg" width = "550" height = "500" cellspacing = "10" cellpadding = "0" >
-                                    <tr>
-                                        <td valign = "top" colspan = "2" ><img src = "<?= base_url() ?>public/images/home/Highlingt.png" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <?php foreach ($dunlop_highlight as $each) :
-                                                ?>
-                                                <div class="highlight"><a href="<?= $each->Highlight_URL ?>"><img src="<?= base_url() ?>administrator/public/uploads/<?= $each->Highlight_IMG ?>" /></a></div>
-                                            <?php endforeach; ?>
-                                        </td>
 
-                                    </tr>
-
-                                </table></td>
-                            <td width="15">&nbsp;</td>
-                            <td width="377" valign="top"><table width="377" height="363" border="0" cellspacing="0" cellpadding="0">
-                                    <tr>
-                                        <td colspan="3" height="80" width="357"><img src="<?= base_url() ?>public/images/home/NEWS_1.png" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td height="263" width="10"><img src="<?= base_url() ?>public/images/home/NEWS_2_1.png" /></td>
-                                        <td height="263" width="357"  background="<?= base_url() ?>public/images/home/NEWS_2_2.png">
-                                            <div class="whatnews">
-                                                <ul class="bxslider">
-                                                    <?php foreach ($dunlop_news as $each): ?>
-                                                        <li>
-                                                            <div class="whatnews_frame" style="cursor: pointer;"><img onclick="location.href='<?= $each->NEWS_URL ?>'" src="<?= base_url() ?>administrator/public/uploads/<?= str_replace('thumb_', '', $each->NEWS_IMG) ?>" width="100%" /></div>
-                                                            <p><?= $each->NEWS_Headline ?></p>
-                                                        </li>
-                                                    <?php endforeach; ?>
-                                                </ul>
-                                            </div>
-                                        </td>
-                                        <td height="263" width="10"><img src="<?= base_url() ?>public/images/home/NEWS_2_3.png" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="3" height="20" width="357"><img src="<?= base_url() ?>public/images/home/NEWS_3.png" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="3" height="10">&nbsp;</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="3" ><table width="377" border="0" cellspacing="0" cellpadding="0">
-                                                <tr>
-                                                    <td height="53"><img src="<?= base_url() ?>public/images/home/search_1.png" /></td>
-                                                </tr>
-                                                <tr>
-                                                    <td background="<?= base_url() ?>public/images/home/search_2.png" valign="top" height="40">
-                                                        <select name="diameter" id="diameter" style="margin-left: 20px;
-                                                                margin-top:5px;
-                                                                width: 160px;"><option value="">เลือกโซน</option>
-                                                                <?php foreach ($zone_list as $each) { ?>
-                                                                <option value="<?php echo $each->ZONE_ID; ?>"><?php echo $each->ZONE_NAME; ?></option>';
-                                                            <?php } ?>
-
-                                                        </select>
-                                                        <select name="diameter" id="diameter" style="margin-left: 20px;
-                                                                margin-top: 5px;
-                                                                width: 160px;"><option value="0">กรุณาเลือกโซน</option></select>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td background="<?= base_url() ?>public/images/home/search_2.png" valign="top" height="30" align="right"><button class="btn-vdo" style="margin-right: 10px;"> SEARCH</button></td>
-                                                </tr>
-                                                <tr height="10">
-                                                    <td background="<?= base_url() ?>public/images/home/search_3.png" ></td>
-                                                </tr>
-                                            </table></td>
-                                    </tr>
-                                </table></td>
-                        </tr>
-                    </table></td>
-                <td>&nbsp;</td>
-            </tr>
             <tr height="30">
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -353,84 +183,77 @@
         <!-- end table 3x3-->
         <script type="text/javascript" src="<?= base_url() ?>public/js/jquery.ba-cond.min.js"></script>
         <script type="text/javascript" src="<?= base_url() ?>public/js/jquery.slitslider.js"></script>
+
         <script type="text/javascript">
-                                                            $(document).ready(function() {
+            $(document).ready(function() {
 
-                                                                var Page = (function() {
+                var Page = (function() {
 
-                                                                    var $navArrows = $('#nav-arrows'),
-                                                                            $nav = $('#nav-dots > span'),
-                                                                            slitslider = $('#slider').slitslider({
-                                                                        onBeforeChange: function(slide, pos) {
+                    var $navArrows = $('#nav-arrows'),
+                            $nav = $('#nav-dots > span'),
+                            slitslider = $('#slider').slitslider({
+                        onBeforeChange: function(slide, pos) {
 
-                                                                            $nav.removeClass('nav-dot-current');
-                                                                            $nav.eq(pos).addClass('nav-dot-current');
+                            $nav.removeClass('nav-dot-current');
+                            $nav.eq(pos).addClass('nav-dot-current');
 
-                                                                        }
-                                                                    }),
-                                                                            init = function() {
+                        }
+                    }),
+                            init = function() {
 
-                                                                                initEvents();
+                                initEvents();
 
-                                                                            },
-                                                                            initEvents = function() {
+                            },
+                            initEvents = function() {
 
-                                                                                // add navigation events
-                                                                                $navArrows.children(':last').on('click', function() {
+                                // add navigation events
+                                $navArrows.children(':last').on('click', function() {
 
-                                                                                    slitslider.next();
-                                                                                    return false;
+                                    slitslider.next();
+                                    return false;
 
-                                                                                });
+                                });
 
-                                                                                $navArrows.children(':first').on('click', function() {
+                                $navArrows.children(':first').on('click', function() {
 
-                                                                                    slitslider.previous();
-                                                                                    return false;
+                                    slitslider.previous();
+                                    return false;
 
-                                                                                });
+                                });
 
-                                                                                $nav.each(function(i) {
+                                $nav.each(function(i) {
 
-                                                                                    $(this).on('click', function(event) {
+                                    $(this).on('click', function(event) {
 
-                                                                                        var $dot = $(this);
+                                        var $dot = $(this);
 
-                                                                                        if (!slitslider.isActive()) {
+                                        if (!slitslider.isActive()) {
 
-                                                                                            // $nav.removeClass('nav-dot-current');
-                                                                                            // $dot.addClass('nav-dot-current');
+                                            // $nav.removeClass('nav-dot-current');
+                                            // $dot.addClass('nav-dot-current');
 
-                                                                                        }
+                                        }
 
-                                                                                        slitslider.jump(i + 1);
-                                                                                        return false;
+                                        slitslider.jump(i + 1);
+                                        return false;
 
-                                                                                    });
+                                    });
 
-                                                                                });
+                                });
 
-                                                                            };
+                            };
 
-                                                                    return {init: init};
+                    return {init: init};
 
-                                                                })();
+                })();
 
-                                                                Page.init();
-
-
-                                                            });
+                Page.init();
 
 
-                                                            function showvdo(id) {
+            });
 
-                                                                var videoWrap = document.getElementById('vdo');
-                                                                var element = document.getElementById(id);
-                                                                var src = element.getAttribute('data-value');
-                                                                // alert(src);
-                                                                videoWrap.innerHTML = '<embed src=' + src + ' type="application/x-shockwave-flash" width="425" height="230" allowscriptaccess="never" allowfullscreen="true"></embed>';
 
-                                                            }
+
         </script>
     </body>
 </html>

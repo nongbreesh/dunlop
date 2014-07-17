@@ -43,6 +43,7 @@
 body{
     background: url('../images/bg.jpg');
 }
+
 .wrapper{
     width:1300px;
     margin: 0 auto;
@@ -220,7 +221,126 @@ select{
     display: block;
     margin-left:8px;
 }
+.wrapper{
+    min-height: 500px;
+    width: 946px;
+}
 
 .contact{
-    height: 500px;
+    height: 1020px;
+    width: 946px;
+    background: url('../images/bg-trans.png')  no-repeat;
+}
+
+
+.title_trans{
+    height: 71px;
+    width: 944px;
+    background: url('../images/bg_title_trans.png') no-repeat;
+
+}
+.title_trans h1{
+    color:#ffde00;
+    font:50px 'ThaiSansNeue-Bold';
+    margin-left: 20px;
+}
+p.contact_detail{
+    color:#ffffff;
+    font:20px 'ThaiSansNeue-Regular';
+    text-indent: 20px;
+    padding:10px 20px;
+}
+.c_danger{
+    color:#f00;
+    font:18px 'ThaiSansNeue-Regular';
+}
+.contact_form{
+    width: 100%;
+    font:18px 'ThaiSansNeue-Light';
+    margin-top: 20px;
+}
+.contact_form tr td{
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+.contact_form label{
+    color: #ffde00;
+    margin-bottom: 10px;
+}
+.map{
+    height: 354px;
+    width: 408px;
+    background: url('../images/map_bg.png')  no-repeat;
+    margin-top: 75px;
+    padding: 15px;
+}
+.address_detail h1{
+    font:30px 'ThaiSansNeue-Bold';
+    color: #ffde00;
+}
+.address_detail p{
+    font:20px 'ThaiSansNeue-Regular';
+    color: #fff;
+}
+#map_canvas {
+    width: 376px;
+    height: 303px;
+    border: 2px #000 solid;
+}
+
+.sidebar-l{
+    height: 290px;
+    width: 266px;
+    background: url('../images/sidebar_bg.png')  no-repeat;
+    float: left;
+}
+.contact-r{
+    height: 812px;
+    width: 667px;
+    background: url('../images/bg-trans-r.png')  no-repeat;
+    float: right;
+}
+
+.title_trans-r{
+    height: 71px;
+    width: 944px;
+    background: url('../images/bg_title_trans-r.png') no-repeat;
+    float: left;
+    position: relative;
+
+}
+.contact-r h1{
+    color:#ffde00;
+    font:50px 'ThaiSansNeue-Bold';
+    margin-left: 20px;
+    position: absolute;
+    top: -35px;
+}
+.knowledge_title{
+    height: 76px;
+    width: 236px;
+    background: url('../images/knowledge-logo.png') no-repeat;
+    float: left;
+    position: relative;
+    margin: 12px;
+
+}
+.about_title{
+    height: 75px;
+    width: 235px;
+    background: url('../images/about-logo.png') no-repeat;
+    float: left;
+    position: relative;
+    margin: 12px;
+
+}
+
+.sidemenu{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    margin-left: 10px;
+}
+.sidemenu li{
+    line-height: 5px;
 }
