@@ -150,7 +150,7 @@
                         <tr>
                             <td> 
 
-                                <div class="contact">
+                                <div class="contact" style="margin-top: -20px;">
                                     <div class="title_trans"><h1>ตัวแทนจำหน่าย <img style="margin-top: -14px;
                                                                                     margin-left: -5px; " src="<?= base_url() ?>public/images/add_loc_icon.png"/></h1> </div>
 
