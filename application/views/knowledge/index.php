@@ -152,13 +152,56 @@
                                 <div class="wrapper">
                                     <div class="sidebar-l" ><div class="knowledge_title"></div> 
                                         <ul class="sidemenu">
-                                            <li><a href="#"><img style="" src="<?= base_url() ?>public/images/blackground.png"/></a></li>
-                                            <li><a href="#"><img style="" src="<?= base_url() ?>public/images/quality.png"/></a></li>
-                                            <li><a href="#"><img style="" src="<?= base_url() ?>public/images/museum.png"/></a></li>
+                                            <li><a href="<?= base_url() ?>knowledge/qa"><img style="" src="<?= base_url() ?>public/images/qa_hover.png" onmouseover="this.src = '<?= base_url() ?>public/images/qa_hover.png'" onmouseout="this.src = '<?= base_url() ?>public/images/qa.png'"/></a></li>
+                                            <li><a href="<?= base_url() ?>knowledge/tech"><img style="" src="<?= base_url() ?>public/images/tech.png" onmouseover="this.src = '<?= base_url() ?>public/images/tech_hover.png'" onmouseout="this.src = '<?= base_url() ?>public/images/tech.png'"/></a></li>
+                                            <li><a href="<?= base_url() ?>knowledge/usage"><img style="" src="<?= base_url() ?>public/images/usage.png" onmouseover="this.src = '<?= base_url() ?>public/images/usage_hover.png'" onmouseout="this.src = '<?= base_url() ?>public/images/usage.png'"/></a></li>
                                         </ul>
                                     </div>
                                     <div class="contact-r ">
                                         <div class="title_trans-r"> <h1>ความรู้พืนฐาน <span style="font-size: 36px;margin-left: -14px;">เรืองการปลอดภัยของรถยนต์</span></h1></div>
+                                        <div class="content">
+                                            <h1>&nbsp;</h1>
+
+                                            <table border="0" cellpadding="5" cellspacing="0" style="width:100%">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <p><img alt="ความเป็นมาและวิวัฒนาการของดันลอปไทร์" src="http://www.dunloptire.co.th/img/musuem-topic.jpg" style="height:46px; width:242px" /></p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td>Dunlop มีเครือข่ายครอบคลุมไปกว่า 166 ประเทศทั่วโลก และ มีฐานการผลิตอยู่ใน 3 ทวีป เชื่อมโยงเครือข่ายตลาดยางรถยนต์ทั่วโลก สามารถรองรับการเติบโตของธุรกิจยานยนต์ ได้อย่างครบวงจร</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td><strong>Photo Collection</strong></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td>&nbsp;</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td><strong>Poster Collection</strong></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td>
+                                                            <p>&nbsp;</p>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                            <h1>&nbsp;</h1>
+
+                                            <div style="clear:both"></div>
+                                        </div>
+                                        <div style="clear:both"></div>
                                     </div>
                                 </div>
                             </td>
@@ -185,72 +228,72 @@
         <script type="text/javascript" src="<?= base_url() ?>public/js/jquery.slitslider.js"></script>
 
         <script type="text/javascript">
-            $(document).ready(function() {
+                                                $(document).ready(function() {
 
-                var Page = (function() {
+                                                    var Page = (function() {
 
-                    var $navArrows = $('#nav-arrows'),
-                            $nav = $('#nav-dots > span'),
-                            slitslider = $('#slider').slitslider({
-                        onBeforeChange: function(slide, pos) {
+                                                        var $navArrows = $('#nav-arrows'),
+                                                                $nav = $('#nav-dots > span'),
+                                                                slitslider = $('#slider').slitslider({
+                                                            onBeforeChange: function(slide, pos) {
 
-                            $nav.removeClass('nav-dot-current');
-                            $nav.eq(pos).addClass('nav-dot-current');
+                                                                $nav.removeClass('nav-dot-current');
+                                                                $nav.eq(pos).addClass('nav-dot-current');
 
-                        }
-                    }),
-                            init = function() {
+                                                            }
+                                                        }),
+                                                                init = function() {
 
-                                initEvents();
+                                                                    initEvents();
 
-                            },
-                            initEvents = function() {
+                                                                },
+                                                                initEvents = function() {
 
-                                // add navigation events
-                                $navArrows.children(':last').on('click', function() {
+                                                                    // add navigation events
+                                                                    $navArrows.children(':last').on('click', function() {
 
-                                    slitslider.next();
-                                    return false;
+                                                                        slitslider.next();
+                                                                        return false;
 
-                                });
+                                                                    });
 
-                                $navArrows.children(':first').on('click', function() {
+                                                                    $navArrows.children(':first').on('click', function() {
 
-                                    slitslider.previous();
-                                    return false;
+                                                                        slitslider.previous();
+                                                                        return false;
 
-                                });
+                                                                    });
 
-                                $nav.each(function(i) {
+                                                                    $nav.each(function(i) {
 
-                                    $(this).on('click', function(event) {
+                                                                        $(this).on('click', function(event) {
 
-                                        var $dot = $(this);
+                                                                            var $dot = $(this);
 
-                                        if (!slitslider.isActive()) {
+                                                                            if (!slitslider.isActive()) {
 
-                                            // $nav.removeClass('nav-dot-current');
-                                            // $dot.addClass('nav-dot-current');
+                                                                                // $nav.removeClass('nav-dot-current');
+                                                                                // $dot.addClass('nav-dot-current');
 
-                                        }
+                                                                            }
 
-                                        slitslider.jump(i + 1);
-                                        return false;
+                                                                            slitslider.jump(i + 1);
+                                                                            return false;
 
-                                    });
+                                                                        });
 
-                                });
+                                                                    });
 
-                            };
+                                                                };
 
-                    return {init: init};
+                                                        return {init: init};
 
-                })();
+                                                    })();
 
-                Page.init();
+                                                    Page.init();
 
 
-            });
+                                                });
 
 
 

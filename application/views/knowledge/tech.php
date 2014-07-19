@@ -12,7 +12,6 @@
               type="text/css" />
         <link href="<?= base_url('public') ?>/css/animate.css" rel="stylesheet"
               type="text/css" />
-        <link rel="stylesheet" type="text/css" href="<?= base_url('public') ?>/css/bootstrap.css" />
         <link rel="stylesheet" type="text/css" href="<?= base_url('public') ?>/css/custom.css" />
         <link rel="stylesheet" type="text/css" href="<?= base_url('public') ?>/css/style.css" />
         <script type="text/javascript" src="<?= base_url('public') ?>/js/modernizr.custom.79639.js"></script>
@@ -37,27 +36,27 @@
                 <td width="942"  style="position: relative;"><table border="0" cellspacing="0" cellpadding="0" width="100%">
                         <tr>
                             <td><a href="<?= base_url() ?>"><img src="<?= base_url() ?>public/images/home/logo_2.jpg" /></a></td>
-                            <td background="<?= base_url() ?>public/images/home/logo_3.jpg"  width="100%">
+                            <td background="<?= base_url() ?>public/images/home/logo_3m.png"  width="100%">
 
                             </td>
 
                         </tr>
                     </table>
                     <div class="menu">
-                        <table id="Table_01" width="688" height="42" border="0" cellpadding="0" cellspacing="0">
+                        <table id="Table_01" width="687" height="42" border="0" cellpadding="0" cellspacing="0">
                             <tr>
                                 <td>
-                                    <a href="<?= base_url() ?>home"><img src="<?= base_url() ?>public/images/menu/address/menu_01.png" width="99" height="42" alt=""/></a></td>
+                                    <a href="<?= base_url() ?>home"><img src="<?= base_url() ?>public/images/menu/knowledge/menu_01.png" width="93" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>product"> <img src="<?= base_url() ?>public/images/menu/address/menu_02.png" width="92" height="42" alt=""/></a></td>
+                                    <a href="<?= base_url() ?>product"> <img src="<?= base_url() ?>public/images/menu/knowledge/menu_02.png" width="95" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>knowledge"><img src="<?= base_url() ?>public/images/menu/address/menu_03.png" width="135" height="42" alt=""/></a></td>
+                                    <a href="<?= base_url() ?>knowledge"><img src="<?= base_url() ?>public/images/menu/knowledge/menu_03.png" width="135" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>about">  <img src="<?= base_url() ?>public/images/menu/address/menu_04.png" width="93" height="42" alt=""/></a></td>
+                                    <a href="<?= base_url() ?>about">  <img src="<?= base_url() ?>public/images/menu/knowledge/menu_04.png" width="122" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>address"><img src="<?= base_url() ?>public/images/menu/address/menu_05.png" width="157" height="42" alt=""/></a></td>
+                                    <a href="<?= base_url() ?>address"><img src="<?= base_url() ?>public/images/menu/knowledge/menu_05.png" width="136" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>contact"><img src="<?= base_url() ?>public/images/menu/address/menu_06.png" width="112" height="42" alt=""/></a></td>
+                                    <a href="<?= base_url() ?>contact"><img src="<?= base_url() ?>public/images/menu/knowledge/menu_06.png" width="106" height="42" alt=""/></a></td>
                             </tr>
                         </table>
                     </div>
@@ -150,76 +149,64 @@
                         <tr>
                             <td> 
 
-                                <div class="contact" style="margin-top: -20px;">
-                                    <div class="title_trans"><h1>ตัวแทนจำหน่าย <img style="margin-top: -14px;
-                                                                                    margin-left: -5px; " src="<?= base_url() ?>public/images/add_loc_icon.png"/></h1> </div>
-
-                                    <?php if ($id == 1): ?>
-                                        <div class="mapaddress bg1"></div>
-                                    <?php elseif ($id == 2): ?>
-                                        <div class="mapaddress bg2"></div>
-                                    <?php elseif ($id == 3): ?>
-                                        <div class="mapaddress bg3"></div>
-                                    <?php elseif ($id == 4): ?>
-                                        <div class="mapaddress bg4"></div>
-                                    <?php elseif ($id == 5): ?>
-                                        <div class="mapaddress bg5"></div>
-                                    <?php elseif ($id == 6): ?>
-                                        <div class="mapaddress bg6"></div>
-                                    <?php elseif ($id == 7): ?>
-                                        <div class="mapaddress bg7"></div>
-
-                                    <?php endif; ?>
-
-
-                                    <div class="dealer_list">
-
-                                        <?php foreach ($zone_list as $each): ?>
-                                            <div class="zone_name">
-                                                <?php if ($id == $each->ZONE_ID): ?>
-                                                    <a class="active" href="<?= base_url() ?>address/zone/<?= $each->ZONE_ID ?>"><?= $each->ZONE_NAME ?></a>
-                                                <?php else: ?>
-                                                    <a href="<?= base_url() ?>address/zone/<?= $each->ZONE_ID ?>"><?= $each->ZONE_NAME ?></a>
-                                                <?php endif; ?>
-                                            </div>
-                                        <?php endforeach; ?>
+                                <div class="wrapper">
+                                    <div class="sidebar-l" ><div class="knowledge_title"></div> 
+                                        <ul class="sidemenu">
+                                            <li><a href="<?= base_url() ?>knowledge/qa"><img style="" src="<?= base_url() ?>public/images/qa.png" onmouseover="this.src = '<?= base_url() ?>public/images/qa_hover.png'" onmouseout="this.src = '<?= base_url() ?>public/images/qa.png'"/></a></li>
+                                            <li><a href="<?= base_url() ?>knowledge/tech"><img style="" src="<?= base_url() ?>public/images/tech_hover.png" onmouseover="this.src = '<?= base_url() ?>public/images/tech_hover.png'" onmouseout="this.src = '<?= base_url() ?>public/images/tech.png'"/></a></li>
+                                            <li><a href="<?= base_url() ?>knowledge/usage"><img style="" src="<?= base_url() ?>public/images/usage.png" onmouseover="this.src = '<?= base_url() ?>public/images/usage_hover.png'" onmouseout="this.src = '<?= base_url() ?>public/images/usage.png'"/></a></li>
+                                        </ul>
                                     </div>
+                                    <div class="contact-r ">
+                                        <div class="title_trans-r"> <h1>TECHNOLOGY</h1></div>
+                                        <div class="content">
+                                           <table border="0" cellpadding="0" cellspacing="0" style="width:100%">
+	<tbody>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>
+			<p><img alt="dsr" src="http://www.dunloptire.co.th/img/drs.jpg" style="float:left; height:96px; width:201px" /><strong>DIGITAL ROLLING SIMULATION II&nbsp;</strong>เทคโนโลยีใหม่ล่าสุดที่ Dunlop โดยเป็นการวิเคราะห์ การใช้งาน จริงโดยเครื่อง Computer ทั้งทางแห้งและเปียก โดยเปรียบเทียบระหว่างความแตกต่าง ของ DRS กับ DRS II ที่ถูกพัฒนาให้มีสมรรถนะสูงขึ้นกว่าเดิม แล้วนำข้อมูลที่เกิดจากการวิเคราะห์ทั้งหมดไปผลิต และทดสอบ สมรรถนะยางจริงก่อนออกสู่ตลาด เพื่อรองรับกลุ่มเป้าหมายผู้ใช้รถยุโรประดับหรู หรือ Sporty Saloon ความเร็วสูงจึงไม่เพียงแต่เพิ่มสมรรถนะการเกาะถนนบนความเร็วสูง แต่ยังเพิ่มสมรรถนะ ความมั่นคงบน ทางเปียก ลดเสียงรบกวน และเพิ่มความนุ่มนวลในการขับขี่คุณสมบัติดังกล่าว</p>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>
+			<p><br />
+			<strong>HIGH SPEED STABILITY</strong><br />
+			การยึดเกาะถนนในความเร็วสูงทั้งทางตรงและทางโค้ง ดอกยางแบบ BLOCK RIGIDITY ผนวกกับ DIRECTIONAL เพิ่มความกระชับดอกยาง บนหน้าสัมผัสผิวถนนในทางตรง ร่องดอกบนไหล่รูปปีกนกเพิ่มแรกยึดเหนี่ยวเมื่อเข้าโค้งบนความเร็วสูง</p>
 
-                                    <div class="province_list">
-                                        <h1><?= $zone_header ?></h1>
-                                        <?php foreach ($area_list as $each): ?>
-                                            <div class="area_name">
-                                                <?php if ($area == $each->AREA_ID): ?>
-                                                    <a class="active" href="<?= base_url() ?>address/zone/<?= $each->ZONE_ID ?>/<?= $each->AREA_ID ?>"><?= $each->AREA_NAME ?></a>
-                                                <?php else: ?>
-                                                    <a href="<?= base_url() ?>address/zone/<?= $each->ZONE_ID ?>/<?= $each->AREA_ID ?>"><?= $each->AREA_NAME ?></a>
-                                                <?php endif; ?>
-                                            </div>
-                                        <?php endforeach; ?>
-                                    </div>
+			<p><img alt="stability" src="http://www.dunloptire.co.th/img/stability.jpg" style="width:641px" /></p>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>
+			<p><strong>WET PERFORMANCE</strong><br />
+			ดอกยาง SP SPORT MAXX เพิ่มส่วนผสม COMPOUND สร้าง &ldquo;FUNCTIONAL POLYMER&rdquo; ทำให้เนื้อยางยึดเกาะถนนบนทางเปียก ขณะวิ่งด้วยความเร็วสูง ประสิทธิภาพการหยุดรถ (BREAK) บนทางเปียก เพิ่มขึ้น 5% เมื่อเทียบรุ่น SP9000</p>
 
-                                    <div class="dealer_detail">
-                                        <table class="tb_dealer_detail">
-                                            <thead>
-                                                <tr>
-                                                    <th>ผู้แทนจำหน่าย</th>
-                                                    <th>ที่อยู่</th>
-                                                    <th>เบอร์โทร</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
+			<p><img alt="wet performance" src="http://www.dunloptire.co.th/img/wet-perf.jpg" style="width:641px" /></p>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>
+			<p><strong>QUIETNESS</strong><br />
+			ลดเสียงสะท้อนในขณะใช้ความเร็วสูงด้วยดอกยาง SHIFTED PATTERN โดยการสลับตำแหน่งส่วนปลายร่องดอกบนไหล่ยางช่วยลดเสียงรบกวน ห้องโดยสาร ผลการทดสอบ SP MAXX ลดเสียงรบกวนลง 1.1 เดซิเบล เมื่อเทียบกับ SP 9000 ยาง FLAGSHIP รุ่นก่อน</p>
 
-                                                <?php foreach ($dealer_detail as $each): ?>
-                                                    <tr>
-                                                        <td><?= $each->Dealer_Name ?> </td>
-                                                        <td><?= $each->Dealer_Address ?> </td>
-                                                        <td><?= $each->Dealer_Tel ?> </td>
-                                                    </tr>
-                                                <?php endforeach; ?>
+			<p><img alt="quietness" src="http://www.dunloptire.co.th/img/sound.jpg" style="width:335px" /></p>
 
-                                            </tbody>
-                                        </table>
+			<p>&nbsp;</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
 
+                                            <div style="clear:both"></div>
+                                        </div>
+                                        <div style="clear:both"></div>
                                     </div>
                                 </div>
                             </td>
@@ -246,72 +233,72 @@
         <script type="text/javascript" src="<?= base_url() ?>public/js/jquery.slitslider.js"></script>
 
         <script type="text/javascript">
-            $(document).ready(function() {
+                                                $(document).ready(function() {
 
-                var Page = (function() {
+                                                    var Page = (function() {
 
-                    var $navArrows = $('#nav-arrows'),
-                            $nav = $('#nav-dots > span'),
-                            slitslider = $('#slider').slitslider({
-                        onBeforeChange: function(slide, pos) {
+                                                        var $navArrows = $('#nav-arrows'),
+                                                                $nav = $('#nav-dots > span'),
+                                                                slitslider = $('#slider').slitslider({
+                                                            onBeforeChange: function(slide, pos) {
 
-                            $nav.removeClass('nav-dot-current');
-                            $nav.eq(pos).addClass('nav-dot-current');
+                                                                $nav.removeClass('nav-dot-current');
+                                                                $nav.eq(pos).addClass('nav-dot-current');
 
-                        }
-                    }),
-                            init = function() {
+                                                            }
+                                                        }),
+                                                                init = function() {
 
-                                initEvents();
+                                                                    initEvents();
 
-                            },
-                            initEvents = function() {
+                                                                },
+                                                                initEvents = function() {
 
-                                // add navigation events
-                                $navArrows.children(':last').on('click', function() {
+                                                                    // add navigation events
+                                                                    $navArrows.children(':last').on('click', function() {
 
-                                    slitslider.next();
-                                    return false;
+                                                                        slitslider.next();
+                                                                        return false;
 
-                                });
+                                                                    });
 
-                                $navArrows.children(':first').on('click', function() {
+                                                                    $navArrows.children(':first').on('click', function() {
 
-                                    slitslider.previous();
-                                    return false;
+                                                                        slitslider.previous();
+                                                                        return false;
 
-                                });
+                                                                    });
 
-                                $nav.each(function(i) {
+                                                                    $nav.each(function(i) {
 
-                                    $(this).on('click', function(event) {
+                                                                        $(this).on('click', function(event) {
 
-                                        var $dot = $(this);
+                                                                            var $dot = $(this);
 
-                                        if (!slitslider.isActive()) {
+                                                                            if (!slitslider.isActive()) {
 
-                                            // $nav.removeClass('nav-dot-current');
-                                            // $dot.addClass('nav-dot-current');
+                                                                                // $nav.removeClass('nav-dot-current');
+                                                                                // $dot.addClass('nav-dot-current');
 
-                                        }
+                                                                            }
 
-                                        slitslider.jump(i + 1);
-                                        return false;
+                                                                            slitslider.jump(i + 1);
+                                                                            return false;
 
-                                    });
+                                                                        });
 
-                                });
+                                                                    });
 
-                            };
+                                                                };
 
-                    return {init: init};
+                                                        return {init: init};
 
-                })();
+                                                    })();
 
-                Page.init();
+                                                    Page.init();
 
 
-            });
+                                                });
 
 
 

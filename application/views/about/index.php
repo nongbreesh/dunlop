@@ -151,14 +151,118 @@
 
                                 <div class="wrapper">
                                     <div class="sidebar-l" ><div class="about_title"></div>
-                                        <ul class="sidemenu">
-                                            <li><a href="#"><img style="" src="<?= base_url() ?>public/images/qa.png"/></a></li>
-                                            <li><a href="#"><img style="" src="<?= base_url() ?>public/images/tech.png"/></a></li>
-                                            <li><a href="#"><img style="" src="<?= base_url() ?>public/images/usage.png"/></a></li>
+                                      
+                                         <ul class="sidemenu">
+                                            <li><a href="<?= base_url() ?>about/blackground"><img style="" src="<?= base_url() ?>public/images/blackground_hover.png" onmouseover="this.src='<?= base_url() ?>public/images/blackground_hover.png'" onmouseout="this.src='<?= base_url() ?>public/images/blackground.png'"/></a></li>
+                                            <li><a href="<?= base_url() ?>about/quality"><img style="" src="<?= base_url() ?>public/images/quality.png" onmouseover="this.src='<?= base_url() ?>public/images/quality_hover.png'" onmouseout="this.src='<?= base_url() ?>public/images/quality.png'"/></a></li>
+                                            <li><a href="<?= base_url() ?>about/museum"><img style="" src="<?= base_url() ?>public/images/museum.png" onmouseover="this.src='<?= base_url() ?>public/images/museum_hover.png'" onmouseout="this.src='<?= base_url() ?>public/images/museum.png'"/></a></li>
                                         </ul>
                                     </div>
-                                    <div class="contact-r ">
-                                        <div class="title_trans-r"> <h1>GL<img style="" src="<?= base_url() ?>public/images/O.png"/>BAL QUALITY</h1></div>
+                                    <div class="contact-r " >
+                                        <div class="title_trans-r"> <h1>BACKGROUND</h1></div>
+                                        <div class="content">
+                                            <table align="center" border="0" cellpadding="0" cellspacing="0" style="width:10px">
+	<tbody>
+		<tr>
+			<td>&nbsp;</td>
+			<td>
+			<p><img alt="JC DUNLOP" src="http://www.dunloptire.co.th/img/jcdunlop.jpg" style="height:209px; width:181px" /></p>
+			</td>
+			<td>
+			<table border="0" cellpadding="0" cellspacing="0" style="width:434px">
+				<tbody>
+					<tr>
+						<td><img src="http://www.dunloptire.co.th/img/profile-topic.jpg" style="height:50px; width:302px" /></td>
+					</tr>
+					<tr>
+						<td>
+						<table border="0" cellpadding="5" cellspacing="0" style="width:434px">
+							<tbody>
+								<tr>
+									<td>วิวัฒนาการยางรถยนต์ที่ต้องเติมลมเส้นแรกเกิดเมื่อปี 1888 จากการคิดค้นของ MR. J.B. Dunlop ชาวอังกฤษ&nbsp;<br />
+									ผู้ริเริ่มพัฒนายางรถยนต์ที่ต้องสูบลมและมียางในเส้นแรกของโลกได้สำเร็จ แรงบันดาลใจของ Dunlop ในการ<br />
+									พัฒนายางรถยนต์ที่ใช้สูบลม (ก่อนหน้านั้นรถยังใช้ยางตัน) เนื่องจากปัญหาของลูกชาย Dunlop จึงคิดทำไส้ใน<br />
+									ยางจักรยานแล้วนำมาสูบลมทำให้เกิดแรงยืดหยุ่นและลดแรงกระแทก วิวัฒนาการดังกล่าวนำไปสู่การปฎิสนธิยาง<br />
+									รถยนต์ที่ถูกพัฒนาควบคู่กันไปอย่างต่อเนื่องกว่า 110 ปี มาแล้ว นี่คือเกียรติยศของ Dunlop ที่ต้องถูกจารึกไว้ใน<br />
+									โลกยานยนต์</td>
+								</tr>
+							</tbody>
+						</table>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td colspan="2">
+			<p><img src="http://www.dunloptire.co.th/img/old-tire.jpg" style="height:120px; width:636px" /></p>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td colspan="2">
+			<table border="0" cellpadding="0" cellspacing="0" style="width:600px">
+				<tbody>
+					<tr>
+						<td><img src="http://www.dunloptire.co.th/img/old-tire2.jpg" style="height:44px; width:332px" /></td>
+					</tr>
+					<tr>
+						<td>
+						<p>ทีมงานวิศวกรของ DUNLOP ถือว่าสร้างผลิตภัณฑ์ยางรถยนต์ที่มีคุณภาพมุ่งมันในความรับผิดชอบต่อสังคมคือภาระกิจที่ต้องทำให้ได้&nbsp;<br />
+						DUNLOP เสาะแสวงหาทีมงานคุณภาพพร้อมทั้งเน้นสิ่งอำนวยความสะดวกในขณะปฏิบัติหน้าที่ รวมถึงการสร้างที่ทำงานที่โอ่โถงให้ความสะดวกสบาย และมีความอบอุ่น โดยเฉพาะ DUNLOP เน้นธรรมาภิบาลในการปกครองอันนำมาสู่ความร่วมมือในการคิดค้นยางรถยนต์คุณภาพระดับพรีเมียม อย่างต่อเนื่อง&nbsp;<br />
+						&nbsp;</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						<p><img src="http://www.dunloptire.co.th/img/old-tire3.jpg" style="height:191px; width:638px" /></p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						<p><img src="http://www.dunloptire.co.th/img/old-tire4.jpg" style="height:156px; width:638px" /></p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						<p><img src="http://www.dunloptire.co.th/img/old-tire5.jpg" style="height:173px; width:638px" /></p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td colspan="2"><img src="http://www.dunloptire.co.th/img/old-tire6.jpg" style="height:45px; width:325px" /></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td colspan="2">
+			<p>บริษัท ซูมิโตโม รับเบอร์อินดัสตรี ประเทศญี่ปุ่นได้ตั้งโรงงานผลิตยางรถยนต์ Dunlop ในประเทศไทยเมื่อปี 2548 ในชื่อบริษัทซูมิโตโม รับเบอร์์&nbsp;<br />
+			(ไทยแลนด์ ) จำกัด หรือในนาม SRT โรงงานแห่งนี้ตั้งขึ้นในบริเวณอุตสาหกรรมอมตะซิตี้ จังหวัดระยอง บนพื้นที่ 346 ไร่ หรือประมาณ 585,000 ตารางเมตร โดยใช้งบการลงทุนจนถึงมิถุนายน 2551 ไปแล้ว 12.2 พันล้านบาท</p>
+
+			<p>โรงงานเฟสแรกได้เริ่มผลิตยางรถยนต์ตั้งแต่เดือนพฤศจิกายน 2549 ด้วยเทคโนโลยีการผลิตแบบใหม่ในชื่อว่า &ldquo;SUN SYSTEM&rdquo; ซึ่งเป็นระบบขบวน การผลิตที่ผสมผสานการผลิตให้เป็นหนึ่งเดียวเพื่อให้ได้ผลการผลิตที่สูงโรงงานเฟสสองได้เริ่มการผลิตเมื่อเดือนตุลาคม 2550 และเมื่อสิ้นสุดปี 2551 โรงงานทั้งสองเฟสจะมีกำลังผลิตยางสำหรับรถยนต์นั่ง รถ SUV เอนกประสงค์ และ รถปิ๊กอัพ รวมกันที่ 28,000 เส้นต่อวันและเพื่อที่จะสามารถ ตอบสนองความต้องการของตลาดยางในอนาคต โรงงาน SRT มีแผนที่จะขยายกำลังการผลิตถึง 73,000 เส้นต่อวันในปี 2553<br />
+			&nbsp;</p>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td colspan="2">
+			<p><img src="http://www.dunloptire.co.th/img/old-tire7.jpg" style="height:142px; width:638px" /></p>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td colspan="2">&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+ <div style="clear:both"></div>
+                                        </div>
+                                        <div style="clear:both"></div>
                                     </div>
                                 </div>
                             </td>

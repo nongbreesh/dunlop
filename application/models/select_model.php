@@ -33,16 +33,28 @@ class select_model extends CI_Model {
                 . " on a.AREA_ID = b.AREA_ID order by a.DEALER_ID");
         return $query->result();
     }
-
+   function get_dealer_list_by_id($id) {
+        $query = $this->db->query("SELECT  * FROM dealer_detail a"
+                . " inner join dealer_area b"
+                . " on a.AREA_ID = b.AREA_ID "
+                . " where a.AREA_ID = ".$id);
+        return $query->result();
+    }
     function get_area_list($zone_id) {
         $query = $this->db->query("SELECT  * FROM dealer_area a"
                 . " where a.ZONE_ID = " . $zone_id);
         return $query->result();
     }
+    
 
     function get_dunlop_zone() {
         $query = $this->db->query("SELECT  * FROM dealer_zone");
         return $query->result();
+    }
+    
+        function get_dunlop_zone_by_id($zone_id) {
+        $query = $this->db->query("SELECT  * FROM dealer_zone where ZONE_ID = ".$zone_id);
+        return $query->row();
     }
 
     function get_tire_width() {

@@ -12,7 +12,6 @@
               type="text/css" />
         <link href="<?= base_url('public') ?>/css/animate.css" rel="stylesheet"
               type="text/css" />
-        <link rel="stylesheet" type="text/css" href="<?= base_url('public') ?>/css/bootstrap.css" />
         <link rel="stylesheet" type="text/css" href="<?= base_url('public') ?>/css/custom.css" />
         <link rel="stylesheet" type="text/css" href="<?= base_url('public') ?>/css/style.css" />
         <script type="text/javascript" src="<?= base_url('public') ?>/js/modernizr.custom.79639.js"></script>
@@ -44,20 +43,20 @@
                         </tr>
                     </table>
                     <div class="menu">
-                        <table id="Table_01" width="688" height="42" border="0" cellpadding="0" cellspacing="0">
+                        <table id="Table_01" width="696" height="42" border="0" cellpadding="0" cellspacing="0">
                             <tr>
                                 <td>
-                                    <a href="<?= base_url() ?>home"><img src="<?= base_url() ?>public/images/menu/address/menu_01.png" width="99" height="42" alt=""/></a></td>
+                                    <a href="<?= base_url() ?>home"><img src="<?= base_url() ?>public/images/menu/about/menu_01.png" width="98" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>product"> <img src="<?= base_url() ?>public/images/menu/address/menu_02.png" width="92" height="42" alt=""/></a></td>
+                                    <a href="<?= base_url() ?>product"> <img src="<?= base_url() ?>public/images/menu/about/menu_02.png" width="95" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>knowledge"><img src="<?= base_url() ?>public/images/menu/address/menu_03.png" width="135" height="42" alt=""/></a></td>
+                                    <a href="<?= base_url() ?>knowledge"><img src="<?= base_url() ?>public/images/menu/about/menu_03.png" width="104" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>about">  <img src="<?= base_url() ?>public/images/menu/address/menu_04.png" width="93" height="42" alt=""/></a></td>
+                                    <a href="<?= base_url() ?>about">  <img src="<?= base_url() ?>public/images/menu/about/menu_04.png" width="174" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>address"><img src="<?= base_url() ?>public/images/menu/address/menu_05.png" width="157" height="42" alt=""/></a></td>
+                                    <a href="<?= base_url() ?>address"><img src="<?= base_url() ?>public/images/menu/about/menu_05.png" width="107" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>contact"><img src="<?= base_url() ?>public/images/menu/address/menu_06.png" width="112" height="42" alt=""/></a></td>
+                                    <a href="<?= base_url() ?>contact"><img src="<?= base_url() ?>public/images/menu/about/menu_06.png" width="118" height="42" alt=""/></a></td>
                             </tr>
                         </table>
                     </div>
@@ -150,76 +149,60 @@
                         <tr>
                             <td> 
 
-                                <div class="contact" style="margin-top: -20px;">
-                                    <div class="title_trans"><h1>ตัวแทนจำหน่าย <img style="margin-top: -14px;
-                                                                                    margin-left: -5px; " src="<?= base_url() ?>public/images/add_loc_icon.png"/></h1> </div>
-
-                                    <?php if ($id == 1): ?>
-                                        <div class="mapaddress bg1"></div>
-                                    <?php elseif ($id == 2): ?>
-                                        <div class="mapaddress bg2"></div>
-                                    <?php elseif ($id == 3): ?>
-                                        <div class="mapaddress bg3"></div>
-                                    <?php elseif ($id == 4): ?>
-                                        <div class="mapaddress bg4"></div>
-                                    <?php elseif ($id == 5): ?>
-                                        <div class="mapaddress bg5"></div>
-                                    <?php elseif ($id == 6): ?>
-                                        <div class="mapaddress bg6"></div>
-                                    <?php elseif ($id == 7): ?>
-                                        <div class="mapaddress bg7"></div>
-
-                                    <?php endif; ?>
-
-
-                                    <div class="dealer_list">
-
-                                        <?php foreach ($zone_list as $each): ?>
-                                            <div class="zone_name">
-                                                <?php if ($id == $each->ZONE_ID): ?>
-                                                    <a class="active" href="<?= base_url() ?>address/zone/<?= $each->ZONE_ID ?>"><?= $each->ZONE_NAME ?></a>
-                                                <?php else: ?>
-                                                    <a href="<?= base_url() ?>address/zone/<?= $each->ZONE_ID ?>"><?= $each->ZONE_NAME ?></a>
-                                                <?php endif; ?>
-                                            </div>
-                                        <?php endforeach; ?>
+                                <div class="wrapper">
+                                    <div class="sidebar-l" ><div class="about_title"></div>
+                                      
+                                         <ul class="sidemenu">
+                                            <li><a href="<?= base_url() ?>about/blackground"><img style="" src="<?= base_url() ?>public/images/blackground.png" onmouseover="this.src='<?= base_url() ?>public/images/blackground_hover.png'" onmouseout="this.src='<?= base_url() ?>public/images/blackground.png'"/></a></li>
+                                            <li><a href="<?= base_url() ?>about/quality"><img style="" src="<?= base_url() ?>public/images/quality.png" onmouseover="this.src='<?= base_url() ?>public/images/quality_hover.png'" onmouseout="this.src='<?= base_url() ?>public/images/quality.png'"/></a></li>
+                                            <li><a href="<?= base_url() ?>about/museum"><img style="" src="<?= base_url() ?>public/images/museum_hover.png" onmouseover="this.src='<?= base_url() ?>public/images/museum_hover.png'" onmouseout="this.src='<?= base_url() ?>public/images/museum.png'"/></a></li>
+                                        </ul>
                                     </div>
+                                    <div class="contact-r " >
+                                        <div class="title_trans-r"> <h1>MUSEUM</h1></div>
+                                        <div class="content">
+                                           <h1>&nbsp;</h1>
 
-                                    <div class="province_list">
-                                        <h1><?= $zone_header ?></h1>
-                                        <?php foreach ($area_list as $each): ?>
-                                            <div class="area_name">
-                                                <?php if ($area == $each->AREA_ID): ?>
-                                                    <a class="active" href="<?= base_url() ?>address/zone/<?= $each->ZONE_ID ?>/<?= $each->AREA_ID ?>"><?= $each->AREA_NAME ?></a>
-                                                <?php else: ?>
-                                                    <a href="<?= base_url() ?>address/zone/<?= $each->ZONE_ID ?>/<?= $each->AREA_ID ?>"><?= $each->AREA_NAME ?></a>
-                                                <?php endif; ?>
-                                            </div>
-                                        <?php endforeach; ?>
-                                    </div>
+<table border="0" cellpadding="5" cellspacing="0" style="width:100%">
+	<tbody>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>
+			<p><img alt="ความเป็นมาและวิวัฒนาการของดันลอปไทร์" src="http://www.dunloptire.co.th/img/musuem-topic.jpg" style="height:46px; width:242px" /></p>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>Dunlop มีเครือข่ายครอบคลุมไปกว่า 166 ประเทศทั่วโลก และ มีฐานการผลิตอยู่ใน 3 ทวีป เชื่อมโยงเครือข่ายตลาดยางรถยนต์ทั่วโลก สามารถรองรับการเติบโตของธุรกิจยานยนต์ ได้อย่างครบวงจร</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td><strong>Photo Collection</strong></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td><strong>Poster Collection</strong></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>
+			<p>&nbsp;</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
 
-                                    <div class="dealer_detail">
-                                        <table class="tb_dealer_detail">
-                                            <thead>
-                                                <tr>
-                                                    <th>ผู้แทนจำหน่าย</th>
-                                                    <th>ที่อยู่</th>
-                                                    <th>เบอร์โทร</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
+<h1>&nbsp;</h1>
 
-                                                <?php foreach ($dealer_detail as $each): ?>
-                                                    <tr>
-                                                        <td><?= $each->Dealer_Name ?> </td>
-                                                        <td><?= $each->Dealer_Address ?> </td>
-                                                        <td><?= $each->Dealer_Tel ?> </td>
-                                                    </tr>
-                                                <?php endforeach; ?>
-
-                                            </tbody>
-                                        </table>
-
+ <div style="clear:both"></div>
+                                        </div>
+                                        <div style="clear:both"></div>
                                     </div>
                                 </div>
                             </td>

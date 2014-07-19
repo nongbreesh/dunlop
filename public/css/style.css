@@ -233,6 +233,7 @@ select{
     height: 1020px;
     width: 946px;
     background: url('../images/bg-trans.png')  no-repeat;
+    position: relative;
 }
 
 
@@ -302,12 +303,14 @@ p.contact_detail{
     width: 667px;
     background: url('../images/bg-trans-r.png')  no-repeat;
     float: right;
+    position: relative;
+   
 }
 
 .title_trans-r{
     height: 71px;
     width: 944px;
-    background: url('../images/bg_title_trans-r.png') no-repeat;
+    background: url('../images/bg_title_trans-r.png') repeat-y;
     float: left;
     position: relative;
 
@@ -350,4 +353,129 @@ p.contact_detail{
 
 .border-radius{
     border-radius: 5px;
+}
+
+.mapaddress{
+    width: 251px;
+    height: 463px;
+    position: absolute;
+    top:80px;
+    left: 20px;
+    background: url('../images/address/map1.png')  no-repeat;
+}
+
+.mapaddress.bg1{
+    background: url('../images/address/map1.png')  no-repeat;
+}
+.mapaddress.bg2{
+    background: url('../images/address/map4.png')  no-repeat;
+}
+
+.mapaddress.bg3{
+    background: url('../images/address/map3.png')  no-repeat;
+}
+
+.mapaddress.bg4{
+    background: url('../images/address/map5.png')  no-repeat;
+}
+
+.mapaddress.bg5{
+    background: url('../images/address/map1.png')  no-repeat;
+}
+
+.mapaddress.bg6{
+    background: url('../images/address/map6.png')  no-repeat;
+}
+.mapaddress.bg7{
+    background: url('../images/address/map2.png')  no-repeat;
+}
+
+.dealer_list{
+    background: url('../images/address/dealer_zone.png')  no-repeat;
+    width: 172px;
+    height: 202px;
+    position: absolute;
+    top: 300px;
+    left: 210px;
+    padding-top: 36px;
+}
+
+.province_list{
+    width: 550px;
+    min-height: 200px;
+    position: absolute;
+    left: 390px;
+    padding: 10px;
+}
+.province_list h1{
+    font: 30px 'ThaiSansNeue-Bold';
+    color: #ffde00;
+}
+.area_name a{
+    background: url('../images/address/pin3.png') no-repeat 0px;
+    font: 18px 'ThaiSansNeue-Bold';
+    display: block;
+    float: left;
+    width: 100px;
+    color: #fff;
+    padding-left: 14px;
+    margin: 6px 13px;
+    text-decoration: none;
+}
+.zone_name a{
+    background: url('../images/address/pin4.png') no-repeat 0px;
+    font: 20px 'ThaiSansNeue-Bold';
+    display: block;
+    float: left;
+    width: 170px;
+    color: #fff;
+    padding-left: 14px;
+    margin: -1px 15px;
+    text-decoration: none;
+}
+.zone_name a:hover,.area_name a:hover{
+    color: #ffde00;
+}
+.zone_name a.active,.area_name a.active{
+    color: #ffde00;
+}
+.dealer_detail{
+    color: #fff;
+    position: absolute;
+    top: 555px;
+    width: 915px;
+    padding: 10px;
+    margin: 15px;
+}
+table .tb_dealer_detail{
+    width: 100%;
+    border: 3px solid #ffde00;
+}
+table .tb_dealer_detail  thead{
+    background: #343434;
+    color: #ffde00;
+
+}
+table .tb_dealer_detail  thead tr th{
+    text-align: center;
+    padding: 5px;
+    font:18px 'ThaiSansNeue-Regular';
+    border: 2px #a7a8a8 solid;
+}
+
+table .tb_dealer_detail  tbody tr td{
+    padding: 8px;
+    color: #363636;
+    font:16px 'ThaiSansNeue-Regular';
+    border: 2px #a7a8a8 solid;
+}
+table .tb_dealer_detail  tbody tr:nth-child(even) {background: #fce650}
+table .tb_dealer_detail  tbody tr:nth-child(odd) {background: #e9e9e9}
+.content{
+    background: #f7de29;
+    margin: 10px;
+    border-radius: 5px;
+    margin-top: 80px;
+    height: 720px;
+         overflow-y: scroll;
 }
