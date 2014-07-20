@@ -173,7 +173,7 @@
 			<td>
 			<p>หากท่านต้องการสอบถามข้อมูลเพิ่มเติม สามารถแจ้งคำถามที่ต้องการได้ที่&nbsp;<a href="mailto:marketing@dunloptire.co.th">marketing@dunloptire.co.th</a></p>
 
-			<p><img src="http://www.dunloptire.co.th/img/hr.jpg" style="height:2px; width:729px" /><br />
+			<p><img src="http://www.dunloptire.co.th/img/hr.jpg" style="height:2px; width:640px" /><br />
 			&nbsp;</p>
 			</td>
 		</tr>
@@ -194,7 +194,7 @@
 			7. กรุณาใช้ยางในประเภทเดียวกันสำหรับรถยนต์คันเดียวกัน<br />
 			8. ควรทำการประกอบยางกับรถยนต์โดยให้ดอกยางหันไปตามทิศทางที่กำหนดเพื่อให้การใช้งานได้อย่างมีประสิทธิภาพ</p>
 
-			<p><img alt="line" src="http://www.dunloptire.co.th/img/hr.jpg" style="height:2px; width:729px" /><br />
+			<p><img alt="line" src="http://www.dunloptire.co.th/img/hr.jpg" style="height:2px; width:640px" /><br />
 			&nbsp;</p>
 			</td>
 		</tr>
@@ -227,7 +227,7 @@
 
 			<p><img src="http://www.dunloptire.co.th/img/tirebasic-topic2-2.jpg" style="height:35px; width:303px" /></p>
 
-			<p><img alt="line" src="http://www.dunloptire.co.th/img/hr.jpg" style="height:2px; width:729px" /></p>
+			<p><img alt="line" src="http://www.dunloptire.co.th/img/hr.jpg" style="height:2px; width:640px" /></p>
 			</td>
 		</tr>
 		<tr>
@@ -247,7 +247,7 @@
 			6. ขนาดยางและล้อมีผลต่อสมรรถนะรถยนต์ ถ้ามีขนาดใหญ่เกินไปรถยนต์จะออกตัวช้าและเข็มไมล์คลาดเคลื่อน ถ้ามีขนาดเล็กเกินไปรถยนต์จะออกตัวเร็ว<br />
 			และเข็มไมล์คลาดเคลื่อน</p>
 
-			<p><img alt="line" src="http://www.dunloptire.co.th/img/hr.jpg" style="height:2px; width:729px" /><br />
+			<p><img alt="line" src="http://www.dunloptire.co.th/img/hr.jpg" style="height:2px; width:640px" /><br />
 			&nbsp;</p>
 			</td>
 		</tr>
@@ -268,7 +268,7 @@
 			5. เมื่อเปลี่ยนยางใหม่จะต้องทำการตรวจสอบการรั่วไหลของลมยางทุกครั้ง<br />
 			6. เมื่อเปลี่ยนยางใหม่จะต้องทำการเปลี่ยนจุ๊บลมใหม่ทุกครั้ง</p>
 
-			<p><img alt="line" src="http://www.dunloptire.co.th/img/hr.jpg" style="height:2px; width:729px" /><br />
+			<p><img alt="line" src="http://www.dunloptire.co.th/img/hr.jpg" style="height:2px; width:640px" /><br />
 			&nbsp;</p>
 			</td>
 		</tr>
@@ -287,7 +287,7 @@
 			6. รูปภาพยางที่อยู่ในแผ่นโฆษณาจะมีรูปร่างและขนาดไม่เท่ากับของจริง<br />
 			7. แก้มยางมีการแสดงข้อมูลเฉพาะและคุณสมบัติในการใช้งาน เพื่อให้ผู้ใช้สามารถเลือกใช้ยางได้ตรงความต้องการในการใช้งาน</p>
 
-			<p><img alt="line" src="http://www.dunloptire.co.th/img/hr.jpg" style="height:2px; width:729px" /></p>
+			<p><img alt="line" src="http://www.dunloptire.co.th/img/hr.jpg" style="height:2px; width:640px" /></p>
 			</td>
 		</tr>
 		<tr>

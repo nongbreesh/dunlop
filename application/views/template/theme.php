@@ -202,19 +202,19 @@
                                                     <td><img src="<?= base_url() ?>public/images/home/product_1.png" /></td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="product_2"><a href="#" >PASSENGER CAR TIRE</a></td>
+                                                    <td class="product_2"><a href="<?= base_url() ?>product" >PASSENGER CAR TIRE</a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="product_3"><a href="#" >PICKUP</a></td>
+                                                    <td class="product_3"><a href="<?= base_url() ?>product/product_pickup" >PICKUP</a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td  class="product_4"><a href="#">SUV/4x4 TIRE</a></td>
+                                                    <td  class="product_4"><a href="<?= base_url() ?>product/product_4x4">SUV/4x4 TIRE</a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td  class="product_5"><a href="#">OEM</a></td>
+                                                    <td  class="product_5"><a href="<?= base_url() ?>product/product_oem">OEM</a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="product_6"><a href="#" >WARRANTY POLICY</a></td>
+                                                    <td class="product_6"><a href="<?= base_url() ?>product/warranty" >WARRANTY POLICY</a></td>
                                                 </tr>
                                                 <tr>
                                                     <td><img src="<?= base_url() ?>public/images/home/product_7.png" /></td>
@@ -288,7 +288,7 @@
                                                 <ul class="bxslider">
                                                     <?php foreach ($dunlop_news as $each): ?>
                                                         <li>
-                                                            <div class="whatnews_frame" style="cursor: pointer;"><img onclick="location.href='<?= $each->NEWS_URL ?>'" src="<?= base_url() ?>administrator/public/uploads/<?= str_replace('thumb_', '', $each->NEWS_IMG) ?>" width="100%" /></div>
+                                                            <div class="whatnews_frame" style="cursor: pointer;"><img onclick="location.href = '<?= $each->NEWS_URL ?>'" src="<?= base_url() ?>administrator/public/uploads/<?= str_replace('thumb_', '', $each->NEWS_IMG) ?>" width="100%" /></div>
                                                             <p><?= $each->NEWS_Headline ?></p>
                                                         </li>
                                                     <?php endforeach; ?>
@@ -353,83 +353,83 @@
         <script type="text/javascript" src="<?= base_url() ?>public/js/jquery.ba-cond.min.js"></script>
         <script type="text/javascript" src="<?= base_url() ?>public/js/jquery.slitslider.js"></script>
         <script type="text/javascript">
-                                                            $(document).ready(function() {
+                                                                $(document).ready(function() {
 
-                                                                var Page = (function() {
+                                                                    var Page = (function() {
 
-                                                                    var $navArrows = $('#nav-arrows'),
-                                                                            $nav = $('#nav-dots > span'),
-                                                                            slitslider = $('#slider').slitslider({
-                                                                        onBeforeChange: function(slide, pos) {
+                                                                        var $navArrows = $('#nav-arrows'),
+                                                                                $nav = $('#nav-dots > span'),
+                                                                                slitslider = $('#slider').slitslider({
+                                                                            onBeforeChange: function(slide, pos) {
 
-                                                                            $nav.removeClass('nav-dot-current');
-                                                                            $nav.eq(pos).addClass('nav-dot-current');
+                                                                                $nav.removeClass('nav-dot-current');
+                                                                                $nav.eq(pos).addClass('nav-dot-current');
 
-                                                                        }
-                                                                    }),
-                                                                            init = function() {
+                                                                            }
+                                                                        }),
+                                                                                init = function() {
 
-                                                                                initEvents();
+                                                                                    initEvents();
 
-                                                                            },
-                                                                            initEvents = function() {
+                                                                                },
+                                                                                initEvents = function() {
 
-                                                                                // add navigation events
-                                                                                $navArrows.children(':last').on('click', function() {
+                                                                                    // add navigation events
+                                                                                    $navArrows.children(':last').on('click', function() {
 
-                                                                                    slitslider.next();
-                                                                                    return false;
-
-                                                                                });
-
-                                                                                $navArrows.children(':first').on('click', function() {
-
-                                                                                    slitslider.previous();
-                                                                                    return false;
-
-                                                                                });
-
-                                                                                $nav.each(function(i) {
-
-                                                                                    $(this).on('click', function(event) {
-
-                                                                                        var $dot = $(this);
-
-                                                                                        if (!slitslider.isActive()) {
-
-                                                                                            // $nav.removeClass('nav-dot-current');
-                                                                                            // $dot.addClass('nav-dot-current');
-
-                                                                                        }
-
-                                                                                        slitslider.jump(i + 1);
+                                                                                        slitslider.next();
                                                                                         return false;
 
                                                                                     });
 
-                                                                                });
+                                                                                    $navArrows.children(':first').on('click', function() {
 
-                                                                            };
+                                                                                        slitslider.previous();
+                                                                                        return false;
 
-                                                                    return {init: init};
+                                                                                    });
 
-                                                                })();
+                                                                                    $nav.each(function(i) {
 
-                                                                Page.init();
+                                                                                        $(this).on('click', function(event) {
+
+                                                                                            var $dot = $(this);
+
+                                                                                            if (!slitslider.isActive()) {
+
+                                                                                                // $nav.removeClass('nav-dot-current');
+                                                                                                // $dot.addClass('nav-dot-current');
+
+                                                                                            }
+
+                                                                                            slitslider.jump(i + 1);
+                                                                                            return false;
+
+                                                                                        });
+
+                                                                                    });
+
+                                                                                };
+
+                                                                        return {init: init};
+
+                                                                    })();
+
+                                                                    Page.init();
 
 
-                                                            });
+                                                                });
 
 
-                                                            function showvdo(id) {
+                                                                function showvdo(id) {
 
-                                                                var videoWrap = document.getElementById('vdo');
-                                                                var element = document.getElementById(id);
-                                                                var src = element.getAttribute('data-value');
-                                                                // alert(src);
-                                                                videoWrap.innerHTML = '<embed src=' + src + ' type="application/x-shockwave-flash" width="425" height="230" allowscriptaccess="never" allowfullscreen="true"></embed>';
+                                                                    var videoWrap = document.getElementById('vdo');
+                                                                    var element = document.getElementById(id);
+                                                                    var src = element.getAttribute('data-value');
+                                                                    // alert(src);
+                                                                    videoWrap.innerHTML = '<embed src=' + src + ' type="application/x-shockwave-flash" width="425" height="230" allowscriptaccess="never" allowfullscreen="true"></embed>';
 
-                                                            }
+                                                                }
         </script>
     </body>
 </html>

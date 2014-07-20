@@ -12,6 +12,17 @@ class select_model extends CI_Model {
         return $query->result();
     }
 
+    function get_dunlop_tireDiameter_by_pid($id) {
+        $query = $this->db->query("SELECT distinct(Tire_Diameter) as Tire_Diamete  FROM `dunlop_tire` WHERE `Product_ID` = " . $id . "  ORDER BY `dunlop_tire`.`Tire_ID`  ASC");
+        return $query->result();
+    }
+    
+        function get_dunlop_tire_by_Diameter($id,$Diameter) {
+        $query = $this->db->query("SELECT *  FROM `dunlop_tire` WHERE `Product_ID` = " . $id . "  and `Tire_Diameter` = " . $Diameter . "  ORDER BY `dunlop_tire`.`Tire_ID`  ASC");
+        return $query->result();
+    }
+
+
     function get_dunlop_contact() {
         $query = $this->db->query("SELECT  * FROM dunlop_contact");
         return $query->result();
@@ -33,27 +44,28 @@ class select_model extends CI_Model {
                 . " on a.AREA_ID = b.AREA_ID order by a.DEALER_ID");
         return $query->result();
     }
-   function get_dealer_list_by_id($id) {
+
+    function get_dealer_list_by_id($id) {
         $query = $this->db->query("SELECT  * FROM dealer_detail a"
                 . " inner join dealer_area b"
                 . " on a.AREA_ID = b.AREA_ID "
-                . " where a.AREA_ID = ".$id);
+                . " where a.AREA_ID = " . $id);
         return $query->result();
     }
+
     function get_area_list($zone_id) {
         $query = $this->db->query("SELECT  * FROM dealer_area a"
                 . " where a.ZONE_ID = " . $zone_id);
         return $query->result();
     }
-    
 
     function get_dunlop_zone() {
         $query = $this->db->query("SELECT  * FROM dealer_zone");
         return $query->result();
     }
-    
-        function get_dunlop_zone_by_id($zone_id) {
-        $query = $this->db->query("SELECT  * FROM dealer_zone where ZONE_ID = ".$zone_id);
+
+    function get_dunlop_zone_by_id($zone_id) {
+        $query = $this->db->query("SELECT  * FROM dealer_zone where ZONE_ID = " . $zone_id);
         return $query->row();
     }
 
@@ -81,7 +93,7 @@ class select_model extends CI_Model {
         $query = $this->db->query("SELECT  * FROM dealer_area where ZONE_ID = " . $zone_id);
         return $query->result();
     }
-    
+
     function get_dunlop_news() {
         $query = $this->db->query("SELECT  * FROM dunlop_news");
         return $query->result();

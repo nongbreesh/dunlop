@@ -248,6 +248,7 @@ select{
     font:50px 'ThaiSansNeue-Bold';
     margin-left: 20px;
 }
+
 p.contact_detail{
     color:#ffffff;
     font:20px 'ThaiSansNeue-Regular';
@@ -291,21 +292,68 @@ p.contact_detail{
     height: 303px;
     border: 2px #000 solid;
 }
-
-.sidebar-l{
-    height: 290px;
+.sidebar-l:before{
+    height: 10px;
     width: 266px;
-    background: url('../images/sidebar_bg.png')  no-repeat;
+    background: url('../images/sidebar_bg_top.png')  no-repeat;
+    top: -10px;
+    content: '';
+    position: absolute;
+    z-index: -1; /* push it to the background */
+    right: 0;
+    left: 0;
+}
+.sidebar-l:after{
+    height: 10px;
+    width: 266px;
+    background: url('../images/sidebar_bg_bot.png')  no-repeat;
+    content: '';
+    position: absolute;
+    z-index: -1; /* push it to the background */
+    bottom:-10px; /* position it off the top background */
+    right: 0;
+    left: 0;
+}
+.sidebar-l{
+    top: 10px;
+    display: block;
+    width: 266px;
+    background: url('../images/sidebar_bg.png') ;
     float: left;
+    position: relative;
+}
+.contact-r:before{
+    height: 18px;
+    width: 667px;
+    content: '';
+    position: absolute;
+    z-index: -1; /* push it to the background */
+    top: 0px; /* position it off the top background */
+    right: 0;
+    left: 0;
+    background: url('../images/bg-trans-r-top.png')  no-repeat;
+}
+
+.contact-r:after{
+    height:17px;
+    width: 667px;
+    content: '';
+    position: absolute;
+    z-index: -1; /* push it to the background */
+    bottom:  -5px; /* position it off the top background */
+    right: 0;
+    left: 0;
+    background: url('../images/bg-trans-r-bot.png')  no-repeat;
 }
 .contact-r{
-    height: 812px;
     width: 667px;
-    background: url('../images/bg-trans-r.png')  no-repeat;
+    background: url('../images/bg-trans-r.png') repeat-y;
     float: right;
     position: relative;
-   
 }
+
+
+
 
 .title_trans-r{
     height: 71px;
@@ -322,6 +370,11 @@ p.contact_detail{
     position: absolute;
     top: -35px;
 }
+.contact-r  h2{
+    color:#fff;
+    font:18px 'ThaiSansNeue-Bold';
+    margin-left: 20px;
+}
 .knowledge_title{
     height: 76px;
     width: 236px;
@@ -335,6 +388,16 @@ p.contact_detail{
     height: 75px;
     width: 235px;
     background: url('../images/about-logo.png') no-repeat;
+    float: left;
+    position: relative;
+    margin: 12px;
+
+}
+
+.product_title{
+    height: 80px;
+    width: 238px;
+    background: url('../images/product/Product_menu.png') no-repeat;
     float: left;
     position: relative;
     margin: 12px;
@@ -472,10 +535,261 @@ table .tb_dealer_detail  tbody tr td{
 table .tb_dealer_detail  tbody tr:nth-child(even) {background: #fce650}
 table .tb_dealer_detail  tbody tr:nth-child(odd) {background: #e9e9e9}
 .content{
-    background: #f7de29;
+    background: #fce75e;
     margin: 10px;
     border-radius: 5px;
     margin-top: 80px;
-    height: 720px;
-         overflow-y: scroll;
+    font: 16px 'ThaiSansNeue-Bold';
+}
+
+.list_bar{
+    padding:0px 20px;
+}
+/* Clean up the lists styles */
+ul.accordion {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Hide the radio buttons */
+/* These are what allow us to toggle content panes */
+ul.accordion label + input[type='radio'] {
+    display: none;
+}
+
+/* Give each content pane some styles */
+ul.accordion li {
+}
+
+/* Make the main tab look more clickable */
+ul.accordion label {
+    background: url('../images/list_bar.png') no-repeat;
+    color: #1c1c1c;
+    display: block;
+    font: 20px 'ThaiSansNeue-Bold';
+    height: 31px;
+    padding-left: 30px;
+    text-shadow: 1px 1px #FFF36B;
+}
+
+ul.accordion label:hover {
+    cursor: pointer;
+}
+
+
+/* Set up the div that will show and hide */
+ul.accordion div.content_list {
+    overflow: hidden;
+    margin: 0 10px;
+    padding: 0 10px;
+    display: none;
+    background-color: #fce75e;
+    font: 16px 'ThaiSansNeue-Bold';
+}
+ul.accordion div.content_list  img{
+    margin: 10px;
+}
+/* Show the content boxes when the radio buttons are checked */
+ul.accordion label + input[type='radio']:checked + div.content_list {
+    display: block;
+}
+
+.passenger_car_graph{
+    margin: 0 auto;
+    background: url('../images/product/pass_graph.png') no-repeat;
+    width: 637px;
+    height: 281px;
+    margin-top: 80px;
+    position: relative;
+}
+.passenger_car_graph .point1{
+    position: absolute;
+    background: url('../images/product/pass_graph_1.png') no-repeat;
+    width: 85px;
+    height: 16px;
+    top: 77px;
+    left: 122px;
+}
+.passenger_car_graph .point2{
+    position: absolute;
+    background: url('../images/product/pass_graph_2.png') no-repeat;
+    width: 107px;
+    height: 33px;
+    top: 86px;
+    left: 361px;
+}
+.passenger_car_graph .point3{
+    position: absolute;
+    background: url('../images/product/pass_graph_3.png') no-repeat;
+    width: 81px;
+    height: 32px;
+    top: 77px;
+    left: 122px;
+    top: 140px;
+    left: 270px;
+}
+.passenger_car_graph .point4{
+    position: absolute;
+    background: url('../images/product/pass_graph_4.png') no-repeat;
+    width: 84px;
+    height: 18px;
+    top: 199px;
+    left: 495px;
+}
+.passenger_car_graph .point5{
+    position: absolute;
+    background: url('../images/product/pass_graph_5.png') no-repeat;
+    width: 88px;
+    height: 25px;
+    top: 172px;
+    left: 451px;
+}
+.passenger_car_graph .point6{
+    position: absolute;
+    background: url('../images/product/pass_graph_6.png') no-repeat;
+    width: 86px;
+    height: 31px;
+    top: 150px;
+    left: 388px;
+}
+
+.passenger_car_use{
+    margin: 0 auto;
+    margin-top: 30px;
+    background: url('../images/product/pass_img_1.jpg') no-repeat;
+    width: 635px;
+    height: 303px;
+    top: 77px;
+    left: 122px;
+}
+.passenger_car_graph  a{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+
+.passenger_car_size:before{
+    margin: 0 auto;
+    background: url('../images/product/detail_table_1.png') no-repeat;
+    width: 242px;
+    height: 30px;
+    top: -30px;
+    content: '';
+    position: absolute;
+    z-index: 10;
+    left: 0;
+}
+.passenger_car_size{
+    margin: 10px auto;
+    width: 645px;;
+    min-height: 200px;
+    margin-top: 60px;
+    position: relative;
+    background:#fddd00;
+    position: relative;
+    padding: 5px;
+}
+.passenger_car_size table{
+
+}
+.passenger_car_size table thead{
+    color: #ffde00; 
+    background:#343434;
+}
+.passenger_car_size table thead tr th{
+    padding: 5px;
+    font:18px 'ThaiSansNeue-Regular';
+    border: 1px #a4b0a2 solid;
+    text-align: center;
+}
+
+.passenger_car_size table  tbody tr td{
+    padding: 8px;
+    color: #363636;
+    border: 1px #a4b0a2 solid;
+    font:16px 'ThaiSansNeue-Regular';
+}
+.passenger_car_size table  tfoot tr{
+    font:16px 'ThaiSansNeue-Regular';
+    height:35px;
+    background: #343434;
+    color: #fff;
+}
+.passenger_car_size table  tbody tr:nth-child(even) {background: #fbe64f}
+.passenger_car_size table   tbody tr:nth-child(odd) {background: #e9e9e9}
+.tire-f{
+    background: #3f3f37;
+    color: #ffde00 !important;
+}
+
+.passenger_car{
+    margin: 10px auto;
+    width: 645px;;
+    min-height: 200px;
+    margin-top: 80px;
+    position: relative;
+    padding: 5px;
+}
+.btn_warranty{
+    background: url('../images/product/warranty_button_1.png') no-repeat;
+    width: 151px;
+    height: 29px;
+    display: block;
+    float: left;
+}
+.btn_warranty.active{
+    background: url('../images/product/warranty_button_1_OV.png') no-repeat;
+}
+
+.btn_warranty2{
+    background: url('../images/product/warranty_button_2.png') no-repeat;
+    width: 340px;
+    height: 29px;
+    display: block;
+    float: left;
+}
+.btn_warranty2.active{
+    background: url('../images/product/warranty_button_2_OV.png') no-repeat;
+}
+
+.btn_prodinfo{
+    background: url('../images/product/detail_button_1.png') no-repeat;
+    width: 108px;
+    height: 29px;
+    display: block;
+    float: left;
+
+}
+.btn_prodinfo.active{
+    background: url('../images/product/detail_button_1_OV.png') no-repeat;
+}
+.btn_tech{
+    background: url('../images/product/detail_button_2.png') no-repeat;
+    width: 108px;
+    height: 29px;
+    display: block;
+    float: left;
+}
+.btn_tech.active{
+    background: url('../images/product/detail_button_2_OV.png') no-repeat;
+}
+#prodinfo,#tech{
+    width: 100%;
+    font: 18px 'ThaiSansNeue-Regular';
+    color: #fff;
+    margin-top: 32px;
+}
+#prodinfo img{
+    max-width: 200px;
+    margin: 10px;
+}
+#tech img{
+    max-width: 600px;
+    text-align: center;
+}
+#tech{
+
 }

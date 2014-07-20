@@ -29,7 +29,11 @@
         </script>
     </head>
     <body background="<?= base_url() ?>public/images/home/bg_2.jpg" style="margin:auto">
-
+        <?php
+        if ($sent == true) {
+            echo "<script>alert('ส่งข้อความแล้วค่ะ');</script>";
+        }
+        ?>
         <!-- start table 3x3-->
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr height="78" >
@@ -157,20 +161,20 @@
                                     <div class="col-xs-6">
                                         <span class="c_danger">กรุณากรอกข้อมูลที่มีเครื่องหมาย * ให้ครบถ้วน</span>
 
-                                        <form role="form">
+                                        <form role="form" method="post">
                                             <table class="contact_form">
                                                 <tr>
-                                                    <td ><label>ชื่อ :</label><br/><input type="text" id="exampleInputEmail1" class="form-control" ></input></td>
-                                                    <td ><label>นามสกุล :</label><br/><input type="text" id="exampleInputEmail1" class="form-control" ></input></td>
+                                                    <td ><label>ชื่อ :</label><br/><input required="required" type="text"  class="form-control"  id="firstname" name="firstname"></input></td>
+                                                    <td ><label>นามสกุล :</label><br/><input required="required"  type="text"  class="form-control" id="lastname" name="lastname" ></input></td>
                                                 </tr>
                                                 <tr>
-                                                    <td  colspan="2"><label>ที่อยู่ :</label><br/><textarea class="form-control" rows="3"></textarea></td>
+                                                    <td  colspan="2"><label>ที่อยู่ :</label><br/><textarea required="required"  class="form-control" id="address" name="address" rows="3"></textarea></td>
 
                                                 </tr>
                                                 <tr>
-                                                    <td ><label>จังหวัด :</label><br/><select class="form-control">
+                                                    <td ><label>จังหวัด :</label><br/><select required="required"  class="form-control" id="province" name="province">
 
-                                                            <option value="-1" selected="selected">=====โปรดเลือก=====</option>
+                                                            <option value="" selected="selected">=====โปรดเลือก=====</option>
                                                             <option value="8">กระบี่</option>
                                                             <option value="9">กรุงเทพมหานคร</option>
                                                             <option value="10">กาญจนบุรี</option>
@@ -249,18 +253,18 @@
                                                             <option value="78">อุทัยธานี</option>
                                                             <option value="71">อุบลราชธานี</option>
                                                         </select></td>
-                                                    <td ><label>รหัสไปรษณีย์ :</label><br/><input style="width:150px" type="text" id="exampleInputEmail1" class="form-control" ></input></td>
+                                                    <td ><label>รหัสไปรษณีย์ :</label><br/><input required="required"  style="width:150px" type="text"  class="form-control" id="zipcode" name="zipcode" ></input></td>
                                                 </tr>
                                                 <tr>
-                                                    <td ><label>โทรศัพท์ :</label><br/><input type="text" id="exampleInputEmail1" class="form-control" ></input></td>
-                                                    <td ><label>อีเมลล์ :</label><br/><input type="text" id="exampleInputEmail1" class="form-control" ></input></td>
+                                                    <td ><label>โทรศัพท์ :</label><br/><input required="required"  type="tel"  class="form-control" id="tel" name="tel"  ></input></td>
+                                                    <td ><label>อีเมลล์ :</label><br/><input required="required"  type="email"  class="form-control" id="email" name="email"  ></input></td>
                                                 </tr>
                                                 <tr>
-                                                    <td  colspan="2"><label>ข้อความ :</label><br/><textarea class="form-control" rows="3"></textarea></td>
+                                                    <td  colspan="2"><label>ข้อความ :</label><br/><textarea class="form-control" rows="3"  id="msg" name="msg" ></textarea></td>
 
                                                 </tr>
                                                 <tr>
-                                                    <td  colspan="2"> <button class="btn-vdo">ส่งข้อความ</button></td>
+                                                    <td  colspan="2"> <button type="submit" class="btn-vdo">ส่งข้อความ</button></td>
 
                                                 </tr>
 
