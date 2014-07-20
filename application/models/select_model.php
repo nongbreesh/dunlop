@@ -16,12 +16,11 @@ class select_model extends CI_Model {
         $query = $this->db->query("SELECT distinct(Tire_Diameter) as Tire_Diamete  FROM `dunlop_tire` WHERE `Product_ID` = " . $id . "  ORDER BY `dunlop_tire`.`Tire_ID`  ASC");
         return $query->result();
     }
-    
-        function get_dunlop_tire_by_Diameter($id,$Diameter) {
+
+    function get_dunlop_tire_by_Diameter($id, $Diameter) {
         $query = $this->db->query("SELECT *  FROM `dunlop_tire` WHERE `Product_ID` = " . $id . "  and `Tire_Diameter` = " . $Diameter . "  ORDER BY `dunlop_tire`.`Tire_ID`  ASC");
         return $query->result();
     }
-
 
     function get_dunlop_contact() {
         $query = $this->db->query("SELECT  * FROM dunlop_contact");
@@ -63,6 +62,8 @@ class select_model extends CI_Model {
         $query = $this->db->query("SELECT  * FROM dealer_zone");
         return $query->result();
     }
+
+
 
     function get_dunlop_zone_by_id($zone_id) {
         $query = $this->db->query("SELECT  * FROM dealer_zone where ZONE_ID = " . $zone_id);

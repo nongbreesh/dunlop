@@ -304,13 +304,16 @@
                                         <td colspan="3" height="10">&nbsp;</td>
                                     </tr>
                                     <tr>
-                                        <td colspan="3" ><table width="377" border="0" cellspacing="0" cellpadding="0">
+                                        <td colspan="3" >
+
+                                            <table width="377" border="0" cellspacing="0" cellpadding="0">
                                                 <tr>
                                                     <td height="53"><img src="<?= base_url() ?>public/images/home/search_1.png" /></td>
                                                 </tr>
                                                 <tr>
                                                     <td background="<?= base_url() ?>public/images/home/search_2.png" valign="top" height="40">
-                                                        <select name="diameter" id="diameter" style="margin-left: 20px;
+
+                                                        <select name="zone" id="zone" style="margin-left: 20px;
                                                                 margin-top:5px;
                                                                 width: 160px;"><option value="">เลือกโซน</option>
                                                                 <?php foreach ($zone_list as $each) { ?>
@@ -318,18 +321,22 @@
                                                             <?php } ?>
 
                                                         </select>
-                                                        <select name="diameter" id="diameter" style="margin-left: 20px;
+                                                        <select name="area" id="area" style="margin-left: 20px;
                                                                 margin-top: 5px;
                                                                 width: 160px;"><option value="0">กรุณาเลือกโซน</option></select>
+
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td background="<?= base_url() ?>public/images/home/search_2.png" valign="top" height="30" align="right"><button class="btn-vdo" style="margin-right: 10px;"> SEARCH</button></td>
+                                                    <td background="<?= base_url() ?>public/images/home/search_2.png" valign="top" height="30" align="right">
+                                                        <button class="btn-vdo" style="margin-right: 10px;" onclick="godealer();"> SEARCH</button></td>
                                                 </tr>
                                                 <tr height="10">
                                                     <td background="<?= base_url() ?>public/images/home/search_3.png" ></td>
                                                 </tr>
-                                            </table></td>
+                                            </table>
+
+                                        </td>
                                     </tr>
                                 </table></td>
                         </tr>
@@ -353,83 +360,115 @@
         <script type="text/javascript" src="<?= base_url() ?>public/js/jquery.ba-cond.min.js"></script>
         <script type="text/javascript" src="<?= base_url() ?>public/js/jquery.slitslider.js"></script>
         <script type="text/javascript">
-                                                                $(document).ready(function() {
 
-                                                                    var Page = (function() {
+                                                            function godealer() {
+                                                                var zone = $("#zone").val() == '' ? 1 : $("#zone").val();
+                                                                var area = $("#area").val() == 0 ? 1 : $("#area").val();
+                                                                var url = '<?= base_url() ?>address/zone/' + zone + '/' + area;
+                                                                location.href = url;
+                                                            }
+                                                            $(document).ready(function() {
 
-                                                                        var $navArrows = $('#nav-arrows'),
-                                                                                $nav = $('#nav-dots > span'),
-                                                                                slitslider = $('#slider').slitslider({
-                                                                            onBeforeChange: function(slide, pos) {
 
-                                                                                $nav.removeClass('nav-dot-current');
-                                                                                $nav.eq(pos).addClass('nav-dot-current');
+                                                                $('#zone').change(function() {
+                                                                    $("#area").html($("<option></option>").val(0).html('กรุณาเลือกโซน'));
+                                                                    $.ajax({
+                                                                        type: "POST",
+                                                                        url: "<?php echo base_url(); ?>" + "home/load_area",
+                                                                        data: {'id': $(this).val()},
+                                                                        dataType: "json",
+                                                                        success: function(data) {
 
-                                                                            }
-                                                                        }),
-                                                                                init = function() {
+                                                                            $.each(data, function(key, data) {
+                                                                                console.log(key)
+                                                                                $.each(data, function(index, data) {
+                                                                                    //data.AREA_ID
+                                                                                    //data.AREA_NAME
+                                                                                    $("#area").append($("<option></option>").val(data.AREA_ID).html(data.AREA_NAME));
+                                                                                })
+                                                                            })
 
-                                                                                    initEvents();
+                                                                        },
+                                                                        error: function(XMLHttpRequest) {
+                                                                            console.log(XMLHttpRequest.status);
+                                                                        }
+                                                                    });
+                                                                })
+                                                                var Page = (function() {
 
-                                                                                },
-                                                                                initEvents = function() {
+                                                                    var $navArrows = $('#nav-arrows'),
+                                                                            $nav = $('#nav-dots > span'),
+                                                                            slitslider = $('#slider').slitslider({
+                                                                        onBeforeChange: function(slide, pos) {
 
-                                                                                    // add navigation events
-                                                                                    $navArrows.children(':last').on('click', function() {
+                                                                            $nav.removeClass('nav-dot-current');
+                                                                            $nav.eq(pos).addClass('nav-dot-current');
 
-                                                                                        slitslider.next();
+                                                                        }
+                                                                    }),
+                                                                            init = function() {
+
+                                                                                initEvents();
+
+                                                                            },
+                                                                            initEvents = function() {
+
+                                                                                // add navigation events
+                                                                                $navArrows.children(':last').on('click', function() {
+
+                                                                                    slitslider.next();
+                                                                                    return false;
+
+                                                                                });
+
+                                                                                $navArrows.children(':first').on('click', function() {
+
+                                                                                    slitslider.previous();
+                                                                                    return false;
+
+                                                                                });
+
+                                                                                $nav.each(function(i) {
+
+                                                                                    $(this).on('click', function(event) {
+
+                                                                                        var $dot = $(this);
+
+                                                                                        if (!slitslider.isActive()) {
+
+                                                                                            // $nav.removeClass('nav-dot-current');
+                                                                                            // $dot.addClass('nav-dot-current');
+
+                                                                                        }
+
+                                                                                        slitslider.jump(i + 1);
                                                                                         return false;
 
                                                                                     });
 
-                                                                                    $navArrows.children(':first').on('click', function() {
+                                                                                });
 
-                                                                                        slitslider.previous();
-                                                                                        return false;
+                                                                            };
 
-                                                                                    });
+                                                                    return {init: init};
 
-                                                                                    $nav.each(function(i) {
+                                                                })();
 
-                                                                                        $(this).on('click', function(event) {
-
-                                                                                            var $dot = $(this);
-
-                                                                                            if (!slitslider.isActive()) {
-
-                                                                                                // $nav.removeClass('nav-dot-current');
-                                                                                                // $dot.addClass('nav-dot-current');
-
-                                                                                            }
-
-                                                                                            slitslider.jump(i + 1);
-                                                                                            return false;
-
-                                                                                        });
-
-                                                                                    });
-
-                                                                                };
-
-                                                                        return {init: init};
-
-                                                                    })();
-
-                                                                    Page.init();
+                                                                Page.init();
 
 
-                                                                });
+                                                            });
 
 
-                                                                function showvdo(id) {
+                                                            function showvdo(id) {
 
-                                                                    var videoWrap = document.getElementById('vdo');
-                                                                    var element = document.getElementById(id);
-                                                                    var src = element.getAttribute('data-value');
-                                                                    // alert(src);
-                                                                    videoWrap.innerHTML = '<embed src=' + src + ' type="application/x-shockwave-flash" width="425" height="230" allowscriptaccess="never" allowfullscreen="true"></embed>';
+                                                                var videoWrap = document.getElementById('vdo');
+                                                                var element = document.getElementById(id);
+                                                                var src = element.getAttribute('data-value');
+                                                                // alert(src);
+                                                                videoWrap.innerHTML = '<embed src=' + src + ' type="application/x-shockwave-flash" width="425" height="230" allowscriptaccess="never" allowfullscreen="true"></embed>';
 
-                                                                }
+                                                            }
         </script>
     </body>
 </html>
