@@ -152,7 +152,7 @@
                                 <table class=border-radius  background="<?= base_url() ?>public/images/home/bg_1.jpg" width="942" height="320" cellspacing="10" cellpadding="0" >
                                     <tr>
                                         <td valign="top" width="220">
-                                            <form>
+                                            <form action="<?= base_url() ?>search" method="post">
                                                 <table  border="0" cellspacing="0" cellpadding="0" width="220">
                                                     <tr height="70">
                                                         <td><img src="<?= base_url() ?>public/images/home/Find_1.png" /></td>
@@ -190,7 +190,7 @@
                                                     <tr height="50">
                                                         <td background="<?= base_url() ?>public/images/home/Find_3.png" style="background-repeat: no-repeat;"><table border="0" cellspacing="10" cellpadding="0">
                                                                 <tr>
-                                                                    <td><button class="btn-vdo">SEARCH</button></td>
+                                                                    <td><button type="submit" class="btn-vdo">SEARCH</button></td>
                                                                 </tr>
                                                             </table></td>
                                                     </tr>

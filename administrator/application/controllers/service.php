@@ -192,7 +192,7 @@ class Service extends CI_Controller {
 
     function upload_picture_group() {
         $this->load->library('upload');
-        $type = $_FILE['input_image_add']['type'];
+        $type = $_FILES['input_image_add']['type'];
         if (trim($_FILES["input_image_add"]["tmp_name"]) != "") {
             $images = $_FILES["input_image"]["tmp_name"];
             $old_images = $_FILES["input_image"]["name"];
@@ -209,17 +209,21 @@ class Service extends CI_Controller {
             if ($type) {
                 switch ($type) {
                     case 'image/jpeg':
-                        $image = imagecreatefromjpeg($fileName);
-                        imagecopyresampled($image_p, $image, 0, 0, 0, 0, $width, $height, $width_orig, $height_orig);
-                        ImageJPEG($images_fin, "./public/uploads/" . $new_images);
+                        $images_orig = ImageCreateFromJPEG($images);
+                        $photoX = ImagesX($images_orig);
+                        $photoY = ImagesY($images_orig);
+                        $images_fin = ImageCreateTrueColor($width, $height);
+                        ImageCopyResampled($images_fin, $images_orig, 0, 0, 0, 0, $width + 1, $height + 1, $photoX, $photoY);
+                        ImageJPEG($images_fin, "./public/uploads/slide/" . $new_images);
                         break;
 
                     case 'image/png':
-                        imagealphablending($image_p, false);
-                        imagesavealpha($image_p, true);
-                        $image = imagecreatefrompng($fileName);
-                        imagecopyresampled($image_p, $image, 0, 0, 0, 0, $width, $height, $width_orig, $height_orig);
-                        imagepng($images_fin, "./public/uploads/" . $new_images);
+                        $images_orig = imagecreatefrompng($images);
+                        $photoX = ImagesX($images_orig);
+                        $photoY = ImagesY($images_orig);
+                        $images_fin = ImageCreateTrueColor($width, $height);
+                        ImageCopyResampled($images_fin, $images_orig, 0, 0, 0, 0, $width + 1, $height + 1, $photoX, $photoY);
+                        imagepng($images_fin, "./public/uploads/slide/" . $new_images);
                         break;
                 }
             }
@@ -261,6 +265,14 @@ class Service extends CI_Controller {
 
                     case 'image/png':
                         $images_orig = imagecreatefrompng($images);
+                        $photoX = ImagesX($images_orig);
+                        $photoY = ImagesY($images_orig);
+                        $images_fin = ImageCreateTrueColor($width, $height);
+                        ImageCopyResampled($images_fin, $images_orig, 0, 0, 0, 0, $width + 1, $height + 1, $photoX, $photoY);
+                        imagepng($images_fin, "./public/uploads/" . $new_images);
+                        break;
+                    case 'image/gif':
+                        $images_orig = imagecreatefromgif($images);
                         $photoX = ImagesX($images_orig);
                         $photoY = ImagesY($images_orig);
                         $images_fin = ImageCreateTrueColor($width, $height);
@@ -671,9 +683,11 @@ class Service extends CI_Controller {
 
     function update_cate($id) {
         $inputedit_catename = $this->input->post('inputedit_catename');
-        $inputedit_cateparent = $this->input->post('inputedit_cateparent');
+        $input_hdimage = $this->input->post('input_hdimage');
+
         $input = array(
             'Type_Name' => $inputedit_catename,
+            'Type_IMG' => $input_hdimage,
             'Update_Date' => date('Y-m-d H:i:s'),
         );
         $data = '';
@@ -785,8 +799,10 @@ class Service extends CI_Controller {
 
     function add_category() {
         $input_catename = $this->input->post('input_catename');
+        $input_hdimage = $this->input->post('input_hdimage_add');
         $input = array(
             'Type_Name' => $input_catename,
+            'Type_IMG' => $input_hdimage,
             'Create_Date' => date('Y-m-d H:i:s')
         );
 
@@ -1013,6 +1029,7 @@ class Service extends CI_Controller {
             $html .= '<td>' . $i . '</td>';
             $html .= '<td>' . $row->val2 . '<br>';
             $html .= '<div class = "tools"><span class = "edit"><a href = "javascript:;" onclick="editdata(' . $row->val1 . ');">Edit</a> | </span><span class = "delete"><a class = "delete-tag" href = "javascript:;" onclick="removedata(' . $row->val1 . ');">Delete</a></div></td>';
+            $html .= ' <td><img src="' . base_url('public') . '/uploads/Thumbnails_' . $row->val3 . '" height="50"/></td>';
             $html .= '</tr>';
             $i++;
         }

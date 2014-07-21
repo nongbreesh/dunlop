@@ -289,6 +289,7 @@
                                             <p><img style="margin-right: 10px; " src="<?= base_url() ?>public/images/phone2.png"/>+66 (0) 2744-0198</p>
                                         </div>
                                     </div>
+                                    <div style="clear: both"></div>
                                 </div>
                             </td>
                         </tr>

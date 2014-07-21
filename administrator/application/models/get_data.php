@@ -343,7 +343,7 @@ class get_data extends CI_Model {
     }
 
     function getdunlop_type() {
-        $this->db->select('Type_ID as val1 , Type_Name as val2 ');
+        $this->db->select('Type_ID as val1 , Type_Name as val2 , Type_IMG as val3 ');
         $query = $this->db->get('dunlop_type');
         return $query->result();
     }

@@ -89,7 +89,7 @@ class select_model extends CI_Model {
     function get_dunlop_product() {
 
         $query = $this->db->query("SELECT  * FROM dunlop_product a "
-                . " inner join dunlop_group b"
+                . " left  join dunlop_group b"
                 . " on a.Group_ID = b.Group_ID");
         return $query->result();
     }

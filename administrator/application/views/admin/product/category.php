@@ -51,11 +51,7 @@
                                     <div id="product_pic_add" style="margin-top: 20px;"></div>
 
                                 </div>
-                                <div class="form-group">
-
-
-                                    <p class="help-block">หมวดหมู่ ไม่เหมือนป้ายกำกับ สามารถมีลำดับขั้นได้ คุณอาจจะมีหมวดหมู่แจ๊ช และภายใต้หมวดหมู่แจ๊ชก็สามารถมีหมวดหมู่ย่อยสำหรับ Bebop และ Big Band ได้ สามารถเลือกได้ทั้งนั้น.</p>
-                                </div>
+                     
 
                             </div><!-- /.box-body -->
 

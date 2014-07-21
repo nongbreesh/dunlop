@@ -63,8 +63,6 @@ class select_model extends CI_Model {
         return $query->result();
     }
 
-
-
     function get_dunlop_zone_by_id($zone_id) {
         $query = $this->db->query("SELECT  * FROM dealer_zone where ZONE_ID = " . $zone_id);
         return $query->row();
@@ -119,10 +117,32 @@ class select_model extends CI_Model {
         return $query->result();
     }
 
+    function get_dunlop_search_tire($size = '', $series = '', $diameter = '') {
+        $where = '';
+        if ($size != '' && $size != 0) {
+            $where .= " and  a.Tire_Width = " . $size;
+        }
+        if ($series != '' && $series != 0) {
+            $where .= " and  a.Tire_Series = " . $series;
+        }
+        if ($diameter != '' && $diameter != 0) {
+            $where .= " and  a.Tire_Diameter	 = " . $diameter;
+        }
+        $sql = "SELECT  a.*,b.*,c.* FROM dunlop_tire a"
+                . " inner join dunlop_product b"
+                . " on a.Product_ID = b.Product_ID"
+                . " inner join dunlop_type c"
+                . " on a.Type_ID = c.Type_ID"
+                . " where 1=1" . $where;
+        $query = $this->db->query($sql);
+        return $query->result();
+        //return $sql;
+    }
+
     function get_dunlop_product() {
 
         $query = $this->db->query("SELECT  * FROM dunlop_product a "
-                . " inner join dunlop_group b"
+                . " left join dunlop_group b"
                 . " on a.Group_ID = b.Group_ID");
         return $query->result();
     }

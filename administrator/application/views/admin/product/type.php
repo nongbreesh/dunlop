@@ -38,12 +38,21 @@
                                     <input type="text" class="form-control" id="input_catename" name="input_catename" placeholder="Enter category name">
                                 </div>
 
+
                                 <div class="form-group">
-                                    <label for="exampleInputFile">Parent</label>
+                                    <label for="exampleInputFile">Product image</label>
+                                    <label>Upload Image File:</label><br/>
 
-                                    <p class="help-block">หมวดหมู่ ไม่เหมือนป้ายกำกับ สามารถมีลำดับขั้นได้ คุณอาจจะมีหมวดหมู่แจ๊ช และภายใต้หมวดหมู่แจ๊ชก็สามารถมีหมวดหมู่ย่อยสำหรับ Bebop และ Big Band ได้ สามารถเลือกได้ทั้งนั้น.</p>
+                                    <div class="input-group input-group-sm col-lg-12">
+                                        <input name="input_image_add"  id="input_image_add"  class="form-control" type="file" class="inputFile" />
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-info btn-flat" id="btn_image_upload_add" type="button">Upload</button>
+                                        </span>
+
+                                    </div>
+                                    <div id="product_pic_add" style="margin-top: 20px;"></div>
+
                                 </div>
-
                             </div><!-- /.box-body -->
 
                             <div class="box-footer">
@@ -74,6 +83,7 @@
                                 <tr>
                                     <th><strong>No</strong></th>
                                     <th><strong>Name</strong></th>
+                                    <th><strong>IMG</strong></th>
                                 </tr>
                             </thead>
                             <tbody id="cate_list">
@@ -103,7 +113,7 @@
             <form role="form" id="form_edit_cate">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title"><i class="fa fa-shopping-cart"></i> <span>Update category</span></h4>
+                    <h4 class="modal-title"><i class="fa fa-shopping-cart"></i> <span>Update Type</span></h4>
                 </div>
 
                 <div class="modal-body">
@@ -117,7 +127,20 @@
                                     <label for="exampleInputEmail1">Name</label>
                                     <input type="text" class="form-control" id="inputedit_catename" name="inputedit_catename" placeholder="Enter category name">
                                 </div>
+                                <div class="form-group">
+                                    <label for="exampleInputFile">Product image</label>
+                                    <label>Upload Image File:</label><br/>
 
+                                    <div class="input-group input-group-sm col-lg-6">
+                                        <input name="input_image"  id="input_image"  class="form-control" type="file" class="inputFile" />
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-info btn-flat" id="btn_image_upload" type="button">Upload</button>
+                                        </span>
+
+                                    </div>
+                                    <div id="product_pic" style="margin-top: 20px;"></div>
+
+                                </div>
 
                             </div><!-- /.box-body -->
 
@@ -141,6 +164,86 @@
 <script>
     $(document).ready(function() {
         load_cate_list();
+
+        $("#btn_image_upload_add").click(function() {
+
+            var $btn = $(this);
+            $btn.button('loading');
+
+
+            var form = new FormData(document.getElementById('form_add_cate'));
+            var file = document.getElementById('input_image_add').files[0];
+            //var file = $('#input_image').val();
+            if (file) {
+                form.append('input_image', file);
+                //alert(form);
+            }
+
+            if (input_image != "") {
+                $.ajax({
+                    url: "<?php echo base_url(); ?>" + "index.php/service/upload_picture_group",
+                    type: "POST",
+                    data: form,
+                    dataType: "html",
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    success: function(data) {
+                        $.growl('Add image success!', {type: 'success'}); //danger , info , warning
+                        $btn.button('reset');
+                        $("#product_pic_add").html(data);
+                    },
+                    error: function(XMLHttpRequest) {
+                        $.growl(XMLHttpRequest.status, {type: 'danger'}); //danger , info , warning
+                        $btn.button('reset');
+                    }
+                });
+            }
+            else {
+                $.growl("Please select images", {type: 'danger'}); //danger , info , warning
+                $btn.button('reset');
+            }
+        });
+
+        $("#btn_image_upload").click(function() {
+
+            var $btn = $(this);
+            $btn.button('loading');
+
+
+            var form = new FormData(document.getElementById('form_add_product'));
+            var file = document.getElementById('input_image').files[0];
+            //var file = $('#input_image').val();
+            if (file) {
+                form.append('input_image', file);
+                //alert(form);
+            }
+
+            if (input_image != "") {
+                $.ajax({
+                    url: "<?php echo base_url(); ?>" + "index.php/service/upload_picture",
+                    type: "POST",
+                    data: form,
+                    dataType: "html",
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    success: function(data) {
+                        $.growl('Add image success!', {type: 'success'}); //danger , info , warning
+                        $btn.button('reset');
+                        $("#product_pic").html(data);
+                    },
+                    error: function(XMLHttpRequest) {
+                        $.growl(XMLHttpRequest.status, {type: 'danger'}); //danger , info , warning
+                        $btn.button('reset');
+                    }
+                });
+            }
+            else {
+                $.growl("Please select images", {type: 'danger'}); //danger , info , warning
+                $btn.button('reset');
+            }
+        });
         $("#form_add_cate").on('submit', function(e) {
             e.preventDefault();
             var $btn = $("#input_addcate");
@@ -162,6 +265,7 @@
                 }
             });
         });
+
         $("#form_edit_cate").on('submit', function(e) {
             e.preventDefault();
             var $btn = $("#input_editcate");
@@ -185,8 +289,9 @@
             });
         });
     });
+
     function load_cate_list() {
-        $('#cate_list').html('<tr><td colspan="7"><center><img src="<?php echo base_url(); ?>public/img/loading.gif"  width="50"/></center></td></tr>');
+        $('#cate_list').html('<tr><td colspan="8"><center><img src="<?php echo base_url(); ?>public/img/loading.gif"  width="50"/></center></td></tr>');
         setTimeout(
                 function()
                 {
@@ -213,9 +318,11 @@
             data: {'id': id},
             dataType: "json",
             success: function(data) {
-                console.log(data);
+               // console.log(data);
                 $("#input_hddcate").val(data.result.Type_ID);
                 $("#inputedit_catename").val(data.result.Type_Name);
+                $('#product_pic').html('<img src="../public/uploads/Thumbnails_' + data.result.Type_IMG + '" height="50"><input type="hidden" id="input_hdimage" name="input_hdimage" value="' + data.result.Type_IMG + '" />');
+
             },
             error: function(XMLHttpRequest) {
                 console.log(XMLHttpRequest.status);

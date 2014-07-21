@@ -151,82 +151,79 @@
                             <td> 
 
                                 <div class="contact" style="margin-top: -20px;">
-                                    <div class="title_trans"><h1>ตัวแทนจำหน่าย <img style="margin-top: -14px;
-                                                                                    margin-left: -5px; " src="<?= base_url() ?>public/images/add_loc_icon.png"/></h1> </div>
-                                    <div class="row" style="min-height: 750px;">
-                                        <?php if ($id == 1): ?>
-                                            <div class="mapaddress bg1"></div>
-                                        <?php elseif ($id == 2): ?>
-                                            <div class="mapaddress bg2"></div>
-                                        <?php elseif ($id == 3): ?>
-                                            <div class="mapaddress bg3"></div>
-                                        <?php elseif ($id == 4): ?>
-                                            <div class="mapaddress bg4"></div>
-                                        <?php elseif ($id == 5): ?>
-                                            <div class="mapaddress bg5"></div>
-                                        <?php elseif ($id == 6): ?>
-                                            <div class="mapaddress bg6"></div>
-                                        <?php elseif ($id == 7): ?>
-                                            <div class="mapaddress bg7"></div>
+                                    <div class="title_trans"><h1>FIND YOU TIRE</h1> 
+                                        <div class="tire_search">
+                                            <form action="<?= base_url() ?>search" method="post">
+                                                <select name="size" id="size" style="margin-top: 10px;"><option value="0">(1) ขนาดหน้ายาง</option>
+                                                    <?php foreach ($tire_width as $each) { ?>
+                                                        <?php if ($size == $each->Tire_Width): ?>
+                                                            <option  selected="selected" value="<?php echo $each->Tire_Width; ?>"><?php echo $each->Tire_Width; ?></option>';
+                                                        <?php else: ?>
+                                                            <option  value="<?php echo $each->Tire_Width; ?>"><?php echo $each->Tire_Width; ?></option>';
+                                                        <?php endif; ?>
+                                                    <?php } ?>
+                                                </select>
 
-                                        <?php endif; ?>
+                                                <select name="series" id="series" style="width: 86px;margin-top: 10px;"><option value="0">(2) Series</option>
+                                                    <?php foreach ($tire_series as $each) { ?>
+                                                        <?php if ($series == $each->Tire_Series): ?>
+                                                              <option  selected="selected"  value="<?php echo $each->Tire_Series; ?>"><?php echo $each->Tire_Series; ?></option>';
+                                                        <?php else: ?>
+                                                             <option  value="<?php echo $each->Tire_Series; ?>"><?php echo $each->Tire_Series; ?></option>';
+                                                        <?php endif; ?>
+                                                    <?php } ?>
+                                                </select>
 
+                                                <select name="diameter" id="diameter" style="margin-top: 10px;"><option value="0">(3) ขนาดขอบกระทะล้อ (นิ้ว)</option>
+                                                    <?php foreach ($tire_size as $each) { ?>
+                                                      <?php if ($diameter == $each->Tire_Diameter): ?>
+                                                             <option  selected="selected"  value="<?php echo $each->Tire_Diameter; ?>"><?php echo $each->Tire_Diameter; ?></option>';
+                                                        <?php else: ?>
+                                                            <option value="<?php echo $each->Tire_Diameter; ?>"><?php echo $each->Tire_Diameter; ?></option>';
+                                                        <?php endif; ?>
+                                                       
+                                                    <?php } ?>
+                                                </select>
 
-                                        <div class="dealer_list">
-
-                                            <?php foreach ($zone_list as $each): ?>
-                                                <div class="zone_name">
-                                                    <?php if ($id == $each->ZONE_ID): ?>
-                                                        <a class="active" href="<?= base_url() ?>address/zone/<?= $each->ZONE_ID ?>"><?= $each->ZONE_NAME ?></a>
-                                                    <?php else: ?>
-                                                        <a href="<?= base_url() ?>address/zone/<?= $each->ZONE_ID ?>"><?= $each->ZONE_NAME ?></a>
-                                                    <?php endif; ?>
-                                                </div>
-                                            <?php endforeach; ?>
-                                            <div style="clear: both"></div>
-                                        </div>
-
-                                        <div class="province_list">
-                                            <h1><?= $zone_header ?></h1>
-                                            <?php foreach ($area_list as $each): ?>
-                                                <div class="area_name">
-                                                    <?php if ($area == $each->AREA_ID): ?>
-                                                        <a class="active" href="<?= base_url() ?>address/zone/<?= $each->ZONE_ID ?>/<?= $each->AREA_ID ?>"><?= $each->AREA_NAME ?></a>
-                                                    <?php else: ?>
-                                                        <a href="<?= base_url() ?>address/zone/<?= $each->ZONE_ID ?>/<?= $each->AREA_ID ?>"><?= $each->AREA_NAME ?></a>
-                                                    <?php endif; ?>
-                                                </div>
-                                            <?php endforeach; ?>
-                                            <div style="clear: both"></div>
-                                        </div>
-
-
-                                        <div class="dealer_detail">
-                                            <table class="tb_dealer_detail">
-                                                <thead>
-                                                    <tr>
-                                                        <th>ผู้แทนจำหน่าย</th>
-                                                        <th>ที่อยู่</th>
-                                                        <th>เบอร์โทร</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-
-                                                    <?php foreach ($dealer_detail as $each): ?>
-                                                        <tr>
-                                                            <td><?= $each->Dealer_Name ?> </td>
-                                                            <td><?= $each->Dealer_Address ?> </td>
-                                                            <td><?= $each->Dealer_Tel ?> </td>
-                                                        </tr>
-                                                    <?php endforeach; ?>
-
-                                                </tbody>
-                                            </table>
-                                            <div style="clear: both"></div>
+                                                <button type="submit" class="btn-tire-search">SEARCH</button>
+                                            </form>
                                         </div>
 
                                     </div>
-                                    <div style="clear: both"></div>
+                                    <div class="tire_result ">
+                                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                            <thead>
+                                                <tr>
+                                                    <th style="width: 50px;"></th>
+                                                    <th colspan="3"><div align="center">ขนาดยาง</div></th>
+                                                    <th><div align="center">เส้นผ่านศูนย์กลาง<br>
+                                                        </div></th>
+                                                    <th><div align="center">ความกว้าง<br>
+                                                        </div></th>
+                                                    <th><div align="center">ความกว้างของล้อ (นิ้ว)</div></th>
+
+                                                    <th><div align="center">ประเภทยาง</div></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php foreach ($tire_list as $each): ?>
+                                                    <tr>
+                                                        <td><a href="#<?= $each->Product_Name ?>"><img src="<?= base_url() ?>administrator/public/uploads/<?= $each->Product_IMG ?>" border="0" style="max-width: 200px;max-height: 50px;"/></a> </td>
+                                                        <td class="size"><?= $each->Tire_Diameter ?></td>
+                                                        <td class="series"><?= $each->Tire_Series ?></td>
+                                                        <td><?= $each->Tire_Name ?></td>
+                                                        <td><div align="center"><?= $each->Tire_Radial ?></div></td>
+                                                        <td><div align="center"><?= $each->Tire_Rim ?></div></td>
+                                                        <td><div align="center"><?= $each->Tire_Width_inc ?></div></td>
+                                                        <td> <img src="<?= base_url() ?>administrator/public/uploads/<?= $each->Type_IMG ?>" style="max-width: 200px;max-height: 50px;" /></td>
+                                                    </tr>
+                                                <?php endforeach; ?>
+
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+
                                 </div>
                             </td>
                         </tr>
