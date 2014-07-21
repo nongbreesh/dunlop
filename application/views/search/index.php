@@ -208,7 +208,7 @@
                                             <tbody>
                                                 <?php foreach ($tire_list as $each): ?>
                                                     <tr>
-                                                        <td><a href="#<?= $each->Product_Name ?>"><img src="<?= base_url() ?>administrator/public/uploads/<?= $each->Product_IMG ?>" border="0" style="max-width: 200px;max-height: 50px;"/></a> </td>
+                                                        <td><a href="<?= $each->Product_URL ==''?'#':$each->Product_URL ?>"><img src="<?= base_url() ?>administrator/public/uploads/<?= $each->Product_IMG ?>" border="0" style="max-width: 200px;max-height: 50px;"/></a> </td>
                                                         <td class="size"><?= $each->Tire_Diameter ?></td>
                                                         <td class="series"><?= $each->Tire_Series ?></td>
                                                         <td><?= $each->Tire_Name ?></td>
