@@ -49,6 +49,7 @@
                                     ?>
 
                                     <tr>
+                                        <td><img src="<?= base_url() ?>public/uploads/Thumbnails_<?= $row->Content_thumbnail; ?>" height="50"></td>
                                         <td><?= $row->Content_ID; ?></td>
                                         <td><?= $row->Content_Headline; ?><br>
                                         </span><span class="edit"><a href="javascript:;" onclick="edit_product(<?= $row->Content_ID ?>);">Edit</a> | </span><span class="delete"><a class="delete-tag" href="#" onclick="return removedata(<?= $row->Content_ID ?>);">Delete</a></div></td>
@@ -111,6 +112,20 @@
                                     <textarea equired="required"  name="input_detail" id="input_detail"  rows="10" cols="70"></textarea>          
 
                                 </div>
+                                <div class="form-group">
+                                    <label for="exampleInputFile">Product image</label>
+                                    <label>Upload Image File:</label><br/>
+
+                                    <div class="input-group input-group-sm col-lg-6">
+                                        <input name="input_image"  id="input_image"  class="form-control" type="file" class="inputFile" />
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-info btn-flat" id="btn_image_upload" type="button">Upload</button>
+                                        </span>
+
+                                    </div>
+                                    <div id="product_pic" style="margin-top: 20px;"></div>
+
+                                </div>
 
                             </div>
                             <div class="modal-footer clearfix c">
@@ -137,7 +152,45 @@
 <script>
     $(document).ready(function() {
 
+        $("#btn_image_upload").click(function() {
 
+            var $btn = $(this);
+            $btn.button('loading');
+
+
+            var form = new FormData(document.getElementById('form_add_product'));
+            var file = document.getElementById('input_image').files[0];
+            //var file = $('#input_image').val();
+            if (file) {
+                form.append('input_image', file);
+                //alert(form);
+            }
+
+            if (input_image != "") {
+                $.ajax({
+                    url: "<?php echo base_url(); ?>" + "index.php/service/upload_picture",
+                    type: "POST",
+                    data: form,
+                    dataType: "html",
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    success: function(data) {
+                        $.growl('Add image success!', {type: 'success'}); //danger , info , warning
+                        $btn.button('reset');
+                        $("#product_pic").html(data);
+                    },
+                    error: function(XMLHttpRequest) {
+                        $.growl(XMLHttpRequest.status, {type: 'danger'}); //danger , info , warning
+                        $btn.button('reset');
+                    }
+                });
+            }
+            else {
+                $.growl("Please select images", {type: 'danger'}); //danger , info , warning
+                $btn.button('reset');
+            }
+        });
 
 
         $("#form_add_product").on('submit', function(e) {
@@ -149,11 +202,13 @@
             var title = $("#input_title").val();
             var wrap_detail = CKEDITOR.instances.input_wordwrap.getData();
             var detail = CKEDITOR.instances.input_detail.getData();
+            var hdimage = $("#input_hdimage").val();
+
             if (is_update == 'false') {
                 $.ajax({
                     url: "<?php echo base_url(); ?>" + "index.php/service/add_content",
                     type: "POST",
-                     data: {'input_title': title, 'input_wordwrap': wrap_detail, 'input_detail': detail},
+                    data: {'input_title': title, 'input_wordwrap': wrap_detail, 'input_detail': detail},
                     dataType: "json",
                     success: function(data) {
                         $.growl(data.status.message, {type: data.status.type}); //danger , info , warning
@@ -172,7 +227,7 @@
                 $.ajax({
                     url: "<?php echo base_url(); ?>" + "index.php/service/edit_content/" + input_id,
                     type: "POST",
-                    data: {'input_title': title, 'input_wordwrap': wrap_detail, 'input_detail': detail},
+                    data: {'input_title': title, 'input_wordwrap': wrap_detail, 'input_detail': detail, 'input_hdimage': hdimage},
                     dataType: "json",
                     success: function(data) {
                         $.growl(data.status.message, {type: data.status.type}); //danger , info , warning
@@ -254,6 +309,8 @@
                     $("#input_hdf_update").val('true');
                     $("#input_id").val(id);
                     $('#add_product-modal').modal('show');
+                    $('#product_pic').html('<img src="<?php echo base_url(); ?>public/uploads/Thumbnails_' + data.result.Content_thumbnail + '" height="50"><input type="hidden" id="input_hdimage" name="input_hdimage" value="' + data.result.Content_thumbnail + '" />');
+
                 },
                 error: function(XMLHttpRequest) {
                     $.growl(XMLHttpRequest.status, {type: 'danger'}); //danger , info , warning

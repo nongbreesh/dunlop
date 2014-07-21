@@ -755,11 +755,13 @@ class Service extends CI_Controller {
         $input_title = $this->input->post('input_title');
         $input_wordwrap = $this->input->post('input_wordwrap');
         $input_detail = $this->input->post('input_detail');
+        $input_hdimage = $this->input->post('input_hdimage');
 
         $input = array(
             'Content_Headline' => $input_title,
             'Content_wrap' => $input_wordwrap,
             'Content_detail' => $input_detail,
+            'Content_thumbnail' => $input_hdimage,
             'Create_Date' => date('Y-m-d H:i:s')
         );
 
@@ -1325,11 +1327,12 @@ class Service extends CI_Controller {
         $input_title = $this->input->post('input_title');
         $input_wordwrap = $this->input->post('input_wordwrap');
         $input_detail = $this->input->post('input_detail');
-
+        $input_hdimage = $this->input->post('input_hdimage');
         $input = array(
             'Content_Headline' => $input_title,
             'Content_wrap' => $input_wordwrap,
             'Content_detail' => $input_detail,
+            'Content_thumbnail' => $input_hdimage,
             'Update_Date' => date('Y-m-d H:i:s')
         );
         $data = '';
@@ -1429,6 +1432,7 @@ class Service extends CI_Controller {
         $i = 1;
         foreach ($result as $row) {
             $html .= '<tr>';
+            $html .= '<td><img src="' . base_url() . 'public/uploads/Thumbnails_' . $row->Content_thumbnail . '" height="50"></td>';
             $html .= '<td>' . $row->Content_ID . '</td>';
             $html .= '<td>' . $row->Content_Headline . '</br>';
             $html .= '<div class = "tools"><span class="edit"><a href="javascript:;" onclick="edit_product(' . $row->Content_ID . ')">Edit</a> | </span><span class="delete"><a class="delete-tag" href="#" onclick="return removedata(' . $row->Content_ID . ');">Delete</a></div></td>';

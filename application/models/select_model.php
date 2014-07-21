@@ -7,6 +7,20 @@ class select_model extends CI_Model {
         $this->load->helper(array('cookie', 'url'));
     }
 
+    public function content_count() {
+        return $this->db->count_all("dunlop_content");
+    }
+
+    function get_dunlop_content($limit, $start) {
+        $query = $this->db->query("SELECT  * FROM dunlop_content order by Content_ID limit " . $start . ', ' . $limit);
+        return $query->result();
+    }
+
+    function get_dunlop_content_by_id($id) {
+        $query = $this->db->query("SELECT  * FROM dunlop_content where Content_ID = " . $id);
+        return $query->row();
+    }
+
     function get_dunlop_slide() {
         $query = $this->db->query("SELECT  * FROM dunlop_slide");
         return $query->result();

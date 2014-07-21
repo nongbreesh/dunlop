@@ -162,21 +162,12 @@
                                     </div>
                                     <div class="contact-r " >
                                         <div class="title_trans-r"> <h1><img   style="margin-top: 22px;" src="<?= base_url() ?>public/images/activity_header.png" /></h1></div>
-                                        <div class="content-activities">
-                                            <div class="row">
-                                                <?php foreach ($content_list as $each): ?>
-                                                    <div class="col-xs-6 content-list">
-                                                        <div class="col-xs-4"><img style="" src="<?= base_url() ?>administrator/public/uploads/Thumbnails_<?= $each->Content_thumbnail ?>" /></div>
-                                                        <div class="col-xs-8 content-title"><a href="<?= base_url() ?>about/activities_news/<?= $each->Content_ID ?>"><?= $each->Content_Headline ?></a></div>
-                                                    </div>
-                                                <?php endforeach; ?>
-
-                                            </div>
+                                        <div class="content-activities_headline"><?= $content->Content_Headline ?></div>
+                                        <div class="content-activities-detail ">
+                                            <?= $content->Content_detail ?>
                                             <div style="clear:both"></div>
                                         </div>
-                                        <div class="paging">
-                                            <?php echo $this->pagination->create_links(); ?>
-                                        </div>
+
                                         <div style="clear:both"></div>
                                     </div>
                                 </div>
