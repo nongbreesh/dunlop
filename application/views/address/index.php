@@ -208,6 +208,7 @@
                                                         <th>ผู้แทนจำหน่าย</th>
                                                         <th>ที่อยู่</th>
                                                         <th>เบอร์โทร</th>
+                                                        <th>แผนที่</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -217,6 +218,7 @@
                                                             <td><?= $each->Dealer_Name ?> </td>
                                                             <td><?= $each->Dealer_Address ?> </td>
                                                             <td><?= $each->Dealer_Tel ?> </td>
+                                                            <td align="center"><a target="_blank" href="<?= $each->Dealer_URL ?>"><img src="<?= base_url() ?>public/images/address/pin2.png" /></a> </td>
                                                         </tr>
                                                     <?php endforeach; ?>
 
