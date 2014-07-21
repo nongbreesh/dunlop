@@ -47,4 +47,13 @@ class About extends CI_Controller {
         $data['slide_list'] = $this->select_model->get_dunlop_slide();
         $this->load->view('about/museum', $data);
     }
+    
+      public function activities() {
+        $data['title'] = $this->title;
+        $data['mTitle'] = $this->mTitle;
+        $data['mDesc'] = $this->mDesc;
+        $data['mKeyword'] = $this->mKeyword;
+        $data['slide_list'] = $this->select_model->get_dunlop_slide();
+        $this->load->view('about/activities', $data);
+    }
 }

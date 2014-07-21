@@ -154,85 +154,59 @@
 
                                         <ul class="sidemenu">
                                             <li><a href="<?= base_url() ?>about/blackground"><img style="" src="<?= base_url() ?>public/images/blackground.png" onmouseover="this.src = '<?= base_url() ?>public/images/blackground_hover.png'" onmouseout="this.src = '<?= base_url() ?>public/images/blackground.png'"/></a></li>
-                                            <li><a href="<?= base_url() ?>about/quality_hover"><img style="" src="<?= base_url() ?>public/images/quality_hover.png" /></a></li>
+                                            <li><a href="<?= base_url() ?>about/quality"><img style="" src="<?= base_url() ?>public/images/quality.png" onmouseover="this.src = '<?= base_url() ?>public/images/quality_hover.png'" onmouseout="this.src = '<?= base_url() ?>public/images/quality.png'"/></a></li>
                                             <li><a href="<?= base_url() ?>about/museum"><img style="" src="<?= base_url() ?>public/images/museum.png" onmouseover="this.src = '<?= base_url() ?>public/images/museum_hover.png'" onmouseout="this.src = '<?= base_url() ?>public/images/museum.png'"/></a></li>
-                                         <li><a href="<?= base_url() ?>about/activities"><img style="" src="<?= base_url() ?>public/images/activities.png" onmouseover="this.src = '<?= base_url() ?>public/images/activities_hover.png'" onmouseout="this.src = '<?= base_url() ?>public/images/activities.png'"/></a></li>
-                                       </ul>
+                                         <li><a href="<?= base_url() ?>about/activities"><img style="" src="<?= base_url() ?>public/images/activities_hover.png" /></a></li>
+                                      </ul>
                                     </div>
                                     <div class="contact-r " >
-                                        <div class="title_trans-r"> <h1>GL<img style="" src="<?= base_url() ?>public/images/O.png"/>BAL QUALITY</h1></div>
+                                        <div class="title_trans-r"> <h1><img style="" src="<?= base_url() ?>public/images/activity_header.png" /></h1></div>
                                         <div class="content">
                                             <h1>&nbsp;</h1>
 
-                                            <table border="0" cellpadding="0" cellspacing="0" style="width:100%">
+                                            <table border="0" cellpadding="5" cellspacing="0" style="width:100%">
                                                 <tbody>
                                                     <tr>
+                                                        <td>&nbsp;</td>
                                                     </tr>
                                                     <tr>
-                                                        <td colspan="3">
-                                                            <p><img alt="ความเป็นมาและวิวัฒนาการของดันลอปไทร์" src="http://www.dunloptire.co.th/img/global-qc.jpg" style="height:42px; width:232px" /></p>
+                                                        <td>
+                                                            <p><img alt="ความเป็นมาและวิวัฒนาการของดันลอปไทร์" src="http://www.dunloptire.co.th/img/musuem-topic.jpg" style="height:46px; width:242px" /></p>
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td>&nbsp;</td>
-                                                        <td colspan="3">Dunlop มีเครือข่ายครอบคลุมไปกว่า 166 ประเทศทั่วโลก และ มีฐานการผลิตอยู่ใน 3 ทวีป เชื่อมโยงเครือข่ายตลาดยางรถยนต์ทั่วโลก สามารถรองรับการเติบโตของธุรกิจยานยนต์ ได้อย่างครบวงจร</td>
+                                                        <td colspan="2">   Dunlop มีเครือข่ายครอบคลุมไปกว่า 166 ประเทศทั่วโลก และ มีฐานการผลิตอยู่ใน 3 ทวีป เชื่อมโยงเครือข่ายตลาดยางรถยนต์ทั่วโลก สามารถรองรับการเติบโตของธุรกิจยานยนต์ ได้อย่างครบวงจร</td>
                                                     </tr>
                                                     <tr>
-                                                        <td>&nbsp;</td>
-                                                        <td colspan="3">
-                                                            <br />
+                                                        <td colspan="2">  <strong>Photo Collection</strong></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="2">            
                                                             <div align="center">
-                                                                <img alt="ความเป็นมาและวิวัฒนาการของดันลอปไทร์" src="<?= base_url() ?>public/images/quality.gif" /> </div>
-                                                            <p><br />
-                                                                &nbsp;<br />
-                                                                <img src="http://www.dunloptire.co.th/img/qc-map.jpg" style="height:58px; width:510px" />&nbsp;</p>
+                                                                <script type="text/javascript">
+                                                                    AC_FL_RunContent('codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0', 'width', '587', 'height', '370', 'src', 'museum03', 'quality', 'high', 'pluginspage', 'http://www.macromedia.com/go/getflashplayer', 'movie', 'museum03'); //end AC code
+                                                                </script>
+                                                                <embed width="587" height="370" src="<?= base_url() ?>public/other/museum03.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"></embed>
+                                                            </div>
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td>&nbsp;</td>
-                                                        <td colspan="3">
-                                                            <p><img alt="" src="http://www.dunloptire.co.th/img/global-qc2.jpg" style="height:48px; width:250px" /><br />
-                                                                Dunlop รองรับตลาดยาง OE ในอุตสาหกรรมยานยนต์ทั่วโลก โดยมีรถหลายยี่ห้อที่ใช้สินค้าจาก Dunlop</p>
+                                                        <td colspan="2"> <strong>Poster Collection</strong></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="2"> 
+                                                            <div align="center">
+                                                                <script type="text/javascript">
+                                                                    AC_FL_RunContent('codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0', 'width', '587', 'height', '370', 'src', 'museum03', 'quality', 'high', 'pluginspage', 'http://www.macromedia.com/go/getflashplayer', 'movie', 'museum03'); //end AC code
+                                                                </script>
+                                                                <embed width="587" height="370" src="<?= base_url() ?>public/other/museum_poster.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"></embed>
+                                                            </div>
                                                         </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>&nbsp;</td>
-                                                        <td>1.ALFA&nbsp;<br />
-                                                            2.AUDI&nbsp;<br />
-                                                            3.AUTO ALLIANCE&nbsp;<br />
-                                                            4.BMW&nbsp;<br />
-                                                            5.DAIHATSU&nbsp;<br />
-                                                            6.FIAT&nbsp;<br />
-                                                            7.FORD&nbsp;<br />
-                                                            8.GENERAL MOTORS&nbsp;<br />
-                                                            9.HONDA&nbsp;<br />
-                                                            10.JAGUAR</td>
-                                                        <td>11.LEXUS&nbsp;<br />
-                                                            12.MAZDA&nbsp;<br />
-                                                            13.MERCEDES BENZ&nbsp;<br />
-                                                            14.MITSUBISHI&nbsp;<br />
-                                                            15.NISSAN&nbsp;<br />
-                                                            16.OPEL<br />
-                                                            17.PEUGEOT&nbsp;<br />
-                                                            18.POLARIS&nbsp;<br />
-                                                            19.PORSCHE&nbsp;<br />
-                                                            20.RENAULT</td>
-                                                        <td>21.ROVER&nbsp;<br />
-                                                            22.SAAB&nbsp;<br />
-                                                            23.SEAT&nbsp;<br />
-                                                            24.SKODA&nbsp;<br />
-                                                            25.SUZUKI&nbsp;<br />
-                                                            26.TOYOTA&nbsp;<br />
-                                                            27.VAUXHALL<br />
-                                                            28.VOLKSWAGEN&nbsp;<br />
-                                                            29.VOLVO</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>&nbsp;</td>
-                                                        <td colspan="3">&nbsp;</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
+
+                                            <h1>&nbsp;</h1>
 
                                             <div style="clear:both"></div>
                                         </div>
@@ -263,72 +237,72 @@
         <script type="text/javascript" src="<?= base_url() ?>public/js/jquery.slitslider.js"></script>
 
         <script type="text/javascript">
-                                                $(document).ready(function() {
+                                                                    $(document).ready(function() {
 
-                                                    var Page = (function() {
+                                                                        var Page = (function() {
 
-                                                        var $navArrows = $('#nav-arrows'),
-                                                                $nav = $('#nav-dots > span'),
-                                                                slitslider = $('#slider').slitslider({
-                                                            onBeforeChange: function(slide, pos) {
+                                                                            var $navArrows = $('#nav-arrows'),
+                                                                                    $nav = $('#nav-dots > span'),
+                                                                                    slitslider = $('#slider').slitslider({
+                                                                                onBeforeChange: function(slide, pos) {
 
-                                                                $nav.removeClass('nav-dot-current');
-                                                                $nav.eq(pos).addClass('nav-dot-current');
+                                                                                    $nav.removeClass('nav-dot-current');
+                                                                                    $nav.eq(pos).addClass('nav-dot-current');
 
-                                                            }
-                                                        }),
-                                                                init = function() {
+                                                                                }
+                                                                            }),
+                                                                                    init = function() {
 
-                                                                    initEvents();
+                                                                                        initEvents();
 
-                                                                },
-                                                                initEvents = function() {
+                                                                                    },
+                                                                                    initEvents = function() {
 
-                                                                    // add navigation events
-                                                                    $navArrows.children(':last').on('click', function() {
+                                                                                        // add navigation events
+                                                                                        $navArrows.children(':last').on('click', function() {
 
-                                                                        slitslider.next();
-                                                                        return false;
+                                                                                            slitslider.next();
+                                                                                            return false;
+
+                                                                                        });
+
+                                                                                        $navArrows.children(':first').on('click', function() {
+
+                                                                                            slitslider.previous();
+                                                                                            return false;
+
+                                                                                        });
+
+                                                                                        $nav.each(function(i) {
+
+                                                                                            $(this).on('click', function(event) {
+
+                                                                                                var $dot = $(this);
+
+                                                                                                if (!slitslider.isActive()) {
+
+                                                                                                    // $nav.removeClass('nav-dot-current');
+                                                                                                    // $dot.addClass('nav-dot-current');
+
+                                                                                                }
+
+                                                                                                slitslider.jump(i + 1);
+                                                                                                return false;
+
+                                                                                            });
+
+                                                                                        });
+
+                                                                                    };
+
+                                                                            return {init: init};
+
+                                                                        })();
+
+                                                                        Page.init();
+
 
                                                                     });
-
-                                                                    $navArrows.children(':first').on('click', function() {
-
-                                                                        slitslider.previous();
-                                                                        return false;
-
-                                                                    });
-
-                                                                    $nav.each(function(i) {
-
-                                                                        $(this).on('click', function(event) {
-
-                                                                            var $dot = $(this);
-
-                                                                            if (!slitslider.isActive()) {
-
-                                                                                // $nav.removeClass('nav-dot-current');
-                                                                                // $dot.addClass('nav-dot-current');
-
-                                                                            }
-
-                                                                            slitslider.jump(i + 1);
-                                                                            return false;
-
-                                                                        });
-
-                                                                    });
-
-                                                                };
-
-                                                        return {init: init};
-
-                                                    })();
-
-                                                    Page.init();
-
-
-                                                });
 
 
 

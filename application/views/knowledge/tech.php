@@ -153,7 +153,7 @@
                                     <div class="sidebar-l" ><div class="knowledge_title"></div> 
                                         <ul class="sidemenu">
                                             <li><a href="<?= base_url() ?>knowledge/qa"><img style="" src="<?= base_url() ?>public/images/qa.png" onmouseover="this.src = '<?= base_url() ?>public/images/qa_hover.png'" onmouseout="this.src = '<?= base_url() ?>public/images/qa.png'"/></a></li>
-                                            <li><a href="<?= base_url() ?>knowledge/tech"><img style="" src="<?= base_url() ?>public/images/tech_hover.png" onmouseover="this.src = '<?= base_url() ?>public/images/tech_hover.png'" onmouseout="this.src = '<?= base_url() ?>public/images/tech.png'"/></a></li>
+                                            <li><a href="<?= base_url() ?>knowledge/tech"><img style="" src="<?= base_url() ?>public/images/tech_hover.png" /></a></li>
                                             <li><a href="<?= base_url() ?>knowledge/usage"><img style="" src="<?= base_url() ?>public/images/usage.png" onmouseover="this.src = '<?= base_url() ?>public/images/usage_hover.png'" onmouseout="this.src = '<?= base_url() ?>public/images/usage.png'"/></a></li>
                                         </ul>
                                     </div>
