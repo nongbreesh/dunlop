@@ -181,11 +181,7 @@
                                                         <td colspan="3">
                                                             <br />
                                                             <div align="center">
-                                                                <script type="text/javascript">
-                                                                    AC_FL_RunContent('codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0', 'width', '587', 'height', '370', 'src', 'museum03', 'quality', 'high', 'pluginspage', 'http://www.macromedia.com/go/getflashplayer', 'movie', 'museum03'); //end AC code
-                                                                </script>
-                                                                <embed width="580" height="330" src="<?= base_url() ?>public/other/global.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"></embed>
-                                                            </div>
+                                                                <img alt="ความเป็นมาและวิวัฒนาการของดันลอปไทร์" src="<?= base_url() ?>public/images/quality.gif" /> </div>
                                                             <p><br />
                                                                 &nbsp;<br />
                                                                 <img src="http://www.dunloptire.co.th/img/qc-map.jpg" style="height:58px; width:510px" />&nbsp;</p>
@@ -266,72 +262,72 @@
         <script type="text/javascript" src="<?= base_url() ?>public/js/jquery.slitslider.js"></script>
 
         <script type="text/javascript">
-                                                                    $(document).ready(function() {
+                                                $(document).ready(function() {
 
-                                                                        var Page = (function() {
+                                                    var Page = (function() {
 
-                                                                            var $navArrows = $('#nav-arrows'),
-                                                                                    $nav = $('#nav-dots > span'),
-                                                                                    slitslider = $('#slider').slitslider({
-                                                                                onBeforeChange: function(slide, pos) {
+                                                        var $navArrows = $('#nav-arrows'),
+                                                                $nav = $('#nav-dots > span'),
+                                                                slitslider = $('#slider').slitslider({
+                                                            onBeforeChange: function(slide, pos) {
 
-                                                                                    $nav.removeClass('nav-dot-current');
-                                                                                    $nav.eq(pos).addClass('nav-dot-current');
+                                                                $nav.removeClass('nav-dot-current');
+                                                                $nav.eq(pos).addClass('nav-dot-current');
 
-                                                                                }
-                                                                            }),
-                                                                                    init = function() {
+                                                            }
+                                                        }),
+                                                                init = function() {
 
-                                                                                        initEvents();
+                                                                    initEvents();
 
-                                                                                    },
-                                                                                    initEvents = function() {
+                                                                },
+                                                                initEvents = function() {
 
-                                                                                        // add navigation events
-                                                                                        $navArrows.children(':last').on('click', function() {
+                                                                    // add navigation events
+                                                                    $navArrows.children(':last').on('click', function() {
 
-                                                                                            slitslider.next();
-                                                                                            return false;
-
-                                                                                        });
-
-                                                                                        $navArrows.children(':first').on('click', function() {
-
-                                                                                            slitslider.previous();
-                                                                                            return false;
-
-                                                                                        });
-
-                                                                                        $nav.each(function(i) {
-
-                                                                                            $(this).on('click', function(event) {
-
-                                                                                                var $dot = $(this);
-
-                                                                                                if (!slitslider.isActive()) {
-
-                                                                                                    // $nav.removeClass('nav-dot-current');
-                                                                                                    // $dot.addClass('nav-dot-current');
-
-                                                                                                }
-
-                                                                                                slitslider.jump(i + 1);
-                                                                                                return false;
-
-                                                                                            });
-
-                                                                                        });
-
-                                                                                    };
-
-                                                                            return {init: init};
-
-                                                                        })();
-
-                                                                        Page.init();
-
+                                                                        slitslider.next();
+                                                                        return false;
 
                                                                     });
+
+                                                                    $navArrows.children(':first').on('click', function() {
+
+                                                                        slitslider.previous();
+                                                                        return false;
+
+                                                                    });
+
+                                                                    $nav.each(function(i) {
+
+                                                                        $(this).on('click', function(event) {
+
+                                                                            var $dot = $(this);
+
+                                                                            if (!slitslider.isActive()) {
+
+                                                                                // $nav.removeClass('nav-dot-current');
+                                                                                // $dot.addClass('nav-dot-current');
+
+                                                                            }
+
+                                                                            slitslider.jump(i + 1);
+                                                                            return false;
+
+                                                                        });
+
+                                                                    });
+
+                                                                };
+
+                                                        return {init: init};
+
+                                                    })();
+
+                                                    Page.init();
+
+
+                                                });
 
 
 
