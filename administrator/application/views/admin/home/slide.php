@@ -37,11 +37,11 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th style="width: 200px;">Headline</th>
-                                    <th>Desc</th>
                                     <th>Animation style</th>
                                     <th>Slide bg</th>
-                                    <th>Slide obj</th>
+                                    <th>Slide obj Tire</th>
+                                    <th>Slide obj2 Logo</th>
+                                    <th>Slide obj3 Slogan</th>
                                     <th>Create Date</th>
                                     <th>Update Date</th>
                                 </tr>
@@ -53,14 +53,13 @@
 
                                     <tr>
                                         <td><?= $row->SLIDE_ID; ?></td>
-                                        <td><?= $row->SLIDE_Headline; ?><br>
+                                        <td><?= $row->SLIDE_Animation_Type; ?><br>
                                             </span><div class="edit"><a href="javascript:;" onclick="edit_product(<?= $row->SLIDE_ID ?>);">Edit</a> | </span><span class="delete"><a class="delete-tag" href="#" onclick="return removedata(<?= $row->SLIDE_ID ?>);">Delete</a></div>
                                         </td>
-
-                                        <td><?= $row->SLIDE_Desc ?></td>
-                                        <td><?= $row->SLIDE_Animation_Type ?></td>
                                         <td><?= $row->SLIDE_bg ?></td>
-                                        <td><?= $row->SLIDE_Object_img ?></td>
+                                        <td><?= $row->SLIDE_Object_img1 ?></td>
+                                        <td><?= $row->SLIDE_Object_img2 ?></td>
+                                        <td><?= $row->SLIDE_Object_img3 ?></td>
                                         <td><?= time_ago($row->Create_Date) ?></td>
                                         <td><?= time_ago($row->Update_Date) ?></td>
 
@@ -118,28 +117,50 @@
 
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputFile">Object image (offer max width = 250px , max Height = 350px)</label>
+                                        <label for="exampleInputFile">Tire Object image (offer max width = 540px , max Height = 350px)</label>
                                         <br/> <label>Upload Image File:</label><br/>
 
                                         <div class="input-group input-group-sm col-lg-6">
-                                            <input name="input_image_slide_object"  id="input_image_slide_object"  class="form-control" type="file" class="inputFile" />
+                                            <input name="input_image_slide_object1"  id="input_image_slide_object1"  class="form-control" type="file" class="inputFile" />
                                             <span class="input-group-btn">
-                                                <button class="btn btn-info btn-flat" id="btn_image_upload_slide_object" type="button">Upload</button>
+                                                <button class="btn btn-info btn-flat" id="btn_image_upload_slide_object1" type="button">Upload</button>
                                             </span>
 
                                         </div>
-                                        <div id="product_pic_slide_object" style="margin-top: 20px;"></div>
+                                        <div id="product_pic_slide_object1" style="margin-top: 20px;"></div>
 
                                     </div>
+
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Headline</label>
-                                        <input name="input_headline" id="input_headline" type="text" class="form-control" >
+                                        <label for="exampleInputFile">Logo Object image (offer max width = 480px , max Height = 230px)</label>
+                                        <br/> <label>Upload Image File:</label><br/>
+
+                                        <div class="input-group input-group-sm col-lg-6">
+                                            <input name="input_image_slide_object2"  id="input_image_slide_object2"  class="form-control" type="file" class="inputFile" />
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-info btn-flat" id="btn_image_upload_slide_object2" type="button">Upload</button>
+                                            </span>
+
+                                        </div>
+                                        <div id="product_pic_slide_object2" style="margin-top: 20px;"></div>
 
                                     </div>
+
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Description</label>
-                                        <textarea class="textarea"  name="input_description" id="input_description" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                                        <label for="exampleInputFile">Slogan Object image (offer max width = 545px , max Height = 245px)</label>
+                                        <br/> <label>Upload Image File:</label><br/>
+
+                                        <div class="input-group input-group-sm col-lg-6">
+                                            <input name="input_image_slide_object3"  id="input_image_slide_object3"  class="form-control" type="file" class="inputFile" />
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-info btn-flat" id="btn_image_upload_slide_object3" type="button">Upload</button>
+                                            </span>
+
+                                        </div>
+                                        <div id="product_pic_slide_object3" style="margin-top: 20px;"></div>
+
                                     </div>
+
 
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Animation style</label>
@@ -270,22 +291,22 @@
             }
         });
 
-        $("#btn_image_upload_slide_object").click(function() {
+        $("#btn_image_upload_slide_object1").click(function() {
 
             var $btn = $(this);
             $btn.button('loading');
 
 
             var form = new FormData(document.getElementById('form_add_product'));
-            var file = document.getElementById('input_image_slide_object').files[0];
+            var file = document.getElementById('input_image_slide_object1').files[0];
             if (file) {
-                form.append('input_image_slide_object', file);
+                form.append('input_image_slide_object1', file);
                 //alert(form);
             }
 
-            if (input_image_slide_object != "") {
+            if (input_image_slide_object1 != "") {
                 $.ajax({
-                    url: "<?php echo base_url(); ?>" + "index.php/service/upload_picture_slide_object",
+                    url: "<?php echo base_url(); ?>" + "index.php/service/upload_picture_slide_object1",
                     type: "POST",
                     data: form,
                     dataType: "html",
@@ -295,7 +316,7 @@
                     success: function(data) {
                         $.growl('Add image success!', {type: 'success'}); //danger , info , warning
                         $btn.button('reset');
-                        $("#product_pic_slide_object").html(data);
+                        $("#product_pic_slide_object1").html(data);
                     },
                     error: function(XMLHttpRequest) {
                         $.growl(XMLHttpRequest.status, {type: 'danger'}); //danger , info , warning
@@ -308,6 +329,87 @@
                 $btn.button('reset');
             }
         });
+
+        $("#btn_image_upload_slide_object2").click(function() {
+
+            var $btn = $(this);
+            $btn.button('loading');
+
+
+            var form = new FormData(document.getElementById('form_add_product'));
+            var file = document.getElementById('input_image_slide_object2').files[0];
+            if (file) {
+                form.append('input_image_slide_object2', file);
+                //alert(form);
+            }
+
+            if (input_image_slide_object2 != "") {
+                $.ajax({
+                    url: "<?php echo base_url(); ?>" + "index.php/service/upload_picture_slide_object2",
+                    type: "POST",
+                    data: form,
+                    dataType: "html",
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    success: function(data) {
+                        $.growl('Add image success!', {type: 'success'}); //danger , info , warning
+                        $btn.button('reset');
+                        $("#product_pic_slide_object2").html(data);
+                    },
+                    error: function(XMLHttpRequest) {
+                        $.growl(XMLHttpRequest.status, {type: 'danger'}); //danger , info , warning
+                        $btn.button('reset');
+                    }
+                });
+            }
+            else {
+                $.growl("Please select images", {type: 'danger'}); //danger , info , warning
+                $btn.button('reset');
+            }
+        });
+
+
+        $("#btn_image_upload_slide_object3").click(function() {
+
+            var $btn = $(this);
+            $btn.button('loading');
+
+
+            var form = new FormData(document.getElementById('form_add_product'));
+            var file = document.getElementById('input_image_slide_object3').files[0];
+            if (file) {
+                form.append('input_image_slide_object3', file);
+                //alert(form);
+            }
+
+            if (input_image_slide_object3 != "") {
+                $.ajax({
+                    url: "<?php echo base_url(); ?>" + "index.php/service/upload_picture_slide_object3",
+                    type: "POST",
+                    data: form,
+                    dataType: "html",
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    success: function(data) {
+                        $.growl('Add image success!', {type: 'success'}); //danger , info , warning
+                        $btn.button('reset');
+                        $("#product_pic_slide_object3").html(data);
+                    },
+                    error: function(XMLHttpRequest) {
+                        $.growl(XMLHttpRequest.status, {type: 'danger'}); //danger , info , warning
+                        $btn.button('reset');
+                    }
+                });
+            }
+            else {
+                $.growl("Please select images", {type: 'danger'}); //danger , info , warning
+                $btn.button('reset');
+            }
+        });
+
+
     });
     function add_product() {
         //$.growl('Add product success!', {type: 'success'}); //danger , info , warning
@@ -334,10 +436,11 @@
                             $('#input_slide_anim_3').iCheck('check');
                             break;
                     }
-                    $('#input_headline').val(data.result.SLIDE_Headline);
-                    $('#input_description').data("wysihtml5").editor.setValue(data.result.SLIDE_Desc);
+
                     $('#product_pic_slide_bg').html('<img src="../public/uploads/slide/Thumbnails_' + data.result.SLIDE_bg + '" height="50"><input type="hidden" id="input_hdimage_slide_bg" name="input_hdimage_slide_bg" value="' + data.result.SLIDE_bg + '" />');
-                    $('#product_pic_slide_object').html('<img src="../public/uploads/slide/Thumbnails_' + data.result.SLIDE_Object_img + '" height="50"><input type="hidden" id="input_hdimage_slide_object" name="input_hdimage_slide_object" value="' + data.result.SLIDE_Object_img + '" />');
+                    $('#product_pic_slide_object1').html('<img src="../public/uploads/slide/Thumbnails_' + data.result.SLIDE_Object_img1 + '" height="50"><input type="hidden" id="input_hdimage_slide_object1" name="input_hdimage_slide_object1" value="' + data.result.SLIDE_Object_img1 + '" />');
+                    $('#product_pic_slide_object2').html('<img src="../public/uploads/slide/Thumbnails_' + data.result.SLIDE_Object_img2 + '" height="50"><input type="hidden" id="input_hdimage_slide_object2" name="input_hdimage_slide_object2" value="' + data.result.SLIDE_Object_img2 + '" />');
+                    $('#product_pic_slide_object3').html('<img src="../public/uploads/slide/Thumbnails_' + data.result.SLIDE_Object_img3 + '" height="50"><input type="hidden" id="input_hdimage_slide_object3" name="input_hdimage_slide_object3" value="' + data.result.SLIDE_Object_img3 + '" />');
                     $("#input_hdf_update").val('true');
                     $("#input_id").val(id);
                     $('#add_product-modal').modal('show');

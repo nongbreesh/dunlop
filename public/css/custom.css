@@ -14,7 +14,7 @@
 }
 
 .demo-2 .sl-slider h2,
-.demo-2 .sl-slider blockquote {
+.demo-2 .sl-slider blockquote ,.demo-2 .sl-slider .blockquote {
     padding: 100px 30px 10px 30px;
     width: 80%;
     max-width: 960px;
@@ -29,7 +29,7 @@
     text-shadow: 0 -1px 0 rgba(0,0,0,0.2);
 }
 
-.demo-2 .sl-slider blockquote {
+.demo-2 .sl-slider blockquote  ,.demo-2 .sl-slider .blockquote{
     font-size: 28px;
     padding-top: 10px;
     font-weight: 300;
@@ -160,17 +160,46 @@
 }
 
 /* Content elements */
+.demo-1 .deco_2 {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    margin: 0 0 0 -130px;
+}
+.demo-1 .deco1_2 {
+    position: absolute;
+    top: 15%;
+    left: 18%;
+    margin: 0 0 0 -130px;
+}
+.demo-1 .deco2_2 {
+    position: absolute;
+    top: 25%;
+    left: 18%;
+    margin: 0 0 0 -130px;
+}
 
 .demo-1 .deco {
-    width: 250px;
-    height: 250px;
     position: absolute;
-    bottom: 29%;
-    left: 19%;
+    bottom: 0%;
+    left: 5%;
     margin: 0 0 0 -130px;
 }
 .demo-1 .deco img{
     width: 100%;
+}
+
+.demo-1 .deco1 {
+    position: absolute;
+    top: 0%;
+    left: 508px;
+    margin: 0 0 0 -130px;
+}
+.demo-1 .deco2 {
+    position: absolute;
+    top: 30%;
+    left: 508px;
+    margin: 0 0 0 -130px;
 }
 
 .demo-1 [data-icon]:after {
@@ -405,6 +434,14 @@
     animation: fromleft 1s ease-out both, fadeIn 1s ease-out both;
 }
 
+.sl-trans-elems .fromright{
+    -webkit-animation: fromright 1s ease-out both, fadeIn 1s ease-out both;
+    -moz-animation: fromright 1s ease-out both, fadeIn 1s ease-out both;
+    -o-animation: fromright 1s ease-out both, fadeIn 1s ease-out both;
+    -ms-animation: fromright 1s ease-out both, fadeIn 1s ease-out both;
+    animation: fromright 1s ease-out both, fadeIn 1s ease-out both;
+}
+
 .sl-trans-elems .spin{
     -webkit-animation: spin 1s ease-out both, spin 1s ease-out both;
     -moz-animation: spin 1s ease-out both, spin 1s ease-out both;
@@ -413,7 +450,7 @@
     animation: spin 1s ease-out both, spin 1s ease-out both;
 }
 
-.sl-trans-elems blockquote.bqmoveUp{
+.sl-trans-elems .bqmoveUp{
     -webkit-animation: bqmoveUp 1s ease-in-out both,bqmoveUp 1s ease-in-out both;
     -moz-animation: bqmoveUp 1s ease-in-out both,bqmoveUp 1s ease-in-out both;
     -o-animation: bqmoveUp 1s ease-in-out both,bqmoveUp 1s ease-in-out both;
@@ -422,21 +459,21 @@
 }
 
 
-.sl-trans-elems h2.moveUp{
+.sl-trans-elems .moveUp{
     -webkit-animation: moveUp 1s ease-in-out both;
     -moz-animation: moveUp 1s ease-in-out both;
     -o-animation: moveUp 1s ease-in-out both;
     -ms-animation: moveUp 1s ease-in-out both;
     animation: moveUp 1s ease-in-out both;
 }
-.sl-trans-elems h2.moveDown{
+.sl-trans-elems .moveDown{
     -webkit-animation: moveDown 1s ease-in-out both;
     -moz-animation: moveDown 1s ease-in-out both;
     -o-animation: moveDown 1s ease-in-out both;
     -ms-animation: moveDown 1s ease-in-out both;
     animation: moveDown 1s ease-in-out both;
 }
-.sl-trans-elems blockquote{
+.sl-trans-elems .fadeIn{
     -webkit-animation: fadeIn 0.5s linear 0.5s both;
     -moz-animation: fadeIn 0.5s linear 0.5s both;
     -o-animation: fadeIn 0.5s linear 0.5s both;
@@ -450,14 +487,14 @@
     -ms-animation: scaleDown 1s ease-in-out both;
     animation: scaleDown 1s ease-in-out both;
 }
-.sl-trans-back-elems h2{
+.sl-trans-back-elems .deco1{
     -webkit-animation: fadeOut 1s ease-in-out both;
     -moz-animation: fadeOut 1s ease-in-out both;
     -o-animation: fadeOut 1s ease-in-out both;
     -ms-animation: fadeOut 1s ease-in-out both;
     animation: fadeOut 1s ease-in-out both;
 }
-.sl-trans-back-elems blockquote{
+.sl-trans-back-elems .deco2{
     -webkit-animation: fadeOut 1s linear both;
     -moz-animation: fadeOut 1s linear both;
     -o-animation: fadeOut 1s linear both;
@@ -527,6 +564,26 @@
     100% {transform: translateX(0px);}
 }
 
+@-webkit-keyframes fromright{
+    0% {-webkit-transform: translateX(0px);}
+    100% {-webkit-transform: translateX(-60px);}
+}
+@-moz-keyframes fromright{
+    0% {-moz-transform: translateX(0px);}
+    100% {-moz-transform: translateX(-0px);}
+}
+@-o-keyframes fromright{
+    0% {-o-transform: translateX(0px);}
+    100% {-o-transform: translateX(-60px);}
+}
+@-ms-keyframes fromright{
+    0% {-ms-transform: translateX(0px);}
+    100% {-ms-transform: translateX(-60px);}
+}
+@keyframes fromright{
+    0% {transform: translateX(0px);}
+    100% {transform: translateX(-60px);}
+}
 
 
 @-webkit-keyframes bqmoveUp{

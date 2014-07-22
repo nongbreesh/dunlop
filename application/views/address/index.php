@@ -74,72 +74,7 @@
                             <td><table  border="0" cellspacing="0" cellpadding="0" >
                                     <tr>
                                         <td>
-                                            <div class="container demo-1">
-
-
-                                                <div id="slider" class="sl-slider-wrapper">
-
-                                                    <div class="sl-slider">
-
-                                                        <?php
-                                                        $i = 1;
-                                                        foreach ($slide_list as $each):
-                                                            ?>
-                                                            <?php if ($each->SLIDE_Animation_Type == 1): ?>
-                                                                <div class="sl-slide bg-1" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
-                                                                    <div class="sl-slide-inner" style="background: url('<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_bg ?>');">
-                                                                        <div class="deco roll"><img src="<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_Object_img ?>" /></div>
-                                                                        <h2 class="moveDown"><?= $each->SLIDE_Headline ?></h2>
-                                                                        <blockquote><?= $each->SLIDE_Desc ?></blockquote>
-                                                                    </div>
-                                                                </div>
-                                                            <?php elseif ($each->SLIDE_Animation_Type == 2): ?>
-                                                                <div class="sl-slide bg-1" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
-                                                                    <div class="sl-slide-inner" style="background: url('<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_bg ?>');">
-                                                                        <div class="deco fromleft"><img src="<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_Object_img ?>" /></div>
-                                                                        <h2 class="moveDown"><?= $each->SLIDE_Headline ?></h2>
-                                                                        <blockquote class="bqmoveUp"><?= $each->SLIDE_Desc ?></blockquote>
-                                                                    </div>
-                                                                </div>
-                                                            <?php elseif ($each->SLIDE_Animation_Type == 3): ?>
-                                                                <div class="sl-slide bg-1" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
-                                                                    <div class="sl-slide-inner" style="background: url('<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_bg ?>');">
-                                                                        <div class="deco spin"><img src="<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_Object_img ?>" /></div>
-                                                                        <h2 class="spin"><?= $each->SLIDE_Headline ?></h2>
-                                                                        <blockquote class="spin"><?= $each->SLIDE_Desc ?></blockquote>
-                                                                    </div>
-                                                                </div>
-                                                            <?php endif; ?>
-                                                            <?php $i++; ?>
-                                                        <?php endforeach; ?>
-
-                                                    </div><!-- /sl-slider -->
-
-                                                    <nav id="nav-arrows" class="nav-arrows">
-                                                        <span class="nav-arrow-prev">Previous</span>
-                                                        <span class="nav-arrow-next">Next</span>
-                                                    </nav>
-
-                                                    <nav id="nav-dots" class="nav-dots">
-
-                                                        <?php
-                                                        $x = 1;
-                                                        foreach ($slide_list as $each):
-                                                            ?>
-                                                            <?php if ($x == 1): ?>
-                                                                <span class="nav-dot-current"></span>
-                                                            <?php else: ?>
-                                                                <span></span>
-                                                            <?php endif; ?>
-                                                            <?php
-                                                            $x++;
-                                                        endforeach;
-                                                        ?>
-                                                    </nav>
-
-                                                </div><!-- /slider-wrapper -->
-
-                                            </div>
+                                             <?php $this->load->view('template/slide'); ?>
                                         </td>
                                     </tr>
                                 </table></td>

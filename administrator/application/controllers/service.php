@@ -337,15 +337,15 @@ class Service extends CI_Controller {
         echo $html;
     }
 
-    function upload_picture_slide_object() {
+    function upload_picture_slide_object1() {
         $this->load->library('upload');
 
-        if (trim($_FILES["input_image_slide_object"]["tmp_name"]) != "") {
-            $type = $_FILES['input_image_slide_object']['type'];
-            $images = $_FILES["input_image_slide_object"]["tmp_name"];
-            $old_images = $_FILES["input_image_slide_object"]["name"];
-            $new_images = "Thumbnails_" . $_FILES["input_image_slide_object"]["name"];
-            copy($_FILES["input_image_slide_object"]["tmp_name"], "./public/uploads/slide/" . $_FILES["input_image_slide_object"]["name"]);
+        if (trim($_FILES["input_image_slide_object1"]["tmp_name"]) != "") {
+            $type = $_FILES['input_image_slide_object1']['type'];
+            $images = $_FILES["input_image_slide_object1"]["tmp_name"];
+            $old_images = $_FILES["input_image_slide_object1"]["name"];
+            $new_images = "Thumbnails_" . $_FILES["input_image_slide_object1"]["name"];
+            copy($_FILES["input_image_slide_object1"]["tmp_name"], "./public/uploads/slide/" . $_FILES["input_image_slide_object1"]["name"]);
             $width = 150; //*** Fix Width & Heigh (Autu caculate) ***//
             $weight = GetimageSize($images);
             $height = round($width * $weight[1] / $weight[0]);
@@ -378,7 +378,97 @@ class Service extends CI_Controller {
 
 
         $html = '<img src="' . base_url() . 'public/uploads/slide/' . $new_images . '" height="50">';
-        $html .= '<input type="hidden" id="input_hdimage_slide_object" name="input_hdimage_slide_object" value="' . $old_images . '" />';
+        $html .= '<input type="hidden" id="input_hdimage_slide_object1" name="input_hdimage_slide_object1" value="' . $old_images . '" />';
+        echo $html;
+    }
+
+    function upload_picture_slide_object2() {
+        $this->load->library('upload');
+
+        if (trim($_FILES["input_image_slide_object2"]["tmp_name"]) != "") {
+            $type = $_FILES['input_image_slide_object2']['type'];
+            $images = $_FILES["input_image_slide_object2"]["tmp_name"];
+            $old_images = $_FILES["input_image_slide_object2"]["name"];
+            $new_images = "Thumbnails_" . $_FILES["input_image_slide_object2"]["name"];
+            copy($_FILES["input_image_slide_object2"]["tmp_name"], "./public/uploads/slide/" . $_FILES["input_image_slide_object2"]["name"]);
+            $width = 150; //*** Fix Width & Heigh (Autu caculate) ***//
+            $weight = GetimageSize($images);
+            $height = round($width * $weight[1] / $weight[0]);
+
+            if ($type) {
+                switch ($type) {
+                    case 'image/jpeg':
+                        $images_orig = ImageCreateFromJPEG($images);
+                        $photoX = ImagesX($images_orig);
+                        $photoY = ImagesY($images_orig);
+                        $images_fin = ImageCreateTrueColor($width, $height);
+                        ImageCopyResampled($images_fin, $images_orig, 0, 0, 0, 0, $width + 1, $height + 1, $photoX, $photoY);
+                        ImageJPEG($images_fin, "./public/uploads/slide/" . $new_images);
+                        break;
+
+                    case 'image/png':
+                        $images_orig = imagecreatefrompng($images);
+                        $photoX = ImagesX($images_orig);
+                        $photoY = ImagesY($images_orig);
+                        $images_fin = ImageCreateTrueColor($width, $height);
+                        ImageCopyResampled($images_fin, $images_orig, 0, 0, 0, 0, $width + 1, $height + 1, $photoX, $photoY);
+                        imagepng($images_fin, "./public/uploads/slide/" . $new_images);
+                        break;
+                }
+            }
+
+            ImageDestroy($images_orig);
+            ImageDestroy($images_fin);
+        }
+
+
+        $html = '<img src="' . base_url() . 'public/uploads/slide/' . $new_images . '" height="50">';
+        $html .= '<input type="hidden" id="input_hdimage_slide_object2" name="input_hdimage_slide_object2" value="' . $old_images . '" />';
+        echo $html;
+    }
+
+    function upload_picture_slide_object3() {
+        $this->load->library('upload');
+
+        if (trim($_FILES["input_image_slide_object3"]["tmp_name"]) != "") {
+            $type = $_FILES['input_image_slide_object3']['type'];
+            $images = $_FILES["input_image_slide_object3"]["tmp_name"];
+            $old_images = $_FILES["input_image_slide_object3"]["name"];
+            $new_images = "Thumbnails_" . $_FILES["input_image_slide_object3"]["name"];
+            copy($_FILES["input_image_slide_object3"]["tmp_name"], "./public/uploads/slide/" . $_FILES["input_image_slide_object3"]["name"]);
+            $width = 150; //*** Fix Width & Heigh (Autu caculate) ***//
+            $weight = GetimageSize($images);
+            $height = round($width * $weight[1] / $weight[0]);
+
+            if ($type) {
+                switch ($type) {
+                    case 'image/jpeg':
+                        $images_orig = ImageCreateFromJPEG($images);
+                        $photoX = ImagesX($images_orig);
+                        $photoY = ImagesY($images_orig);
+                        $images_fin = ImageCreateTrueColor($width, $height);
+                        ImageCopyResampled($images_fin, $images_orig, 0, 0, 0, 0, $width + 1, $height + 1, $photoX, $photoY);
+                        ImageJPEG($images_fin, "./public/uploads/slide/" . $new_images);
+                        break;
+
+                    case 'image/png':
+                        $images_orig = imagecreatefrompng($images);
+                        $photoX = ImagesX($images_orig);
+                        $photoY = ImagesY($images_orig);
+                        $images_fin = ImageCreateTrueColor($width, $height);
+                        ImageCopyResampled($images_fin, $images_orig, 0, 0, 0, 0, $width + 1, $height + 1, $photoX, $photoY);
+                        imagepng($images_fin, "./public/uploads/slide/" . $new_images);
+                        break;
+                }
+            }
+
+            ImageDestroy($images_orig);
+            ImageDestroy($images_fin);
+        }
+
+
+        $html = '<img src="' . base_url() . 'public/uploads/slide/' . $new_images . '" height="50">';
+        $html .= '<input type="hidden" id="input_hdimage_slide_object3" name="input_hdimage_slide_object3" value="' . $old_images . '" />';
         echo $html;
     }
 
@@ -920,12 +1010,12 @@ class Service extends CI_Controller {
 
             $html .= '<tr>';
             $html .= '<td>' . $row->SLIDE_ID . '</td>';
-            $html .= '<td>' . $row->SLIDE_Headline . '<br>';
+            $html .= '<td>' . $row->SLIDE_Animation_Type . '<br>';
             $html .= '<div class = "tools"><span class = "edit"><a href = "javascript:;" onclick="edit_product(' . $row->SLIDE_ID . ');">Edit</a> | </span><span class = "delete"><a class = "delete-tag" href = "javascript:;" onclick="removedata(' . $row->SLIDE_ID . ');">Delete</a></div></td>';
-            $html .= '<td>' . $row->SLIDE_Desc . '</td>';
-            $html .= '<td>' . $row->SLIDE_Animation_Type . '</td>';
             $html .= '<td>' . $row->SLIDE_bg . '</td>';
-            $html .= '<td>' . $row->SLIDE_Object_img . '</td>';
+            $html .= '<td>' . $row->SLIDE_Object_img1 . '</td>';
+            $html .= '<td>' . $row->SLIDE_Object_img2 . '</td>';
+            $html .= '<td>' . $row->SLIDE_Object_img3 . '</td>';
             $html .= '<td>' . time_ago($row->Create_Date) . '</td>';
             $html .= '<td>' . time_ago($row->Update_Date) . '</td>';
             $html .= '</tr>';
@@ -1136,17 +1226,17 @@ class Service extends CI_Controller {
     }
 
     function add_slide() {
-        $input_headline = $this->input->post('input_headline');
-        $input_description = $this->input->post('input_description');
         $input_slide_anim = $this->input->post('input_slide_anim');
         $input_hdimage_slide_bg = $this->input->post('input_hdimage_slide_bg');
-        $input_hdimage_slide_object = $this->input->post('input_hdimage_slide_object');
+        $input_hdimage_slide_object1 = $this->input->post('input_hdimage_slide_object1');
+        $input_hdimage_slide_object2 = $this->input->post('input_hdimage_slide_object2');
+        $input_hdimage_slide_object3 = $this->input->post('input_hdimage_slide_object3');
         $input = array(
-            'SLIDE_Headline' => $input_headline,
-            'SLIDE_Desc' => $input_description,
             'SLIDE_Animation_Type' => $input_slide_anim,
             'SLIDE_bg' => $input_hdimage_slide_bg,
-            'SLIDE_Object_img' => $input_hdimage_slide_object,
+            'SLIDE_Object_img1' => $input_hdimage_slide_object1,
+            'SLIDE_Object_img2' => $input_hdimage_slide_object2,
+            'SLIDE_Object_img3' => $input_hdimage_slide_object3,
             'Create_Date' => date('Y-m-d H:i:s')
         );
         $data = '';
@@ -1256,17 +1346,17 @@ class Service extends CI_Controller {
     }
 
     function edit_slide($id) {
-        $input_headline = $this->input->post('input_headline');
-        $input_description = $this->input->post('input_description');
         $input_slide_anim = $this->input->post('input_slide_anim');
         $input_hdimage_slide_bg = $this->input->post('input_hdimage_slide_bg');
-        $input_hdimage_slide_object = $this->input->post('input_hdimage_slide_object');
+        $input_hdimage_slide_object1 = $this->input->post('input_hdimage_slide_object1');
+        $input_hdimage_slide_object2 = $this->input->post('input_hdimage_slide_object2');
+        $input_hdimage_slide_object3 = $this->input->post('input_hdimage_slide_object3');
         $input = array(
-            'SLIDE_Headline' => $input_headline,
-            'SLIDE_Desc' => $input_description,
             'SLIDE_Animation_Type' => $input_slide_anim,
             'SLIDE_bg' => $input_hdimage_slide_bg,
-            'SLIDE_Object_img' => $input_hdimage_slide_object,
+            'SLIDE_Object_img1' => $input_hdimage_slide_object1,
+            'SLIDE_Object_img2' => $input_hdimage_slide_object2,
+            'SLIDE_Object_img3' => $input_hdimage_slide_object3,
             'Create_Date' => date('Y-m-d H:i:s')
         );
         $data = '';
