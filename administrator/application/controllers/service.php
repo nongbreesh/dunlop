@@ -194,10 +194,10 @@ class Service extends CI_Controller {
         $this->load->library('upload');
         $type = $_FILES['input_image_add']['type'];
         if (trim($_FILES["input_image_add"]["tmp_name"]) != "") {
-            $images = $_FILES["input_image"]["tmp_name"];
-            $old_images = $_FILES["input_image"]["name"];
-            $new_images = "Thumbnails_" . $_FILES["input_image"]["name"];
-            copy($_FILES["input_image"]["tmp_name"], "./public/uploads/" . $_FILES["input_image"]["name"]);
+            $images = $_FILES["input_image_add"]["tmp_name"];
+            $old_images = $_FILES["input_image_add"]["name"];
+            $new_images = "Thumbnails_" . $_FILES["input_image_add"]["name"];
+            copy($_FILES["input_image_add"]["tmp_name"], "./public/uploads/" . $_FILES["input_image_add"]["name"]);
             $width = 150; //*** Fix Width & Heigh (Autu caculate) ***//
             $weight = GetimageSize($images);
             $height = round($width * $weight[1] / $weight[0]);
@@ -214,7 +214,7 @@ class Service extends CI_Controller {
                         $photoY = ImagesY($images_orig);
                         $images_fin = ImageCreateTrueColor($width, $height);
                         ImageCopyResampled($images_fin, $images_orig, 0, 0, 0, 0, $width + 1, $height + 1, $photoX, $photoY);
-                        ImageJPEG($images_fin, "./public/uploads/slide/" . $new_images);
+                        ImageJPEG($images_fin, "./public/uploads/" . $new_images);
                         break;
 
                     case 'image/png':
@@ -223,7 +223,7 @@ class Service extends CI_Controller {
                         $photoY = ImagesY($images_orig);
                         $images_fin = ImageCreateTrueColor($width, $height);
                         ImageCopyResampled($images_fin, $images_orig, 0, 0, 0, 0, $width + 1, $height + 1, $photoX, $photoY);
-                        imagepng($images_fin, "./public/uploads/slide/" . $new_images);
+                        imagepng($images_fin, "./public/uploads/" . $new_images);
                         break;
                 }
             }
@@ -236,6 +236,55 @@ class Service extends CI_Controller {
 
         $html = '<img src="' . base_url() . 'public/uploads/' . $new_images . '" height="50">';
         $html .= '<input type="hidden" id="input_hdimage_add" name="input_hdimage_add" value="' . $old_images . '" />';
+        echo $html;
+    }
+
+    function upload_picture_group_hover() {
+        $this->load->library('upload');
+        $type = $_FILES['input_image_hover_add']['type'];
+        if (trim($_FILES["input_image_hover_add"]["tmp_name"]) != "") {
+            $images = $_FILES["input_image_hover_add"]["tmp_name"];
+            $old_images = $_FILES["input_image_hover_add"]["name"];
+            $new_images = "Thumbnails_" . $_FILES["input_image_hover_add"]["name"];
+            copy($_FILES["input_image_hover_add"]["tmp_name"], "./public/uploads/" . $_FILES["input_image_hover_add"]["name"]);
+            $width = 150; //*** Fix Width & Heigh (Autu caculate) ***//
+            $weight = GetimageSize($images);
+            $height = round($width * $weight[1] / $weight[0]);
+            $images_orig = ImageCreateFromJPEG($images);
+            $photoX = ImagesX($images_orig);
+            $photoY = ImagesY($images_orig);
+            $images_fin = ImageCreateTrueColor($width, $height);
+            ImageCopyResampled($images_fin, $images_orig, 0, 0, 0, 0, $width + 1, $height + 1, $photoX, $photoY);
+            if ($type) {
+                switch ($type) {
+                    case 'image/jpeg':
+                        $images_orig = ImageCreateFromJPEG($images);
+                        $photoX = ImagesX($images_orig);
+                        $photoY = ImagesY($images_orig);
+                        $images_fin = ImageCreateTrueColor($width, $height);
+                        ImageCopyResampled($images_fin, $images_orig, 0, 0, 0, 0, $width + 1, $height + 1, $photoX, $photoY);
+                        ImageJPEG($images_fin, "./public/uploads/" . $new_images);
+                        break;
+
+                    case 'image/png':
+                        $images_orig = imagecreatefrompng($images);
+                        $photoX = ImagesX($images_orig);
+                        $photoY = ImagesY($images_orig);
+                        $images_fin = ImageCreateTrueColor($width, $height);
+                        ImageCopyResampled($images_fin, $images_orig, 0, 0, 0, 0, $width + 1, $height + 1, $photoX, $photoY);
+                        imagepng($images_fin, "./public/uploads/" . $new_images);
+                        break;
+                }
+            }
+
+
+            ImageDestroy($images_orig);
+            ImageDestroy($images_fin);
+        }
+
+
+        $html = '<img src="' . base_url() . 'public/uploads/' . $new_images . '" height="50">';
+        $html .= '<input type="hidden" id="input_hdimage_hover_add" name="input_hdimage_hover_add" value="' . $old_images . '" />';
         echo $html;
     }
 
@@ -292,6 +341,165 @@ class Service extends CI_Controller {
         echo $html;
     }
 
+    function upload_picture_hover() {
+        $this->load->library('upload');
+
+        if (trim($_FILES["input_image_hover"]["tmp_name"]) != "") {
+            $type = $_FILES['input_image_hover']['type'];
+            $images = $_FILES["input_image_hover"]["tmp_name"];
+            $old_images = $_FILES["input_image_hover"]["name"];
+            $new_images = "Thumbnails_" . $_FILES["input_image_hover"]["name"];
+            copy($_FILES["input_image_hover"]["tmp_name"], "./public/uploads/" . $_FILES["input_image_hover"]["name"]);
+            $width = 150; //*** Fix Width & Heigh (Autu caculate) ***//
+            $weight = GetimageSize($images);
+            $height = round($width * $weight[1] / $weight[0]);
+
+            if ($type) {
+                switch ($type) {
+                    case 'image/jpeg':
+                        $images_orig = ImageCreateFromJPEG($images);
+                        $photoX = ImagesX($images_orig);
+                        $photoY = ImagesY($images_orig);
+                        $images_fin = ImageCreateTrueColor($width, $height);
+                        ImageCopyResampled($images_fin, $images_orig, 0, 0, 0, 0, $width + 1, $height + 1, $photoX, $photoY);
+                        ImageJPEG($images_fin, "./public/uploads/" . $new_images);
+                        break;
+
+                    case 'image/png':
+                        $images_orig = imagecreatefrompng($images);
+                        $photoX = ImagesX($images_orig);
+                        $photoY = ImagesY($images_orig);
+                        $images_fin = ImageCreateTrueColor($width, $height);
+                        ImageCopyResampled($images_fin, $images_orig, 0, 0, 0, 0, $width + 1, $height + 1, $photoX, $photoY);
+                        imagepng($images_fin, "./public/uploads/" . $new_images);
+                        break;
+                    case 'image/gif':
+                        $images_orig = imagecreatefromgif($images);
+                        $photoX = ImagesX($images_orig);
+                        $photoY = ImagesY($images_orig);
+                        $images_fin = ImageCreateTrueColor($width, $height);
+                        ImageCopyResampled($images_fin, $images_orig, 0, 0, 0, 0, $width + 1, $height + 1, $photoX, $photoY);
+                        imagepng($images_fin, "./public/uploads/" . $new_images);
+                        break;
+                }
+            }
+
+            ImageDestroy($images_orig);
+            ImageDestroy($images_fin);
+        }
+
+
+        $html = '<img src="' . base_url() . 'public/uploads/' . $new_images . '" height="50">';
+        $html .= '<input type="hidden" id="input_hdimage_hover" name="input_hdimage_hover" value="' . $old_images . '" />';
+        echo $html;
+    }
+    
+    function uploadedit_picture() {
+        $this->load->library('upload');
+
+        if (trim($_FILES["inputedit_image"]["tmp_name"]) != "") {
+            $type = $_FILES['inputedit_image']['type'];
+            $images = $_FILES["inputedit_image"]["tmp_name"];
+            $old_images = $_FILES["inputedit_image"]["name"];
+            $new_images = "Thumbnails_" . $_FILES["inputedit_image"]["name"];
+            copy($_FILES["inputedit_image"]["tmp_name"], "./public/uploads/" . $_FILES["inputedit_image"]["name"]);
+            $width = 150; //*** Fix Width & Heigh (Autu caculate) ***//
+            $weight = GetimageSize($images);
+            $height = round($width * $weight[1] / $weight[0]);
+
+            if ($type) {
+                switch ($type) {
+                    case 'image/jpeg':
+                        $images_orig = ImageCreateFromJPEG($images);
+                        $photoX = ImagesX($images_orig);
+                        $photoY = ImagesY($images_orig);
+                        $images_fin = ImageCreateTrueColor($width, $height);
+                        ImageCopyResampled($images_fin, $images_orig, 0, 0, 0, 0, $width + 1, $height + 1, $photoX, $photoY);
+                        ImageJPEG($images_fin, "./public/uploads/" . $new_images);
+                        break;
+
+                    case 'image/png':
+                        $images_orig = imagecreatefrompng($images);
+                        $photoX = ImagesX($images_orig);
+                        $photoY = ImagesY($images_orig);
+                        $images_fin = ImageCreateTrueColor($width, $height);
+                        ImageCopyResampled($images_fin, $images_orig, 0, 0, 0, 0, $width + 1, $height + 1, $photoX, $photoY);
+                        imagepng($images_fin, "./public/uploads/" . $new_images);
+                        break;
+                    case 'image/gif':
+                        $images_orig = imagecreatefromgif($images);
+                        $photoX = ImagesX($images_orig);
+                        $photoY = ImagesY($images_orig);
+                        $images_fin = ImageCreateTrueColor($width, $height);
+                        ImageCopyResampled($images_fin, $images_orig, 0, 0, 0, 0, $width + 1, $height + 1, $photoX, $photoY);
+                        imagepng($images_fin, "./public/uploads/" . $new_images);
+                        break;
+                }
+            }
+
+            ImageDestroy($images_orig);
+            ImageDestroy($images_fin);
+        }
+
+
+        $html = '<img src="' . base_url() . 'public/uploads/' . $new_images . '" height="50">';
+        $html .= '<input type="hidden" id="inputedit_hdimage" name="inputedit_hdimage" value="' . $old_images . '" />';
+        echo $html;
+    }
+
+    function uploadedit_picture_hover() {
+        $this->load->library('upload');
+
+        if (trim($_FILES["inputedit_image_hover"]["tmp_name"]) != "") {
+            $type = $_FILES['inputedit_image_hover']['type'];
+            $images = $_FILES["inputedit_image_hover"]["tmp_name"];
+            $old_images = $_FILES["inputedit_image_hover"]["name"];
+            $new_images = "Thumbnails_" . $_FILES["inputedit_image_hover"]["name"];
+            copy($_FILES["inputedit_image_hover"]["tmp_name"], "./public/uploads/" . $_FILES["inputedit_image_hover"]["name"]);
+            $width = 150; //*** Fix Width & Heigh (Autu caculate) ***//
+            $weight = GetimageSize($images);
+            $height = round($width * $weight[1] / $weight[0]);
+
+            if ($type) {
+                switch ($type) {
+                    case 'image/jpeg':
+                        $images_orig = ImageCreateFromJPEG($images);
+                        $photoX = ImagesX($images_orig);
+                        $photoY = ImagesY($images_orig);
+                        $images_fin = ImageCreateTrueColor($width, $height);
+                        ImageCopyResampled($images_fin, $images_orig, 0, 0, 0, 0, $width + 1, $height + 1, $photoX, $photoY);
+                        ImageJPEG($images_fin, "./public/uploads/" . $new_images);
+                        break;
+
+                    case 'image/png':
+                        $images_orig = imagecreatefrompng($images);
+                        $photoX = ImagesX($images_orig);
+                        $photoY = ImagesY($images_orig);
+                        $images_fin = ImageCreateTrueColor($width, $height);
+                        ImageCopyResampled($images_fin, $images_orig, 0, 0, 0, 0, $width + 1, $height + 1, $photoX, $photoY);
+                        imagepng($images_fin, "./public/uploads/" . $new_images);
+                        break;
+                    case 'image/gif':
+                        $images_orig = imagecreatefromgif($images);
+                        $photoX = ImagesX($images_orig);
+                        $photoY = ImagesY($images_orig);
+                        $images_fin = ImageCreateTrueColor($width, $height);
+                        ImageCopyResampled($images_fin, $images_orig, 0, 0, 0, 0, $width + 1, $height + 1, $photoX, $photoY);
+                        imagepng($images_fin, "./public/uploads/" . $new_images);
+                        break;
+                }
+            }
+
+            ImageDestroy($images_orig);
+            ImageDestroy($images_fin);
+        }
+
+
+        $html = '<img src="' . base_url() . 'public/uploads/' . $new_images . '" height="50">';
+        $html .= '<input type="hidden" id="inputedit_hdimage_hover" name="inputedit_hdimage_hover" value="' . $old_images . '" />';
+        echo $html;
+    }
+    
     function upload_picture_slide_bg() {
         $this->load->library('upload');
 
@@ -472,6 +680,30 @@ class Service extends CI_Controller {
         echo $html;
     }
 
+    function upload_pdf() {
+        $this->load->library('upload');
+
+        if (trim($_FILES["input_pdf"]["tmp_name"]) != "") {
+            $file_name = $_FILES["input_pdf"]["name"];
+            copy($_FILES["input_pdf"]["tmp_name"], "./public/uploads/files/" . $_FILES["input_pdf"]["name"]);
+        }
+        $html = '[' . $file_name . ']';
+        $html .= '<input type="hidden" id="input_hdpdf" name="input_hdpdf" value="' . $file_name . '" />';
+        echo $html;
+    }
+    
+    function uploadedit_pdf() {
+        $this->load->library('upload');
+
+        if (trim($_FILES["inputedit_pdf"]["tmp_name"]) != "") {
+            $file_name = $_FILES["inputedit_pdf"]["name"];
+            copy($_FILES["inputedit_pdf"]["tmp_name"], "./public/uploads/files/" . $_FILES["inputedit_pdf"]["name"]);
+        }
+        $html = '[' . $file_name . ']';
+        $html .= '<input type="hidden" id="inputedit_hdpdf" name="inputedit_hdpdf" value="' . $file_name . '" />';
+        echo $html;
+    }
+
     function gettire_detail() {
         $id = ($this->input->post('id') != false ? $this->input->post('id') : '');
 
@@ -528,6 +760,12 @@ class Service extends CI_Controller {
 
     function get_product_category() {
         $data['result'] = $this->get_data->getdunlop_type();
+        $this->output->set_header('Content-Type: application/json; charset=utf-8');
+        echo json_encode($data);
+    }
+
+    function get_product_group() {
+        $data['result'] = $this->get_data->getdunlop_group();
         $this->output->set_header('Content-Type: application/json; charset=utf-8');
         echo json_encode($data);
     }
@@ -794,10 +1032,21 @@ class Service extends CI_Controller {
 
     function update_group($id) {
         $inputedit_catename = $this->input->post('inputedit_catename');
-        $input_hdimage = $this->input->post('input_hdimage');
+        $inputedit_cateparent = $this->input->post('inputedit_cateparent');
+        $inputedit_url = $this->input->post('inputedit_url');
+        $inputedit_info = $this->input->post('inputedit_info');
+        $input_hdeditimage = $this->input->post('input_hdeditimage');
+        $input_hdeditimage_hover = $this->input->post('input_hdeditimage_hover');
+        $input_hdedit_pdf = $this->input->post('input_hdedit_pdf');
+
         $input = array(
             'Group_Name' => $inputedit_catename,
-            'Group_IMG' => $input_hdimage,
+            'Group_Parent_ID' => $inputedit_cateparent,
+            'Group_INFO' => $inputedit_info,
+            'Group_IMG' => $input_hdeditimage,
+            'Group_IMG_Hover' => $input_hdeditimage_hover,
+            'Group_PDF' => $input_hdedit_pdf,
+            'Group_URL' => $inputedit_url,
             'Update_Date' => date('Y-m-d H:i:s')
         );
         $data = '';
@@ -869,11 +1118,23 @@ class Service extends CI_Controller {
 
     function add_group() {
         $input_catename = $this->input->post('input_catename');
+        $input_cateparent = $this->input->post('input_cateparent');
+        $input_url = $this->input->post('input_url');
+
         $input_hdimage_add = $this->input->post('input_hdimage_add');
+        $input_hdimage_hover_add = $this->input->post('input_hdimage_hover_add');
+        $input_hdpdf = $this->input->post('input_hdpdf');
+        $input_info = $this->input->post('input_info');
+
 
         $input = array(
             'Group_Name' => $input_catename,
+            'Group_Parent_ID' => $input_cateparent,
+            'Group_Parent_ID' => $input_url,
             'Group_IMG' => $input_hdimage_add,
+            'Group_IMG_Hover' => $input_hdimage_hover_add,
+            'Group_INFO' => $input_info,
+            'Group_PDF' => $input_hdpdf,
             'Create_Date' => date('Y-m-d H:i:s')
         );
 
@@ -993,6 +1254,7 @@ class Service extends CI_Controller {
             $html .= '<td>' . $i . '</td>';
             $html .= '<td>' . $row->val2 . '<br>';
             $html .= '<div class = "tools"><span class = "edit"><a href = "javascript:;" onclick="editdata(' . $row->val1 . ');">Edit</a> | </span><span class = "delete"><a class = "delete-tag" href = "javascript:;" onclick="removedata(' . $row->val1 . ');">Delete</a></div></td>';
+            $html .= '<td>' . $row->Group_Parent_ID . '<br>';
             $html .= ' <td><img src="' . base_url('public') . '/uploads/Thumbnails_' . $row->val3 . '" height="50"/></td>';
 
             $html .= '</tr>';
@@ -1255,14 +1517,21 @@ class Service extends CI_Controller {
         $input_name = $this->input->post('input_name');
         $input_url = $this->input->post('input_url');
         $input_tech = $this->input->post('input_tech');
+        $input_info = $this->input->post('input_info');
         $input_group = $this->input->post('input_group');
         $input_hdimage = $this->input->post('input_hdimage');
+        $input_hdimage_hover = $this->input->post('input_hdimage_hover');
+        $input_hdpdf = $this->input->post('input_hdpdf');
+
         $input = array(
             'Product_Name' => $input_name,
             'Product_URL' => $input_url,
             'Product_TECH' => $input_tech,
+            'Product_INFO' => $input_info,
             'Group_ID' => $input_group,
             'Product_IMG' => $input_hdimage,
+            'Product_IMG_HOVER	' => $input_hdimage_hover,
+            'Product_PDF' => $input_hdpdf,
             'Create_Date' => date('Y-m-d H:i:s')
         );
         $data = '';
@@ -1463,14 +1732,21 @@ class Service extends CI_Controller {
         $input_name = $this->input->post('input_name');
         $input_url = $this->input->post('input_url');
         $input_tech = $this->input->post('input_tech');
+        $input_info = $this->input->post('input_info');
         $input_group = $this->input->post('input_group');
         $input_hdimage = $this->input->post('input_hdimage');
+        $input_hdimage_hover = $this->input->post('input_hdimage_hover');
+        $input_hdpdf = $this->input->post('input_hdpdf');
+
         $input = array(
             'Product_Name' => $input_name,
             'Product_URL' => $input_url,
             'Product_TECH' => $input_tech,
+            'Product_INFO' => $input_info,
             'Group_ID' => $input_group,
             'Product_IMG' => $input_hdimage,
+            'Product_IMG_HOVER	' => $input_hdimage_hover,
+            'Product_PDF' => $input_hdpdf,
             'Update_Date' => date('Y-m-d H:i:s')
         );
         $data = '';

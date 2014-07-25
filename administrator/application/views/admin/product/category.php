@@ -17,7 +17,7 @@
     <!-- Main content -->
     <section class="content">
         <div class="row">
-            <section class="col-lg-4 connectedSortable">
+            <section class="col-lg-6 connectedSortable">
                 <div class="box box-info" id="loading-example">
                     <div class="box-header">
                         <!-- tools box -->
@@ -34,8 +34,27 @@
                         <form role="form" id="form_add_cate">
                             <div class="box-body">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Name</label>
-                                    <input type="text" class="form-control" id="input_catename" name="input_catename" placeholder="Enter category name">
+                                    <label for="exampleInputEmail1">Group Name</label>
+                                    <input type="text" class="form-control" id="input_catename" name="input_catename" placeholder="Enter group name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Group URL</label>
+                                    <input type="text" class="form-control" id="input_url" name="input_url" placeholder="Enter URL">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputFile">Parent</label>
+
+                                    <select class="form-control"  id="input_cateparent" name="input_cateparent" >
+                                        <option value="">--- Select one ----</option>';
+                                        <?php foreach ($dunlop_type as $each) { ?>
+                                            <option value="<?php echo $each->Group_ID; ?>"><?php echo $each->Group_Name; ?></option>';
+                                        <?php } ?>
+                                    </select>
+                                    <p class="help-block">หมวดหมู่ ไม่เหมือนป้ายกำกับ สามารถมีลำดับขั้นได้ คุณอาจจะมีหมวดหมู่แจ๊ช และภายใต้หมวดหมู่แจ๊ชก็สามารถมีหมวดหมู่ย่อยสำหรับ Bebop และ Big Band ได้ สามารถเลือกได้ทั้งนั้น.</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Product INFO</label>
+                                    <textarea  name="input_info" id="input_info"  rows="10" cols="64"> </textarea>     
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputFile">Product image</label>
@@ -51,7 +70,34 @@
                                     <div id="product_pic_add" style="margin-top: 20px;"></div>
 
                                 </div>
-                     
+                                <div class="form-group">
+                                    <label for="exampleInputFile">Product image Hover</label>
+                                    <label>Upload Image File:</label><br/>
+
+                                    <div class="input-group input-group-sm col-lg-12">
+                                        <input name="input_image_hover_add"  id="input_image_hover_add"  class="form-control" type="file" class="inputFile" />
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-info btn-flat" id="btn_image_hover_upload_add" type="button">Upload</button>
+                                        </span>
+
+                                    </div>
+                                    <div id="product_pic_hover_add" style="margin-top: 20px;"></div>
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="input_pdf">pdf download</label>
+                                    <label>Upload pdf File:</label><br/>
+
+                                    <div class="input-group input-group-sm col-lg-6">
+                                        <input name="input_pdf"  id="input_pdf"  class="form-control" type="file" class="inputFile" />
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-info btn-flat" id="btn_pdf_add" type="button">Upload</button>
+                                        </span>
+
+                                    </div>
+                                    <div id="product_pdf" style="margin-top: 20px;"></div>
+
+                                </div>
 
                             </div><!-- /.box-body -->
 
@@ -63,7 +109,7 @@
 
                 </div>
             </section>
-            <section class="col-lg-8 connectedSortable"> 
+            <section class="col-lg-6 connectedSortable"> 
                 <!-- Box (with bar chart) -->
                 <div class="box box-body" id="loading-example">
                     <div class="box-header">
@@ -81,8 +127,9 @@
                         <table class="table table-hover todo-list ">
                             <thead>
                                 <tr>
-                                    <th><strong>No</strong></th>
+                                    <th><strong>ID</strong></th>
                                     <th><strong>Name</strong></th>
+                                    <th><strong>Parent ID</strong></th>
                                     <th><strong>IMG</strong></th>
                                 </tr>
                             </thead>
@@ -124,25 +171,74 @@
                             <input type="hidden" name="input_hddcate" id="input_hddcate" />
                             <div class="box-body">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Name</label>
-                                    <input type="text" class="form-control" id="inputedit_catename" name="inputedit_catename" placeholder="Enter category name">
+                                    <label for="inputedit_catename">Group Name</label>
+                                    <input type="text" class="form-control" id="inputedit_catename" name="inputedit_catename" placeholder="Enter URL">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputedit_url">Group URL</label>
+                                    <input type="text" class="form-control" id="inputedit_url" name="inputedit_url" placeholder="Enter URL">   
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputFile">Parent</label>
+
+                                    <select class="form-control"  id="inputedit_cateparent" name="inputedit_cateparent" >
+                                        <option value="">--- Select one ----</option>';
+                                        <?php foreach ($dunlop_type as $each) { ?>
+                                            <option value="<?php echo $each->Group_ID; ?>"><?php echo $each->Group_Name; ?></option>';
+                                        <?php } ?>
+                                    </select>
+                                    <p class="help-block">หมวดหมู่ ไม่เหมือนป้ายกำกับ สามารถมีลำดับขั้นได้ คุณอาจจะมีหมวดหมู่แจ๊ช และภายใต้หมวดหมู่แจ๊ชก็สามารถมีหมวดหมู่ย่อยสำหรับ Bebop และ Big Band ได้ สามารถเลือกได้ทั้งนั้น.</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Group INFO</label><br/>
+                                    <textarea  name="inputedit_info" id="inputedit_info"  rows="10" cols="64"> </textarea>     
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputFile">Product image</label>
                                     <label>Upload Image File:</label><br/>
 
                                     <div class="input-group input-group-sm col-lg-6">
-                                        <input name="input_image"  id="input_image"  class="form-control" type="file" class="inputFile" />
+                                        <input name="inputedit_image"  id="inputedit_image"  class="form-control" type="file" class="inputFile" />
                                         <span class="input-group-btn">
-                                            <button class="btn btn-info btn-flat" id="btn_image_upload" type="button">Upload</button>
+                                            <button class="btn btn-info btn-flat" id="btn_image_upload_edit" type="button">Upload</button>
                                         </span>
 
                                     </div>
-                                    <div id="product_pic" style="margin-top: 20px;"></div>
+                                    <div id="productedit_pic" style="margin-top: 20px;"></div>
+                                </div>
+
+
+
+                                <div class="form-group">
+                                    <label for="exampleInputFile">Group image Hover</label>
+                                    <label>Upload Image File:</label><br/>
+
+                                    <div class="input-group input-group-sm col-lg-6">
+                                        <input name="inputedit_image_hover"  id="inputedit_image_hover"  class="form-control" type="file" class="inputFile" />
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-info btn-flat" id="btn_image_hover_upload_edit" type="button">Upload</button>
+                                        </span>
+
+                                    </div>
+                                    <div id="productedit_pic_hover" style="margin-top: 20px;"></div>
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="input_pdf">PDF download</label>
+                                    <label>Upload pdf File:</label><br/>
+
+                                    <div class="input-group input-group-sm col-lg-6">
+                                        <input name="input_pdf"  id="input_pdf"  class="form-control" type="file" class="inputFile" />
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-info btn-flat" id="btn_pdf_edit" type="button">Upload</button>
+                                        </span>
+
+                                    </div>
+                                    <div id="productedit_pdf" style="margin-top: 20px;"></div>
 
                                 </div>
 
-                            </div><!-- /.box-body -->
+                            </div>
 
 
                         </div><!-- /.col -->
@@ -164,9 +260,9 @@
 <script>
     $(document).ready(function() {
         load_cate_list();
-        
-        
-          $("#btn_image_upload_add").click(function() {
+
+
+        $("#btn_image_upload_add").click(function() {
 
             var $btn = $(this);
             $btn.button('loading');
@@ -176,7 +272,7 @@
             var file = document.getElementById('input_image_add').files[0];
             //var file = $('#input_image').val();
             if (file) {
-                form.append('input_image', file);
+                form.append('input_image_add', file);
                 //alert(form);
             }
 
@@ -205,24 +301,24 @@
                 $btn.button('reset');
             }
         });
-        
-        $("#btn_image_upload").click(function() {
+
+        $("#btn_image_hover_upload_add").click(function() {
 
             var $btn = $(this);
             $btn.button('loading');
 
 
-            var form = new FormData(document.getElementById('form_add_product'));
-            var file = document.getElementById('input_image').files[0];
+            var form = new FormData(document.getElementById('form_add_cate'));
+            var file = document.getElementById('input_image_hover_add').files[0];
             //var file = $('#input_image').val();
             if (file) {
-                form.append('input_image', file);
+                form.append('input_image_hover_add', file);
                 //alert(form);
             }
 
-            if (input_image != "") {
+            if (input_image_hover != "") {
                 $.ajax({
-                    url: "<?php echo base_url(); ?>" + "index.php/service/upload_picture",
+                    url: "<?php echo base_url(); ?>" + "index.php/service/upload_picture_group_hover",
                     type: "POST",
                     data: form,
                     dataType: "html",
@@ -232,7 +328,7 @@
                     success: function(data) {
                         $.growl('Add image success!', {type: 'success'}); //danger , info , warning
                         $btn.button('reset');
-                        $("#product_pic").html(data);
+                        $("#product_pic_hover_add").html(data);
                     },
                     error: function(XMLHttpRequest) {
                         $.growl(XMLHttpRequest.status, {type: 'danger'}); //danger , info , warning
@@ -245,6 +341,167 @@
                 $btn.button('reset');
             }
         });
+
+        $("#btn_pdf_add").click(function() {
+
+            var $btn = $(this);
+            $btn.button('loading');
+
+
+            var form = new FormData(document.getElementById('form_add_product'));
+            var file = document.getElementById('input_pdf').files[0];
+            //var file = $('#input_image').val();
+            if (file) {
+                form.append('input_pdf', file);
+                //alert(form);
+            }
+
+            if (input_image != "") {
+                $.ajax({
+                    url: "<?php echo base_url(); ?>" + "index.php/service/upload_pdf",
+                    type: "POST",
+                    data: form,
+                    dataType: "html",
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    success: function(data) {
+                        $.growl('Upload File success!', {type: 'success'}); //danger , info , warning
+                        $btn.button('reset');
+                        $("#product_pdf").html(data);
+                    },
+                    error: function(XMLHttpRequest) {
+                        $.growl(XMLHttpRequest.status, {type: 'danger'}); //danger , info , warning
+                        $btn.button('reset');
+                    }
+                });
+            }
+            else {
+                $.growl("Please select images", {type: 'danger'}); //danger , info , warning
+                $btn.button('reset');
+            }
+        });
+
+        $("#btn_image_upload_edit").click(function() {
+
+            var $btn = $(this);
+            $btn.button('loading');
+
+
+            var form = new FormData(document.getElementById('form_edit_product'));
+            var file = document.getElementById('inputedit_image').files[0];
+            //var file = $('#input_image').val();
+            if (file) {
+                form.append('inputedit_image', file);
+                //alert(form);
+            }
+
+            if (inputedit_image != "") {
+                $.ajax({
+                    url: "<?php echo base_url(); ?>" + "index.php/service/uploadedit_picture",
+                    type: "POST",
+                    data: form,
+                    dataType: "html",
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    success: function(data) {
+                        $.growl('Add image success!', {type: 'success'}); //danger , info , warning
+                        $btn.button('reset');
+                        $("#productedit_pic").html(data);
+                    },
+                    error: function(XMLHttpRequest) {
+                        $.growl(XMLHttpRequest.status, {type: 'danger'}); //danger , info , warning
+                        $btn.button('reset');
+                    }
+                });
+            }
+            else {
+                $.growl("Please select images", {type: 'danger'}); //danger , info , warning
+                $btn.button('reset');
+            }
+        });
+        
+         $("#btn_image_hover_upload_edit").click(function() {
+
+            var $btn = $(this);
+            $btn.button('loading');
+
+
+            var form = new FormData(document.getElementById('form_edit_product'));
+            var file = document.getElementById('inputedit_image_hover').files[0];
+            //var file = $('#input_image').val();
+            if (file) {
+                form.append('inputedit_image_hover', file);
+                //alert(form);
+            }
+
+            if (inputedit_image != "") {
+                $.ajax({
+                    url: "<?php echo base_url(); ?>" + "index.php/service/uploadedit_picture_hover",
+                    type: "POST",
+                    data: form,
+                    dataType: "html",
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    success: function(data) {
+                        $.growl('Add image success!', {type: 'success'}); //danger , info , warning
+                        $btn.button('reset');
+                        $("#productedit_pic_hover").html(data);
+                    },
+                    error: function(XMLHttpRequest) {
+                        $.growl(XMLHttpRequest.status, {type: 'danger'}); //danger , info , warning
+                        $btn.button('reset');
+                    }
+                });
+            }
+            else {
+                $.growl("Please select images", {type: 'danger'}); //danger , info , warning
+                $btn.button('reset');
+            }
+        });
+
+        $("#btn_pdf_edit").click(function() {
+
+            var $btn = $(this);
+            $btn.button('loading');
+
+
+            var form = new FormData(document.getElementById('inputedit_pdf'));
+            var file = document.getElementById('inputedit_pdf').files[0];
+            //var file = $('#input_image').val();
+            if (file) {
+                form.append('inputedit_pdf', file);
+                //alert(form);
+            }
+
+            if (input_image != "") {
+                $.ajax({
+                    url: "<?php echo base_url(); ?>" + "index.php/service/uploadedit_pdf",
+                    type: "POST",
+                    data: form,
+                    dataType: "html",
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    success: function(data) {
+                        $.growl('Add image success!', {type: 'success'}); //danger , info , warning
+                        $btn.button('reset');
+                        $("#product_pdf").html(data);
+                    },
+                    error: function(XMLHttpRequest) {
+                        $.growl(XMLHttpRequest.status, {type: 'danger'}); //danger , info , warning
+                        $btn.button('reset');
+                    }
+                });
+            }
+            else {
+                $.growl("Please select images", {type: 'danger'}); //danger , info , warning
+                $btn.button('reset');
+            }
+        });
+        
         $("#form_add_cate").on('submit', function(e) {
             e.preventDefault();
             var $btn = $("#input_addcate");
@@ -266,6 +523,7 @@
                 }
             });
         });
+        
         $("#form_edit_cate").on('submit', function(e) {
             e.preventDefault();
             var $btn = $("#input_editcate");
@@ -320,7 +578,11 @@
                 //console.log(data);
                 $("#input_hddcate").val(data.result.Group_ID);
                 $("#inputedit_catename").val(data.result.Group_Name);
-                $('#product_pic').html('<img src="../public/uploads/Thumbnails_' + data.result.Group_IMG + '" height="50"><input type="hidden" id="input_hdimage" name="input_hdimage" value="' + data.result.Group_IMG + '" />');
+                $("#inputedit_cateparent").val(data.result.Group_Parent_ID);
+                $("#inputedit_info").val(data.result.Group_INFO);
+                $('#productedit_pic').html('<img src="../public/uploads/Thumbnails_' + data.result.Group_IMG + '" height="50"><input type="hidden" id="input_hdeditimage" name="input_hdeditimage" value="' + data.result.Group_IMG + '" />');
+                $('#productedit_pic_hover').html('<img src="../public/uploads/Thumbnails_' + data.result.Group_IMG_Hover + '" height="50"><input type="hidden" id="input_hdeditimage_hover" name="input_hdeditimage_hover" value="' + data.result.Group_IMG_Hover + '" />');
+                $('#productedit_pdf').html('[' + data.result.Group_PDF + ']<input type="hidden" id="input_hdedit_pdf" name="input_hdedit_pdf" value="' + data.result.Group_PDF + '" />');
 
 
             },
@@ -357,11 +619,11 @@
 
         $.ajax({
             type: "POST",
-            url: "<?php echo base_url(); ?>" + "index.php/service/get_product_category",
+            url: "<?php echo base_url(); ?>" + "index.php/service/get_product_group",
             dataType: "json",
             success: function(data) {
                 // console.log(data.result[0]);
-
+                $("#input_cateparent").html = "";
                 var listItems = '<option value="">--- Select one ----</option>';
                 $.each(data.result, function(i, data) {
                     listItems += "<option value=" + data.val1 + ">" + data.val2 + "</option>";

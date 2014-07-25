@@ -313,7 +313,7 @@ class get_data extends CI_Model {
     }
 
     function getdunlop_group() {
-        $this->db->select('Group_ID as val1 , Group_Name as val2, Group_IMG as val3 ');
+        $this->db->select('Group_ID as val1 , Group_Name as val2, Group_IMG as val3 , Group_Parent_ID ');
         $query = $this->db->get('dunlop_group');
         return $query->result();
     }

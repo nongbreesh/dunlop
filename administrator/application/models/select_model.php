@@ -102,7 +102,7 @@ class select_model extends CI_Model {
 
     function get_dunlop_group() {
 
-        $query = $this->db->query("SELECT  * FROM dunlop_group");
+        $query = $this->db->query("SELECT  * FROM dunlop_group where  Group_Parent_ID = 0");
         return $query->result();
     }
 

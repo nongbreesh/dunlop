@@ -39,11 +39,11 @@
                                     <th>ID</th>
                                     <th>Group Name</th>
                                     <th>Product Name</th>
-                                 <th><i class="fa fa-picture-o"></i></th>
+                                    <th><i class="fa fa-picture-o"></i></th>
                                     <th>Product_URL</th>
                                     <th>Product_TECH</th>
                                     <th>Create Date</th>
-                                     <th>Update Date</th>
+                                    <th>Update Date</th>
                                 </tr>
                             </thead>
                             <tbody id="products_list">
@@ -57,11 +57,11 @@
                                         <td><?= $row->Product_Name ?><br>
                                             <div class = "tools"><span class="edit"><a href="javascript:;" onclick="edit_product(<?= $row->Product_ID ?>);">Edit</a> | </span><span class="delete"><a class="delete-tag" href="#" onclick="return removedata(<?= $row->Product_ID ?>);">Delete</a></div></td></td>
                                         </td>
-                                        <td><img src="<?=base_url('public')?>/uploads/Thumbnails_<?= $row->Product_IMG ?>"  height="50"/></td>
+                                        <td><img src="<?= base_url('public') ?>/uploads/Thumbnails_<?= $row->Product_IMG ?>"  height="50"/></td>
                                         <td><?= $row->Product_URL ?></td>
                                         <td> <?= $row->Product_TECH ?></td>
                                         <td><?= time_ago($row->Create_Date) ?></td>
-                                          <td><?= time_ago($row->Update_Date) ?></td>
+                                        <td><?= time_ago($row->Update_Date) ?></td>
 
                                     </tr> 
                                     <?php
@@ -110,13 +110,13 @@
                                                 <option value="<?php echo $each->Group_ID; ?>"><?php echo $each->Group_Name; ?></option>';
                                             <?php } ?>
                                         </select>
-                                       
+
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Product Name</label>
-                                         <input name="input_name" id="input_name" type="text" class="form-control" >
+                                        <input name="input_name" id="input_name" type="text" class="form-control" >
                                     </div>
-                 
+
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Product URL</label>
                                         <input name="input_url" id="input_url" type="text"  class="form-control" >
@@ -124,13 +124,18 @@
 
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Product TECH</label>
-                                     <input name="input_tech" id="input_tech" type="text" class="form-control" >
-                                   
+
+                                        <textarea  name="input_tech" id="input_tech"  rows="10" cols="68"> </textarea>     
                                     </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Product INFO</label>
+                                        <textarea  name="input_info" id="input_info"  rows="10" cols="68"> </textarea>     
+                                    </div>
+
                                 </div>
-   
+
                                 <div class="form-group">
-                                    <label for="exampleInputFile">Product image</label>
+                                    <label for="input_image">Product image_defualt</label>
                                     <label>Upload Image File:</label><br/>
 
                                     <div class="input-group input-group-sm col-lg-6">
@@ -141,6 +146,35 @@
 
                                     </div>
                                     <div id="product_pic" style="margin-top: 20px;"></div>
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="input_image_hover">Product image_hover</label>
+                                    <label>Upload Image File:</label><br/>
+
+                                    <div class="input-group input-group-sm col-lg-6">
+                                        <input name="input_image_hover"  id="input_image_hover"  class="form-control" type="file" class="inputFile" />
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-info btn-flat" id="btn_image_upload_hover" type="button">Upload</button>
+                                        </span>
+
+                                    </div>
+                                    <div id="product_pic_hover" style="margin-top: 20px;"></div>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="input_pdf">pdf download</label>
+                                    <label>Upload pdf File:</label><br/>
+
+                                    <div class="input-group input-group-sm col-lg-6">
+                                        <input name="input_pdf"  id="input_pdf"  class="form-control" type="file" class="inputFile" />
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-info btn-flat" id="btn_pdf_upload" type="button">Upload</button>
+                                        </span>
+
+                                    </div>
+                                    <div id="product_pdf" style="margin-top: 20px;"></div>
 
                                 </div>
 
@@ -258,6 +292,86 @@
                 $btn.button('reset');
             }
         });
+
+        $("#btn_image_upload_hover").click(function() {
+
+            var $btn = $(this);
+            $btn.button('loading');
+
+
+            var form = new FormData(document.getElementById('form_add_product'));
+            var file = document.getElementById('input_image_hover').files[0];
+            //var file = $('#input_image').val();
+            if (file) {
+                form.append('input_image', file);
+                //alert(form);
+            }
+
+            if (input_image != "") {
+                $.ajax({
+                    url: "<?php echo base_url(); ?>" + "index.php/service/upload_picture_hover",
+                    type: "POST",
+                    data: form,
+                    dataType: "html",
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    success: function(data) {
+                        $.growl('Add image success!', {type: 'success'}); //danger , info , warning
+                        $btn.button('reset');
+                        $("#product_pic_hover").html(data);
+                    },
+                    error: function(XMLHttpRequest) {
+                        $.growl(XMLHttpRequest.status, {type: 'danger'}); //danger , info , warning
+                        $btn.button('reset');
+                    }
+                });
+            }
+            else {
+                $.growl("Please select images", {type: 'danger'}); //danger , info , warning
+                $btn.button('reset');
+            }
+        });
+        
+         $("#btn_pdf_upload").click(function() {
+
+            var $btn = $(this);
+            $btn.button('loading');
+
+
+            var form = new FormData(document.getElementById('form_add_product'));
+            var file = document.getElementById('input_pdf').files[0];
+            //var file = $('#input_image').val();
+            if (file) {
+                form.append('input_pdf', file);
+                //alert(form);
+            }
+
+            if (input_image != "") {
+                $.ajax({
+                    url: "<?php echo base_url(); ?>" + "index.php/service/upload_pdf",
+                    type: "POST",
+                    data: form,
+                    dataType: "html",
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    success: function(data) {
+                        $.growl('Add image success!', {type: 'success'}); //danger , info , warning
+                        $btn.button('reset');
+                        $("#product_pdf").html(data);
+                    },
+                    error: function(XMLHttpRequest) {
+                        $.growl(XMLHttpRequest.status, {type: 'danger'}); //danger , info , warning
+                        $btn.button('reset');
+                    }
+                });
+            }
+            else {
+                $.growl("Please select images", {type: 'danger'}); //danger , info , warning
+                $btn.button('reset');
+            }
+        });
     });
     function add_product() {
         //$.growl('Add product success!', {type: 'success'}); //danger , info , warning
@@ -273,7 +387,7 @@
                 data: {"id": id},
                 dataType: 'json',
                 success: function(data) {
-                        console.log(data);
+                    console.log(data);
                     $('#input_item_code').val(data.result[0].item_code);
                     $('#input_categories').val(data.result[0].categories);
                     if (data.result[0].ishit == 1) {
@@ -285,8 +399,10 @@
                     $('#input_name').val(data.result[0].Product_Name);
                     $('#input_url').val(data.result[0].Product_URL);
                     $('#input_tech').val(data.result[0].Product_TECH);
+                    $('#input_info').val(data.result[0].Product_INFO);
                     $('#input_group').val(data.result[0].Group_ID);
                     $('#product_pic').html('<img src="../public/uploads/Thumbnails_' + data.result[0].Product_IMG + '" height="50"><input type="hidden" id="input_hdimage" name="input_hdimage" value="' + data.result[0].Product_IMG + '" />');
+                    $('#product_pic_hover').html('<img src="../public/uploads/Thumbnails_' + data.result[0].Product_IMG_HOVER + '" height="50"><input type="hidden" id="input_hdimage_hover" name="input_hdimage_hover" value="' + data.result[0].Product_IMG_HOVER + '" />');
                     $("#input_hdf_update").val('true');
                     $("#input_id").val(id);
                     $('#add_product-modal').modal('show');
