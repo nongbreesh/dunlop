@@ -623,9 +623,13 @@ ul.accordion div.content_list {
     display: none;
     background-color: #fce75e;
     font: 16px 'ThaiSansNeue-Bold';
+    color: #000;
 }
 ul.accordion div.content_list  img{
     margin: 10px;
+}
+ul.accordion div.content_list p{
+    color: #000 !important;
 }
 /* Show the content boxes when the radio buttons are checked */
 ul.accordion label + input[type='radio']:checked + div.content_list {
