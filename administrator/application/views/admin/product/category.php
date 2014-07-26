@@ -407,7 +407,7 @@
             $btn.button('loading');
 
 
-            var form = new FormData(document.getElementById('form_edit_product'));
+            var form = new FormData(document.getElementById('form_edit_cate'));
             var file = document.getElementById('inputedit_image').files[0];
             //var file = $('#input_image').val();
             if (file) {
@@ -447,7 +447,7 @@
             $btn.button('loading');
 
 
-            var form = new FormData(document.getElementById('form_edit_product'));
+            var form = new FormData(document.getElementById('form_edit_cate'));
             var file = document.getElementById('inputedit_image_hover').files[0];
             //var file = $('#input_image').val();
             if (file) {
