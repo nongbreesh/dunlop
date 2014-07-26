@@ -74,7 +74,7 @@
                             <td><table  border="0" cellspacing="0" cellpadding="0" >
                                     <tr>
                                         <td>
-                                             <?php $this->load->view('template/slide'); ?>
+                                            <?php $this->load->view('template/slide'); ?>
                                         </td>
                                     </tr>
                                 </table></td>
@@ -88,7 +88,7 @@
                                 <div class="contact" style="margin-top: -20px;">
                                     <div class="title_trans"><h1>ตัวแทนจำหน่าย <img style="margin-top: -14px;
                                                                                     margin-left: -5px; " src="<?= base_url() ?>public/images/add_loc_icon.png"/></h1> </div>
-                                    <div class="row" style="min-height: 750px;">
+                                    <div class="row" style="min-height: 1100px;">
                                         <?php if ($id == 1): ?>
                                             <div class="mapaddress bg1"></div>
                                         <?php elseif ($id == 2): ?>
