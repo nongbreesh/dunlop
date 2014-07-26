@@ -41,7 +41,6 @@
                                     <th>Product Name</th>
                                     <th><i class="fa fa-picture-o"></i></th>
                                     <th>Product_URL</th>
-                                    <th>Product_TECH</th>
                                     <th>Create Date</th>
                                     <th>Update Date</th>
                                 </tr>
@@ -59,7 +58,6 @@
                                         </td>
                                         <td><img src="<?= base_url('public') ?>/uploads/Thumbnails_<?= $row->Product_IMG ?>"  height="50"/></td>
                                         <td><?= $row->Product_URL ?></td>
-                                        <td> <?= $row->Product_TECH ?></td>
                                         <td><?= time_ago($row->Create_Date) ?></td>
                                         <td><?= time_ago($row->Update_Date) ?></td>
 
@@ -203,7 +201,25 @@
 <script>
     $(document).ready(function() {
 
+        CKEDITOR.replace('input_tech',
+                {
+                    filebrowserImageBrowseUrl: '<?= base_url() ?>public/js/plugins/ckfinder/ckfinder.html?Type=Images',
+                    filebrowserFlashBrowseUrl: '<?= base_url() ?>public/js/plugins/ckfinder/ckfinder.html?Type=Flash',
+                    filebrowserUploadUrl: '<?= base_url() ?>public/js/plugins/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+                    filebrowserImageUploadUrl: '<?= base_url() ?>public/js/plugins/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+                    filebrowserFlashUploadUrl: '<?= base_url() ?>public/js/plugins/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
+                    ,
+                });
 
+        CKEDITOR.replace('input_info',
+                {
+                    filebrowserImageBrowseUrl: '<?= base_url() ?>public/js/plugins/ckfinder/ckfinder.html?Type=Images',
+                    filebrowserFlashBrowseUrl: '<?= base_url() ?>public/js/plugins/ckfinder/ckfinder.html?Type=Flash',
+                    filebrowserUploadUrl: '<?= base_url() ?>public/js/plugins/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+                    filebrowserImageUploadUrl: '<?= base_url() ?>public/js/plugins/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+                    filebrowserFlashUploadUrl: '<?= base_url() ?>public/js/plugins/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
+                    ,
+                });
 
 
         $("#form_add_product").on('submit', function(e) {
@@ -211,6 +227,23 @@
             var $btn = $("#input_addproduct");
             $btn.button('loading');
             var is_update = $("#input_hdf_update").val();
+
+            var input_tech = CKEDITOR.instances.input_tech.getData();
+
+            $('<input />').attr('type', 'hidden')
+                    .attr('name', 'input_tech')
+                    .attr('value', input_tech)
+                    .appendTo($(this));
+
+
+            var input_info = CKEDITOR.instances.input_info.getData();
+
+            $('<input />').attr('type', 'hidden')
+                    .attr('name', 'input_info')
+                    .attr('value', input_info)
+                    .appendTo($(this));
+
+
             if (is_update == 'false') {
                 $.ajax({
                     url: "<?php echo base_url(); ?>" + "index.php/service/add_product",
@@ -231,6 +264,20 @@
             }
             else {
                 var input_id = $("#input_id").val();
+                var input_tech = CKEDITOR.instances.input_tech.getData();
+
+                $('<input />').attr('type', 'hidden')
+                        .attr('name', 'input_tech')
+                        .attr('value', input_tech)
+                        .appendTo($(this));
+
+
+                var input_info = CKEDITOR.instances.input_info.getData();
+
+                $('<input />').attr('type', 'hidden')
+                        .attr('name', 'input_info')
+                        .attr('value', input_info)
+                        .appendTo($(this));
                 $.ajax({
                     url: "<?php echo base_url(); ?>" + "index.php/service/edit_product/" + input_id,
                     type: "POST",
@@ -332,8 +379,8 @@
                 $btn.button('reset');
             }
         });
-        
-         $("#btn_pdf_upload").click(function() {
+
+        $("#btn_pdf_upload").click(function() {
 
             var $btn = $(this);
             $btn.button('loading');
@@ -398,8 +445,11 @@
                     }
                     $('#input_name').val(data.result[0].Product_Name);
                     $('#input_url').val(data.result[0].Product_URL);
-                    $('#input_tech').val(data.result[0].Product_TECH);
-                    $('#input_info').val(data.result[0].Product_INFO);
+                    // $('#input_tech').val(data.result[0].Product_TECH);
+                    //$('#input_info').val(data.result[0].Product_INFO);
+
+                    CKEDITOR.instances.input_tech.setData(data.result[0].Product_TECH);
+                    CKEDITOR.instances.input_info.setData(data.result[0].Product_INFO);
                     $('#input_group').val(data.result[0].Group_ID);
                     $('#product_pic').html('<img src="../public/uploads/Thumbnails_' + data.result[0].Product_IMG + '" height="50"><input type="hidden" id="input_hdimage" name="input_hdimage" value="' + data.result[0].Product_IMG + '" />');
                     $('#product_pic_hover').html('<img src="../public/uploads/Thumbnails_' + data.result[0].Product_IMG_HOVER + '" height="50"><input type="hidden" id="input_hdimage_hover" name="input_hdimage_hover" value="' + data.result[0].Product_IMG_HOVER + '" />');

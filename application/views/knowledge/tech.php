@@ -73,7 +73,7 @@
                             <td><table  border="0" cellspacing="0" cellpadding="0" >
                                     <tr>
                                         <td>
-                                        <?php $this->load->view('template/slide'); ?>
+                                            <?php $this->load->view('template/slide'); ?>
                                         </td>
                                     </tr>
                                 </table></td>
@@ -94,54 +94,11 @@
                                     </div>
                                     <div class="contact-r ">
                                         <div class="title_trans-r"> <h1>TECHNOLOGY</h1></div>
-                                        <div class="content">
-                                           <table border="0" cellpadding="0" cellspacing="0" style="width:100%">
-	<tbody>
-		<tr>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>&nbsp;</td>
-			<td>
-			<p><img alt="dsr" src="http://www.dunloptire.co.th/img/drs.jpg" style="float:left; height:96px; width:201px" /><strong>DIGITAL ROLLING SIMULATION II&nbsp;</strong>เทคโนโลยีใหม่ล่าสุดที่ Dunlop โดยเป็นการวิเคราะห์ การใช้งาน จริงโดยเครื่อง Computer ทั้งทางแห้งและเปียก โดยเปรียบเทียบระหว่างความแตกต่าง ของ DRS กับ DRS II ที่ถูกพัฒนาให้มีสมรรถนะสูงขึ้นกว่าเดิม แล้วนำข้อมูลที่เกิดจากการวิเคราะห์ทั้งหมดไปผลิต และทดสอบ สมรรถนะยางจริงก่อนออกสู่ตลาด เพื่อรองรับกลุ่มเป้าหมายผู้ใช้รถยุโรประดับหรู หรือ Sporty Saloon ความเร็วสูงจึงไม่เพียงแต่เพิ่มสมรรถนะการเกาะถนนบนความเร็วสูง แต่ยังเพิ่มสมรรถนะ ความมั่นคงบน ทางเปียก ลดเสียงรบกวน และเพิ่มความนุ่มนวลในการขับขี่คุณสมบัติดังกล่าว</p>
-			</td>
-		</tr>
-		<tr>
-			<td>&nbsp;</td>
-			<td>
-			<p><br />
-			<strong>HIGH SPEED STABILITY</strong><br />
-			การยึดเกาะถนนในความเร็วสูงทั้งทางตรงและทางโค้ง ดอกยางแบบ BLOCK RIGIDITY ผนวกกับ DIRECTIONAL เพิ่มความกระชับดอกยาง บนหน้าสัมผัสผิวถนนในทางตรง ร่องดอกบนไหล่รูปปีกนกเพิ่มแรกยึดเหนี่ยวเมื่อเข้าโค้งบนความเร็วสูง</p>
 
-			<p><img alt="stability" src="http://www.dunloptire.co.th/img/stability.jpg" style="width:641px" /></p>
-			</td>
-		</tr>
-		<tr>
-			<td>&nbsp;</td>
-			<td>
-			<p><strong>WET PERFORMANCE</strong><br />
-			ดอกยาง SP SPORT MAXX เพิ่มส่วนผสม COMPOUND สร้าง &ldquo;FUNCTIONAL POLYMER&rdquo; ทำให้เนื้อยางยึดเกาะถนนบนทางเปียก ขณะวิ่งด้วยความเร็วสูง ประสิทธิภาพการหยุดรถ (BREAK) บนทางเปียก เพิ่มขึ้น 5% เมื่อเทียบรุ่น SP9000</p>
 
-			<p><img alt="wet performance" src="http://www.dunloptire.co.th/img/wet-perf.jpg" style="width:641px" /></p>
-			</td>
-		</tr>
-		<tr>
-			<td>&nbsp;</td>
-			<td>
-			<p><strong>QUIETNESS</strong><br />
-			ลดเสียงสะท้อนในขณะใช้ความเร็วสูงด้วยดอกยาง SHIFTED PATTERN โดยการสลับตำแหน่งส่วนปลายร่องดอกบนไหล่ยางช่วยลดเสียงรบกวน ห้องโดยสาร ผลการทดสอบ SP MAXX ลดเสียงรบกวนลง 1.1 เดซิเบล เมื่อเทียบกับ SP 9000 ยาง FLAGSHIP รุ่นก่อน</p>
-
-			<p><img alt="quietness" src="http://www.dunloptire.co.th/img/sound.jpg" style="width:335px" /></p>
-
-			<p>&nbsp;</p>
-			</td>
-		</tr>
-	</tbody>
-</table>
-
-                                            <div style="clear:both"></div>
-                                        </div>
+                                        <img src="<?= base_url() ?>public/images/tech_content.png"   style="width: 658px;margin: 5px;"/>
                                         <div style="clear:both"></div>
+
                                     </div>
                                 </div>
                             </td>

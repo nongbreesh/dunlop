@@ -311,9 +311,16 @@ class get_data extends CI_Model {
         $query = $this->db->get('dunlop_about_cate');
         return $query->result();
     }
+    
+     function getdunlop_groupall() {
+        $this->db->select('Group_ID as val1 , Group_Name as val2, Group_IMG as val3 , Group_Parent_ID ');
+        $query = $this->db->get('dunlop_group');
+        return $query->result();
+    }
 
     function getdunlop_group() {
         $this->db->select('Group_ID as val1 , Group_Name as val2, Group_IMG as val3 , Group_Parent_ID ');
+        $this->db->where('Group_Parent_ID', 0);
         $query = $this->db->get('dunlop_group');
         return $query->result();
     }

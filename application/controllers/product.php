@@ -15,12 +15,49 @@ class Product extends CI_Controller {
         $this->mKeyword = '';
     }
 
-    public function index() {
+    public function index($groupid = 0, $productid = 0, $parentgid = 0) {
+        $data['groupid'] = $groupid == 0 ? 1 : $groupid;
+        $data['productid'] = $productid == 0 ? 0 : $productid;
+        $data['parentgid'] = $parentgid;
         $data['title'] = $this->title;
         $data['mTitle'] = $this->mTitle;
         $data['mDesc'] = $this->mDesc;
         $data['mKeyword'] = $this->mKeyword;
         $data['slide_list'] = $this->select_model->get_dunlop_slide();
+        $data['dunlop_group'] = $this->select_model->getdunlop_group();
+        $data['dunlop_group_detail'] = $this->select_model->getdunlop_group_detail($groupid);
+        if ($groupid != 0) {
+            $data['dunlop_group_parent'] = $this->select_model->getdunlop_group_parent($groupid);
+        }
+        if ($productid != 0) {
+            $data['tireDiameter'] = $this->select_model->get_dunlop_tireDiameter_by_pid($productid);
+        }
+        $this->load->view('product/index', $data);
+    }
+
+    public function g($groupid = 0, $productid = 0, $parentgid = 0) {
+        $data['groupid'] = $groupid == 0 ? 1 : $groupid;
+        $data['productid'] = $productid == 0 ? 0 : $productid;
+        $data['parentgid'] = $parentgid;
+        $data['title'] = $this->title;
+        $data['mTitle'] = $this->mTitle;
+        $data['mDesc'] = $this->mDesc;
+        $data['mKeyword'] = $this->mKeyword;
+        $data['slide_list'] = $this->select_model->get_dunlop_slide();
+
+        $data['dunlop_group'] = $this->select_model->getdunlop_group();
+        if ($parentgid == 0) {
+            $data['dunlop_group_detail'] = $this->select_model->getdunlop_group_detail($groupid);
+        } else {
+            $data['dunlop_group_detail'] = $this->select_model->getdunlop_group_detail($parentgid);
+        }
+
+        if ($groupid != 0) {
+            $data['dunlop_group_parent'] = $this->select_model->getdunlop_group_parent($groupid);
+        }
+        if ($productid != 0) {
+            $data['tireDiameter'] = $this->select_model->get_dunlop_tireDiameter_by_pid($productid);
+        }
         $this->load->view('product/index', $data);
     }
 

@@ -201,11 +201,6 @@ class Service extends CI_Controller {
             $width = 150; //*** Fix Width & Heigh (Autu caculate) ***//
             $weight = GetimageSize($images);
             $height = round($width * $weight[1] / $weight[0]);
-            $images_orig = ImageCreateFromJPEG($images);
-            $photoX = ImagesX($images_orig);
-            $photoY = ImagesY($images_orig);
-            $images_fin = ImageCreateTrueColor($width, $height);
-            ImageCopyResampled($images_fin, $images_orig, 0, 0, 0, 0, $width + 1, $height + 1, $photoX, $photoY);
             if ($type) {
                 switch ($type) {
                     case 'image/jpeg':
@@ -250,11 +245,6 @@ class Service extends CI_Controller {
             $width = 150; //*** Fix Width & Heigh (Autu caculate) ***//
             $weight = GetimageSize($images);
             $height = round($width * $weight[1] / $weight[0]);
-            $images_orig = ImageCreateFromJPEG($images);
-            $photoX = ImagesX($images_orig);
-            $photoY = ImagesY($images_orig);
-            $images_fin = ImageCreateTrueColor($width, $height);
-            ImageCopyResampled($images_fin, $images_orig, 0, 0, 0, 0, $width + 1, $height + 1, $photoX, $photoY);
             if ($type) {
                 switch ($type) {
                     case 'image/jpeg':
@@ -393,7 +383,7 @@ class Service extends CI_Controller {
         $html .= '<input type="hidden" id="input_hdimage_hover" name="input_hdimage_hover" value="' . $old_images . '" />';
         echo $html;
     }
-    
+
     function uploadedit_picture() {
         $this->load->library('upload');
 
@@ -499,7 +489,7 @@ class Service extends CI_Controller {
         $html .= '<input type="hidden" id="inputedit_hdimage_hover" name="inputedit_hdimage_hover" value="' . $old_images . '" />';
         echo $html;
     }
-    
+
     function upload_picture_slide_bg() {
         $this->load->library('upload');
 
@@ -691,7 +681,7 @@ class Service extends CI_Controller {
         $html .= '<input type="hidden" id="input_hdpdf" name="input_hdpdf" value="' . $file_name . '" />';
         echo $html;
     }
-    
+
     function uploadedit_pdf() {
         $this->load->library('upload');
 
@@ -1035,9 +1025,9 @@ class Service extends CI_Controller {
         $inputedit_cateparent = $this->input->post('inputedit_cateparent');
         $inputedit_url = $this->input->post('inputedit_url');
         $inputedit_info = $this->input->post('inputedit_info');
-        $input_hdeditimage = $this->input->post('input_hdeditimage');
-        $input_hdeditimage_hover = $this->input->post('input_hdeditimage_hover');
-        $input_hdedit_pdf = $this->input->post('input_hdedit_pdf');
+        $input_hdeditimage = $this->input->post('inputedit_hdimage');
+        $input_hdeditimage_hover = $this->input->post('inputedit_hdimage_hover');
+        $inputedit_hdpdf = $this->input->post('inputedit_hdpdf');
 
         $input = array(
             'Group_Name' => $inputedit_catename,
@@ -1045,7 +1035,7 @@ class Service extends CI_Controller {
             'Group_INFO' => $inputedit_info,
             'Group_IMG' => $input_hdeditimage,
             'Group_IMG_Hover' => $input_hdeditimage_hover,
-            'Group_PDF' => $input_hdedit_pdf,
+            'Group_PDF' => $inputedit_hdpdf,
             'Group_URL' => $inputedit_url,
             'Update_Date' => date('Y-m-d H:i:s')
         );
@@ -1130,7 +1120,7 @@ class Service extends CI_Controller {
         $input = array(
             'Group_Name' => $input_catename,
             'Group_Parent_ID' => $input_cateparent,
-            'Group_Parent_ID' => $input_url,
+            'Group_URL' => $input_url,
             'Group_IMG' => $input_hdimage_add,
             'Group_IMG_Hover' => $input_hdimage_hover_add,
             'Group_INFO' => $input_info,
@@ -1245,7 +1235,7 @@ class Service extends CI_Controller {
     }
 
     function load_group_list() {
-        $result = $this->get_data->getdunlop_group();
+        $result = $this->get_data->getdunlop_groupall();
         $i = 1;
         $html = '';
         foreach ($result as $row) {
@@ -1825,7 +1815,6 @@ class Service extends CI_Controller {
             $html .= '<div class = "tools"><span class="edit"><a href="javascript:;" onclick="edit_product(' . $row->Product_ID . ')">Edit</a> | </span><span class="delete"><a class="delete-tag" href="#" onclick="return removedata(' . $row->Product_ID . ');">Delete</a></div></td>';
             $html .= ' <td><img src="' . base_url('public') . '/uploads/Thumbnails_' . $row->Product_IMG . '" height="50"/></td>';
             $html .= '<td>' . $row->Product_URL . '</td>';
-            $html .= '<td> ' . $row->Product_TECH . '</td>';
             $html .= '<td> ' . time_ago($row->Create_Date) . '</td>';
             $html .= '<td> ' . time_ago($row->Update_Date) . '</td>';
             $html .= '</tr>';

@@ -387,6 +387,10 @@ p.contact_detail{
     position: relative;
 
 }
+.contact-r p {
+    font:18px 'ThaiSansNeue-Bold';
+    color:#fff;
+}
 .contact-r h1{
     color:#ffde00;
     font:50px 'ThaiSansNeue-Bold';
@@ -436,6 +440,15 @@ p.contact_detail{
 }
 .sidemenu li{
     line-height: 5px;
+}
+.sidemenu li ul{
+    display: none;
+}
+.sidemenu li.active ul{
+    display: block;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
 }
 
 .border-radius{
@@ -805,6 +818,7 @@ ul.accordion label + input[type='radio']:checked + div.content_list {
     font: 18px 'ThaiSansNeue-Regular';
     color: #fff;
     margin-top: 32px;
+    position: relative;
 }
 #prodinfo img{
     max-width: 200px;
@@ -957,4 +971,36 @@ ul.accordion label + input[type='radio']:checked + div.content_list {
     font: 16px 'ThaiSansNeue-Bold';
     text-align: left;
     color: #fff;
+}
+
+.download_pdf{
+    background: url('../images/pdf_button.png') no-repeat;
+    width:133px;
+    height: 39px;
+    position: absolute;
+    bottom: -25px;
+    right:0px;
+}
+
+.download_pdf a{
+    z-index: 999;
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.contact-p{
+    color: #f4f4f4;
+    font: 18px 'ThaiSansNeue-Bold';
+    padding:0px 0px 0px 20px;
+}
+.contact-p table tbody tr td{
+    color: #f4f4f4 !important;
+    font: 18px 'ThaiSansNeue-Bold';
+}
+.htitle{
+    color: #ffde00;
+    font: 35px 'ThaiSansNeue-Bold';
+    margin: 0px;
+    padding-left: 37px;
 }

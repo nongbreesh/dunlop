@@ -26,6 +26,45 @@ class select_model extends CI_Model {
         return $query->result();
     }
 
+    function getdunlop_group() {
+        $this->db->select('');
+        $this->db->where('Group_Parent_ID', 0);
+        $this->db->order_by('Group_ID', 'ASC');
+        $query = $this->db->get('dunlop_group');
+        return $query->result();
+    }
+
+    function getdunlop_group_detail($gid) {
+        $this->db->select('');
+        $this->db->where('Group_ID', $gid);
+        $query = $this->db->get('dunlop_group');
+        return $query->row();
+    }
+
+    function getdunlop_group_parent($gid) {
+        $this->db->select('');
+        $this->db->where('Group_Parent_ID', $gid);
+        $this->db->order_by('Group_ID', 'ASC');
+        $query = $this->db->get('dunlop_group');
+        return $query->result();
+    }
+
+    function getdunlop_produt_by_gid($gid) {
+        $this->db->select('');
+        $this->db->where('Group_ID', $gid);
+        $this->db->order_by('Product_ID', 'ASC');
+        $query = $this->db->get('dunlop_product');
+        return $query->result();
+    }
+
+    function getdunlop_produt_by_id($id) {
+        $this->db->select('');
+        $this->db->where('Product_ID', $id);
+        $this->db->order_by('Product_ID', 'ASC');
+        $query = $this->db->get('dunlop_product');
+        return $query->row();
+    }
+
     function get_dunlop_tireDiameter_by_pid($id) {
         $query = $this->db->query("SELECT distinct(Tire_Diameter) as Tire_Diamete  FROM `dunlop_tire` WHERE `Product_ID` = " . $id . "  ORDER BY `dunlop_tire`.`Tire_ID`  ASC");
         return $query->result();

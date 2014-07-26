@@ -73,7 +73,7 @@
                             <td><table  border="0" cellspacing="0" cellpadding="0" >
                                     <tr>
                                         <td>
-                                      <?php $this->load->view('template/slide'); ?>
+                                            <?php $this->load->view('template/slide'); ?>
                                         </td>
                                     </tr>
                                 </table></td>
@@ -88,34 +88,170 @@
                                     <div class="sidebar-l" ><div class="product_title"></div>
 
                                         <ul class="sidemenu">
-                                            <li><a href="<?= base_url() ?>product/index"><img style="" src="<?= base_url() ?>public/images/product/Product_menu_1_OV.png" /></a></li>
-                                            <li><a href="<?= base_url() ?>product/maxxtt"><img style="" src="<?= base_url() ?>public/images/product/Product_sub_1.png" onmouseover="this.src = '<?= base_url() ?>public/images/product/Product_sub_1_OV.png'" onmouseout="this.src = '<?= base_url() ?>public/images/product/Product_sub_1.png'"/></a></li>
-                                            <li><a href="<?= base_url() ?>product/ve302"><img style="" src="<?= base_url() ?>public/images/product/Product_sub_2.png" onmouseover="this.src = '<?= base_url() ?>public/images/product/Product_sub_2_OV.png'" onmouseout="this.src = '<?= base_url() ?>public/images/product/Product_sub_2.png'"/></a></li>
-                                            <li><a href="<?= base_url() ?>product/ec503"><img style="" src="<?= base_url() ?>public/images/product/Product_sub_3.png" onmouseover="this.src = '<?= base_url() ?>public/images/product/Product_sub_3_OV.png'" onmouseout="this.src = '<?= base_url() ?>public/images/product/Product_sub_3.png'"/></a></li>
-                                            <li><a href="<?= base_url() ?>product/lm704"><img style="" src="<?= base_url() ?>public/images/product/Product_sub_4.png" onmouseover="this.src = '<?= base_url() ?>public/images/product/Product_sub_4_OV.png'" onmouseout="this.src = '<?= base_url() ?>public/images/product/Product_sub_4.png'"/></a></li>
-                                            <li><a href="<?= base_url() ?>product/dz102"><img style="" src="<?= base_url() ?>public/images/product/Product_sub_5.png" onmouseover="this.src = '<?= base_url() ?>public/images/product/Product_sub_5_OV.png'" onmouseout="this.src = '<?= base_url() ?>public/images/product/Product_sub_5.png'"/></a></li>
-                                            <li><a href="<?= base_url() ?>product/dzII_star"><img style="" src="<?= base_url() ?>public/images/product/Product_sub_6.png" onmouseover="this.src = '<?= base_url() ?>public/images/product/Product_sub_6_OV.png'" onmouseout="this.src = '<?= base_url() ?>public/images/product/Product_sub_6.png'"/></a></li>
-                                            <li><a href="<?= base_url() ?>product/sp_touring_t1"><img style="" src="<?= base_url() ?>public/images/product/Product_sub_7.png" onmouseover="this.src = '<?= base_url() ?>public/images/product/Product_sub_7_OV.png'" onmouseout="this.src = '<?= base_url() ?>public/images/product/Product_sub_7.png'"/></a></li>
+                                            <?php foreach ($dunlop_group as $each): ?>
+                                                <?php if ($groupid == $each->Group_ID): ?>
+                                                    <li class="active"><a href = "<?= base_url() ?>product/g/<?= $each->Group_ID ?>"><img style = "" src = "<?= base_url() ?>administrator/public/uploads/<?= $each->Group_IMG_Hover ?>" /></a>
+                                                    <?php else: ?>       
+                                                        <li ><a href = "<?= base_url() ?>product/g/<?= $each->Group_ID ?>"><img style = "" src = "<?= base_url() ?>administrator/public/uploads/<?= $each->Group_IMG ?>" onmouseover="this.src = '<?= base_url() ?>administrator/public/uploads/<?= $each->Group_IMG_Hover ?>'" onmouseout="this.src = '<?= base_url() ?>administrator/public/uploads/<?= $each->Group_IMG ?>'"/></a>
+                                                        <?php endif; ?>
+                                                        <?php if ($groupid != 0 || $groupid != 1): ?>
+                                                            <?php
+                                                            $dunlop_product = $this->select_model->getdunlop_produt_by_gid($each->Group_ID);
+                                                            ?>
+                                                            <ul>
+                                                                <?php if (!empty($dunlop_group_parent)): ?>
+                                                                    <?php foreach ($dunlop_group_parent as $each0): ?>
+                                                                        <?php if ($parentgid == $each0->Group_ID): ?>
+                                                                            <li><a href = "<?= base_url() ?>product/g/<?= $each->Group_ID ?>/0/<?= $each0->Group_ID ?>"><img style = "" src = "<?= base_url() ?>administrator/public/uploads/<?= $each0->Group_IMG_Hover ?>" /></a></li>
+                                                                        <?php else: ?>   
+                                                                            <li><a href = "<?= base_url() ?>product/g/<?= $each->Group_ID ?>/0/<?= $each0->Group_ID ?>"><img style = "" src = "<?= base_url() ?>administrator/public/uploads/<?= $each0->Group_IMG ?>" onmouseover="this.src = '<?= base_url() ?>administrator/public/uploads/<?= $each0->Group_IMG_Hover ?>'" onmouseout="this.src = '<?= base_url() ?>administrator/public/uploads/<?= $each0->Group_IMG ?>'"/></a></li>
+                                                                        <?php endif; ?>
+                                                                    <?php endforeach; ?>
+                                                                <?php endif; ?>
+                                                                <?php foreach ($dunlop_product as $each1): ?>
+                                                                    <?php if ($productid == $each1->Product_ID): ?>
+                                                                        <li><a href = "<?= base_url() ?>product/g/<?= $each->Group_ID ?>/<?= $each1->Product_ID ?>"><img style = "" src = "<?= base_url() ?>administrator/public/uploads/<?= $each1->Product_IMG_HOVER ?>" /></a></li>
+                                                                    <?php else: ?>    
+                                                                        <li><a href = "<?= base_url() ?>product/g/<?= $each->Group_ID ?>/<?= $each1->Product_ID ?>"><img style = "" src = "<?= base_url() ?>administrator/public/uploads/<?= $each1->Product_IMG ?>" onmouseover="this.src = '<?= base_url() ?>administrator/public/uploads/<?= $each1->Product_IMG_HOVER ?>'" onmouseout="this.src = '<?= base_url() ?>administrator/public/uploads/<?= $each1->Product_IMG ?>'"/></a></li>
+                                                                    <?php endif; ?>
+                                                                <?php endforeach; ?>
+                                                            </ul>
+                                                        <?php endif; ?>
 
-                                             <li><a href="<?= base_url() ?>product/product_4x4"><img style="" src="<?= base_url() ?>public/images/product/Product_menu_3.png"  onmouseover="this.src = '<?= base_url() ?>public/images/product/Product_menu_3_OV.png'" onmouseout="this.src = '<?= base_url() ?>public/images/product/Product_menu_3.png'"/></a></li> 
-                                            <li><a href="<?= base_url() ?>product/product_pickup"><img style="" src="<?= base_url() ?>public/images/product/Product_menu_2.png" onmouseover="this.src = '<?= base_url() ?>public/images/product/Product_menu_2_OV.png'" onmouseout="this.src = '<?= base_url() ?>public/images/product/Product_menu_2.png'"/></a></li>
-                                            <li><a href="<?= base_url() ?>product/product_oem"><img style="" src="<?= base_url() ?>public/images/product/Product_menu_4.png" onmouseover="this.src = '<?= base_url() ?>public/images/product/Product_menu_4_OV.png'" onmouseout="this.src = '<?= base_url() ?>public/images/product/Product_menu_4.png'"/></a></li>
-                                            <li><a href="<?= base_url() ?>product/warranty"><img style="" src="<?= base_url() ?>public/images/product/Product_menu_5.png" onmouseover="this.src = '<?= base_url() ?>public/images/product/Product_menu_5_OV.png'" onmouseout="this.src = '<?= base_url() ?>public/images/product/Product_menu_5.png'"/></a></li>
-                                     </ul>
+                                                    </li>
+                                                <?php endforeach; ?>
+                                        </ul>
                                     </div>
-                                    <div class="contact-r " >
-                                        <div class="title_trans-r"><h1 style="top: -20px;"><img src="<?= base_url() ?>public/images/product/pass_head.png"/></h1></div>
+                                    <div class = "contact-r " >
+                                        <?php if ($groupid == 0 || $groupid == 1 && $productid == 0): ?>
 
-                                        <div class="passenger_car_graph">
-                                            <div class="point1"><a href="#" ></a></div>
-                                            <div class="point2"><a href="#" ></a></div>
-                                            <div class="point3"><a href="#" ></a></div>
-                                            <div class="point4"><a href="#" ></a></div>
-                                            <div class="point5"><a href="#" ></a></div>
-                                            <div class="point6"><a href="#" ></a></div>
-                                        </div>
-                                        <div class="passenger_car_use"></div>
-                                        <div style="clear:both"></div>
+                                            <div class = "title_trans-r"><h1 style = "top: -20px;"><img src = "<?= base_url() ?>public/images/product/pass_head.png"/></h1></div>
+
+                                            <div class = "passenger_car_graph">
+                                                <div class = "point1"><a href = "#" ></a></div>
+                                                <div class = "point2"><a href = "#" ></a></div>
+                                                <div class = "point3"><a href = "#" ></a></div>
+                                                <div class = "point4"><a href = "#" ></a></div>
+                                                <div class = "point5"><a href = "#" ></a></div>
+                                                <div class = "point6"><a href = "#" ></a></div>
+                                            </div>
+                                            <div class = "passenger_car_use"></div>
+                                            <div style = "clear:both"></div>
+                                        <?php else: ?>
+                                            <?php if ($productid != 0): ?>
+                                                <?php
+                                                $r = $this->select_model->getdunlop_produt_by_id($productid);
+                                                ?>
+                                                <div class="title_trans-r"><h1 ><?= $r->Product_Name ?></h1></div>
+                                                <div class="passenger_car">
+                                                    <a class="btn_prodinfo active" href="javascript:;"></a>
+                                                    <a class="btn_tech" href="javascript:;"></a>
+
+                                                    <div class="passenger_car_header"></div>
+                                                    <div id="tech">
+                                                        <p>
+                                                            <?= $r->Product_TECH ?>
+                                                        </p>
+
+
+                                                        <div style="clear: both"></div>
+                                                    </div>
+                                                    <div id="prodinfo">
+
+                                                        <p>
+                                                            <?= $r->Product_INFO ?>
+                                                        </p>
+                                                        <div style="clear: both"></div>
+                                                        <?php if ($r->Product_PDF): ?>
+                                                            <div class="download_pdf"><a target="_blank" href="<?= base_url() ?>administrator/public/uploads/files/<?= $r->Product_PDF ?>"</div>
+                                                        <?php endif; ?>
+
+                                                    </div>
+
+
+                                                </div>
+                                                <?php if (count($tireDiameter) > 0): ?>
+                                                    <div class="passenger_car_size">
+                                                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th colspan="3"  ><div align="center">ขนาดยาง</div></th>
+                                                                    <th><div align="center">เส้นผ่านศูนย์กลาง<br>
+                                                                        </div></th>
+                                                                    <th><div align="center">ความกว้าง<br>
+                                                                        </div></th>
+                                                                    <th><div align="center">ความกว้างของล้อ (นิ้ว)</div></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+
+                                                                <?php
+                                                                foreach ($tireDiameter as $each):
+                                                                    ?>
+                                                                    <?php $result = $this->select_model->get_dunlop_tire_by_Diameter($productid, $each->Tire_Diamete); ?>
+                                                                    <?php
+                                                                    $i = 1;
+                                                                    $cr = '';
+                                                                    foreach ($result as $each2):
+                                                                        ?>
+                                                                        <tr>
+                                                                            <?php if ($i == 1): ?>
+                                                                                <td rowspan="<?= count($result) ?>"  width="32" height="16" class="tire-f" ><div align="center"><?= $each->Tire_Diamete ?></div></td>
+                                                                                <?php if ($cr != $each2->Tire_Series): ?>
+                                                                                    <td  bgcolor="#ffde00" ><div align="center"><?= $each2->Tire_Series ?></div></td>
+                                                                                <?php else: ?>
+                                                                                    <td  > </td>
+                                                                                <?php endif; ?>
+
+                                                                                <td   ><?= $each2->Tire_Name ?></td>
+                                                                                <td><div align="center"><?= $each2->Tire_Radial ?></div></td>
+                                                                                <td><div align="center"><?= $each2->Tire_Rim ?></div></td>
+                                                                                <td><div align="center"><?= $each2->Tire_Width_inc ?></div></td>
+                                                                            <?php else: ?>
+                                                                                <?php if ($cr != $each2->Tire_Series): ?>
+                                                                                    <td  bgcolor="#ffde00" ><div align="center"><?= $each2->Tire_Series ?></div></td>
+                                                                                <?php else: ?>
+                                                                                    <td  > </td>
+                                                                                <?php endif; ?>
+
+                                                                                <td   ><?= $each2->Tire_Name ?></td>
+                                                                                <td><div align="center"><?= $each2->Tire_Radial ?></div></td>
+                                                                                <td><div align="center"><?= $each2->Tire_Rim ?></div></td>
+                                                                                <td><div align="center"><?= $each2->Tire_Width_inc ?></div></td>
+                                                                            <?php
+                                                                            endif;
+                                                                            $i++;
+                                                                            ?>
+                                                                        </tr>
+                                                                        <?php
+                                                                        $cr = $each2->Tire_Series;
+                                                                    endforeach;
+                                                                    ?>
+                                                                <?php endforeach; ?>
+                                                            </tbody>
+                                                            <tfoot>
+                                                                <tr>
+                                                                    <td >&nbsp;</td>
+                                                                    <td colspan="5"  class="12pxwhite"><div align="right" class="style3">MFS = Max Flange Shield (Rim Protector), XL = Extra Load<span >...</span></div></td>
+                                                                </tr>
+                                                            </tfoot>
+                                                        </table>
+                                                    </div>
+                                                <?php endif; ?>
+                                                <div style="clear:both"></div>
+                                            <?php else: ?>
+                                                <div class="title_trans-r"><h1><?= $dunlop_group_detail->Group_Name ?></h1></div>
+                                                <div class="passenger_car">
+                                                    <p><?= $dunlop_group_detail->Group_INFO ?></p>
+                                                    <?php if ($dunlop_group_detail->Group_PDF): ?>
+                                                        <div class="download_pdf" style="bottom: 0;"><a target="_blank" href="<?= base_url() ?>administrator/public/uploads/files/<?= $dunlop_group_detail->Group_PDF ?>"</div>
+                                                    <?php endif; ?>
+                                                </div>
+
+                                                <div style="clear:both"></div>
+                                            <?php endif; ?>
+
+                                        <?php endif; ?>
                                     </div>
                                 </div>
                             </td>
@@ -124,90 +260,110 @@
                     </table></td>
             </tr>
 
-            <tr height="30">
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
+            <tr height = "30">
+                <td>&nbsp;
+                </td>
+                <td>&nbsp;
+                </td>
+                <td>&nbsp;
+                </td>
             </tr>
-            <tr height="40">
-                <td bgcolor="#373737">&nbsp;</td>
-                <td width="942" bgcolor="#373737" align="right" class="footer"> 2014 Dunlop Tire (Thailand) Company Limited. All Right Reserved </td>
+            <tr height = "40">
+                <td bgcolor = "#373737">&nbsp;
+                </td>
+                <td width = "942" bgcolor = "#373737" align = "right" class = "footer"> 2014 Dunlop Tire (Thailand) Company Limited. All Right Reserved </td>
 
-                <td bgcolor="#373737">&nbsp;</td>
+                <td bgcolor = "#373737">&nbsp;
+                </td>
             </tr>
         </table>
 
-        <!-- end table 3x3-->
-        <script type="text/javascript" src="<?= base_url() ?>public/js/jquery.ba-cond.min.js"></script>
+        <!--end table 3x3-->
+        <script type = "text/javascript" src = "<?= base_url() ?>public/js/jquery.ba-cond.min.js"></script>
         <script type="text/javascript" src="<?= base_url() ?>public/js/jquery.slitslider.js"></script>
 
         <script type="text/javascript">
-                                                $(document).ready(function() {
+                                                                            $(document).ready(function() {
+                                                                                $('#tech').hide();
+                                                                                $('.btn_prodinfo').click(function() {
+                                                                                    $(this).addClass('active')
+                                                                                    $('.btn_tech').removeClass('active')
+                                                                                    $('#tech').hide();
+                                                                                    $('.passenger_car_size').show();
+                                                                                    $('#prodinfo').show();
+                                                                                });
+                                                                                $('.btn_tech').click(function() {
+                                                                                    $(this).addClass('active');
+                                                                                    $('.btn_prodinfo').removeClass('active')
+                                                                                    $('#tech').show();
+                                                                                    $('#prodinfo').hide();
+                                                                                    $('.passenger_car_size').hide();
+                                                                                });
 
-                                                    var Page = (function() {
+                                                                                var Page = (function() {
 
-                                                        var $navArrows = $('#nav-arrows'),
-                                                                $nav = $('#nav-dots > span'),
-                                                                slitslider = $('#slider').slitslider({
-                                                            onBeforeChange: function(slide, pos) {
+                                                                                    var $navArrows = $('#nav-arrows'),
+                                                                                            $nav = $('#nav-dots > span'),
+                                                                                            slitslider = $('#slider').slitslider({
+                                                                                        onBeforeChange: function(slide, pos) {
 
-                                                                $nav.removeClass('nav-dot-current');
-                                                                $nav.eq(pos).addClass('nav-dot-current');
+                                                                                            $nav.removeClass('nav-dot-current');
+                                                                                            $nav.eq(pos).addClass('nav-dot-current');
 
-                                                            }
-                                                        }),
-                                                                init = function() {
+                                                                                        }
+                                                                                    }),
+                                                                                            init = function() {
 
-                                                                    initEvents();
+                                                                                                initEvents();
 
-                                                                },
-                                                                initEvents = function() {
+                                                                                            },
+                                                                                            initEvents = function() {
 
-                                                                    // add navigation events
-                                                                    $navArrows.children(':last').on('click', function() {
+                                                                                                // add navigation events
+                                                                                                $navArrows.children(':last').on('click', function() {
 
-                                                                        slitslider.next();
-                                                                        return false;
+                                                                                                    slitslider.next();
+                                                                                                    return false;
 
-                                                                    });
+                                                                                                });
 
-                                                                    $navArrows.children(':first').on('click', function() {
+                                                                                                $navArrows.children(':first').on('click', function() {
 
-                                                                        slitslider.previous();
-                                                                        return false;
+                                                                                                    slitslider.previous();
+                                                                                                    return false;
 
-                                                                    });
+                                                                                                });
 
-                                                                    $nav.each(function(i) {
+                                                                                                $nav.each(function(i) {
 
-                                                                        $(this).on('click', function(event) {
+                                                                                                    $(this).on('click', function(event) {
 
-                                                                            var $dot = $(this);
+                                                                                                        var $dot = $(this);
 
-                                                                            if (!slitslider.isActive()) {
+                                                                                                        if (!slitslider.isActive()) {
 
-                                                                                // $nav.removeClass('nav-dot-current');
-                                                                                // $dot.addClass('nav-dot-current');
+                                                                                                            // $nav.removeClass('nav-dot-current');
+                                                                                                            // $dot.addClass('nav-dot-current');
 
-                                                                            }
+                                                                                                        }
 
-                                                                            slitslider.jump(i + 1);
-                                                                            return false;
+                                                                                                        slitslider.jump(i + 1);
+                                                                                                        return false;
 
-                                                                        });
+                                                                                                    });
 
-                                                                    });
+                                                                                                });
 
-                                                                };
+                                                                                            };
 
-                                                        return {init: init};
+                                                                                    return {init: init};
 
-                                                    })();
+                                                                                })();
 
-                                                    Page.init();
+                                                                                Page.init();
 
 
-                                                });
+                                                                            });
 
 
 

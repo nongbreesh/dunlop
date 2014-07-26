@@ -228,7 +228,7 @@
                                     <label>Upload pdf File:</label><br/>
 
                                     <div class="input-group input-group-sm col-lg-6">
-                                        <input name="input_pdf"  id="input_pdf"  class="form-control" type="file" class="inputFile" />
+                                        <input name="inputedit_pdf"  id="inputedit_pdf"  class="form-control" type="file" class="inputFile" />
                                         <span class="input-group-btn">
                                             <button class="btn btn-info btn-flat" id="btn_pdf_edit" type="button">Upload</button>
                                         </span>
@@ -261,6 +261,25 @@
     $(document).ready(function() {
         load_cate_list();
 
+        CKEDITOR.replace('input_info',
+                {
+                    filebrowserImageBrowseUrl: '<?= base_url() ?>public/js/plugins/ckfinder/ckfinder.html?Type=Images',
+                    filebrowserFlashBrowseUrl: '<?= base_url() ?>public/js/plugins/ckfinder/ckfinder.html?Type=Flash',
+                    filebrowserUploadUrl: '<?= base_url() ?>public/js/plugins/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+                    filebrowserImageUploadUrl: '<?= base_url() ?>public/js/plugins/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+                    filebrowserFlashUploadUrl: '<?= base_url() ?>public/js/plugins/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
+                    ,
+                });
+
+        CKEDITOR.replace('inputedit_info',
+                {
+                    filebrowserImageBrowseUrl: '<?= base_url() ?>public/js/plugins/ckfinder/ckfinder.html?Type=Images',
+                    filebrowserFlashBrowseUrl: '<?= base_url() ?>public/js/plugins/ckfinder/ckfinder.html?Type=Flash',
+                    filebrowserUploadUrl: '<?= base_url() ?>public/js/plugins/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+                    filebrowserImageUploadUrl: '<?= base_url() ?>public/js/plugins/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+                    filebrowserFlashUploadUrl: '<?= base_url() ?>public/js/plugins/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
+                    ,
+                });
 
         $("#btn_image_upload_add").click(function() {
 
@@ -276,7 +295,7 @@
                 //alert(form);
             }
 
-            if (input_image != "") {
+            if (input_image_add != "") {
                 $.ajax({
                     url: "<?php echo base_url(); ?>" + "index.php/service/upload_picture_group",
                     type: "POST",
@@ -316,7 +335,7 @@
                 //alert(form);
             }
 
-            if (input_image_hover != "") {
+            if (input_image_hover_add != "") {
                 $.ajax({
                     url: "<?php echo base_url(); ?>" + "index.php/service/upload_picture_group_hover",
                     type: "POST",
@@ -356,7 +375,7 @@
                 //alert(form);
             }
 
-            if (input_image != "") {
+            if (input_pdf != "") {
                 $.ajax({
                     url: "<?php echo base_url(); ?>" + "index.php/service/upload_pdf",
                     type: "POST",
@@ -421,8 +440,8 @@
                 $btn.button('reset');
             }
         });
-        
-         $("#btn_image_hover_upload_edit").click(function() {
+
+        $("#btn_image_hover_upload_edit").click(function() {
 
             var $btn = $(this);
             $btn.button('loading');
@@ -476,7 +495,7 @@
                 //alert(form);
             }
 
-            if (input_image != "") {
+            if (inputedit_pdf != "") {
                 $.ajax({
                     url: "<?php echo base_url(); ?>" + "index.php/service/uploadedit_pdf",
                     type: "POST",
@@ -486,9 +505,9 @@
                     cache: false,
                     processData: false,
                     success: function(data) {
-                        $.growl('Add image success!', {type: 'success'}); //danger , info , warning
+                        $.growl('upload file success!', {type: 'success'}); //danger , info , warning
                         $btn.button('reset');
-                        $("#product_pdf").html(data);
+                        $("#productedit_pdf").html(data);
                     },
                     error: function(XMLHttpRequest) {
                         $.growl(XMLHttpRequest.status, {type: 'danger'}); //danger , info , warning
@@ -501,11 +520,17 @@
                 $btn.button('reset');
             }
         });
-        
+
         $("#form_add_cate").on('submit', function(e) {
             e.preventDefault();
             var $btn = $("#input_addcate");
             $btn.button('loading');
+            var input_info = CKEDITOR.instances.input_info.getData();
+
+            $('<input />').attr('type', 'hidden')
+                    .attr('name', 'input_info')
+                    .attr('value', input_info)
+                    .appendTo($(this));
             $.ajax({
                 url: "<?php echo base_url(); ?>" + "index.php/service/add_group",
                 type: "POST",
@@ -523,12 +548,20 @@
                 }
             });
         });
-        
+
         $("#form_edit_cate").on('submit', function(e) {
             e.preventDefault();
             var $btn = $("#input_editcate");
             $btn.button('loading');
             var id = $("#input_hddcate").val();
+            var inputedit_info = CKEDITOR.instances.inputedit_info.getData();
+
+            $('<input />').attr('type', 'hidden')
+                    .attr('name', 'inputedit_info')
+                    .attr('value', inputedit_info)
+                    .appendTo($(this));
+
+
             $.ajax({
                 url: "<?php echo base_url(); ?>" + "index.php/service/update_group/" + id,
                 type: "POST",
@@ -579,10 +612,10 @@
                 $("#input_hddcate").val(data.result.Group_ID);
                 $("#inputedit_catename").val(data.result.Group_Name);
                 $("#inputedit_cateparent").val(data.result.Group_Parent_ID);
-                $("#inputedit_info").val(data.result.Group_INFO);
-                $('#productedit_pic').html('<img src="../public/uploads/Thumbnails_' + data.result.Group_IMG + '" height="50"><input type="hidden" id="input_hdeditimage" name="input_hdeditimage" value="' + data.result.Group_IMG + '" />');
-                $('#productedit_pic_hover').html('<img src="../public/uploads/Thumbnails_' + data.result.Group_IMG_Hover + '" height="50"><input type="hidden" id="input_hdeditimage_hover" name="input_hdeditimage_hover" value="' + data.result.Group_IMG_Hover + '" />');
-                $('#productedit_pdf').html('[' + data.result.Group_PDF + ']<input type="hidden" id="input_hdedit_pdf" name="input_hdedit_pdf" value="' + data.result.Group_PDF + '" />');
+                CKEDITOR.instances.inputedit_info.setData(data.result.Group_INFO);
+                $('#productedit_pic').html('<img src="../public/uploads/Thumbnails_' + data.result.Group_IMG + '" height="50"><input type="hidden" id="inputedit_hdimage" name="inputedit_hdimage" value="' + data.result.Group_IMG + '" />');
+                $('#productedit_pic_hover').html('<img src="../public/uploads/Thumbnails_' + data.result.Group_IMG_Hover + '" height="50"><input type="hidden" id="inputedit_hdimage_hover" name="inputedit_hdimage_hover" value="' + data.result.Group_IMG_Hover + '" />');
+                $('#productedit_pdf').html('[' + data.result.Group_PDF + ']<input type="hidden" id="inputedit_hdpdf" name="inputedit_hdpdf" value="' + data.result.Group_PDF + '" />');
 
 
             },

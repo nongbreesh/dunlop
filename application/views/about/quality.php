@@ -73,7 +73,7 @@
                             <td><table  border="0" cellspacing="0" cellpadding="0" >
                                     <tr>
                                         <td>
-                                      <?php $this->load->view('template/slide'); ?>
+                                            <?php $this->load->view('template/slide'); ?>
                                         </td>
                                     </tr>
                                 </table></td>
@@ -91,113 +91,61 @@
                                             <li><a href="<?= base_url() ?>about/blackground"><img style="" src="<?= base_url() ?>public/images/blackground.png" onmouseover="this.src = '<?= base_url() ?>public/images/blackground_hover.png'" onmouseout="this.src = '<?= base_url() ?>public/images/blackground.png'"/></a></li>
                                             <li><a href="<?= base_url() ?>about/quality_hover"><img style="" src="<?= base_url() ?>public/images/quality_hover.png" /></a></li>
                                             <li><a href="<?= base_url() ?>about/museum"><img style="" src="<?= base_url() ?>public/images/museum.png" onmouseover="this.src = '<?= base_url() ?>public/images/museum_hover.png'" onmouseout="this.src = '<?= base_url() ?>public/images/museum.png'"/></a></li>
-                                         <li><a href="<?= base_url() ?>about/activities"><img style="" src="<?= base_url() ?>public/images/activities.png" onmouseover="this.src = '<?= base_url() ?>public/images/activities_hover.png'" onmouseout="this.src = '<?= base_url() ?>public/images/activities.png'"/></a></li>
-                                       </ul>
+                                            <li><a href="<?= base_url() ?>about/activities"><img style="" src="<?= base_url() ?>public/images/activities.png" onmouseover="this.src = '<?= base_url() ?>public/images/activities_hover.png'" onmouseout="this.src = '<?= base_url() ?>public/images/activities.png'"/></a></li>
+                                        </ul>
                                     </div>
                                     <div class="contact-r " >
                                         <div class="title_trans-r"> <h1>GL<img style="" src="<?= base_url() ?>public/images/O.png"/>BAL QUALITY</h1></div>
-                                        <div class="content">
-                                            <h1>&nbsp;</h1>
+                                        <p  class="contact-p">	Dunlop มีเครือข่ายครอบคลุมไปกว่า 166 ประเทศทั่วโลก และ มีฐานการผลิตอยู่ใน 3 ทวีป เชื่อมโยงเครือข่ายตลาดยางรถยนต์ทั่วโลก สามารถรองรับการเติบโตของธุรกิจยานยนต์ ได้อย่างครบวงจร</p>
+                                        <img src="<?= base_url() ?>public/images/quality.gif"  style="width: 658px;margin: 5px;"/>
+                                        <h3 class="htitle">สุดยอดคุณภาพระดับสากล</h3>
+                                        <p  class="contact-p">Dunlop รองรับตลาดยาง OE ในอุตสาหกรรมยานยนต์ทั่วโลก โดยมีรถหลายยี่ห้อที่ใช้สินค้าจาก Dunlop</p>
 
-                                            <table border="0" cellpadding="0" cellspacing="0" style="width:100%">
-                                                <tbody>
-                                                    <tr>
-                                                    </tr>
-                                                    <tr>
-                                                        <td colspan="3">
-                                                            <p><img alt="ความเป็นมาและวิวัฒนาการของดันลอปไทร์" src="http://www.dunloptire.co.th/img/global-qc.jpg" style="height:42px; width:232px" /></p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>&nbsp;</td>
-                                                        <td colspan="3">Dunlop มีเครือข่ายครอบคลุมไปกว่า 166 ประเทศทั่วโลก และ มีฐานการผลิตอยู่ใน 3 ทวีป เชื่อมโยงเครือข่ายตลาดยางรถยนต์ทั่วโลก สามารถรองรับการเติบโตของธุรกิจยานยนต์ ได้อย่างครบวงจร</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>&nbsp;</td>
-                                                        <td colspan="3">
-                                                            <br />
-                                                            <div align="center">
-                                                                <img alt="ความเป็นมาและวิวัฒนาการของดันลอปไทร์" src="<?= base_url() ?>public/images/quality.gif" /> </div>
-                                                            <p><br />
-                                                                &nbsp;<br />
-                                                                <img src="http://www.dunloptire.co.th/img/qc-map.jpg" style="height:58px; width:510px" />&nbsp;</p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>&nbsp;</td>
-                                                        <td colspan="3">
-                                                            <p><img alt="" src="http://www.dunloptire.co.th/img/global-qc2.jpg" style="height:48px; width:250px" /><br />
-                                                                Dunlop รองรับตลาดยาง OE ในอุตสาหกรรมยานยนต์ทั่วโลก โดยมีรถหลายยี่ห้อที่ใช้สินค้าจาก Dunlop</p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>&nbsp;</td>
-                                                        <td>1.ALFA&nbsp;<br />
-                                                            2.AUDI&nbsp;<br />
-                                                            3.AUTO ALLIANCE&nbsp;<br />
-                                                            4.BMW&nbsp;<br />
-                                                            5.DAIHATSU&nbsp;<br />
-                                                            6.FIAT&nbsp;<br />
-                                                            7.FORD&nbsp;<br />
-                                                            8.GENERAL MOTORS&nbsp;<br />
-                                                            9.HONDA&nbsp;<br />
-                                                            10.JAGUAR</td>
-                                                        <td>11.LEXUS&nbsp;<br />
-                                                            12.MAZDA&nbsp;<br />
-                                                            13.MERCEDES BENZ&nbsp;<br />
-                                                            14.MITSUBISHI&nbsp;<br />
-                                                            15.NISSAN&nbsp;<br />
-                                                            16.OPEL<br />
-                                                            17.PEUGEOT&nbsp;<br />
-                                                            18.POLARIS&nbsp;<br />
-                                                            19.PORSCHE&nbsp;<br />
-                                                            20.RENAULT</td>
-                                                        <td>21.ROVER&nbsp;<br />
-                                                            22.SAAB&nbsp;<br />
-                                                            23.SEAT&nbsp;<br />
-                                                            24.SKODA&nbsp;<br />
-                                                            25.SUZUKI&nbsp;<br />
-                                                            26.TOYOTA&nbsp;<br />
-                                                            27.VAUXHALL<br />
-                                                            28.VOLKSWAGEN&nbsp;<br />
-                                                            29.VOLVO</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>&nbsp;</td>
-                                                        <td colspan="3">&nbsp;</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
 
-                                            <div style="clear:both"></div>
-                                        </div>
-                                        <div style="clear:both"></div>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
 
-                    </table></td>
-            </tr>
 
-            <tr height="30">
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr height="40">
-                <td bgcolor="#373737">&nbsp;</td>
-                <td width="942" bgcolor="#373737" align="right" class="footer"> 2014 Dunlop Tire (Thailand) Company Limited. All Right Reserved </td>
+                                        <table class="contact-p"  style="width: 658px;margin: 5px;">
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td valign="top">1.ALFA <br>
+                                                        2.AUDI <br>
+                                                            3.AUTO  ALLIANCE <br>
+                                                                4.BMW <br>
+                                                                    5.DAIHATSU <br>
+                                                                        6.FIAT <br>
+                                                                            7.FORD <br>
+                                                                                8.GENERAL MOTORS <br>
+                                                                                    9.HONDA <br>
+                                                                                        10.JAGUAR </td>
+                                                                                        <td valign="top">11.LEXUS <br>
+                                                                                                12.MAZDA <br>
+                                                                                                    13.MERCEDES BENZ <br>
+                                                                                                        14.MITSUBISHI <br>
+                                                                                                            15.NISSAN <br>
+                                                                                                                16.OPEL<br>
+                                                                                                                    17.PEUGEOT <br>
+                                                                                                                        18.POLARIS <br>
+                                                                                                                            19.PORSCHE <br>
+                                                                                                                                20.RENAULT</td>
+                                                                                                                                <td valign="top">21.ROVER <br>
+                                                                                                                                        22.SAAB <br>
+                                                                                                                                            23.SEAT <br>
+                                                                                                                                                24.SKODA <br>
+                                                                                                                                                    25.SUZUKI <br>
+                                                                                                                                                        26.TOYOTA <br>
+                                                                                                                                                            27.VAUXHALL<br>
+                                                                                                                                                                28.VOLKSWAGEN <br>
+                                                                                                                                                                    29.VOLVO </td>
+                                                                                                                                                                    </tr>
 
-                <td bgcolor="#373737">&nbsp;</td>
-            </tr>
-        </table>
+                                                                                                                                                                    </table>
 
-        <!-- end table 3x3-->
-        <script type="text/javascript" src="<?= base_url() ?>public/js/jquery.ba-cond.min.js"></script>
-        <script type="text/javascript" src="<?= base_url() ?>public/js/jquery.slitslider.js"></script>
 
-        <script type="text/javascript">
+                                                                                                                                                                    <!-- end table 3x3-->
+                                                                                                                                                                    <script type="text/javascript" src="<?= base_url() ?>public/js/jquery.ba-cond.min.js"></script>
+                                                                                                                                                                    <script type="text/javascript" src="<?= base_url() ?>public/js/jquery.slitslider.js"></script>
+
+                                                                                                                                                                    <script type="text/javascript">
                                                 $(document).ready(function() {
 
                                                     var Page = (function() {
@@ -267,6 +215,6 @@
 
 
 
-        </script>
-    </body>
-</html>
+                                                                                                                                                                    </script>
+                                                                                                                                                                    </body>
+                                                                                                                                                                    </html>
