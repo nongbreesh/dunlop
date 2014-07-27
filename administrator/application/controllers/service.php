@@ -64,6 +64,47 @@ class Service extends CI_Controller {
         echo $html;
     }
 
+    public function load_album_list() {
+        $result = $this->select_model->get_dunlop_album();
+        $i = 1;
+        $html = '';
+        foreach ($result as $row) {
+
+            $html .= '<tr>';
+            $html .= '<td>' . $row->Album_ID . '</td>';
+            $html .= ' <td><img src="' . base_url('public') . '/uploads/Thumbnails_' . $row->Album_Thumbnail . '" height="50"/></td>';
+            $html .= '<td>' . $row->Album_Name . '<br>';
+            $html .= '<div class = "tools"><span class = "edit"><a href = "javascript:;" onclick="editdata(' . $row->Album_ID . ');">Edit</a> | </span><span class = "delete"><a class = "delete-tag" href = "javascript:;" onclick="removedata(' . $row->Album_ID . ');">Delete</a></div></td>';
+            $html .= '<td>' . $row->Create_Date . '</td>';
+            $html .= '<td>' . $row->Update_Date . '</td>';
+            $html .= '<td><a href="' . base_url() . 'gallery/add_picture/' . $row->Album_ID . '"><i class="fa fa-fw fa-plus-square"></i> Add picture</a></td>';
+            $html .= '</tr>';
+            $i++;
+        }
+        echo $html;
+    }
+
+    public function load_pic_list() {
+        $albumid = $this->input->post('albumid');
+        $result = $this->select_model->get_dunlop_pic($albumid);
+        $i = 1;
+        $html = '';
+        foreach ($result as $row) {
+
+            $html .= '<tr>';
+            $html .= '<td>' . $row->PIC_ID . '</td>';
+            $html .= '<td>' . $row->Album_Name . '</td>';
+            $html .= ' <td><img src="' . base_url('public') . '/uploads/Thumbnails_' . $row->PIC_Image . '" height="50"/></td>';
+            $html .= '<td>' . $row->PIC_Name . '<br>';
+            $html .= '<div class = "tools"><span class = "edit"><a href = "javascript:;" onclick="editdata(' . $row->PIC_ID . ');">Edit</a> | </span><span class = "delete"><a class = "delete-tag" href = "javascript:;" onclick="removedata(' . $row->PIC_ID . ');">Delete</a></div></td>';
+            $html .= '<td>' . $row->aCreate_Date . '</td>';
+            $html .= '<td>' . $row->aUpdate_Date . '</td>';
+            $html .= '</tr>';
+            $i++;
+        }
+        echo $html;
+    }
+
     public function load_area() {
         $id = $this->input->post('zone_id');
         $data['result'] = $this->select_model->get_dunlop_area($id);
@@ -78,116 +119,6 @@ class Service extends CI_Controller {
 
         $this->output->set_header('Content-Type: application/json; charset=utf-8');
         echo json_encode($data);
-    }
-
-    public function getitem_order_detail() {
-        $id = $this->input->post('id');
-        $order = $this->order_model->getOrder($id);
-        $result = $this->order_model->getOrderDetail($id);
-
-        header('Content-Type: text/html; charset=utf-8');
-
-        $html = '<div class="row invoice-info">';
-        $html .= '<div class="col-sm-4 invoice-col">';
-        $html .= '<strong>Order information</strong><br>';
-        $html .= 'Order id : #' . $order->order_id . '<br>';
-        $html .= 'Order owner : ' . $order->order_id . '<br>';
-        $html .= 'Ordered time : ' . $order->order_time . '<br>';
-        $html .= 'Paid time : ' . $order->payment_time . '<br>';
-        $html .= 'Shiped time : ' . $order->shipping_time . '<br>';
-        $html .= 'Status : ';
-        if ($order->is_payment == 0) {
-            $html .= '<span class="label label-warning">wait payment</span>  ';
-        } else {
-            $html .= '<span class="label label-success">paid</span>  ';
-        }
-
-        if ($order->is_shipping == 0) {
-            $html .= '<span class="label label-warning">wait shiping</span>  ';
-        } else {
-            $html .= '<span class="label label-success">shiped</span>  ';
-        }
-
-        $html .= '</div>';
-
-        $html .= '<div class="col-sm-4 invoice-col">';
-        $html .= '<strong> Address</strong>';
-        $html .= '<address>';
-        $html .= '' . $order->orders_ownername . '<br>';
-        $html .= '' . $order->orders_address . '<br>';
-        $html .= '' . $order->orders_providename . '<br>';
-        $html .= '' . $order->orders_zipcode . '<br>';
-        $html .= 'Phone: ' . $order->orders_tel . '<br/>';
-        $html .= ' Email: ' . $order->orders_email . '';
-        $html .= '</address>';
-        $html .= ' </div>';
-
-        $html .= '<div class="col-sm-4 invoice-col">';
-        $html .= '<strong>Shipping Address</strong>';
-        $html .= '<address>';
-        $html .= '' . $order->orders_ownername . '<br>';
-        $html .= '' . $order->orders_address . '<br>';
-        $html .= '' . $order->orders_providename . '<br>';
-        $html .= '' . $order->orders_zipcode . '<br>';
-        $html .= 'Phone: ' . $order->orders_tel . '<br/>';
-        $html .= ' Email: ' . $order->orders_email . '';
-        $html .= '</address>';
-        $html .= ' </div>';
-        $html .= ' </div>';
-
-        $html .= '<table class="table table-striped">';
-        $html .= '<thead>';
-        $html .= '<tr>';
-        $html .= '<th>Product</th>';
-        $html .= '<th>Serial #</th>';
-        $html .= '<th>Price</th>';
-        $html .= '<th>Qty</th>';
-        $html .= '<th>In stock</th>';
-        $html .= '<th>Subtotal</th>';
-        $html .= '</tr>';
-        $html .= '</thead>';
-        $html .= '<tbody>';
-
-        $summary = 0;
-        $sumweight = 0;
-        foreach ($result as $row) {
-
-
-            $html .= '<tr>';
-            $html .= '<td>' . $row->title . '</td>';
-            $html .= '<td>' . $row->item_code . '</td>';
-            $html .= '<td>' . number_format($row->price, 2, '.', ',') . '</td>';
-            $html .= '<td>' . $row->qty . '</td>';
-            $html .= '<td>' . $row->amount . '</td>';
-            $html .= '<td>' . number_format($row->subtotal, 2, '.', ',') . '</td>';
-            $html .= '</tr>';
-            $sumweight += $row->weight;
-            $summary += $row->subtotal;
-        }
-
-        $html .= '<tr>';
-        $html .= '<td colspan = "5" align="right"><strong>Summary</strong></td>';
-        $html .= '<td>' . number_format($summary, 2, '.', ',') . '</td>';
-        $html .= '</tr >';
-        $html .= '<tr>';
-        $html .= '<td colspan = "5" align="right"><strong>EMS</strong></td>';
-        $html .= '<td>' . number_format(costshipping($sumweight), 2, '.', ',') . '</td>';
-        $html .= '</tr >';
-        $html .= '<tr>';
-        $html .= '<td colspan = "5" align="right"><strong>Package cost</strong></td>';
-        $html .= '<td>' . number_format(costbox($sumweight), 2, '.', ',') . '</td>';
-        $html .= '</tr >';
-        $html .= '<tr>';
-        $html .= '<td colspan = "5" align="right"><strong>Total summary</strong></td>';
-        $html .= '<td>' . number_format($summary + costshipping($sumweight) + costbox($sumweight), 2, '.', ',') . '</td>';
-        $html .= '</tr >';
-        $html .= '</tbody>';
-        $html .= '</table> ';
-
-
-
-
-        echo $html;
     }
 
     function upload_picture_group() {
@@ -818,6 +749,32 @@ class Service extends CI_Controller {
         echo json_encode($data);
     }
 
+    function delete_pic() {
+        $id = ($this->input->post('id') != false ? $this->input->post('id') : '');
+
+        if ($this->update_data->delete_Pic($id)) {
+            $data['status'] = array('message' => 'ลบสำเร็จ', 'type' => 'success');
+        } else {
+            $data['status'] = array('message' => 'ลบไม่สำเร็จ', 'type' => 'danger');
+        }
+
+        $this->output->set_header('Content-Type: application/json; charset=utf-8');
+        echo json_encode($data);
+    }
+
+    function delete_album() {
+        $id = ($this->input->post('id') != false ? $this->input->post('id') : '');
+
+        if ($this->update_data->delete_Album($id)) {
+            $data['status'] = array('message' => 'ลบสำเร็จ', 'type' => 'success');
+        } else {
+            $data['status'] = array('message' => 'ลบไม่สำเร็จ', 'type' => 'danger');
+        }
+
+        $this->output->set_header('Content-Type: application/json; charset=utf-8');
+        echo json_encode($data);
+    }
+
     function delete_dealer() {
         $id = ($this->input->post('id') != false ? $this->input->post('id') : '');
 
@@ -1082,12 +1039,14 @@ class Service extends CI_Controller {
 
     function add_content() {
         $input_title = $this->input->post('input_title');
+        $input_album = $this->input->post('input_album');
         $input_wordwrap = $this->input->post('input_wordwrap');
         $input_detail = $this->input->post('input_detail');
         $input_hdimage = $this->input->post('input_hdimage');
 
         $input = array(
             'Content_Headline' => $input_title,
+            'Album_ID' => $input_album,
             'Content_wrap' => $input_wordwrap,
             'Content_detail' => $input_detail,
             'Content_thumbnail' => $input_hdimage,
@@ -1130,6 +1089,51 @@ class Service extends CI_Controller {
 
         $data = '';
         if ($this->insert_model->insert_Group($input)) {
+            $data['status'] = array('message' => 'เพิ่มรายการสำเร็จ', 'type' => 'success');
+        } else {
+            $data['status'] = array('message' => 'เพิ่มรายการไม่สำเร็จ', 'type' => 'danger');
+        }
+
+
+        $this->output->set_header('Content-Type: application/json; charset=utf-8');
+        echo json_encode($data);
+    }
+
+    function add_album() {
+        $input_album_name = $this->input->post('input_album_name');
+        $input_hdimage_add = $this->input->post('input_hdimage_add');
+        $input = array(
+            'Album_Name' => $input_album_name,
+            'Album_Thumbnail' => $input_hdimage_add,
+            'Create_Date' => date('Y-m-d H:i:s')
+        );
+
+        $data = '';
+        if ($this->insert_model->insert_Album($input)) {
+            $data['status'] = array('message' => 'เพิ่มรายการสำเร็จ', 'type' => 'success');
+        } else {
+            $data['status'] = array('message' => 'เพิ่มรายการไม่สำเร็จ', 'type' => 'danger');
+        }
+
+
+        $this->output->set_header('Content-Type: application/json; charset=utf-8');
+        echo json_encode($data);
+    }
+
+    function add_pic() {
+
+        $input_albumid = $this->input->post('input_albumid');
+        $input_pic_name = $this->input->post('input_pic_name');
+        $input_hdimage_add = $this->input->post('input_hdimage_add');
+        $input = array(
+            'Album_ID' => $input_albumid,
+            'PIC_Name' => $input_pic_name,
+            'PIC_Image' => $input_hdimage_add,
+            'Create_Date' => date('Y-m-d H:i:s')
+        );
+
+        $data = '';
+        if ($this->insert_model->insert_Pic($input)) {
             $data['status'] = array('message' => 'เพิ่มรายการสำเร็จ', 'type' => 'success');
         } else {
             $data['status'] = array('message' => 'เพิ่มรายการไม่สำเร็จ', 'type' => 'danger');
@@ -1216,6 +1220,20 @@ class Service extends CI_Controller {
     function load_dealer_detail() {
         $id = $this->input->post('id');
         $data['result'] = $this->get_data->get_dealer_detail($id);
+        $this->output->set_header('Content-Type: application/json; charset=utf-8');
+        echo json_encode($data);
+    }
+
+    function load_album_detail() {
+        $id = $this->input->post('id');
+        $data['result'] = $this->get_data->get_album_detail($id);
+        $this->output->set_header('Content-Type: application/json; charset=utf-8');
+        echo json_encode($data);
+    }
+
+    function load_pic_detail() {
+        $id = $this->input->post('id');
+        $data['result'] = $this->get_data->get_pic_detail($id);
         $this->output->set_header('Content-Type: application/json; charset=utf-8');
         echo json_encode($data);
     }
@@ -1677,8 +1695,10 @@ class Service extends CI_Controller {
         $input_wordwrap = $this->input->post('input_wordwrap');
         $input_detail = $this->input->post('input_detail');
         $input_hdimage = $this->input->post('input_hdimage');
+        $input_album = $this->input->post('input_album');
         $input = array(
             'Content_Headline' => $input_title,
+            'Album_ID' => $input_album,
             'Content_wrap' => $input_wordwrap,
             'Content_detail' => $input_detail,
             'Content_thumbnail' => $input_hdimage,
@@ -1876,6 +1896,46 @@ class Service extends CI_Controller {
         );
         $data = '';
         if ($this->update_data->update_Order($id, $input)) {
+            $data['status'] = array('message' => 'อัพเดทข้อมูลสำเร็จ', 'type' => 'success');
+        } else {
+            $data['status'] = array('message' => 'อัพเดทข้อมูลไม่สำเร็จ', 'type' => 'danger');
+        }
+
+
+        $this->output->set_header('Content-Type: application/json; charset=utf-8');
+        echo json_encode($data);
+    }
+
+    function update_album($id) {
+        $input_album_name = $this->input->post('inputedit_album_name');
+        $input_hdimage_add = $this->input->post('inputedit_hdimage');
+        $input = array(
+            'Album_Name' => $input_album_name,
+            'Album_Thumbnail' => $input_hdimage_add,
+            'Update_Date' => date('Y-m-d H:i:s')
+        );
+        $data = '';
+        if ($this->update_data->update_Album($id, $input)) {
+            $data['status'] = array('message' => 'อัพเดทข้อมูลสำเร็จ', 'type' => 'success');
+        } else {
+            $data['status'] = array('message' => 'อัพเดทข้อมูลไม่สำเร็จ', 'type' => 'danger');
+        }
+
+
+        $this->output->set_header('Content-Type: application/json; charset=utf-8');
+        echo json_encode($data);
+    }
+
+    function update_pic($id) {
+        $inputedit_pic_name = $this->input->post('inputedit_pic_name');
+        $inputedit_hdimage = $this->input->post('inputedit_hdimage');
+        $input = array(
+            'PIC_Name' => $inputedit_pic_name,
+            'PIC_Image' => $inputedit_hdimage,
+            'Update_Date' => date('Y-m-d H:i:s')
+        );
+        $data = '';
+        if ($this->update_data->update_Pic($id, $input)) {
             $data['status'] = array('message' => 'อัพเดทข้อมูลสำเร็จ', 'type' => 'success');
         } else {
             $data['status'] = array('message' => 'อัพเดทข้อมูลไม่สำเร็จ', 'type' => 'danger');

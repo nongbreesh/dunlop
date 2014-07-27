@@ -166,6 +166,10 @@
                                         <label for="exampleInputEmail1">Animation style</label>
                                         <div class="checkbox">
                                             <label class="form-inline">
+                                                <input type="radio" name="input_slide_anim" id="input_slide_anim_0" checked="checked" value="0">
+                                                <label for="input_slide_anim_0">Defualt</label>
+                                            </label> 
+                                            <label class="form-inline">
                                                 <input type="radio" name="input_slide_anim" id="input_slide_anim_1" checked="checked" value="1">
                                                 <label for="input_slide_anim_1">STYLE 1</label>
                                             </label> 
@@ -426,6 +430,9 @@
                 dataType: 'json',
                 success: function(data) {
                     switch (data.result.SLIDE_Animation_Type) {
+                        case 0:
+                            $('#input_slide_anim_0').iCheck('check');
+                            break;
                         case 1:
                             $('#input_slide_anim_1').iCheck('check');
                             break;

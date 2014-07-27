@@ -169,6 +169,9 @@
                                 </li>
 
                                 <li><a href="<?= base_url() ?>news" style="margin-left: 10px;" <?= is_menu_active($menu, "news"); ?>><i class="fa fa-angle-double-right"></i> News</a></li>
+
+                                <li <?= is_menu_active($menu, "gallery"); ?>> <a href="<?= base_url() ?>gallery/index" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Gallery</a></li>
+
                             </ul>
                         </li>
                         <li class="treeview ">
@@ -179,8 +182,8 @@
                             </a>
                             <ul class="treeview-menu" style="display: block;">
                                 <li <?= is_menu_active($menu, "form_contact"); ?>> <a href="<?= base_url() ?>form/contact" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Contact</a></li>
-
                             </ul>
+
                         </li>
 
                     </ul>

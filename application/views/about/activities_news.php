@@ -100,6 +100,16 @@
                                         <div class="title_trans-r"> <h1><img   style="margin-top: 22px;" src="<?= base_url() ?>public/images/activity_header.png" /></h1></div>
                                         <div class="content-activities_headline"><?= $content->Content_Headline ?></div>
                                         <div class="content-activities-detail ">
+                                            <div class="albumpic">
+                                                <ul class="bxslider">
+                                                    <?php foreach ($albumpic as $each): ?>
+                                                        <li>
+                                                            <div  style="cursor: pointer;"><img src="<?= base_url() ?>administrator/public/uploads/<?= str_replace('thumb_', '', $each->PIC_Image) ?>" width="100%" /></div>
+
+                                                        </li>
+                                                    <?php endforeach; ?>
+                                                </ul>
+                                            </div>
                                             <?= $content->Content_detail ?>
                                             <div style="clear:both"></div>
                                         </div>

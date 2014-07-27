@@ -1008,3 +1008,24 @@ ul.accordion label + input[type='radio']:checked + div.content_list {
     margin: 0px;
     padding-left: 37px;
 }
+.albumpic{
+    width: 500px;
+    margin: 0 auto;
+}
+
+.albumpic .bx-has-controls-direction{
+    position: absolute;
+    top: 255px;
+    /* right: 26px; */
+    width: 100%;
+}
+.albumpic .bx-wrapper, .bx-viewport {
+
+}
+.albumpic .bx-wrapper img{
+    max-width: 100%;
+    max-height: 500px;
+}
+.albumpic .bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active{
+    background: #ffde00; 
+}

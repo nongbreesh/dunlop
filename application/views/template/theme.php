@@ -140,16 +140,16 @@
                                                     <td class="product_2"><a href="<?= base_url() ?>product" >PASSENGER CAR TIRE</a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="product_3"><a href="<?= base_url() ?>product/product_pickup" >PICKUP</a></td>
+                                                    <td class="product_3"><a href="<?= base_url() ?>product/g/3" >PICKUP</a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td  class="product_4"><a href="<?= base_url() ?>product/product_4x4">SUV/4x4 TIRE</a></td>
+                                                    <td  class="product_4"><a href="<?= base_url() ?>product/g/2">SUV/4x4 TIRE</a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td  class="product_5"><a href="<?= base_url() ?>product/product_oem">OEM</a></td>
+                                                    <td  class="product_5"><a href="<?= base_url() ?>product/g/4">OEM</a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="product_6"><a href="<?= base_url() ?>product/warranty" >WARRANTY POLICY</a></td>
+                                                    <td class="product_6"><a href="<?= base_url() ?>product/g/5" >WARRANTY POLICY</a></td>
                                                 </tr>
                                                 <tr>
                                                     <td><img src="<?= base_url() ?>public/images/home/product_7.png" /></td>

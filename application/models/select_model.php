@@ -21,6 +21,11 @@ class select_model extends CI_Model {
         return $query->row();
     }
 
+    function get_dunlop_albumpic_by_id($id) {
+        $query = $this->db->query("SELECT  * FROM dunlop_pic where Album_ID = " . $id);
+        return $query->result();
+    }
+
     function get_dunlop_slide() {
         $query = $this->db->query("SELECT  * FROM dunlop_slide");
         return $query->result();

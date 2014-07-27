@@ -3,7 +3,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class News extends CI_Controller {
+class Gallery extends CI_Controller {
 
     function __construct() {
         parent::__construct();
@@ -35,11 +35,24 @@ class News extends CI_Controller {
         } else {
             redirect('login', 'refresh');
         }
-        $data['menu'] = "news";
+        $data['menu'] = "gallery";
         $data['album_list'] = $this->select_model->get_dunlop_album();
-        $data['news_list'] = $this->select_model->dunlop_content();
         $this->load->view('admin/template/header', $data);
-        $this->load->view('admin/news/index');
+        $this->load->view('admin/gallery/index');
+        $this->load->view('admin/template/footer');
+    }
+
+    public function add_picture($albumid) {
+        if ($this->user_model->is_login()) {
+            $data['account'] = $this->user_model->get_account_cookie();
+        } else {
+            redirect('login', 'refresh');
+        }
+        $data['album_id'] = $albumid;
+        $data['menu'] = "gallery";
+        $data['album'] = $this->select_model->get_dunlop_album_by_id($albumid);
+        $this->load->view('admin/template/header', $data);
+        $this->load->view('admin/gallery/add');
         $this->load->view('admin/template/footer');
     }
 

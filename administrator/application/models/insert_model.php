@@ -163,6 +163,24 @@ class Insert_model extends CI_Model {
         endif;
     }
 
+    function insert_Album($input) {
+
+        if ($this->db->insert('dunlop_album', $input)):
+            return true;
+        else:
+            return false;
+        endif;
+    }
+
+    function insert_Pic($input) {
+
+        if ($this->db->insert('dunlop_pic', $input)):
+            return true;
+        else:
+            return false;
+        endif;
+    }
+
     function insert_Hilight($input) {
 
         if ($this->db->insert('dunlop_highlight', $input)):

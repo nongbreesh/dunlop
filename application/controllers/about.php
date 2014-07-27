@@ -83,6 +83,7 @@ class About extends CI_Controller {
 
 
         $data['content'] = $this->select_model->get_dunlop_content_by_id($id);
+        $data['albumpic'] = $this->select_model->get_dunlop_albumpic_by_id($data['content']->Album_ID);
         $this->load->view('about/activities_news', $data);
     }
 

@@ -113,6 +113,17 @@
 
                                 </div>
                                 <div class="form-group">
+
+                                    <label for="input_detail">Gallery</label>
+                                    <select class="form-control"  id="input_album" name="input_album" >
+                                        <option value="">--- Select one ----</option>';
+                                        <?php foreach ($album_list as $each) { ?>
+                                            <option value="<?php echo $each->Album_ID; ?>"><?php echo $each->Album_Name; ?></option>';
+                                        <?php } ?>
+                                    </select>        
+
+                                </div>
+                                <div class="form-group">
                                     <label for="exampleInputFile">Product image</label>
                                     <label>Upload Image File:</label><br/>
 
@@ -203,12 +214,12 @@
             var wrap_detail = CKEDITOR.instances.input_wordwrap.getData();
             var detail = CKEDITOR.instances.input_detail.getData();
             var hdimage = $("#input_hdimage").val();
-
+            var input_album = $("#input_album").val();
             if (is_update == 'false') {
                 $.ajax({
                     url: "<?php echo base_url(); ?>" + "index.php/service/add_content",
                     type: "POST",
-                    data: {'input_title': title, 'input_wordwrap': wrap_detail, 'input_detail': detail},
+                    data: {'input_title': title, 'input_wordwrap': wrap_detail, 'input_detail': detail, 'input_hdimage': hdimage, 'input_album': input_album},
                     dataType: "json",
                     success: function(data) {
                         $.growl(data.status.message, {type: data.status.type}); //danger , info , warning
@@ -227,7 +238,7 @@
                 $.ajax({
                     url: "<?php echo base_url(); ?>" + "index.php/service/edit_content/" + input_id,
                     type: "POST",
-                    data: {'input_title': title, 'input_wordwrap': wrap_detail, 'input_detail': detail, 'input_hdimage': hdimage},
+                    data: {'input_title': title, 'input_wordwrap': wrap_detail, 'input_detail': detail, 'input_hdimage': hdimage, 'input_album': input_album},
                     dataType: "json",
                     success: function(data) {
                         $.growl(data.status.message, {type: data.status.type}); //danger , info , warning
@@ -306,6 +317,7 @@
                     $('#input_title').val(data.result.Content_Headline);
                     CKEDITOR.instances.input_wordwrap.setData(data.result.Content_wrap);
                     CKEDITOR.instances.input_detail.setData(data.result.Content_detail);
+                    $('#input_album').val(data.result.Album_ID);
                     $("#input_hdf_update").val('true');
                     $("#input_id").val(id);
                     $('#add_product-modal').modal('show');

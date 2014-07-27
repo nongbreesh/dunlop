@@ -119,6 +119,28 @@ class update_data extends CI_Model {
         endif;
     }
 
+    function update_Album($id, $input) {
+
+        $this->db->where('Album_ID', $id);
+
+        if ($this->db->update('dunlop_album', $input)):
+            return true;
+        else:
+            return false;
+        endif;
+    }
+
+    function update_pIC($id, $input) {
+
+        $this->db->where('PIC_ID', $id);
+
+        if ($this->db->update('dunlop_pic', $input)):
+            return true;
+        else:
+            return false;
+        endif;
+    }
+
     function update_News($id, $input) {
 
         $this->db->where('NEWS_ID', $id);
@@ -190,6 +212,28 @@ class update_data extends CI_Model {
         $this->db->where('SLIDE_ID', $id);
 
         if ($this->db->delete('dunlop_slide')):
+            return true;
+        else:
+            return false;
+        endif;
+    }
+
+    function delete_Album($id) {
+
+        $this->db->where('Album_ID', $id);
+
+        if ($this->db->delete('dunlop_album')):
+            return true;
+        else:
+            return false;
+        endif;
+    }
+
+    function delete_Pic($id) {
+
+        $this->db->where('PIC_ID', $id);
+
+        if ($this->db->delete('dunlop_pic')):
             return true;
         else:
             return false;

@@ -187,6 +187,13 @@ class get_data extends CI_Model {
         return $query->result();
     }
 
+    function get_pic_detail($id = null) {
+        $this->db->select('*');
+        $this->db->where('PIC_ID', $id);
+        $query = $this->db->get('dunlop_pic');
+        return $query->row();
+    }
+
     function getGroupName($id = null) {
         $this->db->select('*');
         $this->db->where('Group_ID', $id);
@@ -311,8 +318,8 @@ class get_data extends CI_Model {
         $query = $this->db->get('dunlop_about_cate');
         return $query->result();
     }
-    
-     function getdunlop_groupall() {
+
+    function getdunlop_groupall() {
         $this->db->select('Group_ID as val1 , Group_Name as val2, Group_IMG as val3 , Group_Parent_ID ');
         $query = $this->db->get('dunlop_group');
         return $query->result();
@@ -357,6 +364,14 @@ class get_data extends CI_Model {
 
     function getContent($id) {
         $query = $this->db->query("select * from   dunlop_content  where Content_ID =" . $id);
+        return $query->row();
+    }
+
+    function get_album_detail($id) {
+        $this->db->select('*');
+        $this->db->where('Album_ID', $id);
+        $query = $this->db->get('dunlop_album');
+
         return $query->row();
     }
 
