@@ -150,10 +150,18 @@
 
                                                     <?php foreach ($dealer_detail as $each): ?>
                                                         <tr>
-                                                            <td><?= $each->Dealer_Name ?> </td>
+                                                            <?php if ($each->Dealer_Agent == 1): ?>
+                                                                <td><img src="<?= base_url() ?>public/images/dunlop_icon.png" width="15"/> <?= $each->Dealer_Name ?> </td>
+                                                            <?php else: ?>
+                                                                <td><?= $each->Dealer_Name ?> </td>
+                                                            <?php endif; ?>
                                                             <td><?= $each->Dealer_Address ?> </td>
                                                             <td><?= $each->Dealer_Tel ?> </td>
-                                                            <td align="center"><a target="_blank" href="<?= $each->Dealer_URL ?>"><img src="<?= base_url() ?>public/images/address/pin2.png" /></a> </td>
+                                                            <?php if ($each->Dealer_URL != '' && $each->Dealer_URL != '-'): ?>
+                                                                <td align="center"><a target="_blank" href="<?= $each->Dealer_URL ?>"><img src="<?= base_url() ?>public/images/address/pin2.png" /></a> </td>
+                                                            <?php else: ?>
+                                                                <td></td>
+                                                            <?php endif; ?>
                                                         </tr>
                                                     <?php endforeach; ?>
 

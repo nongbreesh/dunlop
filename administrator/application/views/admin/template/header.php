@@ -99,6 +99,7 @@
                         </div>
                     </div>
                     <!-- search form -->
+                    <?php if($menu == "product_tire"): ?>
                     <form action="#" method="get" class="sidebar-form">
                         <div class="input-group">
                             <input type="text" name="q" class="form-control" placeholder="Search..." value="<?php
@@ -111,14 +112,10 @@
                             </span>
                         </div>
                     </form>
+                    <?php endif; ?>
                     <!-- /.search form -->
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
-                        <li <?= is_menu_active($menu, "home"); ?>  >
-                            <a href="<?php echo base_url(); ?>">
-                                <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-                            </a>
-                        </li>
 
 
                         <li class="treeview ">

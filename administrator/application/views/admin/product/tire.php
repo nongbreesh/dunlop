@@ -79,7 +79,13 @@
                         ?>
                     </tbody>
                 </table>
-                <?php echo $this->pagination->create_links(); ?>
+                <?php
+                if (count($item_list) > 0) {
+                    echo $this->pagination->create_links();
+                } else {
+                    echo '<center> NO Result</center>';
+                }
+                ?>
             </div><!-- /.box-body -->
             <div class="box-footer">
 

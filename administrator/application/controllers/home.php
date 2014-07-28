@@ -35,13 +35,14 @@ class Home extends CI_Controller {
         } else {
             redirect('login', 'refresh');
         }
+        redirect('home/highlight');
         $data['menu'] = "home";
 
         $this->load->view('admin/template/header', $data);
         $this->load->view('admin/template/index');
         $this->load->view('admin/template/footer');
     }
-    
+
     public function highlight($offset = 0) {
         if ($this->user_model->is_login()) {
             $data['account'] = $this->user_model->get_account_cookie();
@@ -71,8 +72,8 @@ class Home extends CI_Controller {
         $this->load->view('admin/home/whatnews');
         $this->load->view('admin/template/footer');
     }
-    
-     public function video($offset = 0) {
+
+    public function video($offset = 0) {
         if ($this->user_model->is_login()) {
             $data['account'] = $this->user_model->get_account_cookie();
         } else {
@@ -86,7 +87,7 @@ class Home extends CI_Controller {
         $this->load->view('admin/home/video');
         $this->load->view('admin/template/footer');
     }
-    
+
     public function slide($offset = 0) {
         if ($this->user_model->is_login()) {
             $data['account'] = $this->user_model->get_account_cookie();
