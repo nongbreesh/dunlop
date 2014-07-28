@@ -96,9 +96,9 @@ class select_model extends CI_Model {
             $where = " where a.Tire_Name LIKE '%$q%'";
         }
         $query = $this->db->query("SELECT  a.*,b.*,c.* FROM dunlop_tire a"
-                . " inner join dunlop_product b"
+                . " left join dunlop_product b"
                 . " on a.Product_ID = b.Product_ID"
-                . " inner join dunlop_type c"
+                . " left join dunlop_type c"
                 . " on a.Type_ID = c.Type_ID"
                 . $where
                 . " order by a.Tire_ID	"
