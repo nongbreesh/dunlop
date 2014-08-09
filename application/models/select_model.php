@@ -178,13 +178,13 @@ class select_model extends CI_Model {
     function get_dunlop_search_tire($size = '', $series = '', $diameter = '') {
         $where = '';
         if ($size != '' && $size != 0) {
-            $where .= " and  a.Tire_Width = " . $size;
+            $where .= " and  a.Tire_Width = '" . $size . "'";
         }
         if ($series != '' && $series != 0) {
-            $where .= " and  a.Tire_Series = " . $series;
+            $where .= " and  a.Tire_Series =  '" . $series . "'";
         }
         if ($diameter != '' && $diameter != 0) {
-            $where .= " and  a.Tire_Diameter	 = " . $diameter;
+            $where .= " and  a.Tire_Diameter	 = '" . $diameter . "'";
         }
         $sql = "SELECT  a.*,b.*,c.* FROM dunlop_tire a"
                 . " inner join dunlop_product b"

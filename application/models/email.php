@@ -4,16 +4,23 @@ class Email extends CI_Model {
 
     public function sendemail($email, $input) {
         //config
-        $config['protocol'] = 'smtp';
-        $config['charset'] = 'utf-8';
-        $config['wordwrap'] = FALSE;
-        $config['mailtype'] = 'html';
-        $config['smtp_host'] = 'mail.xxx.com';
-        $config['smtp_user'] = 'noreply@xxx.com';
-        $config['smtp_pass'] = 'p@ssw0rd';
+    
+
+        $config = Array(
+            'protocol' => 'smtp',
+            'charset' => 'utf-8',
+            'wordwrap' => FALSE,
+            'mailtype' => 'html',
+            'smtp_host' => 'ssl://smtp.googlemail.com',
+            'smtp_port' => 465,
+            'smtp_user' => 'dunlopthailand@gmail.com',
+            'smtp_pass' => 'dunlopthailand1234',
+        );
+
+
         $this->email->initialize($config);
         //config
-        $this->email->from('noreply@xxx.com', 'www.xxx.com');
+        $this->email->from('dunlopthailand@gmail.com', 'dunlopthailand@gmail.com');
         $this->email->to($email);
         $this->email->subject('Receive Message');
 

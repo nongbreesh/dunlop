@@ -544,14 +544,14 @@
 		// public method: shows next slide
 		next : function() {
 
-			this._stopSlideshow();
+			//this._stopSlideshow();
 			this._navigate( 'next' );
 
 		},
 		// public method: shows previous slide
 		previous : function() {
 
-			this._stopSlideshow();
+			//this._stopSlideshow();
 			this._navigate( 'prev' );
 
 		},
@@ -566,7 +566,7 @@
 
 			}
 
-			this._stopSlideshow();
+			//this._stopSlideshow();
 			this._navigate( pos > this.current ? 'next' : 'prev', pos );
 
 		},

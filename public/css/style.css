@@ -75,11 +75,11 @@ a{
 .footer{
     text-align: right;
     color:#fff;
-    font:18px 'ThaiSansNeue-Light';
+    font:22px 'ThaiSansNeue-Light';
 }
 .product_2{
     background:url('../images/home/product_2.png') 0px 0px;
-    font:16px 'ThaiSansNeue-Black';
+    font:20px 'ThaiSansNeue-Black';
     padding-left: 40px;
     height:31px;
     width:210px;
@@ -88,7 +88,7 @@ a{
 
 .product_3{
     background:url('../images/home/product_3.png') 0px 0px;
-    font:16px 'ThaiSansNeue-Black';
+    font:18px 'ThaiSansNeue-Black';
     padding-left: 40px;
     height:31px;
     width:210px;
@@ -97,7 +97,7 @@ a{
 }
 .product_4{
     background:url('../images/home/product_4.png') 0px 0px;
-    font:16px 'ThaiSansNeue-Black';
+    font:18px 'ThaiSansNeue-Black';
     padding-left: 40px;
     height:31px;
     width:210px;
@@ -106,7 +106,7 @@ a{
 }
 .product_5{
     background:url('../images/home/product_5.png') 0px 0px;
-    font:16px 'ThaiSansNeue-Black';
+    font:18px 'ThaiSansNeue-Black';
     padding-left: 40px;
     height:31px;
     width:210px;
@@ -115,7 +115,7 @@ a{
 }
 .product_6{
     background:url('../images/home/product_6.png') 0px 0px;
-    font:16px 'ThaiSansNeue-Black';
+    font:18px 'ThaiSansNeue-Black';
     padding-left: 40px;
     height:31px;
     width:210px;
@@ -136,7 +136,7 @@ a{
 }
 
 select{
-    font:16px 'ThaiSansNeue-Light';
+    font:18px 'ThaiSansNeue-Light';
     background: #333333;
     border: 1px #000 solid;
     border-radius: 3px;
@@ -155,7 +155,7 @@ select{
     border-right: 0px #000 solid;
     border-bottom: 2px #322c01 solid;
     border-left: 2px #322c01 solid;
-    font:18px 'ThaiSansNeue-Light';
+    font:20px 'ThaiSansNeue-Light';
     color:#ffffff;
     border-radius: 5px;
     padding: 2px 10px 2px 10px;
@@ -181,7 +181,7 @@ select{
     height: 260px;
 }
 .whatnews p {
-    font:18px 'ThaiSansNeue-Light';
+    font:20px 'ThaiSansNeue-Light';
     padding: 0px;
     margin: 0px;
     color: #000;
@@ -270,17 +270,17 @@ select{
 
 p.contact_detail{
     color:#ffffff;
-    font:20px 'ThaiSansNeue-Regular';
+    font:22px 'ThaiSansNeue-Regular';
     text-indent: 20px;
     padding:10px 20px;
 }
 .c_danger{
     color:#f00;
-    font:18px 'ThaiSansNeue-Regular';
+    font:20px 'ThaiSansNeue-Regular';
 }
 .contact_form{
     width: 100%;
-    font:18px 'ThaiSansNeue-Light';
+    font:20px 'ThaiSansNeue-Light';
     margin-top: 20px;
 }
 .contact_form tr td{
@@ -303,7 +303,7 @@ p.contact_detail{
     color: #ffde00;
 }
 .address_detail p{
-    font:20px 'ThaiSansNeue-Regular';
+    font:22px 'ThaiSansNeue-Regular';
     color: #fff;
 }
 #map_canvas {
@@ -388,7 +388,7 @@ p.contact_detail{
 
 }
 .contact-r p {
-    font:18px 'ThaiSansNeue-Bold';
+    font:20px 'ThaiSansNeue-Bold';
     color:#fff;
 }
 .contact-r h1{
@@ -400,7 +400,7 @@ p.contact_detail{
 }
 .contact-r  h2{
     color:#fff;
-    font:18px 'ThaiSansNeue-Bold';
+    font:20px 'ThaiSansNeue-Bold';
     margin-left: 20px;
 }
 .knowledge_title{
@@ -559,14 +559,14 @@ table .tb_dealer_detail  thead{
 table .tb_dealer_detail  thead tr th{
     text-align: center;
     padding: 5px;
-    font:18px 'ThaiSansNeue-Regular';
+    font:20px 'ThaiSansNeue-Regular';
     border: 2px #a7a8a8 solid;
 }
 
 table .tb_dealer_detail  tbody tr td{
     padding: 8px;
     color: #363636;
-    font:16px 'ThaiSansNeue-Regular';
+    font:18px 'ThaiSansNeue-Regular';
     border: 2px #a7a8a8 solid;
 }
 table .tb_dealer_detail  tbody tr:nth-child(even) {background: #fce650}
@@ -742,7 +742,7 @@ ul.accordion label + input[type='radio']:checked + div.content_list {
 }
 .passenger_car_size table thead tr th{
     padding: 5px;
-    font:18px 'ThaiSansNeue-Regular';
+    font:20px 'ThaiSansNeue-Regular';
     border: 1px #a4b0a2 solid;
     text-align: center;
 }
@@ -751,10 +751,10 @@ ul.accordion label + input[type='radio']:checked + div.content_list {
     padding: 8px;
     color: #363636;
     border: 1px #a4b0a2 solid;
-    font:16px 'ThaiSansNeue-Regular';
+    font:18px 'ThaiSansNeue-Regular';
 }
 .passenger_car_size table  tfoot tr{
-    font:16px 'ThaiSansNeue-Regular';
+    font:18px 'ThaiSansNeue-Regular';
     height:35px;
     background: #343434;
     color: #fff;
@@ -850,7 +850,7 @@ ul.accordion label + input[type='radio']:checked + div.content_list {
     border-right: 0px #000 solid;
     border-bottom: 2px #d5bb0d solid;
     border-left: 2px #d5bb0d solid;
-    font:18px 'ThaiSansNeue-Light';
+    font:20px 'ThaiSansNeue-Light';
     color:#413800;
     border-radius: 5px;
     padding: 2px 10px 2px 10px;
@@ -888,7 +888,7 @@ ul.accordion label + input[type='radio']:checked + div.content_list {
 }
 .tire_result table thead tr th{
     padding:0px 5px 0px 5px;
-    font:18px 'ThaiSansNeue-Regular';
+    font:20px 'ThaiSansNeue-Regular';
     border: 1px #a4b0a2 solid;
     text-align: center;
 }
@@ -897,11 +897,11 @@ ul.accordion label + input[type='radio']:checked + div.content_list {
     padding:0px;
     color: #363636;
     border: 1px #a4b0a2 solid;
-    font:16px 'ThaiSansNeue-Regular';
+    font:18px 'ThaiSansNeue-Regular';
     text-align: center;
 }
 .tire_result table  tfoot tr{
-    font:16px 'ThaiSansNeue-Regular';
+    font:18px 'ThaiSansNeue-Regular';
     height:35px;
     background: #343434;
     color: #fff;

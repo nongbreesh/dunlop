@@ -20,9 +20,18 @@
         </noscript>
         <title>Welcome to Dunlop Tire (Thailand) Company Limited</title>
         <script>
+
+
             $(document).ready(function() {
-                $('.bxslider').bxSlider({
-                    auto: true
+                var slider = $('.bxslider').bxSlider({
+                    auto: true,
+                    stopAuto: false,
+                    startSlide: 0
+                });
+
+                $(document).on('click', '.bx-pager-link', function() {
+                    slider.stopAuto();
+                    slider.startAuto();
                 });
             });
         </script>
@@ -136,24 +145,12 @@
                                                 <tr>
                                                     <td><img src="<?= base_url() ?>public/images/home/product_1.png" /></td>
                                                 </tr>
-                                                <tr>
-                                                    <td class="product_2"><a href="<?= base_url() ?>product" >PASSENGER CAR TIRE</a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="product_3"><a href="<?= base_url() ?>product/g/3" >PICKUP</a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td  class="product_4"><a href="<?= base_url() ?>product/g/2">SUV/4x4 TIRE</a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td  class="product_5"><a href="<?= base_url() ?>product/g/4">OEM</a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="product_6"><a href="<?= base_url() ?>product/g/5" >WARRANTY POLICY</a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><img src="<?= base_url() ?>public/images/home/product_7.png" /></td>
-                                                </tr>
+                                                <?php foreach ($dunlop_group as $each): ?>
+                                                    <tr>
+                                                        <td ><a href="<?= base_url() ?>product/g/<?= $each->Group_ID ?>" ><img style = "" src = "<?= base_url() ?>administrator/public/uploads/<?= $each->Group_IMG ?>" onmouseover="this.src = '<?= base_url() ?>administrator/public/uploads/<?= $each->Group_IMG_Hover ?>'" onmouseout="this.src = '<?= base_url() ?>administrator/public/uploads/<?= $each->Group_IMG ?>'"/></a></td>
+                                                    </tr>
+                                                <?php endforeach; ?>
+                                               
                                                 <tr>
                                                     <td>&nbsp;</td>
                                                 </tr>
@@ -164,7 +161,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td><img src="<?= base_url() ?>public/images/home/vdo_2_1.png" /></td>
-                                                    <td width="430" background="<?= base_url() ?>public/images/home/vdo_2_2.png">
+                                                    <td width="430" background="<?= base_url() ?>public/images/home/vdo_2_2.png" style="text-align: center;">
                                                         <div class="vdo" id="vdo">
                                                             <embed id="video" src="https://www.youtube-nocookie.com/v/<?= $dunlop_vdo[0]->VIDEO_LINK ?>?version=3&amp;hl=en_US&amp;rel=0&showinfo=0"
                                                                    type="application/x-shockwave-flash" width="425" height="230"  allowscriptaccess="never" allowfullscreen="true">
@@ -248,17 +245,17 @@
                                                 <tr>
                                                     <td background="<?= base_url() ?>public/images/home/search_2.png" valign="top" height="40">
 
-                                                        <select name="zone" id="zone" style="margin-left: 20px;
-                                                                margin-top:5px;
-                                                                width: 160px;"><option value="">เลือกโซน</option>
-                                                                <?php foreach ($zone_list as $each) { ?>
+                                                        <select  name="zone" id="zone" style="margin-left: 20px;
+                                                                 margin-top:5px;
+                                                                 width: 160px;"><option value="">กรุณาเลือกโซน</option>
+                                                                 <?php foreach ($zone_list as $each) { ?>
                                                                 <option value="<?php echo $each->ZONE_ID; ?>"><?php echo $each->ZONE_NAME; ?></option>';
                                                             <?php } ?>
 
                                                         </select>
                                                         <select name="area" id="area" style="margin-left: 20px;
                                                                 margin-top: 5px;
-                                                                width: 160px;"><option value="0">กรุณาเลือกโซน</option></select>
+                                                                width: 160px;"><option value="0">กรุณาเลือกพื้นที่</option></select>
 
                                                     </td>
                                                 </tr>
@@ -297,8 +294,17 @@
         <script type="text/javascript">
 
                                                             function godealer() {
-                                                                var zone = $("#zone").val() == '' ? 1 : $("#zone").val();
-                                                                var area = $("#area").val() == 0 ? 1 : $("#area").val();
+                                                                var zone = $("#zone").val();
+                                                                var area = $("#area").val();
+
+                                                                if (zone == '' || zone == 0) {
+                                                                    alert('กรุณาเลือกโซนก่อนค่ะ');
+                                                                    return false;
+                                                                }
+                                                                if (area == '' || area == 0) {
+                                                                    alert('กรุณาเลือกพื้นที่ก่อนค่ะ');
+                                                                    return false;
+                                                                }
                                                                 var url = '<?= base_url() ?>address/zone/' + zone + '/' + area;
                                                                 location.href = url;
                                                             }
@@ -306,7 +312,7 @@
 
 
                                                                 $('#zone').change(function() {
-                                                                    $("#area").html($("<option></option>").val(0).html('กรุณาเลือกโซน'));
+                                                                    $("#area").html($("<option></option>").val(0).html('กรุณาเลือกพื้นที่'));
                                                                     $.ajax({
                                                                         type: "POST",
                                                                         url: "<?php echo base_url(); ?>" + "home/load_area",

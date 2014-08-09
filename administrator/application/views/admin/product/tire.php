@@ -353,7 +353,8 @@
                 success: function(data) {
                     if (data.status.type == 'success') {
                         $.growl(data.status.message, {type: data.status.type}); //danger , info , warning
-                        update_list();
+                        location.reload();
+                        //update_list();
                     }
                 },
                 error: function(XMLHttpRequest) {

@@ -28,6 +28,7 @@ class Home extends CI_Controller {
         $data['dunlop_highlight'] = $this->select_model->get_dunlop_highlight();
         $data['dunlop_vdo'] = $this->select_model->get_dunlop_vdo();
         $data['dunlop_news'] = $this->select_model->get_dunlop_news();
+        $data['dunlop_group'] = $this->select_model->getdunlop_group();
         $this->load->view('template/theme', $data);
     }
 

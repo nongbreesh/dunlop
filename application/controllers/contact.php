@@ -29,8 +29,8 @@ class Contact extends CI_Controller {
                 'email' => $this->input->post('email'),
                 'msg' => $this->input->post('msg')
             );
-
-            $this->Email->sendemail('marketing@dunloptire.co.th', $input);
+            $this->Email->sendemail('breesh.comsci@gmail.com', $input);
+            //$this->Email->sendemail('marketing@dunloptire.co.th', $input);
 
             $data['sent'] = true;
         }
