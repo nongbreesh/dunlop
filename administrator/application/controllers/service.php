@@ -981,6 +981,7 @@ class Service extends CI_Controller {
         $inputedit_catename = $this->input->post('inputedit_catename');
         $inputedit_cateparent = $this->input->post('inputedit_cateparent');
         $inputedit_url = $this->input->post('inputedit_url');
+        $inputedit_Orderno = $this->input->post('inputedit_orderno');
         $inputedit_info = $this->input->post('inputedit_info');
         $input_hdeditimage = $this->input->post('inputedit_hdimage');
         $input_hdeditimage_hover = $this->input->post('inputedit_hdimage_hover');
@@ -994,6 +995,7 @@ class Service extends CI_Controller {
             'Group_IMG_Hover' => $input_hdeditimage_hover,
             'Group_PDF' => $inputedit_hdpdf,
             'Group_URL' => $inputedit_url,
+            'Order_no' => $inputedit_Orderno,
             'Update_Date' => date('Y-m-d H:i:s')
         );
         $data = '';
@@ -1048,6 +1050,36 @@ class Service extends CI_Controller {
             'Content_Headline' => $input_title,
             'Album_ID' => $input_album,
             'Content_wrap' => $input_wordwrap,
+            'type' => 1,
+            'Content_detail' => $input_detail,
+            'Content_thumbnail' => $input_hdimage,
+            'Create_Date' => date('Y-m-d H:i:s')
+        );
+
+        $data = '';
+        if ($this->insert_model->insert_Content($input)) {
+            $data['status'] = array('message' => 'เพิ่มรายการสำเร็จ', 'type' => 'success');
+        } else {
+            $data['status'] = array('message' => 'เพิ่มรายการไม่สำเร็จ', 'type' => 'danger');
+        }
+
+
+        $this->output->set_header('Content-Type: application/json; charset=utf-8');
+        echo json_encode($data);
+    }
+
+    function add_csr() {
+        $input_title = $this->input->post('input_title');
+        $input_album = $this->input->post('input_album');
+        $input_wordwrap = $this->input->post('input_wordwrap');
+        $input_detail = $this->input->post('input_detail');
+        $input_hdimage = $this->input->post('input_hdimage');
+
+        $input = array(
+            'Content_Headline' => $input_title,
+            'Album_ID' => $input_album,
+            'Content_wrap' => $input_wordwrap,
+            'type' => 2,
             'Content_detail' => $input_detail,
             'Content_thumbnail' => $input_hdimage,
             'Create_Date' => date('Y-m-d H:i:s')
@@ -1069,7 +1101,7 @@ class Service extends CI_Controller {
         $input_catename = $this->input->post('input_catename');
         $input_cateparent = $this->input->post('input_cateparent');
         $input_url = $this->input->post('input_url');
-
+        $input_orderno = $this->input->post('input_orderno');
         $input_hdimage_add = $this->input->post('input_hdimage_add');
         $input_hdimage_hover_add = $this->input->post('input_hdimage_hover_add');
         $input_hdpdf = $this->input->post('input_hdpdf');
@@ -1084,6 +1116,7 @@ class Service extends CI_Controller {
             'Group_IMG_Hover' => $input_hdimage_hover_add,
             'Group_INFO' => $input_info,
             'Group_PDF' => $input_hdpdf,
+            'Order_no' => $input_orderno,
             'Create_Date' => date('Y-m-d H:i:s')
         );
 
@@ -1260,6 +1293,7 @@ class Service extends CI_Controller {
 
             $html .= '<tr>';
             $html .= '<td>' . $i . '</td>';
+            $html .= '<td>' . $row->Order_no . '<br>';
             $html .= '<td>' . $row->val2 . '<br>';
             $html .= '<div class = "tools"><span class = "edit"><a href = "javascript:;" onclick="editdata(' . $row->val1 . ');">Edit</a> | </span><span class = "delete"><a class = "delete-tag" href = "javascript:;" onclick="removedata(' . $row->val1 . ');">Delete</a></div></td>';
             $html .= '<td>' . $row->Group_Parent_ID . '<br>';
@@ -1526,6 +1560,7 @@ class Service extends CI_Controller {
         $input_url = $this->input->post('input_url');
         $input_tech = $this->input->post('input_tech');
         $input_info = $this->input->post('input_info');
+        $input_orderno = $this->input->post('input_orderno');
         $input_group = $this->input->post('input_group');
         $input_hdimage = $this->input->post('input_hdimage');
         $input_hdimage_hover = $this->input->post('input_hdimage_hover');
@@ -1540,6 +1575,7 @@ class Service extends CI_Controller {
             'Product_IMG' => $input_hdimage,
             'Product_IMG_HOVER	' => $input_hdimage_hover,
             'Product_PDF' => $input_hdpdf,
+            'Order_no' => $input_orderno,
             'Create_Date' => date('Y-m-d H:i:s')
         );
         $data = '';
@@ -1699,6 +1735,34 @@ class Service extends CI_Controller {
         $input = array(
             'Content_Headline' => $input_title,
             'Album_ID' => $input_album,
+            'type' => 1,
+            'Content_wrap' => $input_wordwrap,
+            'Content_detail' => $input_detail,
+            'Content_thumbnail' => $input_hdimage,
+            'Update_Date' => date('Y-m-d H:i:s')
+        );
+        $data = '';
+        if ($this->update_data->update_Content($id, $input)) {
+            $data['status'] = array('message' => 'อัพเดทข้อมูลสำเร็จ', 'type' => 'success');
+        } else {
+            $data['status'] = array('message' => 'อัพเดทข้อมูลไม่สำเร็จ', 'type' => 'danger');
+        }
+
+
+        $this->output->set_header('Content-Type: application/json; charset=utf-8');
+        echo json_encode($data);
+    }
+    
+    function edit_csr($id) {
+        $input_title = $this->input->post('input_title');
+        $input_wordwrap = $this->input->post('input_wordwrap');
+        $input_detail = $this->input->post('input_detail');
+        $input_hdimage = $this->input->post('input_hdimage');
+        $input_album = $this->input->post('input_album');
+        $input = array(
+            'Content_Headline' => $input_title,
+            'Album_ID' => $input_album,
+            'type' => 2,
             'Content_wrap' => $input_wordwrap,
             'Content_detail' => $input_detail,
             'Content_thumbnail' => $input_hdimage,
@@ -1746,6 +1810,7 @@ class Service extends CI_Controller {
         $input_group = $this->input->post('input_group');
         $input_hdimage = $this->input->post('input_hdimage');
         $input_hdimage_hover = $this->input->post('input_hdimage_hover');
+        $input_orderno = $this->input->post('input_orderno');
         $input_hdpdf = $this->input->post('input_hdpdf');
 
         $input = array(
@@ -1757,6 +1822,7 @@ class Service extends CI_Controller {
             'Product_IMG' => $input_hdimage,
             'Product_IMG_HOVER	' => $input_hdimage_hover,
             'Product_PDF' => $input_hdpdf,
+            'Order_no' => $input_orderno,
             'Update_Date' => date('Y-m-d H:i:s')
         );
         $data = '';
@@ -1802,7 +1868,28 @@ class Service extends CI_Controller {
 
     function load_content() {
 
-        $result = $this->get_data->getContent_list();
+        $result = $this->get_data->getContent_list(1);
+        header('Content-Type: text/html; charset=utf-8');
+        $html = '';
+        $i = 1;
+        foreach ($result as $row) {
+            $html .= '<tr>';
+            $html .= '<td><img src="' . base_url() . 'public/uploads/Thumbnails_' . $row->Content_thumbnail . '" height="50"></td>';
+            $html .= '<td>' . $row->Content_ID . '</td>';
+            $html .= '<td>' . $row->Content_Headline . '</br>';
+            $html .= '<div class = "tools"><span class="edit"><a href="javascript:;" onclick="edit_product(' . $row->Content_ID . ')">Edit</a> | </span><span class="delete"><a class="delete-tag" href="#" onclick="return removedata(' . $row->Content_ID . ');">Delete</a></div></td>';
+            $html .= '<td>' . $row->Content_wrap . '</td>';
+            $html .= '<td> ' . time_ago($row->Create_Date) . '</td>';
+            $html .= '<td> ' . time_ago($row->Update_Date) . '</td>';
+            $html .= '</tr>';
+            $i ++;
+        }
+        echo $html;
+    }
+    
+    function load_csr() {
+
+        $result = $this->get_data->getContent_list(2);
         header('Content-Type: text/html; charset=utf-8');
         $html = '';
         $i = 1;
@@ -1830,6 +1917,7 @@ class Service extends CI_Controller {
         foreach ($result as $row) {
             $html .= '<tr>';
             $html .= '<td>' . $row->Product_ID . '</td>';
+            $html .= '<td>' . $row->aorder_no . '</td>';
             $html .= '<td>' . $row->Group_Name . '</td>';
             $html .= '<td>' . $row->Product_Name;
             $html .= '<div class = "tools"><span class="edit"><a href="javascript:;" onclick="edit_product(' . $row->Product_ID . ')">Edit</a> | </span><span class="delete"><a class="delete-tag" href="#" onclick="return removedata(' . $row->Product_ID . ');">Delete</a></div></td>';

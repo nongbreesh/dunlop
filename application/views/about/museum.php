@@ -92,13 +92,27 @@
                                             <li><a href="<?= base_url() ?>about/quality"><img style="" src="<?= base_url() ?>public/images/quality.png" onmouseover="this.src = '<?= base_url() ?>public/images/quality_hover.png'" onmouseout="this.src = '<?= base_url() ?>public/images/quality.png'"/></a></li>
                                             <li><a href="<?= base_url() ?>about/museum"><img style="" src="<?= base_url() ?>public/images/museum_hover.png" /></a></li>
                                             <li><a href="<?= base_url() ?>about/activities"><img style="" src="<?= base_url() ?>public/images/activities.png" onmouseover="this.src = '<?= base_url() ?>public/images/activities_hover.png'" onmouseout="this.src = '<?= base_url() ?>public/images/activities.png'"/></a></li>
+                                            <li><a href="<?= base_url() ?>about/csr"><img style="" src="<?= base_url() ?>public/images/csr.png" onmouseover="this.src = '<?= base_url() ?>public/images/csr_hover.png'" onmouseout="this.src = '<?= base_url() ?>public/images/csr.png'"/></a></li>
                                         </ul>
                                     </div>
                                     <div class="contact-r ">
                                         <div class="title_trans-r"> <h1>MUSEUM</h1></div>
+                                        <p class="content2">Dunlop มีเครือข่ายครอบคลุมไปกว่า 166 ประเทศทั่วโลก และ มีฐานการผลิตอยู่ใน 3 ทวีป เชื่อมโยงเครือข่ายตลาดยาง
+                                            รถยนต์ทั่วโลก สามารถรองรับการเติบโตของธุรกิจยานยนต์ ได้อย่างครบวงจร</p>
+                                        <h2 class="content2">Photo Collection</h2>
 
 
-                                        <img src="<?= base_url() ?>public/images/museum_content.png"   style="width: 658px;margin: 5px;"/>
+                                        <p class="content2">	ประวัติยางดันลอป ที่มีมากกว่า 100 ปี นั้นมีความเกี่ยวข้องกับบุคลลมากมาย และผ่านการทดสอบ การพัฒนามา
+                                            นับครั้งไม่ถ้วน ซึ่งก็มีบางส่วนที่อาจจะไม่เกี่ยวข้องกับธุรกิจยานยนต์ในปัจจุบัน ในหน้าที่จะเป็นการรวบรวม ภาพเก่าๆ 
+                                            ต่างๆ ที่พอจะหาได้ โดยเฉพาะอย่างยิ่งเป็นรูปที่เป็นของต่างประเทศ</p>
+
+                                        <h2 class="content2"> Poster Collection</h2>
+
+
+                                        <p class="content2"><span style="color:#fcda36">ดันลอป</span> ซึ่งเกาะติดชีวิตประจำวันของผู้คนโดยผ่านทางยางรถยนต์ได้มอบสิ่งใหม่ๆ ให้กับผู้คน โดยแสดงถึงทัศน
+                                            วิสัยที่ลำ้สมัย หน้านี้เป็นการรวบรวมโปสเตอร์ต่างๆ ที่เก็บไว้ที่ดันลอปแต่ละสาขาเป็นการพยายามรวบรวมงานเก่าเท่าที่จะ
+                                            ทำได้</p>
+
                                         <div style="clear:both"></div>
 
                                     </div>

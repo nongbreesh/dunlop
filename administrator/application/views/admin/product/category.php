@@ -33,6 +33,10 @@
 
                         <form role="form" id="form_add_cate">
                             <div class="box-body">
+                                 <div class="form-group">
+                                    <label for="exampleInputEmail1">Order no</label>
+                                    <input type="number" class="form-control" id="input_orderno" name="input_orderno" placeholder="Enter Order no">
+                                </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Group Name</label>
                                     <input type="text" class="form-control" id="input_catename" name="input_catename" placeholder="Enter group name">
@@ -128,6 +132,7 @@
                             <thead>
                                 <tr>
                                     <th><strong>ID</strong></th>
+                                     <th><strong>Order no</strong></th>
                                     <th><strong>Name</strong></th>
                                     <th><strong>Parent ID</strong></th>
                                     <th><strong>IMG</strong></th>
@@ -170,6 +175,10 @@
 
                             <input type="hidden" name="input_hddcate" id="input_hddcate" />
                             <div class="box-body">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Order no</label>
+                                    <input type="number" class="form-control" id="inputedit_orderno" name="inputedit_orderno" placeholder="Enter Order no">
+                                </div>
                                 <div class="form-group">
                                     <label for="inputedit_catename">Group Name</label>
                                     <input type="text" class="form-control" id="inputedit_catename" name="inputedit_catename" placeholder="Enter URL">
@@ -581,7 +590,7 @@
         });
     });
     function load_cate_list() {
-        $('#cate_list').html('<tr><td colspan="7"><center><img src="<?php echo base_url(); ?>public/img/loading.gif"  width="50"/></center></td></tr>');
+        $('#cate_list').html('<tr><td colspan="8"><center><img src="<?php echo base_url(); ?>public/img/loading.gif"  width="50"/></center></td></tr>');
         setTimeout(
                 function()
                 {
@@ -611,6 +620,7 @@
                 //console.log(data);
                 $("#input_hddcate").val(data.result.Group_ID);
                 $("#inputedit_catename").val(data.result.Group_Name);
+                $("#inputedit_orderno").val(data.result.Order_no);
                 $("#inputedit_cateparent").val(data.result.Group_Parent_ID);
                 CKEDITOR.instances.inputedit_info.setData(data.result.Group_INFO);
                 $('#productedit_pic').html('<img src="../public/uploads/Thumbnails_' + data.result.Group_IMG + '" height="50"><input type="hidden" id="inputedit_hdimage" name="inputedit_hdimage" value="' + data.result.Group_IMG + '" />');

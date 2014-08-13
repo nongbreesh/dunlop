@@ -37,6 +37,7 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
+                                    <th>Order no</th>
                                     <th>Group Name</th>
                                     <th>Product Name</th>
                                     <th><i class="fa fa-picture-o"></i></th>
@@ -52,6 +53,7 @@
 
                                     <tr>
                                         <td><?= $row->Product_ID; ?></td>
+                                         <td><?= $row->aorder_no; ?></td>
                                         <td><?= $row->Group_Name; ?></td>
                                         <td><?= $row->Product_Name ?><br>
                                             <div class = "tools"><span class="edit"><a href="javascript:;" onclick="edit_product(<?= $row->Product_ID ?>);">Edit</a> | </span><span class="delete"><a class="delete-tag" href="#" onclick="return removedata(<?= $row->Product_ID ?>);">Delete</a></div></td></td>
@@ -109,6 +111,10 @@
                                             <?php } ?>
                                         </select>
 
+                                    </div>
+                                      <div class="form-group">
+                                        <label for="exampleInputEmail1">Order no</label>
+                                        <input name="input_orderno" id="input_orderno" type="number" class="form-control" >
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Product Name</label>
@@ -443,6 +449,7 @@
                     if (data.result[0].isoffer == 1) {
                         $('#input_isoffer').iCheck('check');
                     }
+                    $('#input_orderno').val(data.result[0].aorder_no);
                     $('#input_name').val(data.result[0].Product_Name);
                     $('#input_url').val(data.result[0].Product_URL);
                     // $('#input_tech').val(data.result[0].Product_TECH);

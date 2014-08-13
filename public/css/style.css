@@ -455,41 +455,104 @@ p.contact_detail{
     border-radius: 5px;
 }
 
+.mapaddress  a{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
 .mapaddress{
-    width: 251px;
-    height: 463px;
+    width: 300px;
+    height: 480px;
     position: absolute;
     top:80px;
-    left: 20px;
-    background: url('../images/address/map1.png')  no-repeat;
+    left:-30px;
+    background: url('../images/address/thailand.png')  no-repeat;
 }
-
-.mapaddress.bg1{
-    background: url('../images/address/map1.png')  no-repeat;
+.mapaddress .bg1{
+    width: 22px;
+    height: 50px;
+    position: absolute;
+    top: 200px;
+    left: 129px;
+    background:none;
+    z-index: 200;
 }
-.mapaddress.bg2{
-    background: url('../images/address/map4.png')  no-repeat;
+.mapaddress .bg1:hover,.mapaddress .bg1.active{
+    background: url('../images/address/bkk.png')  no-repeat;
 }
-
-.mapaddress.bg3{
-    background: url('../images/address/map3.png')  no-repeat;
+.mapaddress .bg2{
+    width: 67px;
+    height: 65px;
+    position: absolute;
+    top: 162px;
+    left: 100px;
+    background: none;
+    z-index: 100;
 }
-
-.mapaddress.bg4{
-    background: url('../images/address/map5.png')  no-repeat;
+.mapaddress .bg2:hover,.mapaddress .bg2.active{
+    background: url('../images/address/central.png')  no-repeat;
 }
-
-.mapaddress.bg5{
-    background: url('../images/address/map1.png')  no-repeat;
+.mapaddress .bg3{
+    width: 135px;
+    height: 173px;
+    position: absolute;
+    top: 5px;
+    left: 43px;
+    background: none;
+    z-index: 100;
 }
-
-.mapaddress.bg6{
-    background: url('../images/address/map6.png')  no-repeat;
+.mapaddress .bg3:hover,.mapaddress .bg3.active{
+    background: url('../images/address/noth.png')  no-repeat;
 }
-.mapaddress.bg7{
-    background: url('../images/address/map2.png')  no-repeat;
+.mapaddress .bg4{
+    width: 146px;
+    height: 136px;
+    position: absolute;
+    top: 69px;
+    left: 149px;
+    background:none;
+    z-index: 100;
 }
-
+.mapaddress .bg4:hover,.mapaddress .bg4.active{
+    background: url('../images/address/nothest.png')  no-repeat;
+}
+.mapaddress .bg5{
+    width: 66px;
+    height: 84px;
+    position: absolute;
+    top: 194px;
+    left: 149px;
+    background: none;
+    z-index: 100;
+}
+.mapaddress .bg5:hover,.mapaddress .bg5.active{
+    background: url('../images/address/east.png')  no-repeat;
+}
+.mapaddress .bg6{
+    width: 60px;
+    height: 146px;
+    position: absolute;
+    top: 158px;
+    left: 67px;
+    background: none;
+    z-index: 100;
+}
+.mapaddress .bg6:hover,.mapaddress .bg6.active{
+    background: url('../images/address/west.png')  no-repeat;
+}
+.mapaddress .bg7{
+    width: 125px;
+    height: 170px;
+    position: absolute;
+    top: 303px;
+    left: 65px;
+    background: none;
+    z-index: 100;
+}
+.mapaddress .bg7:hover,.mapaddress .bg7.active{
+    background: url('../images/address/south.png')  no-repeat;
+}
 .dealer_list{
     background: url('../images/address/dealer_zone.png')  no-repeat;
     width: 172px;
@@ -1028,4 +1091,53 @@ ul.accordion label + input[type='radio']:checked + div.content_list {
 }
 .albumpic .bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active{
     background: #ffde00; 
+}
+
+.content_body{
+    min-height: 200px;
+    border: 2px solid #fed935;
+    margin: 75px 10px;
+}
+.content_body .header{
+    background: -webkit-linear-gradient(#faeca2, #fcda36); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#faeca2, #fcda36); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#faeca2, #fcda36); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#faeca2, b#fcda36lue); /* Standard syntax */
+
+    padding: 5px;
+    font: 20px 'ThaiSansNeue-Bold';
+}
+.content_body p{
+    padding: 10px;
+    margin: 0px;
+    font:18px 'ThaiSansNeue-Bold';
+}
+.content_body ul{
+  list-style: none;
+    margin: 0px;
+}
+.content_body ul li{
+       padding-left: 1em; 
+    text-indent: -2em;
+    color:#fff;
+    margin: 0px;
+    font:18px 'ThaiSansNeue-Bold';
+}
+.content_body ul li:before {
+    content: "• ";
+    font-size: 24px;
+    color: #fcda36; /* or whatever color you prefer */
+}
+.contact-r p.content2{
+    color:#fff;
+    margin: 0px;
+    font:18px 'ThaiSansNeue-Bold';
+    padding: 10px;
+}
+.contact-r  h2.content2{
+    font: 36px 'ThaiSansNeue-Bold';
+    color:#fcda36;
+    padding: 0px;
+    margin: 0px 0px 0px 20px;
+    line-height: 28px;
 }

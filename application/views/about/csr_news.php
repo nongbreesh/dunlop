@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -12,6 +13,7 @@
               type="text/css" />
         <link href="<?= base_url('public') ?>/css/animate.css" rel="stylesheet"
               type="text/css" />
+        <link rel="stylesheet" type="text/css" href="<?= base_url('public') ?>/css/bootstrap.css" />
         <link rel="stylesheet" type="text/css" href="<?= base_url('public') ?>/css/custom.css" />
         <link rel="stylesheet" type="text/css" href="<?= base_url('public') ?>/css/style.css" />
         <script type="text/javascript" src="<?= base_url('public') ?>/js/modernizr.custom.79639.js"></script>
@@ -36,27 +38,27 @@
                 <td width="942"  style="position: relative;"><table border="0" cellspacing="0" cellpadding="0" width="100%">
                         <tr>
                             <td><a href="<?= base_url() ?>"><img src="<?= base_url() ?>public/images/home/logo_2.jpg" /></a></td>
-                            <td background="<?= base_url() ?>public/images/home/logo_3m.png"  width="100%">
+                            <td background="<?= base_url() ?>public/images/home/logo_3.jpg"  width="100%">
 
                             </td>
 
                         </tr>
                     </table>
                     <div class="menu">
-                        <table id="Table_01" width="687" height="42" border="0" cellpadding="0" cellspacing="0">
+                        <table id="Table_01" width="696" height="42" border="0" cellpadding="0" cellspacing="0">
                             <tr>
                                 <td>
-                                    <a href="<?= base_url() ?>home"><img src="<?= base_url() ?>public/images/menu/knowledge/menu_01.png" width="93" height="42" alt=""/></a></td>
+                                    <a href="<?= base_url() ?>home"><img src="<?= base_url() ?>public/images/menu/about/menu_01.png" width="98" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>product"> <img src="<?= base_url() ?>public/images/menu/knowledge/menu_02.png" width="95" height="42" alt=""/></a></td>
+                                    <a href="<?= base_url() ?>product"> <img src="<?= base_url() ?>public/images/menu/about/menu_02.png" width="95" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>knowledge"><img src="<?= base_url() ?>public/images/menu/knowledge/menu_03.png" width="135" height="42" alt=""/></a></td>
+                                    <a href="<?= base_url() ?>knowledge"><img src="<?= base_url() ?>public/images/menu/about/menu_03.png" width="104" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>about">  <img src="<?= base_url() ?>public/images/menu/knowledge/menu_04.png" width="122" height="42" alt=""/></a></td>
+                                    <a href="<?= base_url() ?>about">  <img src="<?= base_url() ?>public/images/menu/about/menu_04.png" width="174" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>address"><img src="<?= base_url() ?>public/images/menu/knowledge/menu_05.png" width="136" height="42" alt=""/></a></td>
+                                    <a href="<?= base_url() ?>address"><img src="<?= base_url() ?>public/images/menu/about/menu_05.png" width="107" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>contact"><img src="<?= base_url() ?>public/images/menu/knowledge/menu_06.png" width="106" height="42" alt=""/></a></td>
+                                    <a href="<?= base_url() ?>contact"><img src="<?= base_url() ?>public/images/menu/about/menu_06.png" width="118" height="42" alt=""/></a></td>
                             </tr>
                         </table>
                     </div>
@@ -85,42 +87,37 @@
                             <td> 
 
                                 <div class="wrapper">
-                                    <div class="sidebar-l" ><div class="knowledge_title"></div> 
+                                    <div class="sidebar-l" ><div class="about_title"></div>
+
                                         <ul class="sidemenu">
-                                            <li><a href="<?= base_url() ?>knowledge/qa"><img style="" src="<?= base_url() ?>public/images/qa.png" onmouseover="this.src = '<?= base_url() ?>public/images/qa_hover.png'" onmouseout="this.src = '<?= base_url() ?>public/images/qa.png'"/></a></li>
-                                            <li><a href="<?= base_url() ?>knowledge/tech"><img style="" src="<?= base_url() ?>public/images/tech_hover.png" /></a></li>
-                                            <li><a href="<?= base_url() ?>knowledge/usage"><img style="" src="<?= base_url() ?>public/images/usage.png" onmouseover="this.src = '<?= base_url() ?>public/images/usage_hover.png'" onmouseout="this.src = '<?= base_url() ?>public/images/usage.png'"/></a></li>
+                                            <li><a href="<?= base_url() ?>about/blackground"><img style="" src="<?= base_url() ?>public/images/blackground.png" onmouseover="this.src = '<?= base_url() ?>public/images/blackground_hover.png'" onmouseout="this.src = '<?= base_url() ?>public/images/blackground.png'"/></a></li>
+                                            <li><a href="<?= base_url() ?>about/quality"><img style="" src="<?= base_url() ?>public/images/quality.png" onmouseover="this.src = '<?= base_url() ?>public/images/quality_hover.png'" onmouseout="this.src = '<?= base_url() ?>public/images/quality.png'"/></a></li>
+                                            <li><a href="<?= base_url() ?>about/museum"><img style="" src="<?= base_url() ?>public/images/museum.png" onmouseover="this.src = '<?= base_url() ?>public/images/museum_hover.png'" onmouseout="this.src = '<?= base_url() ?>public/images/museum.png'"/></a></li>
+                                            <li><a href="<?= base_url() ?>about/activities"><img style="" src="<?= base_url() ?>public/images/activities_hover.png" /></a></li>
+                                        <li><a href="<?= base_url() ?>about/csr"><img style="" src="<?= base_url() ?>public/images/csr_hover.png" /></a></li>
                                         </ul>
                                     </div>
-                                    <div class="contact-r ">
-                                        <div class="title_trans-r"> <h1>TECHNOLOGY</h1></div>
-                                        <div class="content_body">
-                                            <div class="header">DIGITAL ROLLING SIMULATION II</div>
-                                            <p>	เทคโนโลยีใหม่ล่าสุดที่ Dunlop โดยเป็นการวิเคราะห์ การใช้งาน จริงโดย
-                                                เครื่อง Computer ทั้งทางแห้งและเปียก โดยเปรียบเทียบระหว่างความแตกต่างของ 
-                                                DRS กับ DRS II ที่ถูกพัฒนาให้มีสมรรถนะสูงขึ้นกว่าเดิม แล้วนำข้อมูลที่เกิดจาก
-                                                การวิเคราะห์ทั้งหมดไปผลิต และทดสอบ สมรรถนะยางจริงก่อนออกสู่ตลาด เพื่อ
-                                                รองรับกลุ่มเป้าหมายผู้ใช้รถยุโรประดับหรู หรือ Sporty Saloon ความเร็วสูงจึงไม่
-                                                เพียงแต่เพิ่มสมรรถนะการเกาะถนนบนความเร็วสูง แต่ยังเพิ่มสมรรถนะ ความมั่น
-                                                คงบน ทางเปียก ลดเสียงรบกวน และเพิ่มความนุ่มนวลในการขับขี่คุณสมบัติดังกล่าว</p>
-                                            <div class="header">HIGHT SPEED STABILITY</div>
-                                            <p>	การยึดเกาะถนนในความเร็วสูงทั้งทางตรงและทางโค้ง ดอกยางแบบ BLOCK RIGIDITY ผนวกกับ DIRECTIONAL เพิ่ม
-                                                ความกระชับดอกยาง บนหน้าสัมผัสผิวถนนในทางตรง ร่องดอกบนไหล่รูปปีกนกเพิ่มแรกยึดเหนี่ยวเมื่อเข้าโค้งบนความเร็วสูง
-                                            </p>
-                                            <div class="header">WET PERFORMANCE</div>
-                                            <p>	ดอกยาง SP SPORT MAXX เพิ่มส่วนผสม COMPOUND สร้าง “FUNCTIONAL POLYMER” ทำให้เนื้อยางยึดเกาะถนน
-                                                บนทางเปียก ขณะวิ่งด้วยความเร็วสูง ประสิทธิภาพการหยุดรถ (BREAK) บนทางเปียก เพิ่มขึ้น 5% เมื่อเทียบรุ่น SP9000</p>
-                                            <div class="header">QUIETNESS</div>
-                                            <p>	ลดเสียงสะท้อนในขณะใช้ความเร็วสูงด้วยดอก
-                                                ยาง SHIFTED PATTERN โดยการสลับตำแหน่งส่วน
-                                                ปลายร่องดอกบนไหล่ยางช่วยลดเสียงรบกวน ห้องโดย
-                                                สาร ผลการทดสอบ SP MAXX ลดเสียงรบกวนลง 
-                                                1.1 เดซิเบล เมื่อเทียบกับ SP 9000 ยาง FLAGSHIP 
-                                                รุ่นก่อน</p>
+                                    <div class="contact-r " >
+                                        <div class="title_trans-r"> <h1>CSR</h1></div>
+                                        <div class="content-activities_headline"><?= $content->Content_Headline ?></div>
+                                        <div class="content-activities-detail ">
+                                            <?php if (count($albumpic) > 0): ?>
+                                                <div class="albumpic">
+                                                    <ul class="bxslider">
+                                                        <?php foreach ($albumpic as $each): ?>
+                                                            <li>
+                                                                <div  style="cursor: pointer;"><img src="<?= base_url() ?>administrator/public/uploads/<?= str_replace('thumb_', '', $each->PIC_Image) ?>" width="100%" /></div>
+
+                                                            </li>
+                                                        <?php endforeach; ?>
+                                                    </ul>
+                                                </div>
+                                            <?php endif; ?>
+                                            <?= $content->Content_detail ?>
+                                            <div style="clear:both"></div>
                                         </div>
 
                                         <div style="clear:both"></div>
-
                                     </div>
                                 </div>
                             </td>

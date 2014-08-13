@@ -123,13 +123,13 @@ class get_data extends CI_Model {
         return $query->result();
     }
 
-    function getContent_list() {
-        $query = $this->db->query("select  * from dunlop_content");
+    function getContent_list($type) {
+        $query = $this->db->query("select  * from dunlop_content where type = ".$type);
         return $query->result();
     }
 
     function getProducts() {
-        $query = $this->db->query("select a.*,b.* from   dunlop_product  a left join dunlop_group b on a.Group_ID = b.Group_ID ");
+        $query = $this->db->query("select a.*,b.*,a.Order_no as aorder_no from   dunlop_product  a left join dunlop_group b on a.Group_ID = b.Group_ID order by a.Order_no");
         return $query->result();
     }
 
@@ -164,7 +164,7 @@ class get_data extends CI_Model {
     }
 
     function getProductsbyId($id) {
-        $query = $this->db->query("select a.*,b.* from   dunlop_product  a left join dunlop_group b on a.Group_ID = b.Group_ID  where  a.Product_ID =" . $id);
+        $query = $this->db->query("select a.*,b.* , a.Order_no as aorder_no from   dunlop_product  a left join dunlop_group b on a.Group_ID = b.Group_ID  where  a.Product_ID =" . $id);
         return $query->result();
     }
 
@@ -320,7 +320,8 @@ class get_data extends CI_Model {
     }
 
     function getdunlop_groupall() {
-        $this->db->select('Group_ID as val1 , Group_Name as val2, Group_IMG as val3 , Group_Parent_ID ');
+        $this->db->select('Group_ID as val1 , Group_Name as val2, Group_IMG as val3 , Group_Parent_ID ,Order_no');
+        $this->db->order_by('Order_no');
         $query = $this->db->get('dunlop_group');
         return $query->result();
     }

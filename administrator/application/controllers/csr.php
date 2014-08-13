@@ -3,7 +3,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class News extends CI_Controller {
+class Csr extends CI_Controller {
 
     function __construct() {
         parent::__construct();
@@ -35,11 +35,11 @@ class News extends CI_Controller {
         } else {
             redirect('login', 'refresh');
         }
-        $data['menu'] = "news";
+        $data['menu'] = "csr";
         $data['album_list'] = $this->select_model->get_dunlop_album();
-        $data['news_list'] = $this->select_model->dunlop_content(1);
+        $data['news_list'] = $this->select_model->dunlop_content(2);
         $this->load->view('admin/template/header', $data);
-        $this->load->view('admin/news/index');
+        $this->load->view('admin/csr/index');
         $this->load->view('admin/template/footer');
     }
 

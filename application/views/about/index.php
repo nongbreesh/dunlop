@@ -92,13 +92,46 @@
                                             <li><a href="<?= base_url() ?>about/quality"><img style="" src="<?= base_url() ?>public/images/quality.png" onmouseover="this.src = '<?= base_url() ?>public/images/quality_hover.png'" onmouseout="this.src = '<?= base_url() ?>public/images/quality.png'"/></a></li>
                                             <li><a href="<?= base_url() ?>about/museum"><img style="" src="<?= base_url() ?>public/images/museum.png" onmouseover="this.src = '<?= base_url() ?>public/images/museum_hover.png'" onmouseout="this.src = '<?= base_url() ?>public/images/museum.png'"/></a></li>
                                             <li><a href="<?= base_url() ?>about/activities"><img style="" src="<?= base_url() ?>public/images/activities.png" onmouseover="this.src = '<?= base_url() ?>public/images/activities_hover.png'" onmouseout="this.src = '<?= base_url() ?>public/images/activities.png'"/></a></li>
+                                            <li><a href="<?= base_url() ?>about/csr"><img style="" src="<?= base_url() ?>public/images/csr.png" onmouseover="this.src = '<?= base_url() ?>public/images/csr_hover.png'" onmouseout="this.src = '<?= base_url() ?>public/images/csr.png'"/></a></li>
                                         </ul>
                                     </div>
                                     <div class="contact-r ">
                                         <div class="title_trans-r"> <h1>BACKGROUND</h1></div>
+                                        <p class="content2">
+                                            วิวัฒนาการยางรถยนต์ที่ต้องเติมลมเส้นแรกเกิดเมื่อปี 1888 จากการคิดค้นของ 
+                                            MR. J.B. Dunlop ชาวอังกฤษ ผู้ริเริ่มพัฒนายางรถยนต์ที่ต้องสูบลมและมียางในเส้นแรก
+                                            ของโลกได้สำเร็จ แรงบันดาลใจของ Dunlop ในการพัฒนายางรถยนต์ที่ใช้สูบลม (ก่อน
+                                            หน้านั้นรถยังใช้ยางตัน) เนื่องจากปัญหาของลูกชาย Dunlop จึงคิดทำไส้ในยางจักรยาน
+                                            แล้วนำมาสูบลมทำให้เกิดแรงยืดหยุ่นและลดแรงกระแทก วิวัฒนาการดังกล่าวนำไปสู่การ
+                                            ปฎิสนธิยางรถยนต์ที่ถูกพัฒนาควบคู่กันไปอย่างต่อเนื่องกว่า 110 ปี มาแล้ว นี่คือเกียรติ
+                                            ยศของ Dunlop ที่ต้องถูกจารึกไว้ในโลกยานยนต์
 
 
-                                        <img src="<?= base_url() ?>public/images/background_content.png"   style="width: 658px;margin: 5px;"/>
+                                        </p>
+                                        <h2 class="content2">หล่อหลอมแนวคิดทีมงานเป็นหนึงเดียว</h2>
+                                        <p class="content2">
+
+                                            ทีมงานวิศวกรของ DUNLOP ถือว่าสร้างผลิตภัณฑ์ยางรถยนต์ที่มี
+                                            คุณภาพมุ่งมันในความรับผิดชอบต่อสังคมคือ ภาระกิจที่ต้องทำให้ได้ 
+                                            DUNLOP เสาะแสวงหาทีมงานคุณภาพพร้อมทั้งเน้นสิ่งอำนวยความสะดวก
+                                            ในขณะปฏิบัติหน้าที่รวมถึงการสร้างที่ทำงานที่โอ่โถงให้ความสะดวกสบาย 
+                                            และมีความอบอุ่น โดยเฉพาะ DUNLOP เน้นธรรมาภิบาลในการปกครองอัน
+                                            นำมาสู่ความร่วมมือในการคิดค้นยางรถยนต์คุณภาพระดับพรีเมียม อย่าง
+                                            ต่อเนื่อง 
+
+                                        </p>
+                                        <h2 class="content2">ดันลอป ประเทศไทย<br/><span style="font-size: 28px;">SUMITOMO RUBBER THAILAND</span></h2>
+                                        <p class="content2">	บริษัท ซูมิโตโม รับเบอร์อินดัสตรี ประเทศญี่ปุ่นได้ตั้งโรงงานผลิตยางรถยนต์ Dunlop ในประเทศไทยเมื่อปี 2548 ในชื่อ
+                                            บริษัทซูมิโตโม รับเบอร์์ (ไทยแลนด์ ) จำกัด หรือในนาม SRT โรงงานแห่งนี้ตั้งขึ้นในบริเวณอุตสาหกรรมอมตะซิตี้ จังหวัดระยอง 
+                                            บนพื้นที่ 346 ไร่ หรือประมาณ 585,000 ตารางเมตร โดยใช้งบการลงทุนจนถึงมิถุนายน 2551 ไปแล้ว 12.2 พันล้านบาท
+
+                                        </p>
+                                        <p class="content2">	โรงงานเฟสแรกได้เริ่มผลิตยางรถยนต์ตั้งแต่เดือนพฤศจิกายน 2549 ด้วยเทคโนโลยีการผลิตแบบใหม่ในชื่อว่า “SUN 
+                                            SYSTEM” ซึ่งเป็นระบบขบวน การผลิตที่ผสมผสานการผลิตให้เป็นหนึ่งเดียวเพื่อให้ได้ผลการผลิตที่สูงโรงงานเฟสสองได้เริ่มการ
+                                            ผลิตเมื่อเดือนตุลาคม 2550 และเมื่อสิ้นสุดปี 2551 โรงงานทั้งสองเฟสจะมีกำลังผลิตยางสำหรับรถยนต์นั่ง รถ SUV เอนกประสงค์ 
+                                            และ รถปิ๊กอัพ รวมกันที่ 28,000 เส้นต่อวันและเพื่อที่จะสามารถ ตอบสนองความต้องการของตลาดยางในอนาคต โรงงาน SRT 
+                                            มีแผนที่จะขยายกำลังการผลิตถึง 73,000 เส้นต่อวันในปี 2553
+                                        </p>
                                         <div style="clear:both"></div>
 
                                     </div>

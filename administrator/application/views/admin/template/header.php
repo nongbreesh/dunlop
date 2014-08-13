@@ -99,19 +99,19 @@
                         </div>
                     </div>
                     <!-- search form -->
-                    <?php if($menu == "product_tire"): ?>
-                    <form action="#" method="get" class="sidebar-form">
-                        <div class="input-group">
-                            <input type="text" name="q" class="form-control" placeholder="Search..." value="<?php
-                            if (!empty($q)) {
-                                echo $q;
-                            }
-                            ?>"/>
-                            <span class="input-group-btn">
-                                <button type='submit' name='seach' value="excute" id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
-                            </span>
-                        </div>
-                    </form>
+                    <?php if ($menu == "product_tire"): ?>
+                        <form action="#" method="get" class="sidebar-form">
+                            <div class="input-group">
+                                <input type="text" name="q" class="form-control" placeholder="Search..." value="<?php
+                                if (!empty($q)) {
+                                    echo $q;
+                                }
+                                ?>"/>
+                                <span class="input-group-btn">
+                                    <button type='submit' name='seach' value="excute" id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+                                </span>
+                            </div>
+                        </form>
                     <?php endif; ?>
                     <!-- /.search form -->
                     <!-- sidebar menu: : style can be found in sidebar.less -->
@@ -166,7 +166,7 @@
                                 </li>
 
                                 <li><a href="<?= base_url() ?>news" style="margin-left: 10px;" <?= is_menu_active($menu, "news"); ?>><i class="fa fa-angle-double-right"></i> News</a></li>
-
+                                <li><a href="<?= base_url() ?>csr" style="margin-left: 10px;" <?= is_menu_active($menu, "csr"); ?>><i class="fa fa-angle-double-right"></i> CSR</a></li>
                                 <li <?= is_menu_active($menu, "gallery"); ?>> <a href="<?= base_url() ?>gallery/index" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Gallery</a></li>
 
                             </ul>

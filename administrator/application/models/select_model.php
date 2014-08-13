@@ -65,8 +65,8 @@ class select_model extends CI_Model {
         return $query->result();
     }
 
-    function dunlop_content() {
-        $query = $this->db->query("SELECT  * FROM dunlop_content");
+    function dunlop_content($type) {
+        $query = $this->db->query("SELECT  * FROM dunlop_content where type =" . $type);
         return $query->result();
     }
 
@@ -108,9 +108,10 @@ class select_model extends CI_Model {
 
     function get_dunlop_product() {
 
-        $query = $this->db->query("SELECT  * FROM dunlop_product a "
+        $query = $this->db->query("SELECT  *,a.Order_no as aorder_no FROM dunlop_product a "
                 . " left  join dunlop_group b"
-                . " on a.Group_ID = b.Group_ID");
+                . " on a.Group_ID = b.Group_ID"
+                . " order by a.Order_no");
         return $query->result();
     }
 

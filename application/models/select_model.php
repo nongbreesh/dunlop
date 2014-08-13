@@ -7,12 +7,12 @@ class select_model extends CI_Model {
         $this->load->helper(array('cookie', 'url'));
     }
 
-    public function content_count() {
-        return $this->db->count_all("dunlop_content");
+    public function content_count($type) {
+        return $this->db->count_all("dunlop_content where type = " . $type);
     }
 
-    function get_dunlop_content($limit, $start) {
-        $query = $this->db->query("SELECT  * FROM dunlop_content order by Content_ID limit " . $start . ', ' . $limit);
+    function get_dunlop_content($type, $limit, $start) {
+        $query = $this->db->query("SELECT  * FROM dunlop_content where type = " . $type . " order by Content_ID limit " . $start . ', ' . $limit);
         return $query->result();
     }
 
@@ -34,7 +34,7 @@ class select_model extends CI_Model {
     function getdunlop_group() {
         $this->db->select('');
         $this->db->where('Group_Parent_ID', 0);
-        $this->db->order_by('Group_ID', 'ASC');
+        $this->db->order_by('Order_no', 'ASC');
         $query = $this->db->get('dunlop_group');
         return $query->result();
     }
@@ -57,7 +57,7 @@ class select_model extends CI_Model {
     function getdunlop_produt_by_gid($gid) {
         $this->db->select('');
         $this->db->where('Group_ID', $gid);
-        $this->db->order_by('Product_ID', 'ASC');
+        $this->db->order_by('Order_no', 'ASC');
         $query = $this->db->get('dunlop_product');
         return $query->result();
     }

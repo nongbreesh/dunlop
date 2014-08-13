@@ -89,22 +89,32 @@
                                     <div class="title_trans"><h1>ตัวแทนจำหน่าย <img style="margin-top: -14px;
                                                                                     margin-left: -5px; " src="<?= base_url() ?>public/images/add_loc_icon.png"/></h1> </div>
                                     <div class="row" style="min-height: 1100px;">
-                                        <?php if ($id == 1): ?>
-                                            <div class="mapaddress bg1"></div>
-                                        <?php elseif ($id == 2): ?>
-                                            <div class="mapaddress bg2"></div>
-                                        <?php elseif ($id == 3): ?>
-                                            <div class="mapaddress bg3"></div>
-                                        <?php elseif ($id == 4): ?>
-                                            <div class="mapaddress bg4"></div>
-                                        <?php elseif ($id == 5): ?>
-                                            <div class="mapaddress bg5"></div>
-                                        <?php elseif ($id == 6): ?>
-                                            <div class="mapaddress bg6"></div>
-                                        <?php elseif ($id == 7): ?>
-                                            <div class="mapaddress bg7"></div>
+                                        <div class="mapaddress">
+                                            <div class="bg1 <?= $id == 1 ? 'active' : '' ?>"><a href="<?= base_url() ?>address/zone/1" ></a></div>
+                                            <div class="bg2 <?= $id == 5 ? 'active' : '' ?>"><a href="<?= base_url() ?>address/zone/5" ></a></div>
+                                            <div class="bg3 <?= $id == 2 ? 'active' : '' ?>"><a href="<?= base_url() ?>address/zone/2" ></a></div>
+                                            <div class="bg4 <?= $id == 3 ? 'active' : '' ?>"><a href="<?= base_url() ?>address/zone/3" ></a></div>
+                                            <div class="bg5 <?= $id == 4 ? 'active' : '' ?>"><a href="<?= base_url() ?>address/zone/4" ></a></div>
+                                            <div class="bg6 <?= $id == 6 ? 'active' : '' ?>"><a href="<?= base_url() ?>address/zone/6" ></a></div>
+                                            <div class="bg7 <?= $id == 7 ? 'active' : '' ?>"><a href="<?= base_url() ?>address/zone/7" ></a></div>
+                                        </div>
 
-                                        <?php endif; ?>
+                                        <!--<?php if ($id == 1): ?>
+                                                                        <div class="mapaddress bg1"></div>
+                                        <?php elseif ($id == 2): ?>
+                                                                        <div class="mapaddress bg2"></div>
+                                        <?php elseif ($id == 3): ?>
+                                                                        <div class="mapaddress bg3"></div>
+                                        <?php elseif ($id == 4): ?>
+                                                                        <div class="mapaddress bg4"></div>
+                                        <?php elseif ($id == 5): ?>
+                                                                        <div class="mapaddress bg5"></div>
+                                        <?php elseif ($id == 6): ?>
+                                                                        <div class="mapaddress bg6"></div>
+                                        <?php elseif ($id == 7): ?>
+                                                                        <div class="mapaddress bg7"></div>
+
+                                        <?php endif; ?>-->
 
 
                                         <div class="dealer_list">
