@@ -83,7 +83,17 @@
                                         </label>
                                     </div>
                                 </div>
+                                <div class="form-group">
 
+                                    <label for="input_detail">Gallery</label>
+                                    <select class="form-control"  id="input_album" name="input_album" >
+                                        <option value="">--- Select one ----</option>';
+                                        <?php foreach ($album_list as $each) { ?>
+                                            <option value="<?php echo $each->Album_ID; ?>"><?php echo $each->Album_Name; ?></option>';
+                                        <?php } ?>
+                                    </select>        
+
+                                </div>
 
 
 
@@ -212,7 +222,17 @@
                                         </label>
                                     </div>
                                 </div>
+                                <div class="form-group">
 
+                                    <label for="input_detail">Gallery</label>
+                                    <select class="form-control"  id="inputedit_album" name="inputedit_album" >
+                                        <option value="">--- Select one ----</option>';
+                                        <?php foreach ($album_list as $each) { ?>
+                                            <option value="<?php echo $each->Album_ID; ?>"><?php echo $each->Album_Name; ?></option>';
+                                        <?php } ?>
+                                    </select>        
+
+                                </div>
 
 
 
@@ -364,7 +384,7 @@
                 $('#inputedit_dealer_address').val(data.result.Dealer_Address);
                 $('#inputedit_dealer_tel').val(data.result.Dealer_Tel);
                 $('#inputedit_dealer_url').val(data.result.Dealer_URL);
-                //$('#inputedit_dealer_agent').val(data.result.Dealer_Agent);
+                $('#inputedit_album').val(data.result.Album_ID);
                 if (data.result.Dealer_Agent == 1) {
                     $('#inputedit_dealer_agent_yes').iCheck('check');
                 } else {

@@ -899,6 +899,7 @@ class Service extends CI_Controller {
         $input_dealer_tel = $this->input->post('inputedit_dealer_tel');
         $input_dealer_url = $this->input->post('inputedit_dealer_url');
         $input_dealer_agent = $this->input->post('inputedit_dealer_agent');
+        $input_album = $this->input->post('inputedit_album');
         $input = array(
             'Area_ID' => $input_area,
             'Dealer_Name' => $input_dealer_name,
@@ -906,6 +907,7 @@ class Service extends CI_Controller {
             'Dealer_Tel' => $input_dealer_tel,
             'Dealer_URL' => $input_dealer_url,
             'Dealer_Agent' => $input_dealer_agent,
+            'Album_ID' => $input_album,
             'Create_Date' => date('Y-m-d H:i:s')
         );
         $data = '';
@@ -1017,6 +1019,8 @@ class Service extends CI_Controller {
         $input_dealer_tel = $this->input->post('input_dealer_tel');
         $input_dealer_url = $this->input->post('input_dealer_url');
         $input_dealer_agent = $this->input->post('input_dealer_agent');
+        $input_album = $this->input->post('input_album');
+
         $input = array(
             'Area_ID' => $input_area,
             'Dealer_Name' => $input_dealer_name,
@@ -1024,6 +1028,7 @@ class Service extends CI_Controller {
             'Dealer_Tel' => $input_dealer_tel,
             'Dealer_URL' => $input_dealer_url,
             'Dealer_Agent' => boolval($input_dealer_agent),
+            'Album_ID' => $input_album,
             'Create_Date' => date('Y-m-d H:i:s')
         );
 
@@ -1752,7 +1757,7 @@ class Service extends CI_Controller {
         $this->output->set_header('Content-Type: application/json; charset=utf-8');
         echo json_encode($data);
     }
-    
+
     function edit_csr($id) {
         $input_title = $this->input->post('input_title');
         $input_wordwrap = $this->input->post('input_wordwrap');
@@ -1886,7 +1891,7 @@ class Service extends CI_Controller {
         }
         echo $html;
     }
-    
+
     function load_csr() {
 
         $result = $this->get_data->getContent_list(2);

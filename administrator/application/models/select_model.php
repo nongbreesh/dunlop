@@ -32,6 +32,11 @@ class select_model extends CI_Model {
         return $query->row();
     }
 
+    function get_dunlop_dealerpic($id) {
+        $query = $this->db->query("SELECT  * FROM dunlop_album a inner join dealer_detail b on a.Album_ID = b.Album_ID where b.Dealer_ID = " . $id);
+        return $query->row();
+    }
+
     function get_dunlop_pic($id) {
         $query = $this->db->query("SELECT  *,a.Create_Date as aCreate_Date,a.Update_Date as aUpdate_Date FROM dunlop_pic a inner join dunlop_album b on a.Album_ID = b.Album_ID where b.Album_ID = " . $id);
         return $query->result();

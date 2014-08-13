@@ -29,6 +29,10 @@ class Address extends CI_Controller {
         } else {
             $data['area'] = $area;
         }
+        $g = $this->input->get('g');
+        if (!empty($g)) {
+            $data['dealer_pic'] = $this->select_model->get_dunlop_dealerpic($g);
+        }
         $data['dealer_detail'] = $this->select_model->get_dealer_list_by_id($data['area']);
         $data['zone_header'] = $this->select_model->get_dunlop_zone_by_id($id)->ZONE_NAME;
         $data['zone_list'] = $this->select_model->get_dunlop_zone();
@@ -49,7 +53,11 @@ class Address extends CI_Controller {
         } else {
             $data['area'] = $area;
         }
-
+        $g = $this->input->get('g');
+        if (!empty($g)) {
+            $data['dealer_pic'] = $this->select_model->get_dunlop_dealerpic($g);
+        }
+       //print_r($data['dealer_pic']);
         $data['zone_header'] = $this->select_model->get_dunlop_zone_by_id($id)->ZONE_NAME;
         $data['zone_list'] = $this->select_model->get_dunlop_zone();
         $data['dealer_detail'] = $this->select_model->get_dealer_list_by_id($data['area']);

@@ -20,12 +20,81 @@
             <link rel="stylesheet" type="text/css" href="<?= base_url('public') ?>/css/styleNoJS.css" />
         </noscript>
         <title>Welcome to Dunlop Tire (Thailand) Company Limited</title>
+
         <script>
             $(document).ready(function() {
                 $('.bxslider').bxSlider({
                     auto: true
                 });
+
+                var g = getParameterByName('g');
+
+                $("#bgPopup").data("state", 0);
+                if (g) {
+                    centerPopup();
+                    loadPopup();
+                }
+                /*$("#pop_slide").click(function() {
+                 centerPopup();
+                 loadPopup();
+                 });*/
+                $("#popupClose").click(function() {
+                    disablePopup();
+                });
+                $(document).keypress(function(e) {
+                    if (e.keyCode == 27) {
+                        disablePopup();
+                    }
+                });
             });
+
+//Recenter the popup on resize - Thanks @Dan Harvey [http://www.danharvey.com.au/]  
+            $(window).resize(function() {
+                centerPopup();
+            });
+
+            function loadPopup() {
+                //loads popup only if it is disabled  
+                if ($("#bgPopup").data("state") == 0) {
+                    $("#bgPopup").css({
+                        "opacity": "0.7"
+                    });
+                    $("#bgPopup").fadeIn("medium");
+                    $("#Popup").fadeIn("medium");
+                    $("#bgPopup").data("state", 1);
+                }
+            }
+
+            function disablePopup() {
+                if ($("#bgPopup").data("state") == 1) {
+                    $("#bgPopup").fadeOut("medium");
+                    $("#Popup").fadeOut("medium");
+                    $("#bgPopup").data("state", 0);
+                }
+            }
+
+            function centerPopup() {
+                var winw = $(window).width();
+                var winh = $(window).height();
+                var popw = $('#Popup').width();
+                var poph = $('#Popup').height();
+                $("#Popup").css({
+                    "position": "absolute",
+                    "top": winh / 2 - poph / 2,
+                    "left": winw / 2 - popw / 2
+                }
+                );
+                //IE6  
+                $("#bgPopup").css({
+                    "height": winh
+                });
+            }
+            function getParameterByName(name) {
+                name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+                var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                        results = regex.exec(location.search);
+                return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+            }
         </script>
     </head>
     <body background="<?= base_url() ?>public/images/home/bg_2.jpg" style="margin:auto">
@@ -100,19 +169,19 @@
                                         </div>
 
                                         <!--<?php if ($id == 1): ?>
-                                                                        <div class="mapaddress bg1"></div>
+                                                                                                                                                                <div class="mapaddress bg1"></div>
                                         <?php elseif ($id == 2): ?>
-                                                                        <div class="mapaddress bg2"></div>
+                                                                                                                                                                <div class="mapaddress bg2"></div>
                                         <?php elseif ($id == 3): ?>
-                                                                        <div class="mapaddress bg3"></div>
+                                                                                                                                                                <div class="mapaddress bg3"></div>
                                         <?php elseif ($id == 4): ?>
-                                                                        <div class="mapaddress bg4"></div>
+                                                                                                                                                                <div class="mapaddress bg4"></div>
                                         <?php elseif ($id == 5): ?>
-                                                                        <div class="mapaddress bg5"></div>
+                                                                                                                                                                <div class="mapaddress bg5"></div>
                                         <?php elseif ($id == 6): ?>
-                                                                        <div class="mapaddress bg6"></div>
+                                                                                                                                                                <div class="mapaddress bg6"></div>
                                         <?php elseif ($id == 7): ?>
-                                                                        <div class="mapaddress bg7"></div>
+                                                                                                                                                                <div class="mapaddress bg7"></div>
 
                                         <?php endif; ?>-->
 
@@ -161,7 +230,7 @@
                                                     <?php foreach ($dealer_detail as $each): ?>
                                                         <tr>
                                                             <?php if ($each->Dealer_Agent == 1): ?>
-                                                                <td><img src="<?= base_url() ?>public/images/dunlop_icon.png" width="15"/> <?= $each->Dealer_Name ?> </td>
+                                                                <td><a href="<?= base_url() ?>address/zone/<?= $each->ZONE_ID ?>/<?= $each->AREA_ID ?>?g=<?= $each->Dealer_ID ?>" ><img src="<?= base_url() ?>public/images/dunlop_icon.png" width="15"/></a> <?= $each->Dealer_Name ?> </td>
                                                             <?php else: ?>
                                                                 <td><?= $each->Dealer_Name ?> </td>
                                                             <?php endif; ?>
@@ -201,13 +270,31 @@
                 <td bgcolor="#373737">&nbsp;</td>
             </tr>
         </table>
-
+        <div id="Popup">  
+            <a id="popupClose">x</a>  
+            <div class="dealerpic">
+                <ul class="bxslider">
+                    <?php if (isset($dealer_pic)): ?>
+                        <?php foreach ($dealer_pic as $each): ?>
+                            <li>
+                                <img src="<?= base_url() ?>administrator/public/uploads/<?= str_replace('thumb_', '', $each->Album_Thumbnail) ?>" style="width: 500px;" />
+                            </li>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </ul>
+            </div> 
+        </div>   
+        <div id="bgPopup"></div>
         <!-- end table 3x3-->
         <script type="text/javascript" src="<?= base_url() ?>public/js/jquery.ba-cond.min.js"></script>
         <script type="text/javascript" src="<?= base_url() ?>public/js/jquery.slitslider.js"></script>
 
         <script type="text/javascript">
+
+
             $(document).ready(function() {
+
+
 
                 var Page = (function() {
 

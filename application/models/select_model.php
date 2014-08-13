@@ -20,12 +20,22 @@ class select_model extends CI_Model {
         $query = $this->db->query("SELECT  * FROM dunlop_content where Content_ID = " . $id);
         return $query->row();
     }
+    
+    function get_dunlop_dealerpic($id) {
+        $query = $this->db->query("SELECT  a.* FROM dunlop_album a inner join dealer_detail b on a.Album_ID = b.Album_ID where b.Dealer_ID = " . $id);
+        return $query->result();
+    }
 
     function get_dunlop_albumpic_by_id($id) {
         $query = $this->db->query("SELECT  * FROM dunlop_pic where Album_ID = " . $id);
         return $query->result();
     }
 
+    function get_dunlop_albumpic() {
+        $query = $this->db->query("SELECT  * FROM dunlop_pic");
+        return $query->result();
+    }
+    
     function get_dunlop_slide() {
         $query = $this->db->query("SELECT  * FROM dunlop_slide");
         return $query->result();

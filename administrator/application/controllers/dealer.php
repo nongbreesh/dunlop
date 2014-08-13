@@ -37,6 +37,7 @@ class Dealer extends CI_Controller {
         }
         $data['menu'] = "dealer_address";
         $data['zone_list'] = $this->select_model->get_dunlop_zone();
+        $data['album_list'] = $this->select_model->get_dunlop_album();
         //$data['dealer_area_list'] = $this->select_model->get_dealer_list();
         $this->load->view('admin/template/header', $data);
         $this->load->view('admin/dealer/address');
