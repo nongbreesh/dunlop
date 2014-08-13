@@ -123,7 +123,12 @@
                                         </ul>
                                     </div>
                                     <div class = "contact-r " >
-                                        <?php if ($groupid == 0 || $groupid == 1 && $productid == 0): ?>
+                                        <?php if ($groupid == 0): ?>
+                                        <div class="title_trans-r"><h1 >ALL PRODUCTS</h1></div>
+                                                <div class="passenger_car">
+                                        <center><img style="" src="<?= base_url() ?>public/images/usage2.png" /></center></center>
+                                                </div>
+                                            <?php elseif ($groupid == 1 && $productid == 0): ?>
 
                                             <div class = "title_trans-r"><h1 style = "top: -20px;"><img src = "<?= base_url() ?>public/images/product/pass_head.png"/></h1></div>
 
@@ -283,87 +288,87 @@
         <script type="text/javascript" src="<?= base_url() ?>public/js/jquery.slitslider.js"></script>
 
         <script type="text/javascript">
-                                                                            $(document).ready(function() {
-                                                                                $('#tech').hide();
-                                                                                $('.btn_prodinfo').click(function() {
-                                                                                    $(this).addClass('active')
-                                                                                    $('.btn_tech').removeClass('active')
-                                                                                    $('#tech').hide();
-                                                                                    $('.passenger_car_size').show();
-                                                                                    $('#prodinfo').show();
+                                                            $(document).ready(function() {
+                                                                $('#tech').hide();
+                                                                $('.btn_prodinfo').click(function() {
+                                                                    $(this).addClass('active')
+                                                                    $('.btn_tech').removeClass('active')
+                                                                    $('#tech').hide();
+                                                                    $('.passenger_car_size').show();
+                                                                    $('#prodinfo').show();
+                                                                });
+                                                                $('.btn_tech').click(function() {
+                                                                    $(this).addClass('active');
+                                                                    $('.btn_prodinfo').removeClass('active')
+                                                                    $('#tech').show();
+                                                                    $('#prodinfo').hide();
+                                                                    $('.passenger_car_size').hide();
+                                                                });
+
+                                                                var Page = (function() {
+
+                                                                    var $navArrows = $('#nav-arrows'),
+                                                                            $nav = $('#nav-dots > span'),
+                                                                            slitslider = $('#slider').slitslider({
+                                                                        onBeforeChange: function(slide, pos) {
+
+                                                                            $nav.removeClass('nav-dot-current');
+                                                                            $nav.eq(pos).addClass('nav-dot-current');
+
+                                                                        }
+                                                                    }),
+                                                                            init = function() {
+
+                                                                                initEvents();
+
+                                                                            },
+                                                                            initEvents = function() {
+
+                                                                                // add navigation events
+                                                                                $navArrows.children(':last').on('click', function() {
+
+                                                                                    slitslider.next();
+                                                                                    return false;
+
                                                                                 });
-                                                                                $('.btn_tech').click(function() {
-                                                                                    $(this).addClass('active');
-                                                                                    $('.btn_prodinfo').removeClass('active')
-                                                                                    $('#tech').show();
-                                                                                    $('#prodinfo').hide();
-                                                                                    $('.passenger_car_size').hide();
+
+                                                                                $navArrows.children(':first').on('click', function() {
+
+                                                                                    slitslider.previous();
+                                                                                    return false;
+
                                                                                 });
 
-                                                                                var Page = (function() {
+                                                                                $nav.each(function(i) {
 
-                                                                                    var $navArrows = $('#nav-arrows'),
-                                                                                            $nav = $('#nav-dots > span'),
-                                                                                            slitslider = $('#slider').slitslider({
-                                                                                        onBeforeChange: function(slide, pos) {
+                                                                                    $(this).on('click', function(event) {
 
-                                                                                            $nav.removeClass('nav-dot-current');
-                                                                                            $nav.eq(pos).addClass('nav-dot-current');
+                                                                                        var $dot = $(this);
+
+                                                                                        if (!slitslider.isActive()) {
+
+                                                                                            // $nav.removeClass('nav-dot-current');
+                                                                                            // $dot.addClass('nav-dot-current');
 
                                                                                         }
-                                                                                    }),
-                                                                                            init = function() {
 
-                                                                                                initEvents();
+                                                                                        slitslider.jump(i + 1);
+                                                                                        return false;
 
-                                                                                            },
-                                                                                            initEvents = function() {
+                                                                                    });
 
-                                                                                                // add navigation events
-                                                                                                $navArrows.children(':last').on('click', function() {
+                                                                                });
 
-                                                                                                    slitslider.next();
-                                                                                                    return false;
+                                                                            };
 
-                                                                                                });
+                                                                    return {init: init};
 
-                                                                                                $navArrows.children(':first').on('click', function() {
+                                                                })();
 
-                                                                                                    slitslider.previous();
-                                                                                                    return false;
-
-                                                                                                });
-
-                                                                                                $nav.each(function(i) {
-
-                                                                                                    $(this).on('click', function(event) {
-
-                                                                                                        var $dot = $(this);
-
-                                                                                                        if (!slitslider.isActive()) {
-
-                                                                                                            // $nav.removeClass('nav-dot-current');
-                                                                                                            // $dot.addClass('nav-dot-current');
-
-                                                                                                        }
-
-                                                                                                        slitslider.jump(i + 1);
-                                                                                                        return false;
-
-                                                                                                    });
-
-                                                                                                });
-
-                                                                                            };
-
-                                                                                    return {init: init};
-
-                                                                                })();
-
-                                                                                Page.init();
+                                                                Page.init();
 
 
-                                                                            });
+                                                            });
 
 
 

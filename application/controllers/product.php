@@ -16,7 +16,7 @@ class Product extends CI_Controller {
     }
 
     public function index($groupid = 0, $productid = 0, $parentgid = 0) {
-        $data['groupid'] = $groupid == 0 ? 1 : $groupid;
+        $data['groupid'] = $groupid == 0 ? 0 : $groupid;
         $data['productid'] = $productid == 0 ? 0 : $productid;
         $data['parentgid'] = $parentgid;
         $data['title'] = $this->title;

@@ -96,7 +96,7 @@
                                         <div class="title_trans-r"> <h1>TECHNOLOGY</h1></div>
                                         <div class="content_body">
                                             <div class="header">DIGITAL ROLLING SIMULATION II</div>
-                                            <p>	เทคโนโลยีใหม่ล่าสุดที่ Dunlop โดยเป็นการวิเคราะห์ การใช้งาน จริงโดย
+                                            <p>	<span style="float: left;margin: 5px;"><img style="" src="<?= base_url() ?>public/images/techno1.png"/></span>เทคโนโลยีใหม่ล่าสุดที่ Dunlop โดยเป็นการวิเคราะห์ การใช้งาน จริงโดย
                                                 เครื่อง Computer ทั้งทางแห้งและเปียก โดยเปรียบเทียบระหว่างความแตกต่างของ 
                                                 DRS กับ DRS II ที่ถูกพัฒนาให้มีสมรรถนะสูงขึ้นกว่าเดิม แล้วนำข้อมูลที่เกิดจาก
                                                 การวิเคราะห์ทั้งหมดไปผลิต และทดสอบ สมรรถนะยางจริงก่อนออกสู่ตลาด เพื่อ
@@ -106,17 +106,22 @@
                                             <div class="header">HIGHT SPEED STABILITY</div>
                                             <p>	การยึดเกาะถนนในความเร็วสูงทั้งทางตรงและทางโค้ง ดอกยางแบบ BLOCK RIGIDITY ผนวกกับ DIRECTIONAL เพิ่ม
                                                 ความกระชับดอกยาง บนหน้าสัมผัสผิวถนนในทางตรง ร่องดอกบนไหล่รูปปีกนกเพิ่มแรกยึดเหนี่ยวเมื่อเข้าโค้งบนความเร็วสูง
+                                                <br></br>
+                                                <center><img style="" src="<?= base_url() ?>public/images/techno2.png"/></center>
                                             </p>
                                             <div class="header">WET PERFORMANCE</div>
                                             <p>	ดอกยาง SP SPORT MAXX เพิ่มส่วนผสม COMPOUND สร้าง “FUNCTIONAL POLYMER” ทำให้เนื้อยางยึดเกาะถนน
-                                                บนทางเปียก ขณะวิ่งด้วยความเร็วสูง ประสิทธิภาพการหยุดรถ (BREAK) บนทางเปียก เพิ่มขึ้น 5% เมื่อเทียบรุ่น SP9000</p>
+                                                บนทางเปียก ขณะวิ่งด้วยความเร็วสูง ประสิทธิภาพการหยุดรถ (BREAK) บนทางเปียก เพิ่มขึ้น 5% เมื่อเทียบรุ่น SP9000
+                                             <br></br>
+                                                <center><img style="" src="<?= base_url() ?>public/images/techno3.png"/></center></p>
                                             <div class="header">QUIETNESS</div>
-                                            <p>	ลดเสียงสะท้อนในขณะใช้ความเร็วสูงด้วยดอก
+                                            <p><span style="float: left;margin: 5px;"><img style="" src="<?= base_url() ?>public/images/techno4.png"/></span>	ลดเสียงสะท้อนในขณะใช้ความเร็วสูงด้วยดอก
                                                 ยาง SHIFTED PATTERN โดยการสลับตำแหน่งส่วน
                                                 ปลายร่องดอกบนไหล่ยางช่วยลดเสียงรบกวน ห้องโดย
                                                 สาร ผลการทดสอบ SP MAXX ลดเสียงรบกวนลง 
                                                 1.1 เดซิเบล เมื่อเทียบกับ SP 9000 ยาง FLAGSHIP 
                                                 รุ่นก่อน</p>
+                                             <div style="clear:both"></div>
                                         </div>
 
                                         <div style="clear:both"></div>
