@@ -1257,9 +1257,6 @@ NOTE: if you are using z-index on the same level in the DOM -
     background: #ffde00; 
 }
 
-.aboutpic .bx-wrapper, .bx-viewport {
-    height: 170px !important;
-}
 .aboutpic .bx-wrapper .bx-caption span {
     font: 16px 'ThaiSansNeue-Bold';
     color:#fcda36;
