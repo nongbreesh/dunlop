@@ -1230,3 +1230,41 @@ NOTE: if you are using z-index on the same level in the DOM -
 .dealerpic .bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active{
     background: #ffde00; 
 }
+
+
+
+.aboutpic{
+    width: 240px;
+    float: left;
+    margin: 20px 5px;
+    border: 2px solid #fff;
+    height: 150px;
+}
+
+.aboutpic .bx-has-controls-direction{
+    display: none;
+}
+.aboutpic .bx-wrapper, .bx-viewport {
+
+}
+.aboutpic .bx-wrapper{
+    height:100px !important;
+}
+.aboutpic .bx-wrapper img{
+    max-width: 240px !important;
+}
+.aboutpic .bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active{
+    background: #ffde00; 
+}
+
+.aboutpic .bx-wrapper, .bx-viewport {
+    height: 170px !important;
+}
+.aboutpic .bx-wrapper .bx-caption span {
+    font: 16px 'ThaiSansNeue-Bold';
+    color:#fcda36;
+    padding: 5px;
+    background: #000;
+    opacity: .9;
+    text-align: center;
+}

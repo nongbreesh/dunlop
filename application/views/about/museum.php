@@ -14,7 +14,9 @@
               type="text/css" />
         <link rel="stylesheet" type="text/css" href="<?= base_url('public') ?>/css/custom.css" />
         <link rel="stylesheet" type="text/css" href="<?= base_url('public') ?>/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="<?= base_url('public') ?>/css/slidestyle.css" />
         <script type="text/javascript" src="<?= base_url('public') ?>/js/modernizr.custom.79639.js"></script>
+        <script type="text/javascript" src="<?= base_url('public') ?>/js/jquery.gallery.js"></script>
         <noscript>
             <link rel="stylesheet" type="text/css" href="<?= base_url('public') ?>/css/styleNoJS.css" />
         </noscript>
@@ -25,6 +27,18 @@
                     auto: true
                 });
             });
+
+            $(function() {
+                $('#dg-container').gallery({
+                    // autoplay: true
+                });
+                $('#dg-container2').gallery({
+                   // autoplay: true
+                });
+            });
+
+
+
         </script>
     </head>
     <body background="<?= base_url() ?>public/images/home/bg_2.jpg" style="margin:auto">
@@ -101,15 +115,69 @@
                                             รถยนต์ทั่วโลก สามารถรองรับการเติบโตของธุรกิจยานยนต์ ได้อย่างครบวงจร</p>
                                         <h2 class="content2">Photo Collection</h2>
                                         <br></br>
-                                        <center> <img style="" src="<?= base_url() ?>public/images/meseum1.png" width="90%" /></center>
+
+                                        <section id="dg-container" class="dg-container">
+                                            <div class="dg-wrapper">
+                                                <a href="#"><img style="" src="<?= base_url() ?>public/images/about_images/Photo_01.jpg" width="100%" /><div>x xxxxxxx</div></a>
+                                                <a href="#"><img style="" src="<?= base_url() ?>public/images/about_images/Photo_02.jpg" width="100%" /><div>x xxxxxxx</div></a>
+                                                <a href="#"><img style="" src="<?= base_url() ?>public/images/about_images/Photo_03.jpg" width="100%" /><div>x xxxxxxx</div></a>
+                                                <a href="#"><img style="" src="<?= base_url() ?>public/images/about_images/Photo_04.jpg" width="100%" /><div>x xxxxxxx</div></a>
+                                                <a href="#"><img style="" src="<?= base_url() ?>public/images/about_images/Photo_05.jpg" width="100%" /><div>x xxxxxxx</div></a>
+                                                <a href="#"><img style="" src="<?= base_url() ?>public/images/about_images/Photo_06.jpg" width="100%" /><div>x xxxxxxx</div></a>
+                                                <a href="#"><img style="" src="<?= base_url() ?>public/images/about_images/Photo_07.jpg" width="100%" /><div>x xxxxxxx</div></a>
+                                                <a href="#"><img style="" src="<?= base_url() ?>public/images/about_images/Photo_08.jpg" width="100%" /><div>x xxxxxxx</div></a>
+                                                <a href="#"><img style="" src="<?= base_url() ?>public/images/about_images/Photo_09.jpg" width="100%" /><div>x xxxxxxx</div></a>
+                                                <a href="#"><img style="" src="<?= base_url() ?>public/images/about_images/Photo_10.jpg" width="100%" /><div>x xxxxxxx</div></a>
+                                                <a href="#"><img style="" src="<?= base_url() ?>public/images/about_images/Photo_11.jpg" width="100%" /><div>x xxxxxxx</div></a>
+                                                <a href="#"><img style="" src="<?= base_url() ?>public/images/about_images/Photo_12.jpg" width="100%" /><div>x xxxxxxx</div></a>
+                                                <a href="#"><img style="" src="<?= base_url() ?>public/images/about_images/Photo_13.jpg" width="100%" /><div>x xxxxxxx</div></a>
+                                                <a href="#"><img style="" src="<?= base_url() ?>public/images/about_images/Photo_14.jpg" width="100%" /><div>x xxxxxxx</div></a>
+
+                                            </div>
+                                            <nav>	
+                                                <span class="dg-prev">&lt;</span>
+                                                <span class="dg-next">&gt;</span>
+                                            </nav>
+                                        </section>
+
 
                                         <p class="content2">	ประวัติยางดันลอป ที่มีมากกว่า 100 ปี นั้นมีความเกี่ยวข้องกับบุคลลมากมาย และผ่านการทดสอบ การพัฒนามา
                                             นับครั้งไม่ถ้วน ซึ่งก็มีบางส่วนที่อาจจะไม่เกี่ยวข้องกับธุรกิจยานยนต์ในปัจจุบัน ในหน้าที่จะเป็นการรวบรวม ภาพเก่าๆ 
                                             ต่างๆ ที่พอจะหาได้ โดยเฉพาะอย่างยิ่งเป็นรูปที่เป็นของต่างประเทศ</p>
 
                                         <h2 class="content2"> Poster Collection</h2>
-                                        <center><img style="" src="<?= base_url() ?>public/images/meseum2.png" width="90%" /></center>
-
+                                        <br></br>
+                                        <section id="dg-container2" class="dg-container">
+                                            <div class="dg-wrapper">
+                                                <a href="#"><img style="" src="<?= base_url() ?>public/images/about_images/Poster_01.jpg" width="100%" /><div>x xxxxxxx</div></a>
+                                                <a href="#"><img style="" src="<?= base_url() ?>public/images/about_images/Poster_02.jpg" width="100%" /><div>x xxxxxxx</div></a>
+                                                <a href="#"><img style="" src="<?= base_url() ?>public/images/about_images/Poster_03.jpg" width="100%" /><div>x xxxxxxx</div></a>
+                                                <a href="#"><img style="" src="<?= base_url() ?>public/images/about_images/Poster_04.jpg" width="100%" /><div>x xxxxxxx</div></a>
+                                                <a href="#"><img style="" src="<?= base_url() ?>public/images/about_images/Poster_05.jpg" width="100%" /><div>x xxxxxxx</div></a>
+                                                <a href="#"><img style="" src="<?= base_url() ?>public/images/about_images/Poster_06.jpg" width="100%" /><div>x xxxxxxx</div></a>
+                                                <a href="#"><img style="" src="<?= base_url() ?>public/images/about_images/Poster_07.jpg" width="100%" /><div>x xxxxxxx</div></a>
+                                                <a href="#"><img style="" src="<?= base_url() ?>public/images/about_images/Poster_08.jpg" width="100%" /><div>x xxxxxxx</div></a>
+                                                <a href="#"><img style="" src="<?= base_url() ?>public/images/about_images/Poster_09.jpg" width="100%" /><div>x xxxxxxx</div></a>
+                                                <a href="#"><img style="" src="<?= base_url() ?>public/images/about_images/Poster_10.jpg" width="100%" /><div>x xxxxxxx</div></a>
+                                                <a href="#"><img style="" src="<?= base_url() ?>public/images/about_images/Poster_11.jpg" width="100%" /><div>x xxxxxxx</div></a>
+                                                <a href="#"><img style="" src="<?= base_url() ?>public/images/about_images/Poster_12.jpg" width="100%" /><div>x xxxxxxx</div></a>
+                                                <a href="#"><img style="" src="<?= base_url() ?>public/images/about_images/Poster_13.jpg" width="100%" /><div>x xxxxxxx</div></a>
+                                                <a href="#"><img style="" src="<?= base_url() ?>public/images/about_images/Poster_14.jpg" width="100%" /><div>x xxxxxxx</div></a>
+                                                <a href="#"><img style="" src="<?= base_url() ?>public/images/about_images/Poster_15.jpg" width="100%" /><div>x xxxxxxx</div></a>
+                                                <a href="#"><img style="" src="<?= base_url() ?>public/images/about_images/Poster_16.jpg" width="100%" /><div>x xxxxxxx</div></a>
+                                                <a href="#"><img style="" src="<?= base_url() ?>public/images/about_images/Poster_17.jpg" width="100%" /><div>x xxxxxxx</div></a>
+                                                <a href="#"><img style="" src="<?= base_url() ?>public/images/about_images/Poster_18.jpg" width="100%" /><div>x xxxxxxx</div></a>
+                                                <a href="#"><img style="" src="<?= base_url() ?>public/images/about_images/Poster_19.jpg" width="100%" /><div>x xxxxxxx</div></a>
+                                                <a href="#"><img style="" src="<?= base_url() ?>public/images/about_images/Poster_20.jpg" width="100%" /><div>x xxxxxxx</div></a>
+                                                <a href="#"><img style="" src="<?= base_url() ?>public/images/about_images/Poster_21.jpg" width="100%" /><div>x xxxxxxx</div></a>
+                                                <a href="#"><img style="" src="<?= base_url() ?>public/images/about_images/Poster_22.jpg" width="100%" /><div>x xxxxxxx</div></a>
+                                                <a href="#"><img style="" src="<?= base_url() ?>public/images/about_images/Poster_23.jpg" width="100%" /><div>x xxxxxxx</div></a>
+                                            </div>
+                                            <nav>	
+                                                <span class="dg-prev">&lt;</span>
+                                                <span class="dg-next">&gt;</span>
+                                            </nav>
+                                        </section>
 
                                         <p class="content2"><span style="color:#fcda36">ดันลอป</span> ซึ่งเกาะติดชีวิตประจำวันของผู้คนโดยผ่านทางยางรถยนต์ได้มอบสิ่งใหม่ๆ ให้กับผู้คน โดยแสดงถึงทัศน
                                             วิสัยที่ลำ้สมัย หน้านี้เป็นการรวบรวมโปสเตอร์ต่างๆ ที่เก็บไว้ที่ดันลอปแต่ละสาขาเป็นการพยายามรวบรวมงานเก่าเท่าที่จะ

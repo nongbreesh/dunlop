@@ -22,7 +22,8 @@
         <script>
             $(document).ready(function() {
                 $('.bxslider').bxSlider({
-                    auto: true
+                    auto: true,
+                    captions: true
                 });
             });
         </script>
@@ -98,22 +99,67 @@
                                     <div class="contact-r ">
                                         <div class="title_trans-r"> <h1>BACKGROUND</h1></div>
                                         <p class="content2">
-                                           <span style="float: left;margin: 5px;"><img style="" src="<?= base_url() ?>public/images/background1.png"/></span> วิวัฒนาการยางรถยนต์ที่ต้องเติมลมเส้นแรกเกิดเมื่อปี 1888 จากการคิดค้นของ 
+                                            <span style="float: left;margin: 5px;"><img style="" src="<?= base_url() ?>public/images/background1.png"/></span> วิวัฒนาการยางรถยนต์ที่ต้องเติมลมเส้นแรกเกิดเมื่อปี 1888 จากการคิดค้นของ 
                                             MR. J.B. Dunlop ชาวอังกฤษ ผู้ริเริ่มพัฒนายางรถยนต์ที่ต้องสูบลมและมียางในเส้นแรก
                                             ของโลกได้สำเร็จ แรงบันดาลใจของ Dunlop ในการพัฒนายางรถยนต์ที่ใช้สูบลม (ก่อน
                                             หน้านั้นรถยังใช้ยางตัน) เนื่องจากปัญหาของลูกชาย Dunlop จึงคิดทำไส้ในยางจักรยาน
                                             แล้วนำมาสูบลมทำให้เกิดแรงยืดหยุ่นและลดแรงกระแทก วิวัฒนาการดังกล่าวนำไปสู่การ
                                             ปฎิสนธิยางรถยนต์ที่ถูกพัฒนาควบคู่กันไปอย่างต่อเนื่องกว่า 110 ปี มาแล้ว นี่คือเกียรติ
                                             ยศของ Dunlop ที่ต้องถูกจารึกไว้ในโลกยานยนต์
-                                           
+
 
                                         </p>
-                                         <br></br><br></br>
-                                            
-                                            <center><img style="" src="<?= base_url() ?>public/images/background2.png"/></center>
+                                        <br></br><br></br>
+
+                                        <center><img style="" src="<?= base_url() ?>public/images/background2.png"/></center>
                                         <h2 class="content2">หล่อหลอมแนวคิดทีมงานเป็นหนึงเดียว</h2>
+                                        <div class="aboutpic">
+                                            <ul class="bxslider" style="margin-top: -4px;">
+                                                <li>
+                                                    <img src="<?= base_url() ?>public/images/about_images/Photo_01.jpg" title="รถจักรยานของลูกชาย ..." style="height: 150px" />
+                                                </li>
+                                                <li>
+                                                    <img src="<?= base_url() ?>public/images/about_images/Photo_02.jpg" title="รถจักรยานของลูกชาย ..." style="height: 150px" />
+                                                </li>
+                                                <li>
+                                                    <img src="<?= base_url() ?>public/images/about_images/Photo_03.jpg" title="รถจักรยานของลูกชาย ..."  style="height: 150px" />
+                                                </li>
+                                                <li>
+                                                    <img src="<?= base_url() ?>public/images/about_images/Photo_04.jpg" title="รถจักรยานของลูกชาย ..." style="height: 150px" />
+                                                </li>
+                                                <li>
+                                                    <img src="<?= base_url() ?>public/images/about_images/Photo_05.jpg" title="รถจักรยานของลูกชาย ..." style="height: 150px" />
+                                                </li>
+                                                <li>
+                                                    <img src="<?= base_url() ?>public/images/about_images/Photo_06.jpg" title="รถจักรยานของลูกชาย ..." style="height: 150px" />
+                                                </li>
+                                                <li>
+                                                    <img src="<?= base_url() ?>public/images/about_images/Photo_07.jpg" title="รถจักรยานของลูกชาย ..." style="height: 150px" />
+                                                </li>
+                                                <li>
+                                                    <img src="<?= base_url() ?>public/images/about_images/Photo_08.jpg" title="รถจักรยานของลูกชาย ..." style="height: 150px" />
+                                                </li>
+                                                <li>
+                                                    <img src="<?= base_url() ?>public/images/about_images/Photo_09.jpg" title="รถจักรยานของลูกชาย ..." style="height: 150px" />
+                                                </li>
+                                                <li>
+                                                    <img src="<?= base_url() ?>public/images/about_images/Photo_10.jpg" title="รถจักรยานของลูกชาย ..." style="height: 150px" />
+                                                </li>
+                                                <li>
+                                                    <img src="<?= base_url() ?>public/images/about_images/Photo_11.jpg" title="รถจักรยานของลูกชาย ..." style="height: 150px" />
+                                                </li>
+                                                <li>
+                                                    <img src="<?= base_url() ?>public/images/about_images/Photo_12.jpg" title="รถจักรยานของลูกชาย ..." style="height: 150px" />
+                                                </li>
+                                                <li>
+                                                    <img src="<?= base_url() ?>public/images/about_images/Photo_13.jpg" title="รถจักรยานของลูกชาย ..." style="height: 150px" />
+                                                </li>
+                                                <li>
+                                                    <img src="<?= base_url() ?>public/images/about_images/Photo_14.jpg" title="รถจักรยานของลูกชาย ..." style="height: 150px" />
+                                                </li>
+                                            </ul>
+                                        </div> 
                                         <p class="content2">
-<span style="float: left;margin: 5px;"><img style="" src="<?= base_url() ?>public/images/background3.png"/></span> 
                                             ทีมงานวิศวกรของ DUNLOP ถือว่าสร้างผลิตภัณฑ์ยางรถยนต์ที่มี
                                             คุณภาพมุ่งมันในความรับผิดชอบต่อสังคมคือ ภาระกิจที่ต้องทำให้ได้ 
                                             DUNLOP เสาะแสวงหาทีมงานคุณภาพพร้อมทั้งเน้นสิ่งอำนวยความสะดวก
@@ -129,7 +175,7 @@
                                             บนพื้นที่ 346 ไร่ หรือประมาณ 585,000 ตารางเมตร โดยใช้งบการลงทุนจนถึงมิถุนายน 2551 ไปแล้ว 12.2 พันล้านบาท
 
                                         </p>
-                                            <center><img style="" src="<?= base_url() ?>public/images/background2.png"/></center>
+                                        <center><img style="" src="<?= base_url() ?>public/images/background2.png"/></center>
                                         <p class="content2">	โรงงานเฟสแรกได้เริ่มผลิตยางรถยนต์ตั้งแต่เดือนพฤศจิกายน 2549 ด้วยเทคโนโลยีการผลิตแบบใหม่ในชื่อว่า “SUN 
                                             SYSTEM” ซึ่งเป็นระบบขบวน การผลิตที่ผสมผสานการผลิตให้เป็นหนึ่งเดียวเพื่อให้ได้ผลการผลิตที่สูงโรงงานเฟสสองได้เริ่มการ
                                             ผลิตเมื่อเดือนตุลาคม 2550 และเมื่อสิ้นสุดปี 2551 โรงงานทั้งสองเฟสจะมีกำลังผลิตยางสำหรับรถยนต์นั่ง รถ SUV เอนกประสงค์ 
