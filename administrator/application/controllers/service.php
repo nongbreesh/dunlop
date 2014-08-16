@@ -1027,7 +1027,7 @@ class Service extends CI_Controller {
             'Dealer_Address' => $input_dealer_address,
             'Dealer_Tel' => $input_dealer_tel,
             'Dealer_URL' => $input_dealer_url,
-            'Dealer_Agent' => boolval($input_dealer_agent),
+            'Dealer_Agent' => $input_dealer_agent,
             'Album_ID' => $input_album,
             'Create_Date' => date('Y-m-d H:i:s')
         );

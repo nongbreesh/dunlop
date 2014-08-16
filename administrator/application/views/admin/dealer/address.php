@@ -323,6 +323,7 @@
                     $btn.button('reset');
                 }
             });
+            $btn.button('reset');
         });
         $("#form_edit_cate").on('submit', function(e) {
             e.preventDefault();
