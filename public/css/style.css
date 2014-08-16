@@ -1118,7 +1118,7 @@ ul.accordion label + input[type='radio']:checked + div.content_list {
 }
 .content_body ul li{
     padding-left: 1em; 
-    text-indent: -2em;
+    text-indent: -.7em;
     color:#fff;
     margin: 0px;
     font:18px 'ThaiSansNeue-Bold';
