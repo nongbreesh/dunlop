@@ -1265,3 +1265,7 @@ NOTE: if you are using z-index on the same level in the DOM -
     opacity: .9;
     text-align: center;
 }
+.title_yellow{
+     font: 36px 'ThaiSansNeue-Bold';
+    color:#fcda36;
+}

@@ -22,7 +22,7 @@ class select_model extends CI_Model {
     }
     
     function get_dunlop_dealerpic($id) {
-        $query = $this->db->query("SELECT  a.* FROM dunlop_album a inner join dealer_detail b on a.Album_ID = b.Album_ID where b.Dealer_ID = " . $id);
+        $query = $this->db->query("SELECT  a.* FROM dunlop_pic a inner join dealer_detail b on a.Album_ID = b.Album_ID where b.Dealer_ID = " . $id);
         return $query->result();
     }
 
@@ -137,17 +137,17 @@ class select_model extends CI_Model {
     }
 
     function get_tire_width() {
-        $query = $this->db->query("SELECT  distinct(Tire_Width) FROM dunlop_tire where Tire_Width != ''");
+        $query = $this->db->query("SELECT  distinct(Tire_Width) FROM dunlop_tire where Tire_Width != '' order by Tire_Width asc");
         return $query->result();
     }
 
     function get_tire_series() {
-        $query = $this->db->query("SELECT  distinct(Tire_Series) FROM dunlop_tire where Tire_Series != ''");
+        $query = $this->db->query("SELECT  distinct(Tire_Series) FROM dunlop_tire where Tire_Series != ''  order by Tire_Series asc");
         return $query->result();
     }
 
     function get_tire_size() {
-        $query = $this->db->query("SELECT  distinct(Tire_Diameter) FROM dunlop_tire where Tire_Diameter != ''");
+        $query = $this->db->query("SELECT  distinct(Tire_Diameter) FROM dunlop_tire where Tire_Diameter != ''  order by Tire_Diameter asc");
         return $query->result();
     }
 

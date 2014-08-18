@@ -277,7 +277,7 @@
                     <?php if (isset($dealer_pic)): ?>
                         <?php foreach ($dealer_pic as $each): ?>
                             <li>
-                                <img src="<?= base_url() ?>administrator/public/uploads/<?= str_replace('thumb_', '', $each->Album_Thumbnail) ?>" style="width: 500px;" />
+                                <img src="<?= base_url() ?>administrator/public/uploads/<?= str_replace('thumb_', '', $each->PIC_Image) ?>" style="width: 500px;" />
                             </li>
                         <?php endforeach; ?>
                     <?php endif; ?>

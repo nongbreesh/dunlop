@@ -30,10 +30,10 @@
 
             $(function() {
                 $('#dg-container').gallery({
-                    // autoplay: true
+                     autoplay: true
                 });
                 $('#dg-container2').gallery({
-                   // autoplay: true
+                    autoplay: true
                 });
             });
 

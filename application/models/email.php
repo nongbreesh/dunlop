@@ -4,7 +4,7 @@ class Email extends CI_Model {
 
     public function sendemail($email, $input) {
         //config
-    
+
 
         $config = Array(
             'protocol' => 'smtp',
@@ -40,8 +40,10 @@ class Email extends CI_Model {
             ";
         $this->email->message(nl2br($body));
 
-        //echo $this->email->print_debugger();
-        $this->email->send();
+        if (!$this->email->send())
+            show_error($this->email->print_debugger());
+        else
+            echo 'Your e-mail has been sent!';
     }
 
 }
