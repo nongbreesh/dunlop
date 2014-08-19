@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <title>Zoaish site</title>
-<link href="<?= base_url('public')?>/css/bootstrap.css" rel="stylesheet"
+<link href="<?php echo  base_url('public')?>/css/bootstrap.css" rel="stylesheet"
 	type="text/css" />
-<link href="<?= base_url('public')?>/css/style.css" rel="stylesheet"
+<link href="<?php echo  base_url('public')?>/css/style.css" rel="stylesheet"
 	type="text/css" />
 </head>
 <body>

@@ -272,21 +272,21 @@
 
         CKEDITOR.replace('input_info',
                 {
-                    filebrowserImageBrowseUrl: '<?= base_url() ?>public/js/plugins/ckfinder/ckfinder.html?Type=Images',
-                    filebrowserFlashBrowseUrl: '<?= base_url() ?>public/js/plugins/ckfinder/ckfinder.html?Type=Flash',
-                    filebrowserUploadUrl: '<?= base_url() ?>public/js/plugins/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
-                    filebrowserImageUploadUrl: '<?= base_url() ?>public/js/plugins/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
-                    filebrowserFlashUploadUrl: '<?= base_url() ?>public/js/plugins/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
+                    filebrowserImageBrowseUrl: '<?php echo  base_url() ?>public/js/plugins/ckfinder/ckfinder.html?Type=Images',
+                    filebrowserFlashBrowseUrl: '<?php echo  base_url() ?>public/js/plugins/ckfinder/ckfinder.html?Type=Flash',
+                    filebrowserUploadUrl: '<?php echo  base_url() ?>public/js/plugins/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+                    filebrowserImageUploadUrl: '<?php echo  base_url() ?>public/js/plugins/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+                    filebrowserFlashUploadUrl: '<?php echo  base_url() ?>public/js/plugins/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
                     ,
                 });
 
         CKEDITOR.replace('inputedit_info',
                 {
-                    filebrowserImageBrowseUrl: '<?= base_url() ?>public/js/plugins/ckfinder/ckfinder.html?Type=Images',
-                    filebrowserFlashBrowseUrl: '<?= base_url() ?>public/js/plugins/ckfinder/ckfinder.html?Type=Flash',
-                    filebrowserUploadUrl: '<?= base_url() ?>public/js/plugins/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
-                    filebrowserImageUploadUrl: '<?= base_url() ?>public/js/plugins/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
-                    filebrowserFlashUploadUrl: '<?= base_url() ?>public/js/plugins/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
+                    filebrowserImageBrowseUrl: '<?php echo  base_url() ?>public/js/plugins/ckfinder/ckfinder.html?Type=Images',
+                    filebrowserFlashBrowseUrl: '<?php echo  base_url() ?>public/js/plugins/ckfinder/ckfinder.html?Type=Flash',
+                    filebrowserUploadUrl: '<?php echo  base_url() ?>public/js/plugins/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+                    filebrowserImageUploadUrl: '<?php echo  base_url() ?>public/js/plugins/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+                    filebrowserFlashUploadUrl: '<?php echo  base_url() ?>public/js/plugins/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
                     ,
                 });
 

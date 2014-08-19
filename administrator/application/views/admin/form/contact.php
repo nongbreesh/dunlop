@@ -45,15 +45,15 @@
                                     ?>
 
                                     <tr>
-                                        <td><?= $row->ID; ?></td>
-                                        <td><?= $row->first_name; ?></td>
-                                        <td><?= $row->last_name; ?></td>
-                                        <td><?= $row->full_address; ?></td>
-                                        <td><?= $row->province; ?></td>
-                                        <td><?= $row->tel; ?></td>
-                                        <td><?= $row->email; ?></td>
-                                        <td><?= $row->message; ?></td>
-                                        <td><?= time_ago($row->create_date) ?></td>
+                                        <td><?php echo  $row->ID; ?></td>
+                                        <td><?php echo  $row->first_name; ?></td>
+                                        <td><?php echo  $row->last_name; ?></td>
+                                        <td><?php echo  $row->full_address; ?></td>
+                                        <td><?php echo  $row->province; ?></td>
+                                        <td><?php echo  $row->tel; ?></td>
+                                        <td><?php echo  $row->email; ?></td>
+                                        <td><?php echo  $row->message; ?></td>
+                                        <td><?php echo  time_ago($row->create_date) ?></td>
 
                                     </tr> 
                                     <?php

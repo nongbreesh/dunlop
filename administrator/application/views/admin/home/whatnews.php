@@ -50,17 +50,17 @@
                                     ?>
 
                                     <tr>
-                                        <td><?= $row->NEWS_ID; ?></td>
-                                        <td><?= $row->NEWS_Headline; ?><br>
-                                        </span><span class="edit"><a href="javascript:;" onclick="edit_product(<?= $row->NEWS_ID ?>);">Edit</a> | </span><span class="delete"><a class="delete-tag" href="#" onclick="return removedata(<?= $row->NEWS_ID ?>);">Delete</a></div></td></td>
+                                        <td><?php echo  $row->NEWS_ID; ?></td>
+                                        <td><?php echo  $row->NEWS_Headline; ?><br>
+                                        </span><span class="edit"><a href="javascript:;" onclick="edit_product(<?php echo  $row->NEWS_ID ?>);">Edit</a> | </span><span class="delete"><a class="delete-tag" href="#" onclick="return removedata(<?php echo  $row->NEWS_ID ?>);">Delete</a></div></td></td>
                                 </td>
-                                  <td><img src="<?=base_url('public')?>/uploads/Thumbnails_<?= $row->NEWS_IMG ?>"  height="50"/></td>
+                                  <td><img src="<?php echo base_url('public')?>/uploads/Thumbnails_<?php echo  $row->NEWS_IMG ?>"  height="50"/></td>
                               
-                                <td><?= $row->NEWS_URL ?></td>
+                                <td><?php echo  $row->NEWS_URL ?></td>
 
 
-                                <td><?= time_ago($row->Create_Date) ?></td>
-                                <td><?= time_ago($row->Update_Date) ?></td>
+                                <td><?php echo  time_ago($row->Create_Date) ?></td>
+                                <td><?php echo  time_ago($row->Update_Date) ?></td>
 
                             </tr> 
                             <?php

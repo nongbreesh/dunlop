@@ -56,22 +56,22 @@
                                     ?>
 
                                     <tr>
-                                        <td><?= $row->Tire_ID; ?></td>
-                                        <td><?= $row->Tire_Name; ?><br>
-                                        </span><span class="edit"><a href="javascript:;" onclick="edit_product(<?= $row->Tire_ID ?>);">Edit</a> | </span><span class="delete"><a class="delete-tag" href="#" onclick="return removedata(<?= $row->Tire_ID ?>);">Delete</a></div></td></td>
+                                        <td><?php echo  $row->Tire_ID; ?></td>
+                                        <td><?php echo  $row->Tire_Name; ?><br>
+                                        </span><span class="edit"><a href="javascript:;" onclick="edit_product(<?php echo  $row->Tire_ID ?>);">Edit</a> | </span><span class="delete"><a class="delete-tag" href="#" onclick="return removedata(<?php echo  $row->Tire_ID ?>);">Delete</a></div></td></td>
                                 </td>
-                                <td><?= $row->Tire_Width ?></td>
-                                <td><?= $row->Tire_Series ?></td>
-                                <td><?= $row->Tire_Diameter ?>
-                                <td><?= $row->Tire_Radial ?></td>
-                                <td> <?= $row->Tire_Rim ?></td>
-                                <td> <?= $row->Tire_Width_inc ?></td>
-                                <td> <?= $row->Product_Name ?></td>
-                                <td> <?= $row->Type_Name ?></td>
+                                <td><?php echo  $row->Tire_Width ?></td>
+                                <td><?php echo  $row->Tire_Series ?></td>
+                                <td><?php echo  $row->Tire_Diameter ?>
+                                <td><?php echo  $row->Tire_Radial ?></td>
+                                <td> <?php echo  $row->Tire_Rim ?></td>
+                                <td> <?php echo  $row->Tire_Width_inc ?></td>
+                                <td> <?php echo  $row->Product_Name ?></td>
+                                <td> <?php echo  $row->Type_Name ?></td>
 
 
-                                <td><?= time_ago($row->Create_Date) ?></td>
-                                <td><?= time_ago($row->Update_Date) ?></td>
+                                <td><?php echo  time_ago($row->Create_Date) ?></td>
+                                <td><?php echo  time_ago($row->Update_Date) ?></td>
 
                             </tr> 
                             <?php

@@ -50,17 +50,17 @@
                                     ?>
 
                                     <tr>
-                                        <td><?= $row->Highlight_ID; ?></td>
-                                        <td><?= $row->Highlight_Headline; ?><br>
-                                        </span><span class="edit"><a href="javascript:;" onclick="edit_product(<?= $row->Highlight_ID ?>);">Edit</a> | </span><span class="delete"><a class="delete-tag" href="#" onclick="return removedata(<?= $row->Highlight_ID ?>);">Delete</a></div></td></td>
+                                        <td><?php echo  $row->Highlight_ID; ?></td>
+                                        <td><?php echo  $row->Highlight_Headline; ?><br>
+                                        </span><span class="edit"><a href="javascript:;" onclick="edit_product(<?php echo  $row->Highlight_ID ?>);">Edit</a> | </span><span class="delete"><a class="delete-tag" href="#" onclick="return removedata(<?php echo  $row->Highlight_ID ?>);">Delete</a></div></td></td>
       
-                                <td><img src="<?=base_url('public')?>/uploads/Thumbnails_<?= $row->Highlight_IMG ?>"  height="50"/></td>
+                                <td><img src="<?php echo base_url('public')?>/uploads/Thumbnails_<?php echo  $row->Highlight_IMG ?>"  height="50"/></td>
                                        
-                                <td><?= $row->Highlight_URL ?></td>
+                                <td><?php echo  $row->Highlight_URL ?></td>
 
 
-                                <td><?= time_ago($row->Create_Date) ?></td>
-                                <td><?= time_ago($row->Update_Date) ?></td>
+                                <td><?php echo  time_ago($row->Create_Date) ?></td>
+                                <td><?php echo  time_ago($row->Update_Date) ?></td>
 
                             </tr> 
                             <?php

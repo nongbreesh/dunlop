@@ -3,20 +3,20 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <!-- jQuery library (served from Google) -->
-        <script src="<?= base_url('public') ?>/js/1.8.2/jquery.min.js"></script>
+        <script src="<?php echo  base_url('public') ?>/js/1.8.2/jquery.min.js"></script>
         <!-- bxSlider Javascript file -->
-        <script src="<?= base_url('public') ?>/js/jquery.bxslider.min.js"></script>
+        <script src="<?php echo  base_url('public') ?>/js/jquery.bxslider.min.js"></script>
         <!-- bxSlider CSS file -->
-        <link href="<?= base_url('public') ?>/css/jquery.bxslider.css" rel="stylesheet" />
-        <link href="<?= base_url('public') ?>/css/custom_style.css" rel="stylesheet"
+        <link href="<?php echo  base_url('public') ?>/css/jquery.bxslider.css" rel="stylesheet" />
+        <link href="<?php echo  base_url('public') ?>/css/custom_style.css" rel="stylesheet"
               type="text/css" />
-        <link href="<?= base_url('public') ?>/css/animate.css" rel="stylesheet"
+        <link href="<?php echo  base_url('public') ?>/css/animate.css" rel="stylesheet"
               type="text/css" />
-        <link rel="stylesheet" type="text/css" href="<?= base_url('public') ?>/css/custom.css" />
-        <link rel="stylesheet" type="text/css" href="<?= base_url('public') ?>/css/style.css" />
-        <script type="text/javascript" src="<?= base_url('public') ?>/js/modernizr.custom.79639.js"></script>
+        <link rel="stylesheet" type="text/css" href="<?php echo  base_url('public') ?>/css/custom.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo  base_url('public') ?>/css/style.css" />
+        <script type="text/javascript" src="<?php echo  base_url('public') ?>/js/modernizr.custom.79639.js"></script>
         <noscript>
-            <link rel="stylesheet" type="text/css" href="<?= base_url('public') ?>/css/styleNoJS.css" />
+            <link rel="stylesheet" type="text/css" href="<?php echo  base_url('public') ?>/css/styleNoJS.css" />
         </noscript>
         <title>Welcome to Dunlop Tire (Thailand) Company Limited</title>
         <script>
@@ -27,16 +27,16 @@
             });
         </script>
     </head>
-    <body background="<?= base_url() ?>public/images/home/bg_2.jpg" style="margin:auto">
+    <body background="<?php echo  base_url() ?>public/images/home/bg_2.jpg" style="margin:auto">
 
         <!-- start table 3x3-->
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr height="78" >
-                <td background="<?= base_url() ?>public/images/home/logo_1.jpg">&nbsp;</td>
+                <td background="<?php echo  base_url() ?>public/images/home/logo_1.jpg">&nbsp;</td>
                 <td width="942"  style="position: relative;"><table border="0" cellspacing="0" cellpadding="0" width="100%">
                         <tr>
-                            <td><a href="<?= base_url() ?>"><img src="<?= base_url() ?>public/images/home/logo_2.jpg" /></a></td>
-                            <td background="<?= base_url() ?>public/images/home/logo_3m.png"  width="100%">
+                            <td><a href="<?php echo  base_url() ?>"><img src="<?php echo  base_url() ?>public/images/home/logo_2.jpg" /></a></td>
+                            <td background="<?php echo  base_url() ?>public/images/home/logo_3m.png"  width="100%">
 
                             </td>
 
@@ -46,22 +46,22 @@
                         <table id="Table_01" width="687" height="42" border="0" cellpadding="0" cellspacing="0">
                             <tr>
                                 <td>
-                                    <a href="<?= base_url() ?>home"><img src="<?= base_url() ?>public/images/menu/knowledge/menu_01.png" width="93" height="42" alt=""/></a></td>
+                                    <a href="<?php echo  base_url() ?>home"><img src="<?php echo  base_url() ?>public/images/menu/knowledge/menu_01.png" width="93" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>product"> <img src="<?= base_url() ?>public/images/menu/knowledge/menu_02.png" width="95" height="42" alt=""/></a></td>
+                                    <a href="<?php echo  base_url() ?>product"> <img src="<?php echo  base_url() ?>public/images/menu/knowledge/menu_02.png" width="95" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>knowledge"><img src="<?= base_url() ?>public/images/menu/knowledge/menu_03.png" width="135" height="42" alt=""/></a></td>
+                                    <a href="<?php echo  base_url() ?>knowledge"><img src="<?php echo  base_url() ?>public/images/menu/knowledge/menu_03.png" width="135" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>about">  <img src="<?= base_url() ?>public/images/menu/knowledge/menu_04.png" width="122" height="42" alt=""/></a></td>
+                                    <a href="<?php echo  base_url() ?>about">  <img src="<?php echo  base_url() ?>public/images/menu/knowledge/menu_04.png" width="122" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>address"><img src="<?= base_url() ?>public/images/menu/knowledge/menu_05.png" width="136" height="42" alt=""/></a></td>
+                                    <a href="<?php echo  base_url() ?>address"><img src="<?php echo  base_url() ?>public/images/menu/knowledge/menu_05.png" width="136" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>contact"><img src="<?= base_url() ?>public/images/menu/knowledge/menu_06.png" width="106" height="42" alt=""/></a></td>
+                                    <a href="<?php echo  base_url() ?>contact"><img src="<?php echo  base_url() ?>public/images/menu/knowledge/menu_06.png" width="106" height="42" alt=""/></a></td>
                             </tr>
                         </table>
                     </div>
                 </td>
-                <td background="<?= base_url() ?>public/images/home/logo_3.jpg">&nbsp;</td>
+                <td background="<?php echo  base_url() ?>public/images/home/logo_3.jpg">&nbsp;</td>
             </tr>
             <tr height="730">
                 <td >&nbsp;</td>
@@ -87,9 +87,9 @@
                                 <div class="wrapper">
                                     <div class="sidebar-l" ><div class="knowledge_title"></div> 
                                         <ul class="sidemenu">
-                                            <li><a href="<?= base_url() ?>knowledge/qa"><img style="" src="<?= base_url() ?>public/images/qa.png" onmouseover="this.src = '<?= base_url() ?>public/images/qa_hover.png'" onmouseout="this.src = '<?= base_url() ?>public/images/qa.png'"/></a></li>
-                                            <li><a href="<?= base_url() ?>knowledge/tech"><img style="" src="<?= base_url() ?>public/images/tech.png" onmouseover="this.src = '<?= base_url() ?>public/images/tech_hover.png'" onmouseout="this.src = '<?= base_url() ?>public/images/tech.png'"/></a></li>
-                                            <li><a href="<?= base_url() ?>knowledge/usage"><img style="" src="<?= base_url() ?>public/images/usage_hover.png" /></a></li>
+                                            <li><a href="<?php echo  base_url() ?>knowledge/qa"><img style="" src="<?php echo  base_url() ?>public/images/qa.png" onmouseover="this.src = '<?php echo  base_url() ?>public/images/qa_hover.png'" onmouseout="this.src = '<?php echo  base_url() ?>public/images/qa.png'"/></a></li>
+                                            <li><a href="<?php echo  base_url() ?>knowledge/tech"><img style="" src="<?php echo  base_url() ?>public/images/tech.png" onmouseover="this.src = '<?php echo  base_url() ?>public/images/tech_hover.png'" onmouseout="this.src = '<?php echo  base_url() ?>public/images/tech.png'"/></a></li>
+                                            <li><a href="<?php echo  base_url() ?>knowledge/usage"><img style="" src="<?php echo  base_url() ?>public/images/usage_hover.png" /></a></li>
                                         </ul>
                                     </div>
                                     <div class="contact-r ">
@@ -130,13 +130,13 @@
                                                         ยางเส้นดังกล่าวโดยช่างผู้ชำนาญการทันที</li> 
                                                     <li>ควรทำการสลับยางทุกๆ 10,000 กิโลเมตรตามตำแหน่งที่คู่มือรถยนต์กำหนดหรือจากคำแนะนำจากร้านยาง
                                                         <br>
-                                                     <center><img style="" src="<?= base_url() ?>public/images/usage1.png" /></center></li>
+                                                     <center><img style="" src="<?php echo  base_url() ?>public/images/usage1.png" /></center></li>
                                                     <li>ถ้ามีการเปลี่ยนแปลงทิศทางขณะขับขี่ทางตรง(ดึงซ้าย - ขวา)ควรทำการตรวจเช็คสภาพยางและศูนย์รถยนต์โดยช่างผู้ชำนาญ</li>
                                                     <li>เมื่อยางที่ใช้งานมีสิ่งผิดปกติเกิดขึ้น ควรนำยางอะไหล่มาใช้ทำงานทดแทนก่อนที่จะนำยางเส้นที่มีปัญหาไปทำการซ่อมแซม</li>
                                                     <li>ยางรถยนต์มีวัตถุดิบหลักคือยางธรรมชาติและยางเทียม เมื่อมีการใช้งานไปนานๆจะมีการสึกหรอและเสื่อมสภาพ ดังนั้นหากมี
                                                         การใช้งานมากกว่า 3 - 4 ปี ขึ้นไปควรที่จะทำการเปลี่ยนยางเส้นใหม่ทันทีเนื่องจากอาจเกิดอุบัติเหตุอันมีผลต่อความปลอดภัย
                                                         ในการขับขี่ได้<br><br>
-                                                     <center><img style="" src="<?= base_url() ?>public/images/usage2.png" /></center></li>
+                                                     <center><img style="" src="<?php echo  base_url() ?>public/images/usage2.png" /></center></li>
 
                                                 </ul>
                                             </p>
@@ -162,7 +162,7 @@
                                                     <li>ควรทำการเติมลมยางตามค่ามาตรฐานที่กำหนดเสมอ</li>
                                                     <li>เลี่ยงการขับขี่รถยนต์บนถนนที่เสี่ยงต่ออุบัติเหตุและผลกระทบต่อคุณภาพของยาง เช่น ถนนขรุขระหรือถนนที่มีสิ่งแปลกปลอม
                                                         กีดขวาง เป็นต้น<br>
-                                                     <center><img style="" src="<?= base_url() ?>public/images/usage3.png" /></center></li>
+                                                     <center><img style="" src="<?php echo  base_url() ?>public/images/usage3.png" /></center></li>
                                                     <li>อย่าทำการบรรทุกน้ำหนักเกินค่ามาตรฐานที่ยางกำหนด อาจทำให้ยางระเบิดอันมีผลต่อความปลอดภัยในการขับขี่</li>
 
                                                     <li>ควรเลือกยางที่เหมาะสมกับการใช้งาน</li>
@@ -222,8 +222,8 @@
         </table>
 
         <!-- end table 3x3-->
-        <script type="text/javascript" src="<?= base_url() ?>public/js/jquery.ba-cond.min.js"></script>
-        <script type="text/javascript" src="<?= base_url() ?>public/js/jquery.slitslider.js"></script>
+        <script type="text/javascript" src="<?php echo  base_url() ?>public/js/jquery.ba-cond.min.js"></script>
+        <script type="text/javascript" src="<?php echo  base_url() ?>public/js/jquery.slitslider.js"></script>
 
         <script type="text/javascript">
                                                 $(document).ready(function() {

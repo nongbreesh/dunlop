@@ -3,21 +3,21 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <!-- jQuery library (served from Google) -->
-        <script src="<?= base_url('public') ?>/js/1.8.2/jquery.min.js"></script>
+        <script src="<?php echo  base_url('public') ?>/js/1.8.2/jquery.min.js"></script>
         <!-- bxSlider Javascript file -->
-        <script src="<?= base_url('public') ?>/js/jquery.bxslider.min.js"></script>
+        <script src="<?php echo  base_url('public') ?>/js/jquery.bxslider.min.js"></script>
         <!-- bxSlider CSS file -->
-        <link href="<?= base_url('public') ?>/css/jquery.bxslider.css" rel="stylesheet" />
-        <link href="<?= base_url('public') ?>/css/custom_style.css" rel="stylesheet"
+        <link href="<?php echo  base_url('public') ?>/css/jquery.bxslider.css" rel="stylesheet" />
+        <link href="<?php echo  base_url('public') ?>/css/custom_style.css" rel="stylesheet"
               type="text/css" />
-        <link href="<?= base_url('public') ?>/css/animate.css" rel="stylesheet"
+        <link href="<?php echo  base_url('public') ?>/css/animate.css" rel="stylesheet"
               type="text/css" />
-        <link rel="stylesheet" type="text/css" href="<?= base_url('public') ?>/css/bootstrap.css" />
-        <link rel="stylesheet" type="text/css" href="<?= base_url('public') ?>/css/custom.css" />
-        <link rel="stylesheet" type="text/css" href="<?= base_url('public') ?>/css/style.css" />
-        <script type="text/javascript" src="<?= base_url('public') ?>/js/modernizr.custom.79639.js"></script>
+        <link rel="stylesheet" type="text/css" href="<?php echo  base_url('public') ?>/css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo  base_url('public') ?>/css/custom.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo  base_url('public') ?>/css/style.css" />
+        <script type="text/javascript" src="<?php echo  base_url('public') ?>/js/modernizr.custom.79639.js"></script>
         <noscript>
-            <link rel="stylesheet" type="text/css" href="<?= base_url('public') ?>/css/styleNoJS.css" />
+            <link rel="stylesheet" type="text/css" href="<?php echo  base_url('public') ?>/css/styleNoJS.css" />
         </noscript>
         <title>Welcome to Dunlop Tire (Thailand) Company Limited</title>
 
@@ -97,16 +97,16 @@
             }
         </script>
     </head>
-    <body background="<?= base_url() ?>public/images/home/bg_2.jpg" style="margin:auto">
+    <body background="<?php echo  base_url() ?>public/images/home/bg_2.jpg" style="margin:auto">
 
         <!-- start table 3x3-->
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr height="78" >
-                <td background="<?= base_url() ?>public/images/home/logo_1.jpg">&nbsp;</td>
+                <td background="<?php echo  base_url() ?>public/images/home/logo_1.jpg">&nbsp;</td>
                 <td width="942"  style="position: relative;"><table border="0" cellspacing="0" cellpadding="0" width="100%">
                         <tr>
-                            <td><a href="<?= base_url() ?>"><img src="<?= base_url() ?>public/images/home/logo_2.jpg" /></a></td>
-                            <td background="<?= base_url() ?>public/images/home/logo_3.jpg"  width="100%">
+                            <td><a href="<?php echo  base_url() ?>"><img src="<?php echo  base_url() ?>public/images/home/logo_2.jpg" /></a></td>
+                            <td background="<?php echo  base_url() ?>public/images/home/logo_3.jpg"  width="100%">
 
                             </td>
 
@@ -116,22 +116,22 @@
                         <table id="Table_01" width="688" height="42" border="0" cellpadding="0" cellspacing="0">
                             <tr>
                                 <td>
-                                    <a href="<?= base_url() ?>home"><img src="<?= base_url() ?>public/images/menu/address/menu_01.png" width="99" height="42" alt=""/></a></td>
+                                    <a href="<?php echo  base_url() ?>home"><img src="<?php echo  base_url() ?>public/images/menu/address/menu_01.png" width="99" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>product"> <img src="<?= base_url() ?>public/images/menu/address/menu_02.png" width="92" height="42" alt=""/></a></td>
+                                    <a href="<?php echo  base_url() ?>product"> <img src="<?php echo  base_url() ?>public/images/menu/address/menu_02.png" width="92" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>knowledge"><img src="<?= base_url() ?>public/images/menu/address/menu_03.png" width="135" height="42" alt=""/></a></td>
+                                    <a href="<?php echo  base_url() ?>knowledge"><img src="<?php echo  base_url() ?>public/images/menu/address/menu_03.png" width="135" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>about">  <img src="<?= base_url() ?>public/images/menu/address/menu_04.png" width="93" height="42" alt=""/></a></td>
+                                    <a href="<?php echo  base_url() ?>about">  <img src="<?php echo  base_url() ?>public/images/menu/address/menu_04.png" width="93" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>address"><img src="<?= base_url() ?>public/images/menu/address/menu_05.png" width="157" height="42" alt=""/></a></td>
+                                    <a href="<?php echo  base_url() ?>address"><img src="<?php echo  base_url() ?>public/images/menu/address/menu_05.png" width="157" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>contact"><img src="<?= base_url() ?>public/images/menu/address/menu_06.png" width="112" height="42" alt=""/></a></td>
+                                    <a href="<?php echo  base_url() ?>contact"><img src="<?php echo  base_url() ?>public/images/menu/address/menu_06.png" width="112" height="42" alt=""/></a></td>
                             </tr>
                         </table>
                     </div>
                 </td>
-                <td background="<?= base_url() ?>public/images/home/logo_3.jpg">&nbsp;</td>
+                <td background="<?php echo  base_url() ?>public/images/home/logo_3.jpg">&nbsp;</td>
             </tr>
             <tr height="730">
                 <td >&nbsp;</td>
@@ -156,16 +156,16 @@
 
                                 <div class="contact" style="margin-top: -20px;">
                                     <div class="title_trans"><h1>ตัวแทนจำหน่าย <img style="margin-top: -14px;
-                                                                                    margin-left: -5px; " src="<?= base_url() ?>public/images/add_loc_icon.png"/></h1> </div>
+                                                                                    margin-left: -5px; " src="<?php echo  base_url() ?>public/images/add_loc_icon.png"/></h1> </div>
                                     <div class="row" style="min-height: 1100px;">
                                         <div class="mapaddress">
-                                            <div class="bg1 <?= $id == 1 ? 'active' : '' ?>"><a href="<?= base_url() ?>address/zone/1" ></a></div>
-                                            <div class="bg2 <?= $id == 5 ? 'active' : '' ?>"><a href="<?= base_url() ?>address/zone/5" ></a></div>
-                                            <div class="bg3 <?= $id == 2 ? 'active' : '' ?>"><a href="<?= base_url() ?>address/zone/2" ></a></div>
-                                            <div class="bg4 <?= $id == 3 ? 'active' : '' ?>"><a href="<?= base_url() ?>address/zone/3" ></a></div>
-                                            <div class="bg5 <?= $id == 4 ? 'active' : '' ?>"><a href="<?= base_url() ?>address/zone/4" ></a></div>
-                                            <div class="bg6 <?= $id == 6 ? 'active' : '' ?>"><a href="<?= base_url() ?>address/zone/6" ></a></div>
-                                            <div class="bg7 <?= $id == 7 ? 'active' : '' ?>"><a href="<?= base_url() ?>address/zone/7" ></a></div>
+                                            <div class="bg1 <?php echo  $id == 1 ? 'active' : '' ?>"><a href="<?php echo  base_url() ?>address/zone/1" ></a></div>
+                                            <div class="bg2 <?php echo  $id == 5 ? 'active' : '' ?>"><a href="<?php echo  base_url() ?>address/zone/5" ></a></div>
+                                            <div class="bg3 <?php echo  $id == 2 ? 'active' : '' ?>"><a href="<?php echo  base_url() ?>address/zone/2" ></a></div>
+                                            <div class="bg4 <?php echo  $id == 3 ? 'active' : '' ?>"><a href="<?php echo  base_url() ?>address/zone/3" ></a></div>
+                                            <div class="bg5 <?php echo  $id == 4 ? 'active' : '' ?>"><a href="<?php echo  base_url() ?>address/zone/4" ></a></div>
+                                            <div class="bg6 <?php echo  $id == 6 ? 'active' : '' ?>"><a href="<?php echo  base_url() ?>address/zone/6" ></a></div>
+                                            <div class="bg7 <?php echo  $id == 7 ? 'active' : '' ?>"><a href="<?php echo  base_url() ?>address/zone/7" ></a></div>
                                         </div>
 
                                         <!--<?php if ($id == 1): ?>
@@ -191,9 +191,9 @@
                                             <?php foreach ($zone_list as $each): ?>
                                                 <div class="zone_name">
                                                     <?php if ($id == $each->ZONE_ID): ?>
-                                                        <a class="active" href="<?= base_url() ?>address/zone/<?= $each->ZONE_ID ?>"><?= $each->ZONE_NAME ?></a>
+                                                        <a class="active" href="<?php echo  base_url() ?>address/zone/<?php echo  $each->ZONE_ID ?>"><?php echo  $each->ZONE_NAME ?></a>
                                                     <?php else: ?>
-                                                        <a href="<?= base_url() ?>address/zone/<?= $each->ZONE_ID ?>"><?= $each->ZONE_NAME ?></a>
+                                                        <a href="<?php echo  base_url() ?>address/zone/<?php echo  $each->ZONE_ID ?>"><?php echo  $each->ZONE_NAME ?></a>
                                                     <?php endif; ?>
                                                 </div>
                                             <?php endforeach; ?>
@@ -201,13 +201,13 @@
                                         </div>
 
                                         <div class="province_list">
-                                            <h1><?= $zone_header ?></h1>
+                                            <h1><?php echo  $zone_header ?></h1>
                                             <?php foreach ($area_list as $each): ?>
                                                 <div class="area_name">
                                                     <?php if ($area == $each->AREA_ID): ?>
-                                                        <a class="active" href="<?= base_url() ?>address/zone/<?= $each->ZONE_ID ?>/<?= $each->AREA_ID ?>"><?= $each->AREA_NAME ?></a>
+                                                        <a class="active" href="<?php echo  base_url() ?>address/zone/<?php echo  $each->ZONE_ID ?>/<?php echo  $each->AREA_ID ?>"><?php echo  $each->AREA_NAME ?></a>
                                                     <?php else: ?>
-                                                        <a href="<?= base_url() ?>address/zone/<?= $each->ZONE_ID ?>/<?= $each->AREA_ID ?>"><?= $each->AREA_NAME ?></a>
+                                                        <a href="<?php echo  base_url() ?>address/zone/<?php echo  $each->ZONE_ID ?>/<?php echo  $each->AREA_ID ?>"><?php echo  $each->AREA_NAME ?></a>
                                                     <?php endif; ?>
                                                 </div>
                                             <?php endforeach; ?>
@@ -230,14 +230,14 @@
                                                     <?php foreach ($dealer_detail as $each): ?>
                                                         <tr>
                                                             <?php if ($each->Dealer_Agent == 1): ?>
-                                                                <td><a href="<?= base_url() ?>address/zone/<?= $each->ZONE_ID ?>/<?= $each->AREA_ID ?>?g=<?= $each->Dealer_ID ?>" ><img src="<?= base_url() ?>public/images/dunlop_icon.png" width="15"/></a> <?= $each->Dealer_Name ?> </td>
+                                                                <td><a href="<?php echo  base_url() ?>address/zone/<?php echo  $each->ZONE_ID ?>/<?php echo  $each->AREA_ID ?>?g=<?php echo  $each->Dealer_ID ?>" ><img src="<?php echo  base_url() ?>public/images/dunlop_icon.png" width="15"/></a> <?php echo  $each->Dealer_Name ?> </td>
                                                             <?php else: ?>
-                                                                <td><?= $each->Dealer_Name ?> </td>
+                                                                <td><?php echo  $each->Dealer_Name ?> </td>
                                                             <?php endif; ?>
-                                                            <td><?= $each->Dealer_Address ?> </td>
-                                                            <td><?= $each->Dealer_Tel ?> </td>
+                                                            <td><?php echo  $each->Dealer_Address ?> </td>
+                                                            <td><?php echo  $each->Dealer_Tel ?> </td>
                                                             <?php if ($each->Dealer_URL != '' && $each->Dealer_URL != '-'): ?>
-                                                                <td align="center"><a target="_blank" href="<?= $each->Dealer_URL ?>"><img src="<?= base_url() ?>public/images/address/pin2.png" /></a> </td>
+                                                                <td align="center"><a target="_blank" href="<?php echo  $each->Dealer_URL ?>"><img src="<?php echo  base_url() ?>public/images/address/pin2.png" /></a> </td>
                                                             <?php else: ?>
                                                                 <td></td>
                                                             <?php endif; ?>
@@ -277,7 +277,7 @@
                     <?php if (isset($dealer_pic)): ?>
                         <?php foreach ($dealer_pic as $each): ?>
                             <li>
-                                <img src="<?= base_url() ?>administrator/public/uploads/<?= str_replace('thumb_', '', $each->PIC_Image) ?>" style="width: 500px;" />
+                                <img src="<?php echo  base_url() ?>administrator/public/uploads/<?php echo  str_replace('thumb_', '', $each->PIC_Image) ?>" style="width: 500px;" />
                             </li>
                         <?php endforeach; ?>
                     <?php endif; ?>
@@ -286,8 +286,8 @@
         </div>   
         <div id="bgPopup"></div>
         <!-- end table 3x3-->
-        <script type="text/javascript" src="<?= base_url() ?>public/js/jquery.ba-cond.min.js"></script>
-        <script type="text/javascript" src="<?= base_url() ?>public/js/jquery.slitslider.js"></script>
+        <script type="text/javascript" src="<?php echo  base_url() ?>public/js/jquery.ba-cond.min.js"></script>
+        <script type="text/javascript" src="<?php echo  base_url() ?>public/js/jquery.slitslider.js"></script>
 
         <script type="text/javascript">
 

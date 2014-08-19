@@ -7,12 +7,12 @@
 </footer>
 </body>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
-<script type="text/javascript" src="<?= base_url('public') ?>/js/jquery.eislideshow.js"></script>
-<script type="text/javascript" src="<?= base_url('public') ?>/js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="<?php echo  base_url('public') ?>/js/jquery.eislideshow.js"></script>
+<script type="text/javascript" src="<?php echo  base_url('public') ?>/js/jquery.easing.1.3.js"></script>
 
-<script type="text/javascript" src="<?= base_url('public') ?>/js/jQuery.blockUI.js" ></script>
-<script type="text/javascript" src="<?= base_url('public') ?>/js/index.js" ></script>
-<script type="text/javascript" src="<?= base_url('public') ?>/js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="<?php echo  base_url('public') ?>/js/jQuery.blockUI.js" ></script>
+<script type="text/javascript" src="<?php echo  base_url('public') ?>/js/index.js" ></script>
+<script type="text/javascript" src="<?php echo  base_url('public') ?>/js/bootstrap-datepicker.js"></script>
 <script type="text/javascript">
     $(function() {
         $('#ei-slider').eislideshow({
@@ -31,9 +31,9 @@
         var str = "id=" + id;
         var str = "id=" + id;
         var qty = document.getElementById('txtqty');
-        //alert('<?= base_url() ?>cart/addcart/'+id+'/'+qty.value);
+        //alert('<?php echo  base_url() ?>cart/addcart/'+id+'/'+qty.value);
         $.ajax({
-            url: '<?= base_url() ?>cart/addcart/' + id + '/' + qty.value,
+            url: '<?php echo  base_url() ?>cart/addcart/' + id + '/' + qty.value,
             type: 'get',
             data: str,
             cache: false,
@@ -46,9 +46,9 @@
             success: function(data) {
                 var parms = data.split('&');
                 $.unblockUI();
-                $(".basket").html("<img src=\"<?= base_url('public') ?>/img/cart.png\">&nbsp;<a href='<?= base_url('cart') ?>'><b> ชนิดสินค้า [" + parms[0] + "]</b><br></a> <b>ยอดรวม</b> : " + parms[1] + "<b> บาท</b>");
+                $(".basket").html("<img src=\"<?php echo  base_url('public') ?>/img/cart.png\">&nbsp;<a href='<?php echo  base_url('cart') ?>'><b> ชนิดสินค้า [" + parms[0] + "]</b><br></a> <b>ยอดรวม</b> : " + parms[1] + "<b> บาท</b>");
                 $(".cart_mini_count").html(parms[0]);
-                location.href = '<?= base_url('cart') ?>';
+                location.href = '<?php echo  base_url('cart') ?>';
             }
         })
 
@@ -60,17 +60,17 @@
         str += "&session=" + session;
 
         $.ajax({
-            url: '<?= base_url() ?>/cart/currentcart',
+            url: '<?php echo  base_url() ?>/cart/currentcart',
             type: 'get',
             data: str,
             cache: false,
             success: function(data) {
-                $(".cartHead").html("<img src=\"<?= base_url('public') ?>/img/cart.png\">&nbsp;&nbsp;" + data);
+                $(".cartHead").html("<img src=\"<?php echo  base_url('public') ?>/img/cart.png\">&nbsp;&nbsp;" + data);
             }
         })
 
         $.ajax({
-            url: '<?= base_url() ?>/cart/dropcart',
+            url: '<?php echo  base_url() ?>/cart/dropcart',
             type: 'get',
             data: str,
             cache: false,

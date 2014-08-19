@@ -11,34 +11,34 @@
                 ?>
                 <?php if ($each->SLIDE_Animation_Type == 0): ?>
                     <div class="sl-slide bg-1" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
-                        <div class="sl-slide-inner" style="background: url('<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_bg ?>');">
-                            <div class="deco fade-in"><img src="<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_Object_img1 ?>" /></div>
-                            <div class="deco1 fade-in"><img src="<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_Object_img2 ?>" /></div>
-                            <div class="deco2 fade-in"><img src="<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_Object_img3 ?>" /></div>
+                        <div class="sl-slide-inner" style="background: url('<?php echo  base_url() ?>administrator/public/uploads/slide/<?php echo  $each->SLIDE_bg ?>');">
+                            <div class="deco fade-in"><img src="<?php echo  base_url() ?>administrator/public/uploads/slide/<?php echo  $each->SLIDE_Object_img1 ?>" /></div>
+                            <div class="deco1 fade-in"><img src="<?php echo  base_url() ?>administrator/public/uploads/slide/<?php echo  $each->SLIDE_Object_img2 ?>" /></div>
+                            <div class="deco2 fade-in"><img src="<?php echo  base_url() ?>administrator/public/uploads/slide/<?php echo  $each->SLIDE_Object_img3 ?>" /></div>
                         </div>
                     </div>
                 <?php elseif ($each->SLIDE_Animation_Type == 1): ?>
                     <div class="sl-slide bg-1" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
-                        <div class="sl-slide-inner" style="background: url('<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_bg ?>');">
-                            <div class="deco fromleft"><img src="<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_Object_img1 ?>" /></div>
-                            <div class="deco1 moveDown"><img src="<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_Object_img2 ?>" /></div>
-                            <div class="deco2 moveUp"><img src="<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_Object_img3 ?>" /></div>
+                        <div class="sl-slide-inner" style="background: url('<?php echo  base_url() ?>administrator/public/uploads/slide/<?php echo  $each->SLIDE_bg ?>');">
+                            <div class="deco fromleft"><img src="<?php echo  base_url() ?>administrator/public/uploads/slide/<?php echo  $each->SLIDE_Object_img1 ?>" /></div>
+                            <div class="deco1 moveDown"><img src="<?php echo  base_url() ?>administrator/public/uploads/slide/<?php echo  $each->SLIDE_Object_img2 ?>" /></div>
+                            <div class="deco2 moveUp"><img src="<?php echo  base_url() ?>administrator/public/uploads/slide/<?php echo  $each->SLIDE_Object_img3 ?>" /></div>
                         </div>
                     </div>
                 <?php elseif ($each->SLIDE_Animation_Type == 2): ?>
                     <div class="sl-slide bg-1" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
-                        <div class="sl-slide-inner" style="background: url('<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_bg ?>');">
-                            <div class="deco_2 fromleft"><img src="<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_Object_img1 ?>" /></div>
-                            <div class="deco1_2 moveDown"><img src="<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_Object_img2 ?>" /></div>
-                            <div class="deco2_2 moveUp"><img src="<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_Object_img3 ?>" /></div>
+                        <div class="sl-slide-inner" style="background: url('<?php echo  base_url() ?>administrator/public/uploads/slide/<?php echo  $each->SLIDE_bg ?>');">
+                            <div class="deco_2 fromleft"><img src="<?php echo  base_url() ?>administrator/public/uploads/slide/<?php echo  $each->SLIDE_Object_img1 ?>" /></div>
+                            <div class="deco1_2 moveDown"><img src="<?php echo  base_url() ?>administrator/public/uploads/slide/<?php echo  $each->SLIDE_Object_img2 ?>" /></div>
+                            <div class="deco2_2 moveUp"><img src="<?php echo  base_url() ?>administrator/public/uploads/slide/<?php echo  $each->SLIDE_Object_img3 ?>" /></div>
                         </div>
                     </div>
                 <?php elseif ($each->SLIDE_Animation_Type == 3): ?>
                     <div class="sl-slide bg-1" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
-                        <div class="sl-slide-inner" style="background: url('<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_bg ?>');">
-                            <div class="deco fromleft"><img src="<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_Object_img1 ?>" /></div>
-                            <div class="deco1 moveDown"><img src="<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_Object_img2 ?>" /></div>
-                            <div class="deco2 moveUp"><img src="<?= base_url() ?>administrator/public/uploads/slide/<?= $each->SLIDE_Object_img3 ?>" /></div>
+                        <div class="sl-slide-inner" style="background: url('<?php echo  base_url() ?>administrator/public/uploads/slide/<?php echo  $each->SLIDE_bg ?>');">
+                            <div class="deco fromleft"><img src="<?php echo  base_url() ?>administrator/public/uploads/slide/<?php echo  $each->SLIDE_Object_img1 ?>" /></div>
+                            <div class="deco1 moveDown"><img src="<?php echo  base_url() ?>administrator/public/uploads/slide/<?php echo  $each->SLIDE_Object_img2 ?>" /></div>
+                            <div class="deco2 moveUp"><img src="<?php echo  base_url() ?>administrator/public/uploads/slide/<?php echo  $each->SLIDE_Object_img3 ?>" /></div>
                         </div>
                     </div>
                 <?php endif; ?>

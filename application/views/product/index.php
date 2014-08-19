@@ -3,20 +3,20 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <!-- jQuery library (served from Google) -->
-        <script src="<?= base_url('public') ?>/js/1.8.2/jquery.min.js"></script>
+        <script src="<?php echo  base_url('public') ?>/js/1.8.2/jquery.min.js"></script>
         <!-- bxSlider Javascript file -->
-        <script src="<?= base_url('public') ?>/js/jquery.bxslider.min.js"></script>
+        <script src="<?php echo  base_url('public') ?>/js/jquery.bxslider.min.js"></script>
         <!-- bxSlider CSS file -->
-        <link href="<?= base_url('public') ?>/css/jquery.bxslider.css" rel="stylesheet" />
-        <link href="<?= base_url('public') ?>/css/custom_style.css" rel="stylesheet"
+        <link href="<?php echo  base_url('public') ?>/css/jquery.bxslider.css" rel="stylesheet" />
+        <link href="<?php echo  base_url('public') ?>/css/custom_style.css" rel="stylesheet"
               type="text/css" />
-        <link href="<?= base_url('public') ?>/css/animate.css" rel="stylesheet"
+        <link href="<?php echo  base_url('public') ?>/css/animate.css" rel="stylesheet"
               type="text/css" />
-        <link rel="stylesheet" type="text/css" href="<?= base_url('public') ?>/css/custom.css" />
-        <link rel="stylesheet" type="text/css" href="<?= base_url('public') ?>/css/style.css" />
-        <script type="text/javascript" src="<?= base_url('public') ?>/js/modernizr.custom.79639.js"></script>
+        <link rel="stylesheet" type="text/css" href="<?php echo  base_url('public') ?>/css/custom.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo  base_url('public') ?>/css/style.css" />
+        <script type="text/javascript" src="<?php echo  base_url('public') ?>/js/modernizr.custom.79639.js"></script>
         <noscript>
-            <link rel="stylesheet" type="text/css" href="<?= base_url('public') ?>/css/styleNoJS.css" />
+            <link rel="stylesheet" type="text/css" href="<?php echo  base_url('public') ?>/css/styleNoJS.css" />
         </noscript>
         <title>Welcome to Dunlop Tire (Thailand) Company Limited</title>
         <script>
@@ -27,16 +27,16 @@
             });
         </script>
     </head>
-    <body background="<?= base_url() ?>public/images/home/bg_2.jpg" style="margin:auto">
+    <body background="<?php echo  base_url() ?>public/images/home/bg_2.jpg" style="margin:auto">
 
         <!-- start table 3x3-->
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr height="78" >
-                <td background="<?= base_url() ?>public/images/home/logo_1.jpg">&nbsp;</td>
+                <td background="<?php echo  base_url() ?>public/images/home/logo_1.jpg">&nbsp;</td>
                 <td width="942"  style="position: relative;"><table border="0" cellspacing="0" cellpadding="0" width="100%">
                         <tr>
-                            <td><a href="<?= base_url() ?>"><img src="<?= base_url() ?>public/images/home/logo_2.jpg" /></a></td>
-                            <td background="<?= base_url() ?>public/images/home/logo_3.jpg"  width="100%">
+                            <td><a href="<?php echo  base_url() ?>"><img src="<?php echo  base_url() ?>public/images/home/logo_2.jpg" /></a></td>
+                            <td background="<?php echo  base_url() ?>public/images/home/logo_3.jpg"  width="100%">
 
                             </td>
 
@@ -46,22 +46,22 @@
                         <table id="Table_01" width="696" height="42" border="0" cellpadding="0" cellspacing="0">
                             <tr>
                                 <td>
-                                    <a href="<?= base_url() ?>home"><img src="<?= base_url() ?>public/images/menu/product/menu_01.png" width="95" height="42" alt=""/></a></td>
+                                    <a href="<?php echo  base_url() ?>home"><img src="<?php echo  base_url() ?>public/images/menu/product/menu_01.png" width="95" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>product"> <img src="<?= base_url() ?>public/images/menu/product/menu_02.png" width="101" height="42" alt=""/></a></td>
+                                    <a href="<?php echo  base_url() ?>product"> <img src="<?php echo  base_url() ?>public/images/menu/product/menu_02.png" width="101" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>knowledge"><img src="<?= base_url() ?>public/images/menu/product/menu_03.png" width="134" height="42" alt=""/></a></td>
+                                    <a href="<?php echo  base_url() ?>knowledge"><img src="<?php echo  base_url() ?>public/images/menu/product/menu_03.png" width="134" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>about">  <img src="<?= base_url() ?>public/images/menu/product/menu_04.png" width="119" height="42" alt=""/></a></td>
+                                    <a href="<?php echo  base_url() ?>about">  <img src="<?php echo  base_url() ?>public/images/menu/product/menu_04.png" width="119" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>address"><img src="<?= base_url() ?>public/images/menu/product/menu_05.png" width="132" height="42" alt=""/></a></td>
+                                    <a href="<?php echo  base_url() ?>address"><img src="<?php echo  base_url() ?>public/images/menu/product/menu_05.png" width="132" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>contact"><img src="<?= base_url() ?>public/images/menu/product/menu_06.png" width="112" height="42" alt=""/></a></td>
+                                    <a href="<?php echo  base_url() ?>contact"><img src="<?php echo  base_url() ?>public/images/menu/product/menu_06.png" width="112" height="42" alt=""/></a></td>
                             </tr>
                         </table>
                     </div>
                 </td>
-                <td background="<?= base_url() ?>public/images/home/logo_3.jpg">&nbsp;</td>
+                <td background="<?php echo  base_url() ?>public/images/home/logo_3.jpg">&nbsp;</td>
             </tr>
             <tr height="730">
                 <td >&nbsp;</td>
@@ -90,9 +90,9 @@
                                         <ul class="sidemenu">
                                             <?php foreach ($dunlop_group as $each): ?>
                                                 <?php if ($groupid == $each->Group_ID): ?>
-                                                    <li class="active"><a href = "<?= base_url() ?>product/g/<?= $each->Group_ID ?>"><img style = "" src = "<?= base_url() ?>administrator/public/uploads/<?= $each->Group_IMG_Hover ?>" /></a>
+                                                    <li class="active"><a href = "<?php echo  base_url() ?>product/g/<?php echo  $each->Group_ID ?>"><img style = "" src = "<?php echo  base_url() ?>administrator/public/uploads/<?php echo  $each->Group_IMG_Hover ?>" /></a>
                                                     <?php else: ?>       
-                                                        <li ><a href = "<?= base_url() ?>product/g/<?= $each->Group_ID ?>"><img style = "" src = "<?= base_url() ?>administrator/public/uploads/<?= $each->Group_IMG ?>" onmouseover="this.src = '<?= base_url() ?>administrator/public/uploads/<?= $each->Group_IMG_Hover ?>'" onmouseout="this.src = '<?= base_url() ?>administrator/public/uploads/<?= $each->Group_IMG ?>'"/></a>
+                                                        <li ><a href = "<?php echo  base_url() ?>product/g/<?php echo  $each->Group_ID ?>"><img style = "" src = "<?php echo  base_url() ?>administrator/public/uploads/<?php echo  $each->Group_IMG ?>" onmouseover="this.src = '<?php echo  base_url() ?>administrator/public/uploads/<?php echo  $each->Group_IMG_Hover ?>'" onmouseout="this.src = '<?php echo  base_url() ?>administrator/public/uploads/<?php echo  $each->Group_IMG ?>'"/></a>
                                                         <?php endif; ?>
                                                         <?php if ($groupid != 0 || $groupid != 1): ?>
                                                             <?php
@@ -102,17 +102,17 @@
                                                                 <?php if (!empty($dunlop_group_parent)): ?>
                                                                     <?php foreach ($dunlop_group_parent as $each0): ?>
                                                                         <?php if ($parentgid == $each0->Group_ID): ?>
-                                                                            <li><a href = "<?= base_url() ?>product/g/<?= $each->Group_ID ?>/0/<?= $each0->Group_ID ?>"><img style = "" src = "<?= base_url() ?>administrator/public/uploads/<?= $each0->Group_IMG_Hover ?>" /></a></li>
+                                                                            <li><a href = "<?php echo  base_url() ?>product/g/<?php echo  $each->Group_ID ?>/0/<?php echo  $each0->Group_ID ?>"><img style = "" src = "<?php echo  base_url() ?>administrator/public/uploads/<?php echo  $each0->Group_IMG_Hover ?>" /></a></li>
                                                                         <?php else: ?>   
-                                                                            <li><a href = "<?= base_url() ?>product/g/<?= $each->Group_ID ?>/0/<?= $each0->Group_ID ?>"><img style = "" src = "<?= base_url() ?>administrator/public/uploads/<?= $each0->Group_IMG ?>" onmouseover="this.src = '<?= base_url() ?>administrator/public/uploads/<?= $each0->Group_IMG_Hover ?>'" onmouseout="this.src = '<?= base_url() ?>administrator/public/uploads/<?= $each0->Group_IMG ?>'"/></a></li>
+                                                                            <li><a href = "<?php echo  base_url() ?>product/g/<?php echo  $each->Group_ID ?>/0/<?php echo  $each0->Group_ID ?>"><img style = "" src = "<?php echo  base_url() ?>administrator/public/uploads/<?php echo  $each0->Group_IMG ?>" onmouseover="this.src = '<?php echo  base_url() ?>administrator/public/uploads/<?php echo  $each0->Group_IMG_Hover ?>'" onmouseout="this.src = '<?php echo  base_url() ?>administrator/public/uploads/<?php echo  $each0->Group_IMG ?>'"/></a></li>
                                                                         <?php endif; ?>
                                                                     <?php endforeach; ?>
                                                                 <?php endif; ?>
                                                                 <?php foreach ($dunlop_product as $each1): ?>
                                                                     <?php if ($productid == $each1->Product_ID): ?>
-                                                                        <li><a href = "<?= base_url() ?>product/g/<?= $each->Group_ID ?>/<?= $each1->Product_ID ?>"><img style = "" src = "<?= base_url() ?>administrator/public/uploads/<?= $each1->Product_IMG_HOVER ?>" /></a></li>
+                                                                        <li><a href = "<?php echo  base_url() ?>product/g/<?php echo  $each->Group_ID ?>/<?php echo  $each1->Product_ID ?>"><img style = "" src = "<?php echo  base_url() ?>administrator/public/uploads/<?php echo  $each1->Product_IMG_HOVER ?>" /></a></li>
                                                                     <?php else: ?>    
-                                                                        <li><a href = "<?= base_url() ?>product/g/<?= $each->Group_ID ?>/<?= $each1->Product_ID ?>"><img style = "" src = "<?= base_url() ?>administrator/public/uploads/<?= $each1->Product_IMG ?>" onmouseover="this.src = '<?= base_url() ?>administrator/public/uploads/<?= $each1->Product_IMG_HOVER ?>'" onmouseout="this.src = '<?= base_url() ?>administrator/public/uploads/<?= $each1->Product_IMG ?>'"/></a></li>
+                                                                        <li><a href = "<?php echo  base_url() ?>product/g/<?php echo  $each->Group_ID ?>/<?php echo  $each1->Product_ID ?>"><img style = "" src = "<?php echo  base_url() ?>administrator/public/uploads/<?php echo  $each1->Product_IMG ?>" onmouseover="this.src = '<?php echo  base_url() ?>administrator/public/uploads/<?php echo  $each1->Product_IMG_HOVER ?>'" onmouseout="this.src = '<?php echo  base_url() ?>administrator/public/uploads/<?php echo  $each1->Product_IMG ?>'"/></a></li>
                                                                     <?php endif; ?>
                                                                 <?php endforeach; ?>
                                                             </ul>
@@ -126,11 +126,11 @@
                                         <?php if ($groupid == 0): ?>
                                             <div class="title_trans-r"><h1 >ALL PRODUCTS</h1></div>
                                             <div class="passenger_car">
-                                                <center><img style="" src="<?= base_url() ?>public/images/tire.jpg" /></center></center>
+                                                <center><img style="" src="<?php echo  base_url() ?>public/images/tire.jpg" /></center></center>
                                             </div>
                                         <?php elseif ($groupid == 1 && $productid == 0): ?>
 
-                                            <div class = "title_trans-r"><h1 style = "top: -20px;"><img src = "<?= base_url() ?>public/images/product/pass_head.png"/></h1></div>
+                                            <div class = "title_trans-r"><h1 style = "top: -20px;"><img src = "<?php echo  base_url() ?>public/images/product/pass_head.png"/></h1></div>
 
                                             <div class = "passenger_car_graph">
                                                 <div class = "point1"><a href = "#" ></a></div>
@@ -147,7 +147,7 @@
                                                 <?php
                                                 $r = $this->select_model->getdunlop_produt_by_id($productid);
                                                 ?>
-                                                <div class="title_trans-r"><h1 ><?= $r->Product_Name ?></h1></div>
+                                                <div class="title_trans-r"><h1 ><?php echo  $r->Product_Name ?></h1></div>
                                                 <div class="passenger_car">
                                                     <a class="btn_prodinfo active" href="javascript:;"></a>
                                                     <a class="btn_tech" href="javascript:;"></a>
@@ -155,7 +155,7 @@
                                                     <div class="passenger_car_header"></div>
                                                     <div id="tech">
                                                         <p>
-                                                            <?= $r->Product_TECH ?>
+                                                            <?php echo  $r->Product_TECH ?>
                                                         </p>
 
 
@@ -164,11 +164,11 @@
                                                     <div id="prodinfo">
 
                                                         <p>
-                                                            <?= $r->Product_INFO ?>
+                                                            <?php echo  $r->Product_INFO ?>
                                                         </p>
                                                         <div style="clear: both"></div>
                                                         <?php if ($r->Product_PDF): ?>
-                                                            <div class="download_pdf"><a target="_blank" href="<?= base_url() ?>administrator/public/uploads/files/<?= $r->Product_PDF ?>"</div>
+                                                            <div class="download_pdf"><a target="_blank" href="<?php echo  base_url() ?>administrator/public/uploads/files/<?php echo  $r->Product_PDF ?>"</div>
                                                         <?php endif; ?>
 
                                                     </div>
@@ -201,28 +201,28 @@
                                                                         ?>
                                                                         <tr>
                                                                             <?php if ($i == 1): ?>
-                                                                                <td rowspan="<?= count($result) ?>"  width="32" height="16" class="tire-f" ><div align="center"><?= $each->Tire_Diamete ?></div></td>
+                                                                                <td rowspan="<?php echo  count($result) ?>"  width="32" height="16" class="tire-f" ><div align="center"><?php echo  $each->Tire_Diamete ?></div></td>
                                                                                 <?php if ($cr != $each2->Tire_Series): ?>
-                                                                                    <td  bgcolor="#ffde00" ><div align="center"><?= $each2->Tire_Series ?></div></td>
+                                                                                    <td  bgcolor="#ffde00" ><div align="center"><?php echo  $each2->Tire_Series ?></div></td>
                                                                                 <?php else: ?>
                                                                                     <td  > </td>
                                                                                 <?php endif; ?>
 
-                                                                                <td   ><?= $each2->Tire_Name ?></td>
-                                                                                <td><div align="center"><?= $each2->Tire_Radial ?></div></td>
-                                                                                <td><div align="center"><?= $each2->Tire_Rim ?></div></td>
-                                                                                <td><div align="center"><?= $each2->Tire_Width_inc ?></div></td>
+                                                                                <td   ><?php echo  $each2->Tire_Name ?></td>
+                                                                                <td><div align="center"><?php echo  $each2->Tire_Radial ?></div></td>
+                                                                                <td><div align="center"><?php echo  $each2->Tire_Rim ?></div></td>
+                                                                                <td><div align="center"><?php echo  $each2->Tire_Width_inc ?></div></td>
                                                                             <?php else: ?>
                                                                                 <?php if ($cr != $each2->Tire_Series): ?>
-                                                                                    <td  bgcolor="#ffde00" ><div align="center"><?= $each2->Tire_Series ?></div></td>
+                                                                                    <td  bgcolor="#ffde00" ><div align="center"><?php echo  $each2->Tire_Series ?></div></td>
                                                                                 <?php else: ?>
                                                                                     <td  > </td>
                                                                                 <?php endif; ?>
 
-                                                                                <td   ><?= $each2->Tire_Name ?></td>
-                                                                                <td><div align="center"><?= $each2->Tire_Radial ?></div></td>
-                                                                                <td><div align="center"><?= $each2->Tire_Rim ?></div></td>
-                                                                                <td><div align="center"><?= $each2->Tire_Width_inc ?></div></td>
+                                                                                <td   ><?php echo  $each2->Tire_Name ?></td>
+                                                                                <td><div align="center"><?php echo  $each2->Tire_Radial ?></div></td>
+                                                                                <td><div align="center"><?php echo  $each2->Tire_Rim ?></div></td>
+                                                                                <td><div align="center"><?php echo  $each2->Tire_Width_inc ?></div></td>
                                                                             <?php
                                                                             endif;
                                                                             $i++;
@@ -245,7 +245,7 @@
                                                 <?php endif; ?>
                                                 <div style="clear:both"></div>
                                             <?php elseif ($groupid == 5): ?>
-                                                <div class="title_trans-r"><h1><?= $dunlop_group_detail->Group_Name ?></h1></div>
+                                                <div class="title_trans-r"><h1><?php echo  $dunlop_group_detail->Group_Name ?></h1></div>
 
                                                 <div style="margin:40px 10px;"><a class="btn_warranty active" href="javascript:;"></a>
                                                     <a class="btn_warranty2" href="javascript:;"></a></div>
@@ -279,10 +279,10 @@
                                                                     ความลึก ที่ 1.6 มิลลิเมตร โดยจำนวนเงินที่ชดเชยนั้นจะได้มาจากการคูณของราคาขายยางรถยนต์ใหม่ของร้านค้าในปัจจุบัน
                                                                     กับเปอร์เซ็นต์ระดับ ความลึกของร่องดอกยางที่เหลืออยู่ จำนวนในการชดเชยจะถูกคำนวณจาก “ระดับความลึกร่องดอกยาง
                                                                     ที่เหลืออยู่**” ซึ่งสามารถคำนวณได้ดังต่อไปนี้<br><br>
-                                                                            <center><img style="" src="<?= base_url() ?>public/images/waran1.png" /></center></li>
+                                                                            <center><img style="" src="<?php echo  base_url() ?>public/images/waran1.png" /></center></li>
                                                                             <li>การชดเชยจะกระทำโดยการขายยางใหม่แก่ผู้ใช้ในราคาดังนี้ 
                                                                                 หมายเหตุ** การวัดความลึกร่องดอกยางที่เหลืออยู่โดยบริษัท ดันลอป ไทร์ (ไทยแลนด์) ถือเป็นที่สิ้นสุด<br><br>
-                                                                            <center><img style="" src="<?= base_url() ?>public/images/waran2.png" /></center></li>
+                                                                            <center><img style="" src="<?php echo  base_url() ?>public/images/waran2.png" /></center></li>
                                                                             <li>นโยบายการรับประกันนี้ไม่ครอบคลุมต้นทุนอื่นใด เช่น ค่าถอดและใส่ ค่าเสียเวลา ความสูญเสียจากการที่ไม่สามารถใช้รถยนต์ 
                                                                                 ค่าความไม่สะดวก และค่าของความเสียหายที่กฎหมายยอมรับ</li>
 
@@ -318,7 +318,7 @@
                                                                                     <li>ค่าธรรมเนียมในการขนส่งผลิตภัณฑ์ยางรถยนต์ที่ไม่ได้รับการชดเชยกลับคืนจะเป็นภาระของบริษัท ดันลอป ไทร์ (ไทยแลนด์) 
                                                                                         จำกัด </li>
                                                                                     <li>ตั้งแต่วันที่ 1 กันยายน 2549 เป็นต้นไป ระยะเวลาของการรับประกันคุณภาพยางรถยนต์มีรายละเอียดดังนี้<br><br>
-                                                                            <center><img style="" src="<?= base_url() ?>public/images/waran3.png" /></center></li>
+                                                                            <center><img style="" src="<?php echo  base_url() ?>public/images/waran3.png" /></center></li>
 
                                                                                     <li>หมายเหตุ
                                                                                         1. สำหรับรายละเอียดวิธีการปฏิบัติดูได้จากหน้าแรกของแผ่นพับ<br>
@@ -364,11 +364,11 @@
                                                                                                     <div id="tech">
                                                                                                     </div>
                                                                                                 <?php else: ?>
-                                                                                                    <div class="title_trans-r"><h1><?= $dunlop_group_detail->Group_Name ?></h1></div>
+                                                                                                    <div class="title_trans-r"><h1><?php echo  $dunlop_group_detail->Group_Name ?></h1></div>
                                                                                                     <div class="passenger_car">
-                                                                                                        <p><?= $dunlop_group_detail->Group_INFO ?></p>
+                                                                                                        <p><?php echo  $dunlop_group_detail->Group_INFO ?></p>
                                                                                                         <?php if ($dunlop_group_detail->Group_PDF): ?>
-                                                                                                            <div class="download_pdf" style="bottom: 0;"><a target="_blank" href="<?= base_url() ?>administrator/public/uploads/files/<?= $dunlop_group_detail->Group_PDF ?>"</div>
+                                                                                                            <div class="download_pdf" style="bottom: 0;"><a target="_blank" href="<?php echo  base_url() ?>administrator/public/uploads/files/<?php echo  $dunlop_group_detail->Group_PDF ?>"</div>
                                                                                                         <?php endif; ?>
                                                                                                     </div>
 
@@ -403,8 +403,8 @@
                                                                                             </table>
 
                                                                                             <!--end table 3x3-->
-                                                                                            <script type = "text/javascript" src = "<?= base_url() ?>public/js/jquery.ba-cond.min.js"></script>
-                                                                                            <script type="text/javascript" src="<?= base_url() ?>public/js/jquery.slitslider.js"></script>
+                                                                                            <script type = "text/javascript" src = "<?php echo  base_url() ?>public/js/jquery.ba-cond.min.js"></script>
+                                                                                            <script type="text/javascript" src="<?php echo  base_url() ?>public/js/jquery.slitslider.js"></script>
 
                                                                                             <script type="text/javascript">
                                                                                                                                                                 $(document).ready(function() {

@@ -3,20 +3,20 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <!-- jQuery library (served from Google) -->
-        <script src="<?= base_url('public') ?>/js/1.8.2/jquery.min.js"></script>
+        <script src="<?php echo  base_url('public') ?>/js/1.8.2/jquery.min.js"></script>
         <!-- bxSlider Javascript file -->
-        <script src="<?= base_url('public') ?>/js/jquery.bxslider.min.js"></script>
+        <script src="<?php echo  base_url('public') ?>/js/jquery.bxslider.min.js"></script>
         <!-- bxSlider CSS file -->
-        <link href="<?= base_url('public') ?>/css/jquery.bxslider.css" rel="stylesheet" />
-        <link href="<?= base_url('public') ?>/css/custom_style.css" rel="stylesheet"
+        <link href="<?php echo  base_url('public') ?>/css/jquery.bxslider.css" rel="stylesheet" />
+        <link href="<?php echo  base_url('public') ?>/css/custom_style.css" rel="stylesheet"
               type="text/css" />
-        <link href="<?= base_url('public') ?>/css/animate.css" rel="stylesheet"
+        <link href="<?php echo  base_url('public') ?>/css/animate.css" rel="stylesheet"
               type="text/css" />
-        <link rel="stylesheet" type="text/css" href="<?= base_url('public') ?>/css/custom.css" />
-        <link rel="stylesheet" type="text/css" href="<?= base_url('public') ?>/css/style.css" />
-        <script type="text/javascript" src="<?= base_url('public') ?>/js/modernizr.custom.79639.js"></script>
+        <link rel="stylesheet" type="text/css" href="<?php echo  base_url('public') ?>/css/custom.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo  base_url('public') ?>/css/style.css" />
+        <script type="text/javascript" src="<?php echo  base_url('public') ?>/js/modernizr.custom.79639.js"></script>
         <noscript>
-            <link rel="stylesheet" type="text/css" href="<?= base_url('public') ?>/css/styleNoJS.css" />
+            <link rel="stylesheet" type="text/css" href="<?php echo  base_url('public') ?>/css/styleNoJS.css" />
         </noscript>
         <title>Welcome to Dunlop Tire (Thailand) Company Limited</title>
         <script>
@@ -27,16 +27,16 @@
             });
         </script>
     </head>
-    <body background="<?= base_url() ?>public/images/home/bg_2.jpg" style="margin:auto">
+    <body background="<?php echo  base_url() ?>public/images/home/bg_2.jpg" style="margin:auto">
 
         <!-- start table 3x3-->
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr height="78" >
-                <td background="<?= base_url() ?>public/images/home/logo_1.jpg">&nbsp;</td>
+                <td background="<?php echo  base_url() ?>public/images/home/logo_1.jpg">&nbsp;</td>
                 <td width="942"  style="position: relative;"><table border="0" cellspacing="0" cellpadding="0" width="100%">
                         <tr>
-                            <td><a href="<?= base_url() ?>"><img src="<?= base_url() ?>public/images/home/logo_2.jpg" /></a></td>
-                            <td background="<?= base_url() ?>public/images/home/logo_3.jpg"  width="100%">
+                            <td><a href="<?php echo  base_url() ?>"><img src="<?php echo  base_url() ?>public/images/home/logo_2.jpg" /></a></td>
+                            <td background="<?php echo  base_url() ?>public/images/home/logo_3.jpg"  width="100%">
 
                             </td>
 
@@ -46,22 +46,22 @@
                         <table id="Table_01" width="696" height="42" border="0" cellpadding="0" cellspacing="0">
                             <tr>
                                 <td>
-                                    <a href="<?= base_url() ?>home"><img src="<?= base_url() ?>public/images/menu/about/menu_01.png" width="98" height="42" alt=""/></a></td>
+                                    <a href="<?php echo  base_url() ?>home"><img src="<?php echo  base_url() ?>public/images/menu/about/menu_01.png" width="98" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>product"> <img src="<?= base_url() ?>public/images/menu/about/menu_02.png" width="95" height="42" alt=""/></a></td>
+                                    <a href="<?php echo  base_url() ?>product"> <img src="<?php echo  base_url() ?>public/images/menu/about/menu_02.png" width="95" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>knowledge"><img src="<?= base_url() ?>public/images/menu/about/menu_03.png" width="104" height="42" alt=""/></a></td>
+                                    <a href="<?php echo  base_url() ?>knowledge"><img src="<?php echo  base_url() ?>public/images/menu/about/menu_03.png" width="104" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>about">  <img src="<?= base_url() ?>public/images/menu/about/menu_04.png" width="174" height="42" alt=""/></a></td>
+                                    <a href="<?php echo  base_url() ?>about">  <img src="<?php echo  base_url() ?>public/images/menu/about/menu_04.png" width="174" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>address"><img src="<?= base_url() ?>public/images/menu/about/menu_05.png" width="107" height="42" alt=""/></a></td>
+                                    <a href="<?php echo  base_url() ?>address"><img src="<?php echo  base_url() ?>public/images/menu/about/menu_05.png" width="107" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>contact"><img src="<?= base_url() ?>public/images/menu/about/menu_06.png" width="118" height="42" alt=""/></a></td>
+                                    <a href="<?php echo  base_url() ?>contact"><img src="<?php echo  base_url() ?>public/images/menu/about/menu_06.png" width="118" height="42" alt=""/></a></td>
                             </tr>
                         </table>
                     </div>
                 </td>
-                <td background="<?= base_url() ?>public/images/home/logo_3.jpg">&nbsp;</td>
+                <td background="<?php echo  base_url() ?>public/images/home/logo_3.jpg">&nbsp;</td>
             </tr>
             <tr height="730">
                 <td >&nbsp;</td>
@@ -88,17 +88,17 @@
                                     <div class="sidebar-l" ><div class="about_title"></div>
 
                                         <ul class="sidemenu">
-                                            <li><a href="<?= base_url() ?>about/blackground"><img style="" src="<?= base_url() ?>public/images/blackground.png" onmouseover="this.src = '<?= base_url() ?>public/images/blackground_hover.png'" onmouseout="this.src = '<?= base_url() ?>public/images/blackground.png'"/></a></li>
-                                            <li><a href="<?= base_url() ?>about/quality_hover"><img style="" src="<?= base_url() ?>public/images/quality_hover.png" /></a></li>
-                                            <li><a href="<?= base_url() ?>about/museum"><img style="" src="<?= base_url() ?>public/images/museum.png" onmouseover="this.src = '<?= base_url() ?>public/images/museum_hover.png'" onmouseout="this.src = '<?= base_url() ?>public/images/museum.png'"/></a></li>
-                                            <li><a href="<?= base_url() ?>about/activities"><img style="" src="<?= base_url() ?>public/images/activities.png" onmouseover="this.src = '<?= base_url() ?>public/images/activities_hover.png'" onmouseout="this.src = '<?= base_url() ?>public/images/activities.png'"/></a></li>
-                                        <li><a href="<?= base_url() ?>about/csr"><img style="" src="<?= base_url() ?>public/images/csr.png" onmouseover="this.src = '<?= base_url() ?>public/images/csr_hover.png'" onmouseout="this.src = '<?= base_url() ?>public/images/csr.png'"/></a></li>
+                                            <li><a href="<?php echo  base_url() ?>about/blackground"><img style="" src="<?php echo  base_url() ?>public/images/blackground.png" onmouseover="this.src = '<?php echo  base_url() ?>public/images/blackground_hover.png'" onmouseout="this.src = '<?php echo  base_url() ?>public/images/blackground.png'"/></a></li>
+                                            <li><a href="<?php echo  base_url() ?>about/quality_hover"><img style="" src="<?php echo  base_url() ?>public/images/quality_hover.png" /></a></li>
+                                            <li><a href="<?php echo  base_url() ?>about/museum"><img style="" src="<?php echo  base_url() ?>public/images/museum.png" onmouseover="this.src = '<?php echo  base_url() ?>public/images/museum_hover.png'" onmouseout="this.src = '<?php echo  base_url() ?>public/images/museum.png'"/></a></li>
+                                            <li><a href="<?php echo  base_url() ?>about/activities"><img style="" src="<?php echo  base_url() ?>public/images/activities.png" onmouseover="this.src = '<?php echo  base_url() ?>public/images/activities_hover.png'" onmouseout="this.src = '<?php echo  base_url() ?>public/images/activities.png'"/></a></li>
+                                        <li><a href="<?php echo  base_url() ?>about/csr"><img style="" src="<?php echo  base_url() ?>public/images/csr.png" onmouseover="this.src = '<?php echo  base_url() ?>public/images/csr_hover.png'" onmouseout="this.src = '<?php echo  base_url() ?>public/images/csr.png'"/></a></li>
                                         </ul>
                                     </div>
                                     <div class="contact-r " >
-                                        <div class="title_trans-r"> <h1>GL<img style="" src="<?= base_url() ?>public/images/O.png"/>BAL QUALITY</h1></div>
+                                        <div class="title_trans-r"> <h1>GL<img style="" src="<?php echo  base_url() ?>public/images/O.png"/>BAL QUALITY</h1></div>
                                         <p  class="contact-p">	Dunlop มีเครือข่ายครอบคลุมไปกว่า 166 ประเทศทั่วโลก และ มีฐานการผลิตอยู่ใน 3 ทวีป เชื่อมโยงเครือข่ายตลาดยางรถยนต์ทั่วโลก สามารถรองรับการเติบโตของธุรกิจยานยนต์ ได้อย่างครบวงจร</p>
-                                        <img src="<?= base_url() ?>public/images/quality.gif"  style="width: 658px;margin: 5px;"/>
+                                        <img src="<?php echo  base_url() ?>public/images/quality.gif"  style="width: 658px;margin: 5px;"/>
                                         <h3 class="htitle">สุดยอดคุณภาพระดับสากล</h3>
                                         <p  class="contact-p">Dunlop รองรับตลาดยาง OE ในอุตสาหกรรมยานยนต์ทั่วโลก โดยมีรถหลายยี่ห้อที่ใช้สินค้าจาก Dunlop</p>
 
@@ -143,8 +143,8 @@
 
 
                                                                                                                                                                     <!-- end table 3x3-->
-                                                                                                                                                                    <script type="text/javascript" src="<?= base_url() ?>public/js/jquery.ba-cond.min.js"></script>
-                                                                                                                                                                    <script type="text/javascript" src="<?= base_url() ?>public/js/jquery.slitslider.js"></script>
+                                                                                                                                                                    <script type="text/javascript" src="<?php echo  base_url() ?>public/js/jquery.ba-cond.min.js"></script>
+                                                                                                                                                                    <script type="text/javascript" src="<?php echo  base_url() ?>public/js/jquery.slitslider.js"></script>
 
                                                                                                                                                                     <script type="text/javascript">
                                                 $(document).ready(function() {

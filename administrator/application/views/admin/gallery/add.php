@@ -32,11 +32,11 @@
                     <div class="box-body table-responsive no-padding">
 
                         <form role="form" id="form_add_cate">
-                            <input type="hidden" name="input_albumid" id="input_albumid" value="<?= $album_id ?>"/>
+                            <input type="hidden" name="input_albumid" id="input_albumid" value="<?php echo  $album_id ?>"/>
                             <div class="box-body">
 
                                 <div class="form-group">
-                                    <label>Album Name : <?= $album->Album_Name ?></label>
+                                    <label>Album Name : <?php echo  $album->Album_Name ?></label>
                                 </div>
 
                                 <div class="form-group">

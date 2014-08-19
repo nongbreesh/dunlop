@@ -15,7 +15,7 @@
         <div class="topic"><h1>ตระกร้าสินค้า</h1></div>
         <div class="basket" >
             <?php if (!isset($_SESSION['SHOPPING_CART'])): ?>
-                <img src="<?= base_url('public') ?>/img/cart.png" width="16" height="16"> &nbsp;<strong><a href="<?= base_url('cart') ?>">ชนิดสินค้า [0]</a></strong> <br/><b>ยอดรวม</b> : 0 <b> บาท</b>
+                <img src="<?php echo  base_url('public') ?>/img/cart.png" width="16" height="16"> &nbsp;<strong><a href="<?php echo  base_url('cart') ?>">ชนิดสินค้า [0]</a></strong> <br/><b>ยอดรวม</b> : 0 <b> บาท</b>
             <?php else: ?>
                 <?php
                 $_SESSION['total'] = 0;
@@ -29,7 +29,7 @@
 
                 $_SESSION['total'] = number_format($_SESSION['total'] + $this->_cost->costshipping($sumweight) + $this->_cost->costbox($sumweight), 2, '.', ',');
                 ?>
-                <img src="<?= base_url('public') ?>/img/cart.png" width="16" height="16"> &nbsp;<strong><a href="<?= base_url('cart') ?>">ชนิดสินค้า [<?= count($_SESSION['SHOPPING_CART']) ?>]</a></strong> <br/><b>ยอดรวม</b> : <?= $_SESSION['total'] ?> <b> บาท</b>
+                <img src="<?php echo  base_url('public') ?>/img/cart.png" width="16" height="16"> &nbsp;<strong><a href="<?php echo  base_url('cart') ?>">ชนิดสินค้า [<?php echo  count($_SESSION['SHOPPING_CART']) ?>]</a></strong> <br/><b>ยอดรวม</b> : <?php echo  $_SESSION['total'] ?> <b> บาท</b>
             <?php endif; ?>
 
             <div style="clear:both;"></div>
@@ -38,7 +38,7 @@
         <div style="clear:both;"></div>
         <div class="topic" style="background: #47B624;">
             <h1>ช่องทางเพิ่มเติม</h1></div>   
-        <center> <img src="<?= base_url('public') ?>/images/S__1163282.jpg" /></center>
+        <center> <img src="<?php echo  base_url('public') ?>/images/S__1163282.jpg" /></center>
         <center><b>ID : peijangkyo</b></center>
         <br/>
         <div style="clear:both;"></div>
@@ -47,7 +47,7 @@
  <div class="topic" style="background: #4D3BD3;">
             <h1>พิษงู (SYN-AKE) ดีจริงหรือ?</h1></div>   
 
-     <center> <a href="<?= base_url('public') ?>/images/S__2392227.jpg" target="_blank"><img src="<?= base_url('public') ?>/images/S__2392227.jpg" /></a></center>
+     <center> <a href="<?php echo  base_url('public') ?>/images/S__2392227.jpg" target="_blank"><img src="<?php echo  base_url('public') ?>/images/S__2392227.jpg" /></a></center>
 
  <br/>
         <div style="clear:both;"></div>
@@ -57,7 +57,7 @@
  <div class="topic" style="background: #F7197A;">
             <h1>รีวิวจากลูกค้า</h1></div>   
 
-     <center> <a href="<?= base_url('public') ?>/images/S__2351110.jpg" target="_blank"><img src="<?= base_url('public') ?>/images/S__2351110.jpg" /></a></center>
+     <center> <a href="<?php echo  base_url('public') ?>/images/S__2351110.jpg" target="_blank"><img src="<?php echo  base_url('public') ?>/images/S__2351110.jpg" /></a></center>
 
  <br/>
         <div style="clear:both;"></div>
@@ -68,7 +68,7 @@
 
         <ul class="prod">
             <?php foreach ($Cate_list as $items) : ?>
-                <li><i class="icon-star"></i><a href="<?= base_url() ?>item/categories/<?= $items->categories_id ?>"><?= $items->categories_name ?></a></li>
+                <li><i class="icon-star"></i><a href="<?php echo  base_url() ?>item/categories/<?php echo  $items->categories_id ?>"><?php echo  $items->categories_name ?></a></li>
             <?php endforeach; ?>
 
         </ul>
@@ -79,7 +79,7 @@
         <ul class="prod-offer">
 
             <?php foreach ($ProductOffer_list as $items) : ?>
-                <li><a href="<?= base_url('item') ?>/detail/<?= $items->id ?>"><div class="offerimg"><center><img title="<?= $items->title ?>" alt="<?= $items->title ?>" src="<?= base_url('public/uploads') ?>/<?= $items->pic ?>" style="width:50px;height: auto; " /></center></div></a> <a href="<?= base_url('item') ?>/detail/<?= $items->id ?>" class="prod"><?= $items->title ?></a><a href="#" class="prod"></a></li>
+                <li><a href="<?php echo  base_url('item') ?>/detail/<?php echo  $items->id ?>"><div class="offerimg"><center><img title="<?php echo  $items->title ?>" alt="<?php echo  $items->title ?>" src="<?php echo  base_url('public/uploads') ?>/<?php echo  $items->pic ?>" style="width:50px;height: auto; " /></center></div></a> <a href="<?php echo  base_url('item') ?>/detail/<?php echo  $items->id ?>" class="prod"><?php echo  $items->title ?></a><a href="#" class="prod"></a></li>
             <?php endforeach; ?>
         </ul>  
         <div style="clear:both;"></div>
@@ -87,7 +87,7 @@
             <h1>การันตรีคุณภาพ</h1></div> 
 
         <span style="float: right;margin: 5px;width: 100%;"> <iframe width="100%" src="//www.youtube.com/embed/IGLBliqz4K4?rel=0" frameborder="0" allowfullscreen></iframe>   </span> 
-<video style="float: right;margin: 5px;width: 100%;" id="sampleMovie" src="<?= base_url('public') ?>/uploads/trim.56F40B29-6D33-450C-B07D-5C66AC336012.MOV" controls></video>
+<video style="float: right;margin: 5px;width: 100%;" id="sampleMovie" src="<?php echo  base_url('public') ?>/uploads/trim.56F40B29-6D33-450C-B07D-5C66AC336012.MOV" controls></video>
     </div>
 
 

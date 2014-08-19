@@ -3,21 +3,21 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <!-- jQuery library (served from Google) -->
-        <script src="<?= base_url('public') ?>/js/1.8.2/jquery.min.js"></script>
+        <script src="<?php echo  base_url('public') ?>/js/1.8.2/jquery.min.js"></script>
         <!-- bxSlider Javascript file -->
-        <script src="<?= base_url('public') ?>/js/jquery.bxslider.min.js"></script>
+        <script src="<?php echo  base_url('public') ?>/js/jquery.bxslider.min.js"></script>
         <!-- bxSlider CSS file -->
-        <link href="<?= base_url('public') ?>/css/jquery.bxslider.css" rel="stylesheet" />
-        <link href="<?= base_url('public') ?>/css/custom_style.css" rel="stylesheet"
+        <link href="<?php echo  base_url('public') ?>/css/jquery.bxslider.css" rel="stylesheet" />
+        <link href="<?php echo  base_url('public') ?>/css/custom_style.css" rel="stylesheet"
               type="text/css" />
-        <link href="<?= base_url('public') ?>/css/animate.css" rel="stylesheet"
+        <link href="<?php echo  base_url('public') ?>/css/animate.css" rel="stylesheet"
               type="text/css" />
-        <link rel="stylesheet" type="text/css" href="<?= base_url('public') ?>/css/bootstrap.css" />
-        <link rel="stylesheet" type="text/css" href="<?= base_url('public') ?>/css/custom.css" />
-        <link rel="stylesheet" type="text/css" href="<?= base_url('public') ?>/css/style.css" />
-        <script type="text/javascript" src="<?= base_url('public') ?>/js/modernizr.custom.79639.js"></script>
+        <link rel="stylesheet" type="text/css" href="<?php echo  base_url('public') ?>/css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo  base_url('public') ?>/css/custom.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo  base_url('public') ?>/css/style.css" />
+        <script type="text/javascript" src="<?php echo  base_url('public') ?>/js/modernizr.custom.79639.js"></script>
         <noscript>
-            <link rel="stylesheet" type="text/css" href="<?= base_url('public') ?>/css/styleNoJS.css" />
+            <link rel="stylesheet" type="text/css" href="<?php echo  base_url('public') ?>/css/styleNoJS.css" />
         </noscript>
         <title>Welcome to Dunlop Tire (Thailand) Company Limited</title>
         <script>
@@ -28,7 +28,7 @@
             });
         </script>
     </head>
-    <body background="<?= base_url() ?>public/images/home/bg_2.jpg" style="margin:auto">
+    <body background="<?php echo  base_url() ?>public/images/home/bg_2.jpg" style="margin:auto">
         <?php
         if ($sent == true) {
             echo "<script>alert('ส่งข้อความแล้วค่ะ');</script>";
@@ -37,11 +37,11 @@
         <!-- start table 3x3-->
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr height="78" >
-                <td background="<?= base_url() ?>public/images/home/logo_1.jpg">&nbsp;</td>
+                <td background="<?php echo  base_url() ?>public/images/home/logo_1.jpg">&nbsp;</td>
                 <td width="942"  style="position: relative;"><table border="0" cellspacing="0" cellpadding="0" width="100%">
                         <tr>
-                            <td><a href="<?= base_url() ?>"><img src="<?= base_url() ?>public/images/home/logo_2.jpg" /></a></td>
-                            <td background="<?= base_url() ?>public/images/home/logo_3.jpg"  width="100%">
+                            <td><a href="<?php echo  base_url() ?>"><img src="<?php echo  base_url() ?>public/images/home/logo_2.jpg" /></a></td>
+                            <td background="<?php echo  base_url() ?>public/images/home/logo_3.jpg"  width="100%">
 
                             </td>
 
@@ -51,22 +51,22 @@
                         <table id="Table_01" width="603" height="42" border="0" cellpadding="0" cellspacing="0"> 
                             <tr>
                                 <td>
-                                    <a href="<?= base_url() ?>home"><img src="<?= base_url() ?>public/images/menu/contact/menu_01.png" width="98" height="42" alt=""/></a></td>
+                                    <a href="<?php echo  base_url() ?>home"><img src="<?php echo  base_url() ?>public/images/menu/contact/menu_01.png" width="98" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>product"> <img src="<?= base_url() ?>public/images/menu/contact/menu_02.png" width="96" height="42" alt=""/></a></td>
+                                    <a href="<?php echo  base_url() ?>product"> <img src="<?php echo  base_url() ?>public/images/menu/contact/menu_02.png" width="96" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>knowledge"><img src="<?= base_url() ?>public/images/menu/contact/menu_03.png" width="129" height="42" alt=""/></a></td>
+                                    <a href="<?php echo  base_url() ?>knowledge"><img src="<?php echo  base_url() ?>public/images/menu/contact/menu_03.png" width="129" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>about">  <img src="<?= base_url() ?>public/images/menu/contact/menu_04.png" width="119" height="42" alt=""/></a></td>
+                                    <a href="<?php echo  base_url() ?>about">  <img src="<?php echo  base_url() ?>public/images/menu/contact/menu_04.png" width="119" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>address"><img src="<?= base_url() ?>public/images/menu/contact/menu_05.png" width="111" height="42" alt=""/></a></td>
+                                    <a href="<?php echo  base_url() ?>address"><img src="<?php echo  base_url() ?>public/images/menu/contact/menu_05.png" width="111" height="42" alt=""/></a></td>
                                 <td>
-                                    <a href="<?= base_url() ?>address"><img src="<?= base_url() ?>public/images/menu/contact/menu_06.png" width="137" height="42" alt=""/></a></td>
+                                    <a href="<?php echo  base_url() ?>address"><img src="<?php echo  base_url() ?>public/images/menu/contact/menu_06.png" width="137" height="42" alt=""/></a></td>
                             </tr>
                         </table>
                     </div>
                 </td>
-                <td background="<?= base_url() ?>public/images/home/logo_3.jpg">&nbsp;</td>
+                <td background="<?php echo  base_url() ?>public/images/home/logo_3.jpg">&nbsp;</td>
             </tr>
             <tr height="730">
                 <td >&nbsp;</td>
@@ -209,19 +209,19 @@
                                     <div class="col-xs-6">
                                         <div class="map"> <div id="map_canvas"></div></div>
                                         <div class="address_detail">
-                                            <h1><img style="margin-right: 10px; margin-bottom: 7px;" src="<?= base_url() ?>public/images/location_icon.png"/>DUNLOP CONTACT ADDRESS</h1>
+                                            <h1><img style="margin-right: 10px; margin-bottom: 7px;" src="<?php echo  base_url() ?>public/images/location_icon.png"/>DUNLOP CONTACT ADDRESS</h1>
                                             <p>บริษัท ดันลอปไทร์ (ไทยแลนด์) จำกัด<br/>
                                                 120 อาคารแอมเพิลทาวเวอร์ ชั้น 24 ห้อง 4/1 หมู่ที่ 11<br/>
                                                 ถนนบางนา-ตราด กม.4 แขวงบางนา เขตบางนา<br/>
                                                 กรุงเทพมหานคร 10260</p>
-                                            <p><img style="margin-right: 10px; " src="<?= base_url() ?>public/images/phone1.png"/>+66 (0) 2744-0199</p>
-                                            <p><img style="margin-right: 10px; " src="<?= base_url() ?>public/images/phone2.png"/>+66 (0) 2744-0198</p>
+                                            <p><img style="margin-right: 10px; " src="<?php echo  base_url() ?>public/images/phone1.png"/>+66 (0) 2744-0199</p>
+                                            <p><img style="margin-right: 10px; " src="<?php echo  base_url() ?>public/images/phone2.png"/>+66 (0) 2744-0198</p>
                                             <p>Dunlop Tire (Thailand) Co.,Ltd.
                                                 120 Ample Tower, 4th Floor, Unit 4/1
                                                 Bangna-Trad Km.4 Road, Kwang Bangna, Khet Bangna,
                                                 Bangkok  10260</p>
-                                            <p><img style="margin-right: 10px; " src="<?= base_url() ?>public/images/phone1.png"/>+66 (0) 2744-0199</p>
-                                            <p><img style="margin-right: 10px; " src="<?= base_url() ?>public/images/phone2.png"/>+66 (0) 2744-0198</p>
+                                            <p><img style="margin-right: 10px; " src="<?php echo  base_url() ?>public/images/phone1.png"/>+66 (0) 2744-0199</p>
+                                            <p><img style="margin-right: 10px; " src="<?php echo  base_url() ?>public/images/phone2.png"/>+66 (0) 2744-0198</p>
                                         </div>
                                     </div>
                                     <div style="clear: both"></div>
@@ -246,8 +246,8 @@
         </table>
 
         <!-- end table 3x3-->
-        <script type="text/javascript" src="<?= base_url() ?>public/js/jquery.ba-cond.min.js"></script>
-        <script type="text/javascript" src="<?= base_url() ?>public/js/jquery.slitslider.js"></script>
+        <script type="text/javascript" src="<?php echo  base_url() ?>public/js/jquery.ba-cond.min.js"></script>
+        <script type="text/javascript" src="<?php echo  base_url() ?>public/js/jquery.slitslider.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js"></script>
         <script>
             function initialize() {

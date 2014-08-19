@@ -49,15 +49,15 @@
                                     ?>
 
                                     <tr>
-                                        <td><?= $row->VIDEO_ID; ?></td>
-                                        <td><?= $row->VIDEO_Headline; ?><br>
-                                        </span><span class="edit"><a href="javascript:;" onclick="edit_product(<?= $row->VIDEO_ID ?>);">Edit</a> | </span><span class="delete"><a class="delete-tag" href="#" onclick="return removedata(<?= $row->VIDEO_ID ?>);">Delete</a></div></td></td>
+                                        <td><?php echo  $row->VIDEO_ID; ?></td>
+                                        <td><?php echo  $row->VIDEO_Headline; ?><br>
+                                        </span><span class="edit"><a href="javascript:;" onclick="edit_product(<?php echo  $row->VIDEO_ID ?>);">Edit</a> | </span><span class="delete"><a class="delete-tag" href="#" onclick="return removedata(<?php echo  $row->VIDEO_ID ?>);">Delete</a></div></td></td>
                                 </td>
-                                <td><?= $row->VIDEO_LINK ?></td>
+                                <td><?php echo  $row->VIDEO_LINK ?></td>
 
 
-                                <td><?= time_ago($row->Create_Date) ?></td>
-                                <td><?= time_ago($row->Update_Date) ?></td>
+                                <td><?php echo  time_ago($row->Create_Date) ?></td>
+                                <td><?php echo  time_ago($row->Update_Date) ?></td>
 
                             </tr> 
                             <?php

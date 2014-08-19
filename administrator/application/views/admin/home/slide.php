@@ -52,16 +52,16 @@
                                     ?>
 
                                     <tr>
-                                        <td><?= $row->SLIDE_ID; ?></td>
-                                        <td><?= $row->SLIDE_Animation_Type; ?><br>
-                                            </span><div class="edit"><a href="javascript:;" onclick="edit_product(<?= $row->SLIDE_ID ?>);">Edit</a> | </span><span class="delete"><a class="delete-tag" href="#" onclick="return removedata(<?= $row->SLIDE_ID ?>);">Delete</a></div>
+                                        <td><?php echo  $row->SLIDE_ID; ?></td>
+                                        <td><?php echo  $row->SLIDE_Animation_Type; ?><br>
+                                            </span><div class="edit"><a href="javascript:;" onclick="edit_product(<?php echo  $row->SLIDE_ID ?>);">Edit</a> | </span><span class="delete"><a class="delete-tag" href="#" onclick="return removedata(<?php echo  $row->SLIDE_ID ?>);">Delete</a></div>
                                         </td>
-                                        <td><?= $row->SLIDE_bg ?></td>
-                                        <td><?= $row->SLIDE_Object_img1 ?></td>
-                                        <td><?= $row->SLIDE_Object_img2 ?></td>
-                                        <td><?= $row->SLIDE_Object_img3 ?></td>
-                                        <td><?= time_ago($row->Create_Date) ?></td>
-                                        <td><?= time_ago($row->Update_Date) ?></td>
+                                        <td><?php echo  $row->SLIDE_bg ?></td>
+                                        <td><?php echo  $row->SLIDE_Object_img1 ?></td>
+                                        <td><?php echo  $row->SLIDE_Object_img2 ?></td>
+                                        <td><?php echo  $row->SLIDE_Object_img3 ?></td>
+                                        <td><?php echo  time_ago($row->Create_Date) ?></td>
+                                        <td><?php echo  time_ago($row->Update_Date) ?></td>
 
                                     </tr> 
                                     <?php

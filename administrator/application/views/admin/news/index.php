@@ -49,13 +49,13 @@
                                     ?>
 
                                     <tr>
-                                        <td><img src="<?= base_url() ?>public/uploads/Thumbnails_<?= $row->Content_thumbnail; ?>" height="50"></td>
-                                        <td><?= $row->Content_ID; ?></td>
-                                        <td><?= $row->Content_Headline; ?><br>
-                                        </span><span class="edit"><a href="javascript:;" onclick="edit_product(<?= $row->Content_ID ?>);">Edit</a> | </span><span class="delete"><a class="delete-tag" href="#" onclick="return removedata(<?= $row->Content_ID ?>);">Delete</a></div></td>
-                                <td><?= $row->Content_wrap; ?></td>
-                                <td><?= time_ago($row->Create_Date) ?></td>
-                                <td><?= time_ago($row->Update_Date) ?></td>
+                                        <td><img src="<?php echo  base_url() ?>public/uploads/Thumbnails_<?php echo  $row->Content_thumbnail; ?>" height="50"></td>
+                                        <td><?php echo  $row->Content_ID; ?></td>
+                                        <td><?php echo  $row->Content_Headline; ?><br>
+                                        </span><span class="edit"><a href="javascript:;" onclick="edit_product(<?php echo  $row->Content_ID ?>);">Edit</a> | </span><span class="delete"><a class="delete-tag" href="#" onclick="return removedata(<?php echo  $row->Content_ID ?>);">Delete</a></div></td>
+                                <td><?php echo  $row->Content_wrap; ?></td>
+                                <td><?php echo  time_ago($row->Create_Date) ?></td>
+                                <td><?php echo  time_ago($row->Update_Date) ?></td>
 
                             </tr> 
                             <?php
@@ -380,20 +380,20 @@
         // instance, using default configuration.
         CKEDITOR.replace('input_wordwrap',
                 {
-                    filebrowserImageBrowseUrl: '<?= base_url() ?>public/js/plugins/ckfinder/ckfinder.html?Type=Images',
-                    filebrowserFlashBrowseUrl: '<?= base_url() ?>public/js/plugins/ckfinder/ckfinder.html?Type=Flash',
-                    filebrowserUploadUrl: '<?= base_url() ?>public/js/plugins/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
-                    filebrowserImageUploadUrl: '<?= base_url() ?>public/js/plugins/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
-                    filebrowserFlashUploadUrl: '<?= base_url() ?>public/js/plugins/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
+                    filebrowserImageBrowseUrl: '<?php echo  base_url() ?>public/js/plugins/ckfinder/ckfinder.html?Type=Images',
+                    filebrowserFlashBrowseUrl: '<?php echo  base_url() ?>public/js/plugins/ckfinder/ckfinder.html?Type=Flash',
+                    filebrowserUploadUrl: '<?php echo  base_url() ?>public/js/plugins/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+                    filebrowserImageUploadUrl: '<?php echo  base_url() ?>public/js/plugins/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+                    filebrowserFlashUploadUrl: '<?php echo  base_url() ?>public/js/plugins/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
                 });
 
         CKEDITOR.replace('input_detail',
                 {
-                    filebrowserImageBrowseUrl: '<?= base_url() ?>public/js/plugins/ckfinder/ckfinder.html?Type=Images',
-                    filebrowserFlashBrowseUrl: '<?= base_url() ?>public/js/plugins/ckfinder/ckfinder.html?Type=Flash',
-                    filebrowserUploadUrl: '<?= base_url() ?>public/js/plugins/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
-                    filebrowserImageUploadUrl: '<?= base_url() ?>public/js/plugins/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
-                    filebrowserFlashUploadUrl: '<?= base_url() ?>public/js/plugins/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
+                    filebrowserImageBrowseUrl: '<?php echo  base_url() ?>public/js/plugins/ckfinder/ckfinder.html?Type=Images',
+                    filebrowserFlashBrowseUrl: '<?php echo  base_url() ?>public/js/plugins/ckfinder/ckfinder.html?Type=Flash',
+                    filebrowserUploadUrl: '<?php echo  base_url() ?>public/js/plugins/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+                    filebrowserImageUploadUrl: '<?php echo  base_url() ?>public/js/plugins/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+                    filebrowserFlashUploadUrl: '<?php echo  base_url() ?>public/js/plugins/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
                     ,
                 });
 

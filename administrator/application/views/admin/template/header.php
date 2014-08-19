@@ -61,8 +61,8 @@
                                 <li class="user-header bg-light-blue">
                                     <img src="<?php echo base_url() ?>public/img/avatar3.png" class="img-circle" alt="User Image" />
                                     <p>
-                                        <?= $account['admin_username'] ?>  - <?= $account['admin_fullname'] ?>
-                                        <small>Lastest logout <?= time_ago($account['admin_logout']) ?></small>
+                                        <?php echo  $account['admin_username'] ?>  - <?php echo  $account['admin_fullname'] ?>
+                                        <small>Lastest logout <?php echo  time_ago($account['admin_logout']) ?></small>
                                     </p>
                                 </li>
                                 <!-- Menu Body -->
@@ -93,7 +93,7 @@
                             <img src="<?php echo base_url() ?>public/img/avatar3.png" class="img-circle" alt="User Image" />
                         </div>
                         <div class="pull-left info">
-                            <p>Hello, <?= $account['admin_username'] ?></p>
+                            <p>Hello, <?php echo  $account['admin_username'] ?></p>
 
                             <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                         </div>
@@ -127,47 +127,47 @@
                             <ul class="treeview-menu" style="display: block;">
                                 <li><a href="#" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Home</a>
                                     <ul class="treeview-menu" style="display: block;">
-                                        <li <?= is_menu_active($menu, "home_highlight"); ?>><a href="<?= base_url() ?>home/highlight" style="margin-left: 40px;"><i class="fa fa-angle-right"></i> Highlight news</a></li>
-                                        <li <?= is_menu_active($menu, "home_whatnews"); ?>><a href="<?= base_url() ?>home/whatnews" style="margin-left: 40px;"><i class="fa fa-angle-right"></i> What news</a></li>
-                                        <li <?= is_menu_active($menu, "home_video"); ?>><a href="<?= base_url() ?>home/video" style="margin-left: 40px;"><i class="fa fa-angle-right"></i> Video</a></li>
-                                        <li <?= is_menu_active($menu, "home_slide"); ?>><a href="<?= base_url() ?>home/slide" style="margin-left: 40px;"><i class="fa fa-angle-right"></i> Slide</a></li>
+                                        <li <?php echo  is_menu_active($menu, "home_highlight"); ?>><a href="<?php echo  base_url() ?>home/highlight" style="margin-left: 40px;"><i class="fa fa-angle-right"></i> Highlight news</a></li>
+                                        <li <?php echo  is_menu_active($menu, "home_whatnews"); ?>><a href="<?php echo  base_url() ?>home/whatnews" style="margin-left: 40px;"><i class="fa fa-angle-right"></i> What news</a></li>
+                                        <li <?php echo  is_menu_active($menu, "home_video"); ?>><a href="<?php echo  base_url() ?>home/video" style="margin-left: 40px;"><i class="fa fa-angle-right"></i> Video</a></li>
+                                        <li <?php echo  is_menu_active($menu, "home_slide"); ?>><a href="<?php echo  base_url() ?>home/slide" style="margin-left: 40px;"><i class="fa fa-angle-right"></i> Slide</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="#" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Product</a>
                                     <ul class="treeview-menu" style="display: block;">
-                                        <li <?= is_menu_active($menu, "product_category"); ?> ><a href="<?= base_url() ?>product/category" style="margin-left: 40px;"><i class="fa fa-angle-right"></i> Group</a></li>
+                                        <li <?php echo  is_menu_active($menu, "product_category"); ?> ><a href="<?php echo  base_url() ?>product/category" style="margin-left: 40px;"><i class="fa fa-angle-right"></i> Group</a></li>
 
-                                        <li <?= is_menu_active($menu, "product_type"); ?> ><a href="<?= base_url() ?>product/type" style="margin-left: 40px;"><i class="fa fa-angle-right"></i> Type</a></li>
-                                        <li <?= is_menu_active($menu, "product_item"); ?>><a href="<?= base_url() ?>product/item" style="margin-left: 40px;"><i class="fa fa-angle-right"></i> Product</a></li>
-                                        <li <?= is_menu_active($menu, "product_tire"); ?>><a href="<?= base_url() ?>product/tire" style="margin-left: 40px;"><i class="fa fa-angle-right"></i> Tire</a></li>
+                                        <li <?php echo  is_menu_active($menu, "product_type"); ?> ><a href="<?php echo  base_url() ?>product/type" style="margin-left: 40px;"><i class="fa fa-angle-right"></i> Type</a></li>
+                                        <li <?php echo  is_menu_active($menu, "product_item"); ?>><a href="<?php echo  base_url() ?>product/item" style="margin-left: 40px;"><i class="fa fa-angle-right"></i> Product</a></li>
+                                        <li <?php echo  is_menu_active($menu, "product_tire"); ?>><a href="<?php echo  base_url() ?>product/tire" style="margin-left: 40px;"><i class="fa fa-angle-right"></i> Tire</a></li>
 
                                     </ul></li>
                                 <!--
                             <li><a href="#" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Tire Knowledge</a>
                                 <ul class="treeview-menu" style="display: block;">
-                                    <li <?= is_menu_active($menu, "knowledge_category"); ?>><a href="<?= base_url() ?>knowledge/category" style="margin-left: 40px;"><i class="fa fa-angle-right"></i> Categories</a></li>
-                                    <li <?= is_menu_active($menu, "knowledge_article"); ?>><a href="<?= base_url() ?>knowledge/article" style="margin-left: 40px;"><i class="fa fa-angle-right"></i>  Article</a></li>
+                                    <li <?php echo  is_menu_active($menu, "knowledge_category"); ?>><a href="<?php echo  base_url() ?>knowledge/category" style="margin-left: 40px;"><i class="fa fa-angle-right"></i> Categories</a></li>
+                                    <li <?php echo  is_menu_active($menu, "knowledge_article"); ?>><a href="<?php echo  base_url() ?>knowledge/article" style="margin-left: 40px;"><i class="fa fa-angle-right"></i>  Article</a></li>
                                 </ul>
                             </li>
-                            <li <?= is_menu_active($menu, "about"); ?>><a href="#" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> About Dunlop</a>
+                            <li <?php echo  is_menu_active($menu, "about"); ?>><a href="#" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> About Dunlop</a>
                             <ul class="treeview-menu" style="display: block;">
-                                    <li <?= is_menu_active($menu, "about_category"); ?>><a href="<?= base_url() ?>about/category" style="margin-left: 40px;"><i class="fa fa-angle-right"></i> Categories</a></li>
-                                    <li <?= is_menu_active($menu, "about_article"); ?>><a href="<?= base_url() ?>about/article" style="margin-left: 40px;"><i class="fa fa-angle-right"></i>  Article</a></li>
+                                    <li <?php echo  is_menu_active($menu, "about_category"); ?>><a href="<?php echo  base_url() ?>about/category" style="margin-left: 40px;"><i class="fa fa-angle-right"></i> Categories</a></li>
+                                    <li <?php echo  is_menu_active($menu, "about_article"); ?>><a href="<?php echo  base_url() ?>about/article" style="margin-left: 40px;"><i class="fa fa-angle-right"></i>  Article</a></li>
                                 </ul></li>
-                            <li <?= is_menu_active($menu, "dealeraddress"); ?>><a href="#" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Dealer Address</a></li>
-                            <li <?= is_menu_active($menu, "contact"); ?>><a href="#" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Contact</a></li>
+                            <li <?php echo  is_menu_active($menu, "dealeraddress"); ?>><a href="#" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Dealer Address</a></li>
+                            <li <?php echo  is_menu_active($menu, "contact"); ?>><a href="#" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Contact</a></li>
                                 -->
 
                                 <li><a href="#" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Dealer</a>
                                     <ul class="treeview-menu" style="display: block;">
-                                        <li <?= is_menu_active($menu, "dealer_address"); ?> ><a href="<?= base_url() ?>dealer/address" style="margin-left: 40px;"><i class="fa fa-angle-right"></i> Address</a></li>
+                                        <li <?php echo  is_menu_active($menu, "dealer_address"); ?> ><a href="<?php echo  base_url() ?>dealer/address" style="margin-left: 40px;"><i class="fa fa-angle-right"></i> Address</a></li>
 
                                     </ul>
                                 </li>
 
-                                <li><a href="<?= base_url() ?>news" style="margin-left: 10px;" <?= is_menu_active($menu, "news"); ?>><i class="fa fa-angle-double-right"></i> News</a></li>
-                                <li><a href="<?= base_url() ?>csr" style="margin-left: 10px;" <?= is_menu_active($menu, "csr"); ?>><i class="fa fa-angle-double-right"></i> CSR</a></li>
-                                <li <?= is_menu_active($menu, "gallery"); ?>> <a href="<?= base_url() ?>gallery/index" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Gallery</a></li>
+                                <li><a href="<?php echo  base_url() ?>news" style="margin-left: 10px;" <?php echo  is_menu_active($menu, "news"); ?>><i class="fa fa-angle-double-right"></i> News</a></li>
+                                <li><a href="<?php echo  base_url() ?>csr" style="margin-left: 10px;" <?php echo  is_menu_active($menu, "csr"); ?>><i class="fa fa-angle-double-right"></i> CSR</a></li>
+                                <li <?php echo  is_menu_active($menu, "gallery"); ?>> <a href="<?php echo  base_url() ?>gallery/index" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Gallery</a></li>
 
                             </ul>
                         </li>
@@ -178,7 +178,7 @@
                                 <i class="fa pull-right fa-angle-down"></i>
                             </a>
                             <ul class="treeview-menu" style="display: block;">
-                                <li <?= is_menu_active($menu, "form_contact"); ?>> <a href="<?= base_url() ?>form/contact" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Contact</a></li>
+                                <li <?php echo  is_menu_active($menu, "form_contact"); ?>> <a href="<?php echo  base_url() ?>form/contact" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i> Contact</a></li>
                             </ul>
 
                         </li>
